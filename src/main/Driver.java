@@ -54,50 +54,50 @@ public class Driver {
 
 	}
 	
-//	public static void generateTemplate() throws FileNotFoundException, IOException {
-//		for (File file : dev_files) {
-//			String id = "";
-//			String text = "";
-//			int i = 0;
-//
-//			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-//				String line;
-//				while ((line = br.readLine()) != null) {
-//					if (i == 0) {
-//						id = line.split("\\s+")[0];
-//					} else {
-//						text += " " + line;
-//					}
-//					i++;
-//				}
-//			}
-////			text = text.replaceAll("\\s*\\p{Punct}+\\s*$", "");
-////			text = text.replaceAll("\"", "");
-////			text = text.replaceAll(",", "");
-////			text = text.replaceAll("\\[", "").replaceAll("\\]", "");
-////			text = text.replaceAll("\\(", "").replaceAll("\\)", "");
-////			text = text.replaceAll("\\{", "").replaceAll("\\}", "");
-////			text = text.replaceAll("\\$", "").replaceAll("\\$", "");
-////			text = text.replaceAll("--", "");
-//
+	public static void generateTemplate() throws FileNotFoundException, IOException {
+		for (File file : dev_files) {
+			String id = "";
+			String text = "";
+			int i = 0;
+
+			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if (i == 0) {
+						id = line.split("\\s+")[0];
+					} else {
+						text += " " + line;
+					}
+					i++;
+				}
+			}
+//			text = text.replaceAll("\\s*\\p{Punct}+\\s*$", "");
+//			text = text.replaceAll("\"", "");
+//			text = text.replaceAll(",", "");
+//			text = text.replaceAll("\\[", "").replaceAll("\\]", "");
+//			text = text.replaceAll("\\(", "").replaceAll("\\)", "");
+//			text = text.replaceAll("\\{", "").replaceAll("\\}", "");
+//			text = text.replaceAll("\\$", "").replaceAll("\\$", "");
+//			text = text.replaceAll("--", "");
+
 //			String incident = getIncident(text);
 //			oursIncident.put(id, incident);
-//
-//			// oursPerpOrg.put(id, po);
-//			// HashSet<String> perpetrator_orgs = getAnswers(perp_orgs, text);
-//
-//			// DEV-MUC3-0126, DEV-MUC3-0231, DEV-MUC3-0253, DEV-MUC3-0277, DEV-MUC3-0316
-//
-//			if (id.equals("DEV-MUC3-0102")) {
-//				System.out.print("");
-//			}
-//
+
+			// oursPerpOrg.put(id, po);
+			// HashSet<String> perpetrator_orgs = getAnswers(perp_orgs, text);
+
+			// DEV-MUC3-0126, DEV-MUC3-0231, DEV-MUC3-0253, DEV-MUC3-0277, DEV-MUC3-0316
+
+			if (id.equals("DEV-MUC3-0102")) {
+				System.out.print("");
+			}
+
 //			HashSet<String> weaponsSet = parseWeaponsSpecificRules(text);
-//			HashSet<String> perpOrgs = new HashSet<String>();
-//			HashSet<String> victims = new HashSet<String>();
-//
-//			Document d = new Document(text);
-//			// System.out.println(id);
+			HashSet<String> perpOrgs = new HashSet<String>();
+			HashSet<String> victims = new HashSet<String>();
+
+			Document d = new Document(text);
+			// System.out.println(id);
 //			for (Sentence s : d.sentences()) {
 //				// System.out.println(s.text());
 //				for (String s1 : weaponGeneralRules.keySet()) {
@@ -133,18 +133,18 @@ public class Driver {
 //				}
 //
 //			}
-//			// System.out.print(id + " ");
-//			// for(String s : perpOrgs) {
-//			// System.out.print(s + " ");
-//			// }
-//			// System.out.println();
-//
+//			 System.out.print(id + " ");
+//			 for(String s : perpOrgs) {
+//			 System.out.print(s + " ");
+//			 }
+//			 System.out.println();
+
 //			if (id.startsWith("DEV") || id.startsWith("TST")) {
 //				System.out.println(printTemplate(id, "date", "event", "status", "country", new HashSet<String>(), new HashSet<String>()));
 //				// System.out.println();
 //			}
-//		}
-//	}
+		}
+	}
 
 	
 	public static String printTemplate(String id, String date, String event, String status, HashSet<String> containment, String country, HashSet<String> disease, HashSet<String> victim) {
