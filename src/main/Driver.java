@@ -33,6 +33,7 @@ public class Driver {
 	
 	public static List<File> dev_files = new ArrayList<File>();
 	public static List<Article> ans_templates = new ArrayList<Article>();
+	public static List<Article> output_templates = new ArrayList<Article>();
 	
 	public static HashMap<String, String> eventRules = new HashMap<String, String>();
 	public static HashMap<String, String> containmentRules = new HashMap<String, String>();
@@ -40,7 +41,6 @@ public class Driver {
 	public static HashMap<String, String> perpOrgRules = new HashMap<String, String>();
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
-	public static String body = "";
 
 	public static void main(String args[]) throws FileNotFoundException, IOException {
 		
@@ -92,45 +92,49 @@ public class Driver {
 				if(line.contains(":")) {
 					String[] split = line.split(":");
 					if(split[0].equals("Story")) {
-						a.story = split[1];
+						a.story = line.substring(21);
+						System.out.println(a.story);
+						//System.out.println(line.substring(21, line.length()-1));
 					}
 					if(split[0].equals("ID")) {
-						a.id = split[1];
+						a.id = line.substring(21);
 					}
 					if(split[0].equals("Date")) {
-						a.date = split[1];
+						a.date = (line.substring(21));
 					}
 					if(split[0].equals("Event")) {
-						a.event = split[1];
+						a.event = line.substring(21);
 					}
 					if(split[0].equals("Country")) {
-						a.country = split[1];
+						a.country = line.substring(21);
 					}
 					if(split[0].equals("Status")) {
-						a.status = split[1];
+						a.status = line.substring(21);
 					}
 					if(split[0].equals("Containment")) {
 						a.containment = new HashSet<String>();
-						a.containment.add(split[1]);
+						a.containment.add(line.substring(21));
 						prev = "Containment";
 					}
 					if(split[0].equals("Disease")) {
 						a.disease = new HashSet<String>();
-						a.disease.add(split[1]);
+						a.disease.add(line.substring(21));
 						prev = "Disease";
 					}
 					if(split[0].equals("Victims")) {
 						a.victim = new HashSet<String>();
-						a.victim.add(split[1]);
+						a.victim.add(line.substring(21));
 						prev = "Victim";
 					}
 				} else {
 					if(prev.equals("Containment")) {
-						a.containment.add(line.substring(21, line.length()-1));
+						a.containment.add(line.substring(21));
 					} else if (prev.equals("Victim")) {
-						a.victim.add(line.substring(21, line.length()-1));
+						if(line.length() != 0){
+							a.victim.add(line.substring(21));
+						}
 					} else if (prev.equals("Disease")) {
-						a.disease.add(line.substring(21, line.length()-1));
+						a.disease.add(line.substring(21));
 					}
 				}
 			}
@@ -252,7 +256,7 @@ public class Driver {
 		if(output.status.equals(answer.status)) {
 			result.put("status", "1.00 (1/1)");
 		} else {
-			if(output.status.equals("-")) {
+			if(output.status.equals("-----")) {
 				result.put("status", "0.00 (0/0)");
 			} else {
 				result.put("status", "0.00 (0/1)");
@@ -262,7 +266,7 @@ public class Driver {
 		if(output.country.equals(answer.country)) {
 			result.put("country", "1.00 (1/1)");
 		} else {
-			if(output.country.equals("-")) {
+			if(output.country.equals("-----")) {
 				result.put("country", "0.00 (0/0)");
 			} else {
 				result.put("country", "0.00 (0/1)");
@@ -272,7 +276,7 @@ public class Driver {
 		if(output.date.equals(answer.date)) {
 			result.put("date", "1.00 (1/1)");
 		} else {
-			if(output.date.equals("-")) {
+			if(output.date.equals("-----")) {
 				result.put("date", "0.00 (0/0)");
 			} else {
 				result.put("date", "0.00 (0/1)");
@@ -282,7 +286,7 @@ public class Driver {
 		if(output.event.equals(answer.event)) {
 			result.put("event", "1.00 (1/1)");
 		} else {
-			if(output.event.equals("-")) {
+			if(output.event.equals("-----")) {
 				result.put("event", "0.00 (0/0)");
 			} else {
 				result.put("event", "0.00 (0/1)");
@@ -491,15 +495,12 @@ public class Driver {
 			count++;
 		}
 		template += "Country:             " + country + "\n";
-		template += "Disease:             ";
-		for (String s : disease) {
-			template += " " + s;
-		}
+		
 		template += "\n";
-		template += "PERP ORG: ";
+		template += "Disease:             ";
 		int count2 = 0;
 		if (disease.size() == 0) {
-			template += "-";
+			template += "----";
 			template += "\n";
 		}
 		for (String s : disease) {
@@ -507,17 +508,17 @@ public class Driver {
 				template += s;
 				template += "\n";
 			} else {
-				template += "        " + s;
+				template += "             " + s;
 				template += "\n";
 			}
 
 			count2++;
 		}
 
-		template += "VICTIM: ";
+		template += "VICTIM:              ";
 		int count3 = 0;
 		if (victim.size() == 0) {
-			template += "-";
+			template += "----";
 			template += "\n";
 		}
 		for (String s : victim) {
@@ -532,8 +533,8 @@ public class Driver {
 			count3++;
 		}
 
-		body += template + "\n";
-		generateOutputFile(fileName, body);
+		//body += template + "\n";
+		generateOutputFile(fileName, template);
 	}
 
 	public static void generateOutputFile(String fileName, String body) throws FileNotFoundException, UnsupportedEncodingException {
