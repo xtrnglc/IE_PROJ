@@ -1,0 +1,747 @@
+FILE: 20000123.0120.maintext
+ANSWER: quarantine
+CONTEXT: 99/169 First report of plum pox potyvirus in USA (Pennsylvania) Plum pox potyvirus (PPV- EPPO A2 quarantine pest) has been detected for the first time in USA, in Pennsylvania.
+
+CONTEXT: The area concerned will be placed under quarantine, movement of stone fruit trees or budwood material will be prohibited and infected trees will be destroyed.
+
+
+FILE: 20000127.0135.maintext
+ANSWER: vaccine
+
+FILE: 20000314.0354.maintext
+ANSWER: quarantine
+
+FILE: 20000319.0386.maintext
+ANSWER: -----
+
+FILE: 20000323.0414.maintext
+ANSWER: -----
+
+FILE: 20000328.0451.maintext
+ANSWER: disinfecting
+
+FILE: 20000330.0472.maintext
+ANSWER: other
+CONTEXT: A mother gave birth by caesarian section on 26 Oct 1999 at George Elliot Hospital which is in North Warwickshire.
+
+CONTEXT: At the time she had been noticed to have some depression and mood swings but was otherwise normal.
+
+CONTEXT: On 29 Jan 2000 she was admitted to another hospital in the region with a deteriorating neurological condition which was suspicious of Variant CJD (nvCJD).
+
+CONTEXT: George Elliot hospital were also able to ascertain 7 other women had had caesarian sections using this theatre kit in the intervening period between 26 Oct 1999 and 29 Jan 2000.
+
+CONTEXT: The child of this mother was also admitted to the second hospital because it was failing to thrive and appeared to have neurological signs.
+
+CONTEXT: Shortly after this the family obtained a court injunction which prohibited anyone from publishing the name of mother or child or the name of any hospital at which they were treated in newspapers on cable TV or on what was called a public computer network.
+
+CONTEXT: Advice that we were able to obtain in the short period before we had to respond to the media suggested we could cause these women significant harm, both through the anxiety and possible other harm, like reaction of family members, loss of insurability etc.
+
+CONTEXT: We also discussed the terms of the injunction with the judge and other legal advisors.
+
+
+FILE: 20000413.0523.maintext
+ANSWER: -----
+
+FILE: 20000423.0600.maintext
+ANSWER: other
+
+FILE: 20000423.0604.maintext
+ANSWER: -----
+
+FILE: 20000512.0724.maintext
+ANSWER: -----
+
+FILE: 20000513.0744.maintext
+ANSWER: -----
+CONTEXT: Seals pose influenza threat ----------------------------- .
+
+
+FILE: 20000514.0753.maintext
+ANSWER: -----
+
+FILE: 20000514.0755.maintext
+ANSWER: -----
+
+FILE: 20000516.0763.maintext
+ANSWER: inspection
+
+FILE: 20000518.0783.maintext
+ANSWER: other
+CONTEXT: Naoufal said 14 other cases had been admitted at the hospital, adding that 60 patients had been diagnosed with the disease since it was detected 10 March.
+
+CONTEXT: There were no fresh figures on the cholera situation in Anjouan island, where on average 300 new cases were recorded per week before the island was blockaded 20 March to prevent the disease from spreading to other islands.
+
+CONTEXT: <pollackmp@mindspring.com> Source: Xinhua News Agency [edited] At least 93 people have died from cholera and other forms of acute diarrhea since February in the Mozambican capital Maputo, said the city's health director Olivia Ferreira on Friday.
+
+CONTEXT: ****** Uganda Date: 6 May 2000 From: John Baptist Lwanga <jb@chdc-muk.com>, ProMED Moderator Africa Source: The New Vision [edited] Cholera  has killed 22 and infected 115 other displaced people in Bundibugyo district.
+
+CONTEXT: Humanitarian organizations including Medicins Sans Frontieres, Action Aid and the Red Cross have provided clean, safe water to Bundibugyo hospital and other health units.
+
+CONTEXT: Dr Muyunda advised the people to continue observing hygiene to combat cholera and other diarrheal diseases.
+
+CONTEXT: ****** CENTRAL AMERICA El Salvador Date: 24 Apr 2000 From: ProMED-mail <promed@promedmail.org> Source: News Agency [edited] Cholera has killed three people and made 343 others ill so far this year in El Salvador, authorities reported Monday.
+
+CONTEXT: Scientists have learned how to use satellites to track blooms of tiny floating plant and animal plankton that carry cholera bacteria by using satellite data on ocean temperatures, sea height and other climate variables.
+
+CONTEXT: Tracking sea temperatures from ships and by other direct measurements is too expensive to be practical, he added.
+
+CONTEXT: The other authors include Byron Wood, Ames; Anwar Huq, UMBI; and George Fuchs and A.
+
+
+FILE: 20000519.0790.maintext
+ANSWER: -----
+
+FILE: 20000606.0910.maintext
+ANSWER: -----
+CONTEXT: Bald eagle deaths alarm wildlife experts ----------------------------------------- .
+
+
+FILE: 20000608.0922.maintext
+ANSWER: -----
+CONTEXT: Mystery illness --------------- .
+
+
+FILE: 20000610.0938.maintext
+ANSWER: -----
+
+FILE: 20000621.1011.maintext
+ANSWER: -----
+CONTEXT: ---------------------------------------------------------------------------- Wheat stem rust is lighter than normal this year throughout the Great Plains.
+
+CONTEXT: ---------------------------------------------------------------------------- The small grain harvest is underway from southern South Carolina to northern Oklahoma.
+
+
+FILE: 20000622.1022.maintext
+ANSWER: quarantine
+
+FILE: 20000624.1035.maintext
+ANSWER: -----
+
+FILE: 20000703.1103.maintext
+ANSWER: -----
+
+FILE: 20000713.1163.maintext
+ANSWER: -----
+CONTEXT: Typhus outbreak in North Kazakhstan ------------------------------------------------------- .
+
+
+FILE: 20000725.1231.maintext
+ANSWER: inspection
+
+FILE: 20000802.1280.maintext
+ANSWER: pesticide
+
+FILE: 20000818.1375.maintext
+ANSWER: -----
+
+FILE: 20000903.1494.maintext
+ANSWER: -----
+CONTEXT: Eighth West Nile virus victim in New York City confirmed ------------------------------------------------------- .
+
+
+FILE: 20000926.1659.maintext
+ANSWER: facility
+
+FILE: 20001002.1697.maintext
+ANSWER: -----
+CONTEXT: RABIES IN TEXAS - JULY 2000 ---------------------------- .
+
+
+FILE: 20001017.1785.maintext
+ANSWER: quarantine
+
+FILE: 20001020.1814.maintext
+ANSWER: quarantine
+
+FILE: 20001022.1827.maintext
+ANSWER: pesticide
+CONTEXT: There is no way to kill off all the mosquitoes that spread it, although health officials say local pesticide spraying when infected birds are found can greatly reduce the risk that people will become infected.
+
+
+FILE: 20001023.1833.maintext
+ANSWER: -----
+CONTEXT: Ebola Haemorrhagic Fever In Uganda - Update 5 --------------------------------------------- .
+
+
+FILE: 20001027.1870.maintext
+ANSWER: other
+
+FILE: 20001031.1895.maintext
+ANSWER: quarantine
+
+FILE: 20001124.2048.maintext
+ANSWER: -----
+
+FILE: 20001206.2129.maintext
+ANSWER: -----
+
+FILE: 20001213.2180.maintext
+ANSWER: quarantine
+
+FILE: 20001221.2243.maintext
+ANSWER: vaccine
+
+FILE: 20001223.2266.maintext
+ANSWER: -----
+
+FILE: 20001230.2301.maintext
+ANSWER: -----
+CONTEXT: Ebola haemorrhagic fever in Uganda - WHO Update 36 -------------------------------------------------- .
+
+
+FILE: 20010106.0048.maintext
+ANSWER: -----
+CONTEXT: Unverified Rumors of Viral Hemorrhagic Fever in Democratic Republic of Congo ------------------------------------------------------------------------ .
+
+
+FILE: 20010129.0204.maintext
+ANSWER: -----
+CONTEXT: Queensland Rail Gears Up for Q fever ----------------------------------------- .
+
+
+FILE: 20010210.0278.maintext
+ANSWER: -----
+CONTEXT: Re-exportation of contaminated blood products from Egypt -------------------------------------------------------- .
+
+
+FILE: 20010226.0382.maintext
+ANSWER: culling
+
+FILE: 20010301.0404.maintext
+ANSWER: -----
+CONTEXT: A Comment --------- The situation with respect to the unexplained deaths in India does not  appear to be a good one.
+
+
+FILE: 20010308.0477.maintext
+ANSWER: culling
+
+FILE: 20010314.0518.maintext
+ANSWER: -----
+
+FILE: 20010319.0553.maintext
+ANSWER: facility
+
+FILE: 20010323.0578.maintext
+ANSWER: -----
+
+FILE: 20010401.0657.maintext
+ANSWER: -----
+
+FILE: 20010426.0818.maintext
+ANSWER: -----
+
+FILE: 20010508.0888.maintext
+ANSWER: culling
+
+FILE: 20010510.0903.maintext
+ANSWER: vaccine
+
+FILE: 20010510.0909.maintext
+ANSWER: -----
+CONTEXT: Dysentery - Russia (Kaluga province) ------------------------------------ .
+
+
+FILE: 20010513.0920.maintext
+ANSWER: vaccine
+
+FILE: 20010524.1015.maintext
+ANSWER: quarantine
+
+FILE: 20010603.1094.maintext
+ANSWER: -----
+CONTEXT: A Novel Pneumovirus Isolated from Children with Respiratory Tract Disease ------------------------------------------- .
+
+
+FILE: 20010603.1095.maintext
+ANSWER: -----
+
+FILE: 20010628.1226.maintext
+ANSWER: other
+
+FILE: 20010712.1341.maintext
+ANSWER: inspection
+
+FILE: 20010802.1510.maintext
+ANSWER: -----
+CONTEXT: Renewed West Nile Virus Activity in Israel ------------------------------------------ .
+
+
+FILE: 20010804.1522.maintext
+ANSWER: -----
+CONTEXT: Chile Struggles to Cope with Outbreak of Respiratory Virus ---------------------------------------------------------- .
+
+
+FILE: 20010810.1886.maintext
+ANSWER: other
+CONTEXT: Since late June, 3 other people in the county have been  hospitalized with the _Vibrio vulnificus_ infection.
+
+CONTEXT: Including the man who died 2  Aug 2001, 2 others bought oysters from restaurants, one in ceviche.
+
+CONTEXT: Raw  shellfish from other regions, such as the Pacific Northwest and Northeast,  generally do not trigger infection because water temperatures in those  areas are lower.
+
+
+FILE: 20010814.1917.maintext
+ANSWER: quarantine
+CONTEXT: The Rukhi-Natsuluku section of Zugdidi District (on the Abkhaz border) has  been placed under quarantine after several cases of human anthrax were  recorded in the area.
+
+
+FILE: 20010825.2014.maintext
+ANSWER: other
+
+FILE: 20010825.2018.maintext
+ANSWER: -----
+
+FILE: 20010830.2058.maintext
+ANSWER: -----
+
+FILE: 20010831.2076.maintext
+ANSWER: -----
+CONTEXT: Outbreak of legionellosis in Stavanger, Norway ---------------------------------------------- .
+
+
+FILE: 20010901.2093.maintext
+ANSWER: quarantine
+CONTEXT: The report said quarantine officers had moved to the vast Gonarezhou  national wildlife park in southeastern Zimbabwe, suspected to have to been  the source of the outbreak of the disease last week.
+
+
+FILE: 20010905.2121.maintext
+ANSWER: culling
+
+FILE: 20010916.2240.maintext
+ANSWER: culling
+
+FILE: 20010923.2307.maintext
+ANSWER: other
+CONTEXT: at 613-221-2011 or the Canadian Food Inspection Agency at 1-800-561-3350 in Quebec and 1-800-442-2342 in other provinces and territories.
+
+
+FILE: 20011001.2387.maintext
+ANSWER: -----
+
+FILE: 20011011.2484.maintext
+ANSWER: -----
+
+FILE: 20011013.2506.maintext
+ANSWER: -----
+
+FILE: 20011015.2530.maintext
+ANSWER: -----
+CONTEXT: Suspected Skin Anthrax Cases Reported in Italy ---------------------------------------------- .
+
+
+FILE: 20011019.2576.maintext
+ANSWER: -----
+CONTEXT: Caring for the Survivors of Uganda's Ebola Epidemic One Year On --------------------------------------------------------------- .
+
+
+FILE: 20011026.2645.maintext
+ANSWER: facility
+CONTEXT: [1] anthrax spores found at CIA (receives mail from Brentwood   station); also found at Walter Reed Army Institute of Research [2] anthrax spores found in NYC postal sorting facility [3] WHO anthrax update with links [4] Structure of anthrax: link to webpage with color image Anthrax found at CIA Walter Reed mailroom also has anthrax --------------------------------------- Traces of anthrax have been found in a building at the Central   Intelligence Agency in Langley, Virginia, where incoming mail is  sorted, U.S.
+
+CONTEXT: agencies, the CIA receives its mail via the  Brentwood post office facility in Washington, where 2 postal workers  have died from inhalation anthrax and a number of others are being  treated in hospitals.
+
+CONTEXT: The spokesman, Charles Dasey, said the mailroom at the facility will be  closed Friday, but the institute will be open for business and employees  will be reporting to work.
+
+CONTEXT: - Mod.MHJ] Traces of anthrax have been found at New York's largest mail  distribution center, the first instance of the germ warfare agent being  detected at a mail facility in the city, the New York Times reported on  Friday.
+
+CONTEXT: The newspaper said tests found anthrax contamination in 4 high-speed  sorting machines [at the Morgan processing and distribution facility].
+
+
+FILE: 20011027.2650.maintext
+ANSWER: medicine
+
+FILE: 20011031.2687.maintext
+ANSWER: -----
+
+FILE: 20011107.2767.maintext
+ANSWER: disinfecting
+
+FILE: 20011108.2771.maintext
+ANSWER: -----
+CONTEXT: West Nile Virus Activity: United States, 31 Oct through 6 Nov 2001 ------------------------------------------------------------------ .
+
+
+FILE: 20011116.2823.maintext
+ANSWER: -----
+CONTEXT: Occurrence of Beet pseudoyellows virus in cucumber in New Zealand -------------------------------------------- .
+
+
+FILE: 20011118.2835.maintext
+ANSWER: -----
+CONTEXT: West Nile Virus Activity: United States, 7-13 Nov 2001 ------------------------------------------------------ .
+
+
+FILE: 20011210.2995.maintext
+ANSWER: -----
+CONTEXT: A Comment on the Flamingo Deaths at Zoo Atlanta ----------------------------------------------- .
+
+
+FILE: 20011221.3082.maintext
+ANSWER: vaccine
+CONTEXT: Anthrax vaccine offered to civilians [edited] --------------------------------------------- .
+
+CONTEXT: Sent: Thu 20 Dec 2001 7:52 AM From: JoeParrish <JoeParrish@compuserve.com> Source: ENVIRONMENT NEWS SERVICE (ENS) [edited] <http://ens-news.com/ens/dec2001/2001L-12-19-06.html> WASHINGTON DC, 19 Dec 2001 (ENS): Members of congress and others who may  have been exposed to anthrax from contaminated letters will be offered a  controversial anthrax vaccine, the United States Department of Health and  Human Services (HHS) said on Tuesday.
+
+CONTEXT: The vaccine, formerly available only  to military personnel, will be administered as part of an experimental study.
+
+CONTEXT: HHS is providing 2 additional options beyond  the 60 day course for those who may wish to pursue them: an extended course  of antibiotics, and experimental treatment with the anthrax vaccine.
+
+CONTEXT: The  vaccine, developed for use by military personnel who could be exposed to  weapons-grade anthrax in the field, is only intended to protect people who  are immunized before exposure.
+
+CONTEXT: HHS is offering the vaccine to about 3000 people -- members of congress,  their staff, postal workers, and journalists who could have encountered  spores from the contaminated letters -- "out of an abundance of caution,"  said HHS secretary Tommy Thompson.
+
+CONTEXT: "Anthrax is a rare disease, and so that  the vaccine used in this way would represent a different way of using  vaccine than it's been used before," explained Dr D A Henderson of the HHS  Office of Public Health Preparedness.
+
+CONTEXT: Here we are providing vaccine after, 60 days after,  to give them antibodies, so that they might be protected against a risk."
+
+CONTEXT: Tommy Thompson said, "As an investigational new drug, the vaccine would  have to be given with the full informed consent of the individual as to  possible risks.
+
+CONTEXT: Those receiving the vaccine would also be asked to take  part in a follow-up study to determine the effectiveness of the vaccine  when it is given after exposure."
+
+CONTEXT: The decision to use the vaccine will be  at the discretion of the individual, in consultation with his or her  physician, Thompson said.
+
+CONTEXT: HHS says that the vaccine [normally given in a series of 6 injections over  18 months] will be given to interested volunteers in 3 doses, spread out  over 4 weeks.
+
+CONTEXT: Anyone accepting the vaccine will also be required to take  antibiotics for another 40 days.
+
+CONTEXT: The agency explained that for the  military, the vaccine is given in a manner intended to provide long term  protection over many years.
+
+CONTEXT: Kathy Zoon from the Food and Drug Administration told reporters  on Tuesday that those who accept the vaccine can expect some mild side  effects, include "redness and swelling at the site of injection," lasting  from days to weeks.
+
+CONTEXT: The HHS has paid the Department of Defense $598 000 for about 219 000 doses  of the anthrax vaccine, but expects to use fewer than 3000.
+
+CONTEXT: As many as 3000 people are at the  highest risk of having lingering spores and might be candidates for an  anthrax vaccine, officials said."
+
+CONTEXT: I recently came across a study done in 1986 that compared the Sterne and  acellular vaccines using guinea pigs (1).
+
+CONTEXT: The researchers found that the  acellular vaccine, which is very similar if not identical to the one in use  today, gave poor protection against most strains of anthrax except the  Vollum and Vollum 1B strains, against which protection was 100 per cent.
+
+CONTEXT: Comparative efficacy of Bacillus anthracis live spore  vaccine and protective antigen vaccine against anthrax in the guinea pig.
+
+CONTEXT: Some references for the efficacy of the  acellular anthrax vaccine adsorbed are the following: Ivins BE, Fellows PF, Pitt MLM, Estep JE, Welkos SL, Worsham PL, et al.
+
+CONTEXT: Efficacy of a standard human anthrax vaccine against Bacillus anthracis  aerosol spore challenge in rhesus monkeys.
+
+CONTEXT: Comparative efficacy of experimental anthrax vaccine candidates against  inhalation anthrax in rhesus macaques.
+
+CONTEXT: Anthrax vaccine: Evidence for safety  and efficacy against inhalational anthrax.
+
+CONTEXT: Efficacy of a human anthrax vaccine in guinea pigs, rabbits, and rhesus  macaques against challenge by Bacillus anthracis isolates of diverse  geographical origin.
+
+CONTEXT: In the article, he is quoted as  saying that this is not an experimental vaccine trial being given since it  is being administered for preventive purposes only.
+
+CONTEXT: There probably is  another vaccine now in existence according to earlier Post articles but it  is yet to be sufficiently safe.
+
+CONTEXT: [There are several new human, advanced vaccines being developed in the US  and in Europe, with the British vaccine possibly in the lead and due for  release in 2003.
+
+CONTEXT: But as Michelle Mocke said at the 4th International  Anthrax Conference in Annapolis, the Sterne vaccine is still the gold  standard.
+
+CONTEXT: No vaccine provides significant protection for more than 12  months.
+
+CONTEXT: A new vaccine has been announced  in Israel.
+
+CONTEXT: - Mod.MHJ] Laboratories of the Biological Institute in Nes-Ziona,Israel, have  completed the development of an injectable vaccine against anthrax.
+
+CONTEXT: The  vaccine has successfully passed the experimental stages and been found  efficient.
+
+CONTEXT: The vaccine is not yet commercially produced, but experts  [suggest that], if a decision is made, quantities sufficient for the entire  Israeli population could be produced in months.
+
+CONTEXT: According to various recent publications, including one a few months ago in  the Journal of the American Microbiological Society, the vaccine was  developed by genetic engineering and in cooperation with the army and the  Ministry of Health.
+
+CONTEXT: During its testing phases the vaccine was administered  to volunteer soldiers not exposed to the disease agent itself.
+
+CONTEXT: As published in the American journal, the efficacy of the  vaccine was demonstrated in challenged guinea pigs, while the immunization  lasted for a year.
+
+CONTEXT: It has been said that while the American vaccine confers immunity only  after 6 doses, the Israeli one protects after one dose.
+
+CONTEXT: The American  vaccine is said to cause also some unwanted reactions, including headaches,  shivering, and fever, as well as serious allergic reactions.
+
+CONTEXT: Scientific  sources in Israel [suggest that] such phenomena are not caused by the  Israeli vaccine.
+
+CONTEXT: Until the Israeli vaccine has been given to a few  thousand people, the true range and severity of its side effects remain  unknown.
+
+CONTEXT: The severe side effects attributed here to the US vaccine are  overstated and restricted to only a handful of people in the thousands  vaccinated.
+
+CONTEXT: Similarly, information on the reliability of the Israeli  vaccine in humans will emerge only from controlled studies.
+
+CONTEXT: But they are to  be congratulated in getting their vaccine to this stage of readiness.
+
+
+FILE: 20011224.3108.maintext
+ANSWER: -----
+CONTEXT: Note on suspicion of a milk replacement as possible source of BSE, Denmark -------------------------------------------------------------------------- .
+
+
+FILE: 20011227.3118.maintext
+ANSWER: -----
+
+FILE: 20020113.3249.maintext
+ANSWER: vaccine
+CONTEXT: "Most Australians over 30 are immune because of infection in childhood, and most under 18 are immune from vaccination, but blood surveys show that around 15 percent of people between 18 and 30 are not immune, because they only had one dose of measles vaccine as a baby or none," Dr Dowse said.
+
+
+FILE: 20020126.3402.maintext
+ANSWER: -----
+
+FILE: 20020209.3520.maintext
+ANSWER: other
+CONTEXT: Another 85 people have been diagnosed with DHF, the Secretariat said in a bulletin.
+
+CONTEXT: The death toll could still rise as several other deaths in recent days are suspected to be caused by dengue.
+
+CONTEXT: Bravim said 5 deaths had been confirmed as caused by dengue, while another 12 were being investigated.
+
+CONTEXT: Some 3000 residents in Taman Seri Kemuning here are living in fear after 2 of their neighbours died while another 39 were admitted to the Mentakab Hospital for suspected dengue fever.
+
+CONTEXT: "There are at least another 39 people admitted to the Mentakab Hospital for treatment but we have yet to ascertain the actual number.
+
+CONTEXT: We suspect that the 2 residents who have died and the others down with fever have got dengue fever but the actual cause is still yet to be known.
+
+
+FILE: 20020302.3659.maintext
+ANSWER: -----
+
+FILE: 20020302.3660.maintext
+ANSWER: -----
+CONTEXT: Eosinophilic meningitis in tourists - Jamaica ------------------------------------------------ .
+
+
+FILE: 20020408.3903.maintext
+ANSWER: -----
+
+FILE: 20020415.3958.maintext
+ANSWER: quarantine
+
+FILE: 20020516.4232.maintext
+ANSWER: -----
+
+FILE: 20020527.4334.maintext
+ANSWER: -----
+
+FILE: 20020606.4423.maintext
+ANSWER: -----
+
+FILE: 20020608.4437.maintext
+ANSWER: -----
+CONTEXT: References: ---------- .
+
+CONTEXT: Deadly fungus strikes Vancouver Island; 52 infected in the past 3 years -- and one person has died ----------------------------------- A tiny, deadly fungus never before found in a temperate climate has turned up on the east coast of Vancouver Island.
+
+
+FILE: 20020624.4584.maintext
+ANSWER: -----
+CONTEXT: Highly pathogenic avian influenza (Senegal) ------------------------------------------- .
+
+
+FILE: 20020627.4617.maintext
+ANSWER: vaccine
+
+FILE: 20020704.4667.maintext
+ANSWER: vaccine
+CONTEXT: The department, Hargreaves said, had enough anthrax vaccines as it recently  imported about 500 000 doses.
+
+
+FILE: 20020708.4702.maintext
+ANSWER: -----
+
+FILE: 20020714.4756.maintext
+ANSWER: -----
+CONTEXT: Increased Incidence of Creutzfeldt-Jakob Disease in Switzerland --------------------------------------------------------------- .
+
+
+FILE: 20020726.4865.maintext
+ANSWER: quarantine
+
+FILE: 20020812.5028.maintext
+ANSWER: -----
+
+FILE: 20020812.5029.maintext
+ANSWER: -----
+
+FILE: 20020901.5206.maintext
+ANSWER: -----
+
+FILE: 20020906.5246.maintext
+ANSWER: -----
+
+FILE: 20020907.5253.maintext
+ANSWER: quarantine
+
+FILE: 20020908.5259.maintext
+ANSWER: pesticide
+
+FILE: 20020912.5292.maintext
+ANSWER: -----
+CONTEXT: Ontario: 5 Horses Confirmed West Nile Virus-positive ------------------------------------------------------- .
+
+
+FILE: 20020919.5356.maintext
+ANSWER: -----
+CONTEXT: West Nile Virus Infection of Sheep & Goats: Request For Information ------------------------------------------------------------------- .
+
+
+FILE: 20021008.5500.maintext
+ANSWER: pesticide
+CONTEXT: Some communities, such as Prince William, have led assaults on mosquitoes with pesticide-spraying trucks in recent days, continuing a years-long practice.
+
+CONTEXT: Communities from New York to Woodbridge to Florida regularly spray pesticides to reduce mosquitoes, while other areas with mosquito-borne illnesses, including the West Nile virus, don't, saying the possible risks of spraying could outweigh the benefits.
+
+
+FILE: 20021024.5634.maintext
+ANSWER: -----
+CONTEXT: West Nile Virus in Canada - WHO Update 6 ---------------------------------------- .
+
+
+FILE: 20021105.5726.maintext
+ANSWER: -----
+CONTEXT: ********************************************* A ProMED-mail, post <http://www.promedmail.org> ProMED-mail, a program of the International Society for Infectious Diseases <http://www.isid.org> Game Commission Releases Test Results  Proving EHD Caused Deer Deaths in  Southwest ---------------------------- Pennsylvania Game Commission Bureau of Wildlife Management Director Calvin  DuBrock today announced that test results from one deer found dead in  Franklin Township, Greene County, proved that its death was caused by  epizootic hemorrhagic disease (EHD).
+
+
+FILE: 20021117.5831.maintext
+ANSWER: other
+CONTEXT: WASHINGTON (AP): Pain clinics and other health facilities should  immediately quit using all injectable drugs made by a South Carolina  pharmacy after one of that company's drugs was linked to deadly meningitis,  the [United States] government said on Friday, 15 Nov 2002.
+
+CONTEXT: The FDA said its inspections found the Spartanburg pharmacy  ill-equipped to ensure sterility in any of the injected drugs it makes, and  Urgent Care wasn't properly testing the drugs for sterility before shipping  them to pain clinics and other customers.
+
+CONTEXT: Urgent Care refused to recall any  other drugs, the FDA said.
+
+CONTEXT: Urgent Care has refused to voluntarily recall any other injectable products  they prepared and refused to provide FDA with a complete list of products  they distributed.
+
+
+FILE: 20021122.5872.maintext
+ANSWER: -----
+CONTEXT: Possible Rabies-like Infection in Scotland ------------------------------------------- .
+
+
+FILE: 20021123.5881.maintext
+ANSWER: other
+CONTEXT: This, together with other  considerations, may explain why there has not been a larger outbreak.
+
+
+FILE: 20021126.5903.maintext
+ANSWER: -----
+CONTEXT: Closed by Suspected Outbreak of Winter Vomiting Disease -------------------------------------------------- .
+
+
+FILE: 20021203.5955.maintext
+ANSWER: facility
+
+FILE: 20021207.6005.maintext
+ANSWER: -----
+CONTEXT: Question from a correspondent ----------------------------- .
+
+
+FILE: 20021211.6038.maintext
+ANSWER: pesticide
+
+FILE: 20021213.6056.maintext
+ANSWER: -----
+CONTEXT: Organophosphate Pesticides Now Suspected as Cause of Mystery Disease -------------------------------------------------------------------- .
+
+
+FILE: 20030114.0114.maintext
+ANSWER: -----
+
+FILE: 20030208.0338.maintext
+ANSWER: -----
+CONTEXT: United Kingdom: increasing influenza B virus activity ----------------------------------------------------- .
+
+
+FILE: 20030222.0461.maintext
+ANSWER: -----
+CONTEXT: Republic of the Congo: Ebola Fever Death Toll Reaches 68 -------------------------------------------------- .
+
+
+FILE: 20030302.0524.maintext
+ANSWER: other
+
+FILE: 20030310.0589.maintext
+ANSWER: pesticide
+CONTEXT: Spraying and fumigation had made the mosquitoes resistant to pesticides, and so far there were no drugs or vaccines to counter the disease, he said.
+
+
+FILE: 20030315.0645.maintext
+ANSWER: -----
+CONTEXT: Dominican Republic: Detection of West Nile Virus Antibodies in Birds -------------------------------------------------------------------- .
+
+
+FILE: 20030322.0707.maintext
+ANSWER: -----
+CONTEXT: Update #6 - severe acute respiratory syndrome --------------------------------------------- .
+
+
+FILE: 20030324.0729.maintext
+ANSWER: pesticide
+
+FILE: 20030325.0744.maintext
+ANSWER: quarantine
+CONTEXT: I assume you are supportive of the mass  quarantine that Singapore authorities have announced that they are starting  today.
+
+CONTEXT: Singapore today began ordering hundreds of people to stay at home  and it�s being described as the world�s largest quarantine.
+
+CONTEXT: With Singapore, I presume that you are in favour of measures taken, such  as those in Singapore � mass quarantine?
+
+
+FILE: 20030326.0750.maintext
+ANSWER: -----
+
+FILE: 20030403.0819.maintext
+ANSWER: -----
+CONTEXT: SARS: Detection of a Coronavirus by Virologists at the Institut Pasteur ------------------------------------------------- .
+
+CONTEXT: - Mod.CP] Detection of Novel Coronavirus and Human Metapneumovirus Sequences in the Same SARS Patients ------------------ [The following description of the virological investigations in Canadian SARS patients has been extracted from the paper by Poutanen et al., entitled "Identification of Severe Acute Respiratory Syndrome in Canada" and published online in the New England Journal of Medicine.
+
+
+FILE: 20030407.0845.maintext
+ANSWER: quarantine
+CONTEXT: PST, 1 Apr 2003) Arizona / California / Nevada / Grand Total Number of premises quarantined: 6 / 15 395 / 154 / 15 555 Number of premises positive: *1 / 878 (no change since 3/31) / **10 / 889  (no change since 3/31) Number of contact premises: 3 / 1542 (down 4 from 4/1) / 128 / 1673 (down 4  from 4/1) Number of premises depopulated: 4 / 2331 / 138 / 2473 Premises waiting to be depopulated: 0 / 89 / 0 / 89 Birds depopulated to date: 269 / 3 329 055 / 2746 / 3 332 070 Counties [in California] with quarantined premises: La Paz,  Los Angeles,  Riverside, Orange, San Bernardino, San Diego, Clark * The last infected premises in Arizona was depopulated on 7 Feb 2003.
+
+CONTEXT: Operational Update:  Effective 7 Jan 2003, APHIS imposed a federal  quarantine that regulates the interstate movement of all species of birds  and poultry products from Imperial, Los Angeles, Orange,  Riverside, San  Bernardino, San Diego, Santa Barbara, and Ventura Counties, CA.
+
+CONTEXT: Effective 17 Jan 2003, APHIS imposed a federal quarantine that regulates  the interstate movement of all species of birds and poultry products from  Clark and a portion of Nye County, NV.
+
+CONTEXT: Effective 10 Feb 2003, APHIS imposed a federal quarantine that regulates  the interstate movement of all species of birds and poultry products from  all of La Paz and Yuma Counties and a portion of Mohave County, AZ.
+
+CONTEXT: Caltrans is in the process of placing posters with information on END and  related quarantine restrictions at approximately 100 highway rest areas  throughout California.
+
+
+FILE: 20030412.0890.maintext
+ANSWER: -----
+
+FILE: 20030416.0928.maintext
+ANSWER: quarantine
+CONTEXT: Control measures: - quarantine and movement control inside the country.
+
+
+FILE: 20030425.1014.maintext
+ANSWER: quarantine
+CONTEXT: One outbreak of Newcastle disease has been confirmed (clinical and  laboratory diagnosis) in backyard birds (164 birds) in El Paso County,  Texas, which is outside the current quarantine area."
+
+CONTEXT: This information  demonstrates several relevant and important factors: 1) END virus has been contained effectively in the existing quarantine  areas in southern CA, western AZ, and southern NV; and 2) the State-Federal educational and awareness programs and surveillance  efforts are having a positive impact, even outside of the quarantine areas.
+
+CONTEXT: of outbreaks 1 (38 quarantined backyard flocks only; USDA is defining  this event as a single point source outbreak affecting multiple premises) (infected and/or dangerous contacts).
+
+CONTEXT: This information demonstrates several relevant and important factors: 1) we continue to effectively contain the initial virus to the existing  quarantine area in southern California, western Arizona, and southern  Nevada; and 2) our education and awareness programs and surveillance efforts are having  a positive impact, even outside the quarantine areas.
+
+
+FILE: 20030429.1061.maintext
+ANSWER: culling
+
+FILE: 20030501.1093.maintext
+ANSWER: quarantine
+
+FILE: 20030513.1183.maintext
+ANSWER: -----
+
+FILE: 20030516.1217.maintext
+ANSWER: -----
+CONTEXT: Situation in China -------------- .
+
+
+FILE: 20030516.1218.maintext
+ANSWER: other
+CONTEXT: "Since the majority of human and veterinary West Nile virus cases occurred from June through September [in 2002], a positive horse case this early is a little surprising, but some other states have already seen positive horses, birds, and even mosquitoes.
+
+
+FILE: 20030523.1271.maintext
+ANSWER: culling

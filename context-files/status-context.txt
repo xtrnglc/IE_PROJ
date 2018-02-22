@@ -1,0 +1,675 @@
+FILE: 20000123.0120.maintext
+ANSWER: confirmed
+
+FILE: 20000127.0135.maintext
+ANSWER: confirmed
+
+FILE: 20000314.0354.maintext
+ANSWER: confirmed
+
+FILE: 20000319.0386.maintext
+ANSWER: confirmed
+
+FILE: 20000323.0414.maintext
+ANSWER: confirmed
+
+FILE: 20000328.0451.maintext
+ANSWER: confirmed
+
+FILE: 20000330.0472.maintext
+ANSWER: suspected
+
+FILE: 20000413.0523.maintext
+ANSWER: confirmed
+
+FILE: 20000423.0600.maintext
+ANSWER: confirmed
+
+FILE: 20000423.0604.maintext
+ANSWER: confirmed
+CONTEXT: Eleven of the confirmed cases were of meningococcal serogroup W135.
+
+CONTEXT: Twenty of the confirmed cases are of meningococcal serogroup W135 and 1 of _N.
+
+CONTEXT: Seven of the confirmed cases are of meningococcal serogroup W135 and 2 of _Neisseria meningitidis_ serogroup A.
+
+CONTEXT: There have been 2 confirmed cases and 1 probable case of meningococcal disease in close contacts of pilgrims returning from the Haj.
+
+CONTEXT: The dates of onset in the confirmed cases were 5 and 6 April.
+
+CONTEXT: Neisseria meningitidis Serogroup B, Serotype 2a and Subtype PI.2 was confirmed by a national reference laboratory.
+
+
+FILE: 20000512.0724.maintext
+ANSWER: confirmed
+
+FILE: 20000513.0744.maintext
+ANSWER: confirmed
+
+FILE: 20000514.0753.maintext
+ANSWER: confirmed
+CONTEXT: Another four people in Australia were Thursday confirmed with legionnaires'  disease sourced to the Melbourne Aquarium, bringing the number of such  cases to 91.
+
+CONTEXT: A 77-year-old man died Wednesday night following complications from the  disease but he had not been confirmed as a victim of the aquarium outbreak,  health officials said.
+
+
+FILE: 20000514.0755.maintext
+ANSWER: confirmed
+
+FILE: 20000516.0763.maintext
+ANSWER: confirmed
+
+FILE: 20000518.0783.maintext
+ANSWER: confirmed
+CONTEXT: Cases have been confirmed in Bay, Lower Juba, Lower Shabelle, Mogadishu and Mudug.
+
+CONTEXT: Cosgriff <mcosgriff@hotmail.com> Source: The Times of Zambia (Lusaka) Seven people out of 129 cholera cases recorded so far have died in Ndola in the last four weeks, a senior health official has confirmed.
+
+
+FILE: 20000519.0790.maintext
+ANSWER: confirmed
+
+FILE: 20000606.0910.maintext
+ANSWER: confirmed
+CONTEXT: On an even broader scale, South Carolina and Georgia report growing  populations of bald eagles this year, although South Carolina also reported  4 confirmed eagle deaths from AVM.
+
+
+FILE: 20000608.0922.maintext
+ANSWER: suspected
+CONTEXT: A detailed protocol for specimen collection and examination for the  investigation of suspected cases has been devised.
+
+
+FILE: 20000610.0938.maintext
+ANSWER: confirmed
+
+FILE: 20000621.1011.maintext
+ANSWER: confirmed
+
+FILE: 20000622.1022.maintext
+ANSWER: confirmed
+CONTEXT: Urrutia confirmed Thursday  he had met with Alvarado and Honduran health authorities to study the Newcastle outbreak.
+
+
+FILE: 20000624.1035.maintext
+ANSWER: confirmed
+
+FILE: 20000703.1103.maintext
+ANSWER: confirmed
+CONTEXT: The Pohnpei Hospital Laboratory isolated _Vibrio cholerae_, as the cause of this outbreak and the serotype has been confirmed as serotype Ogawa.
+
+
+FILE: 20000713.1163.maintext
+ANSWER: confirmed
+
+FILE: 20000725.1231.maintext
+ANSWER: suspected
+CONTEXT: Lassa fever was suspected, and he was transported to the UNAMSIL  referral hospital in Freetown, where he has been maintained in strict  isolation, with careful precautions in handling of blood and body fluids.
+
+
+FILE: 20000802.1280.maintext
+ANSWER: confirmed
+
+FILE: 20000818.1375.maintext
+ANSWER: confirmed
+
+FILE: 20000903.1494.maintext
+ANSWER: confirmed
+CONTEXT: Eighth West Nile virus victim in New York City confirmed ------------------------------------------------------- .
+
+CONTEXT: Word of  the latest victim came only one day after authorities confirmed that a  61-year-old Staten Island man was the seventh victim in New York.
+
+CONTEXT: [On 1 Sep 2000 test results confirmed that a Hudson County resident had  become New Jersey's first known victim of the virus.
+
+
+FILE: 20000926.1659.maintext
+ANSWER: confirmed
+
+FILE: 20001002.1697.maintext
+ANSWER: confirmed
+CONTEXT: But I would ask you to note there was a horse  and a cow confirmed with rabies in July.
+
+
+FILE: 20001017.1785.maintext
+ANSWER: confirmed
+CONTEXT: The National Institute of Virology in Johannesburg, South Africa, has confirmed by PCR test that Ebola virus is present in the current outbreak in Uganda.
+
+CONTEXT: Kenyan health authorities confirmed on Monday that a team of public health officers had been sent to Busia to try identify possible Ebola carriers.
+
+
+FILE: 20001020.1814.maintext
+ANSWER: confirmed
+CONTEXT: As reported to WHO on 16 Oct 2000 by the WHO Collaborating Centre, the National Institute for Virology (NIV) in South Africa, test results had confirmed that Ebola virus was cause of the disease.
+
+
+FILE: 20001022.1827.maintext
+ANSWER: confirmed
+
+FILE: 20001023.1833.maintext
+ANSWER: confirmed
+
+FILE: 20001027.1870.maintext
+ANSWER: confirmed
+CONTEXT: The number of people known to be infected with the deadly fever since it was confirmed on 14 Oct 2000 rose to 191 by today (27 Oct 2000), up from 182 one day earlier, said Director General of Medical Services Francis Omaswa.
+
+
+FILE: 20001031.1895.maintext
+ANSWER: confirmed
+CONTEXT: It had been confirmed as infected on 9 August - the second of 15 premises to be confirmed with CSF following the start of the outbreak on 8 Aug 2000.
+
+
+FILE: 20001124.2048.maintext
+ANSWER: confirmed
+
+FILE: 20001206.2129.maintext
+ANSWER: confirmed
+CONTEXT: A total of 7 cases, including 2 deaths, have been confirmed by the Parana  State Secretary of Health: 5 from the region of General Carneiro, and 2  from Campina Grande do Sul, which is within the metropolitan area of the  State capital, Curitiba.
+
+
+FILE: 20001213.2180.maintext
+ANSWER: confirmed
+
+FILE: 20001221.2243.maintext
+ANSWER: confirmed
+
+FILE: 20001223.2266.maintext
+ANSWER: confirmed
+
+FILE: 20001230.2301.maintext
+ANSWER: suspected
+CONTEXT: Investigation of reported suspected cases is ongoing as well as follow up of contacts of suspected and confirmed cases.
+
+CONTEXT: None of the suspected Ebola haemorrhagic fever cases in Tanzania, Rwanda, Kenya and Democratic Republic of the Congo, reported previously in ProMED-mail and elsewhere, have been confirmed so far by laboratory tests.
+
+
+FILE: 20010106.0048.maintext
+ANSWER: possible
+
+FILE: 20010129.0204.maintext
+ANSWER: suspected
+
+FILE: 20010210.0278.maintext
+ANSWER: confirmed
+
+FILE: 20010226.0382.maintext
+ANSWER: confirmed
+CONTEXT: There is some confusion about whether or not the diagnosis is confirmed in these sheep.
+
+CONTEXT: The 7am news said it was confirmed while the 8am and 9am news said it was suspected/under investigation.
+
+CONTEXT: In the UK, the Devon farmer whose farm was outbreak 7, which was confirmed yesterday, says he has not exported any livestock since suspected infected sheep brought the virus onto his farm.
+
+CONTEXT: Animals slaughtered on a farm next door to the establishment suspected of being the source of the FMD outbreak did have the infection, veterinary surgeons confirmed today.
+
+CONTEXT: ***** Date: 26 Feb 2001 Source: BBC  Outbreaks 8 and 9 were confirmed at an abattoir in Wiltshire (which had had taken the lamb from the Devon outbreak 7) and a second farm in Devon (under same ownership as case 7) Sheep with FMD signs were found at an abattoir at Gaerwen on the island of Anglesey, Wales.
+
+CONTEXT: **** Date: 26 Feb 2001 Source: BBC  Outbreak 10 confirmed close to outbreak 5 in Northumberland.
+
+CONTEXT: ****** Date: 26 Feb 2001 Source: BBC and National Pig Association  Outbreak 11 confirmed on a farm in Llancloudy, Herefordshire.
+
+CONTEXT: Total number of susceptible livestock slaughtered on those premises following confirmation of disease at 23 Feb 2001 is 918  ****** Date: 26 Feb 2001 Source: BBC news 5pm  Outbreak 12 has been confirmed on a farm in Okehampton, Devon Abattoir in Anglesey.
+
+
+FILE: 20010301.0404.maintext
+ANSWER: suspected
+
+FILE: 20010308.0477.maintext
+ANSWER: confirmed
+
+FILE: 20010314.0518.maintext
+ANSWER: confirmed
+
+FILE: 20010319.0553.maintext
+ANSWER: suspected
+
+FILE: 20010323.0578.maintext
+ANSWER: suspected
+
+FILE: 20010401.0657.maintext
+ANSWER: suspected
+CONTEXT: The  suspected case in Germany concerns 2 pigs imported from the Netherlands  before 1 Feb 2001.
+
+
+FILE: 20010426.0818.maintext
+ANSWER: confirmed
+CONTEXT: The Texas Department of Health has confirmed that plague was the cause of death in a prairie dog population at Lake Meredith National Recreation Area.
+
+
+FILE: 20010508.0888.maintext
+ANSWER: confirmed
+
+FILE: 20010510.0903.maintext
+ANSWER: confirmed
+
+FILE: 20010510.0909.maintext
+ANSWER: confirmed
+CONTEXT: The diagnosis has been confirmed  bacteriologically by isolation of strain of _Shigella flexneri_ 2a from 66  people.
+
+
+FILE: 20010513.0920.maintext
+ANSWER: confirmed
+
+FILE: 20010524.1015.maintext
+ANSWER: possible
+
+FILE: 20010603.1094.maintext
+ANSWER: confirmed
+
+FILE: 20010603.1095.maintext
+ANSWER: confirmed
+CONTEXT: The Ministry of Health has reported 4 cases including 3 deaths, one confirmed by IgM detection in a sample collected on 23 Mar 2001 from a 17 year-old woman who died 24 Mar 2001.
+
+
+FILE: 20010628.1226.maintext
+ANSWER: suspected
+
+FILE: 20010712.1341.maintext
+ANSWER: confirmed
+CONTEXT: The total number of unconfirmed cases stood at 470 yesterday, although the _Legionella_ bacterium has been confirmed as the cause in just 192 of these.
+
+CONTEXT: The epidemic is the largest seen in the country since the 224 cases registered in Alcala de Henares (Madrid) in 1996, and despite its virulent nature, regional health minister Francisco Marques stated that an increase in the number of confirmed cases is not expected.
+
+
+FILE: 20010802.1510.maintext
+ANSWER: confirmed
+CONTEXT: Dr Alex Leventhal, Head of the Public Health Services in the Israeli  Ministry of Health, has indicated that the described case is the first  confirmed one this summer, though several dozens of serum samples are sent  and tested daily.
+
+
+FILE: 20010804.1522.maintext
+ANSWER: confirmed
+
+FILE: 20010810.1886.maintext
+ANSWER: confirmed
+
+FILE: 20010814.1917.maintext
+ANSWER: confirmed
+
+FILE: 20010825.2014.maintext
+ANSWER: confirmed
+CONTEXT: West Nile virus confirmed in Oakville blue jay ---------------------------------------------- .
+
+
+FILE: 20010825.2018.maintext
+ANSWER: confirmed
+
+FILE: 20010830.2058.maintext
+ANSWER: suspected
+CONTEXT: The following report from the 26  Aug 2001 Sunday Observer describes the outbreak: Eighty-three cases of suspected typhus fever have been identified in the  Hambantota district.
+
+CONTEXT: Dr Amarasingha said  that the hospital lacked adequate laboratory facilities to diagnose this  disease, but on clinical suspicion, they were able to diagnose 83 cases of  suspected typhus fever.
+
+CONTEXT: "All suspected cases of typhus fever respond very  rapidly to chloramphenicol, but if you do not treat the fever, it will  prolong for about 2 to 3 weeks."
+
+
+FILE: 20010831.2076.maintext
+ANSWER: confirmed
+CONTEXT: A total of 13 cases have been confirmed by  legionella antigen test in urine [and/or?
+
+CONTEXT: One confirmed and one  suspected case have died.
+
+
+FILE: 20010901.2093.maintext
+ANSWER: confirmed
+CONTEXT: "We have investigated and confirmed there has been  FMD infection in the Jepempe resettlement area of Beitbridge," Stuart  Hargreaves, director of the government's Department of Veterinary Services  said.
+
+
+FILE: 20010905.2121.maintext
+ANSWER: confirmed
+CONTEXT: The farm was a dangerous contact for the recent confirmed outbreak  in Penelles.
+
+
+FILE: 20010916.2240.maintext
+ANSWER: confirmed
+
+FILE: 20010923.2307.maintext
+ANSWER: possible
+
+FILE: 20011001.2387.maintext
+ANSWER: confirmed
+
+FILE: 20011011.2484.maintext
+ANSWER: confirmed
+
+FILE: 20011013.2506.maintext
+ANSWER: confirmed
+
+FILE: 20011015.2530.maintext
+ANSWER: suspected
+CONTEXT: Though local health officials stressed that any links with terrorism had been ruled out, 2 Italians from the northern region of Lombardy were undergoing tests Sunday for suspected skin anthrax.
+
+CONTEXT: The second suspected case concerned a 23-year-old immigrant from Senegal,  who was admitted to a Como hospital 3 days ago.
+
+
+FILE: 20011019.2576.maintext
+ANSWER: confirmed
+CONTEXT: Laboratory tests at the National Institute of Virology in South  Africa, a WHO reference laboratory, confirmed Ebola virus infection on 15  Oct 2000.
+
+
+FILE: 20011026.2645.maintext
+ANSWER: confirmed
+CONTEXT: The State Department said Thursday the diagnosis that one of its mail  handlers has inhalation anthrax has been confirmed by the Centers for  Disease Control and Prevention.
+
+
+FILE: 20011027.2650.maintext
+ANSWER: confirmed
+CONTEXT: employee ill: CDC suspects more letters responsible [Note that all confirmed inhalation cases are in males, and all but  one of the cutaneous anthrax cases are in females.
+
+CONTEXT: The State Department said Thursday the diagnosis that one of its mail  handlers has inhalation anthrax has been confirmed by the Centers for  Disease Control and Prevention.
+
+CONTEXT: Postal Service has  confirmed.
+
+
+FILE: 20011031.2687.maintext
+ANSWER: suspected
+
+FILE: 20011107.2767.maintext
+ANSWER: confirmed
+CONTEXT: [The suspect contamination at the US Consulate in Lahore, Pakistan, is  confirmed as negative.
+
+
+FILE: 20011108.2771.maintext
+ANSWER: confirmed
+CONTEXT: [In contrast to this report, the most recent USDA-APHIS Report covering the  period 1 Jan to 31 Oct 2001, see: West Nile virus surveillance (30)20011105.2745, lists 344 confirmed and 3 probable cases of clinical West  Nile virus (WNV) infection in horses from 18 States.
+
+CONTEXT: If  this case has been confirmed, the total of human cases in 2001 becomes 43.
+
+
+FILE: 20011116.2823.maintext
+ANSWER: confirmed
+CONTEXT: This diagnosis was confirmed by RT-PCR using specific primers which yielded a single band of 450 bp with nucleic acid extracted from the diseased, but not healthy, plants (Rubio et al., 1999).
+
+CONTEXT: This outbreak is the first confirmed occurrence of BPYV in New Zealand and also of a virus of the genus Crinivirus in the country.
+
+
+FILE: 20011118.2835.maintext
+ANSWER: confirmed
+CONTEXT: The above MMWR report still under-records the number of confirmed equine cases in 2001.
+
+CONTEXT: The most recent USDA-APHIS Report covering the period 1 Jan to 31 Oct 2001 (see: West Nile virus surveillance (30)20011105.2745) lists 344 confirmed and 3 probable cases of clinical West Nile virus (WNV) infection in horses from 18 States.
+
+
+FILE: 20011210.2995.maintext
+ANSWER: confirmed
+
+FILE: 20011221.3082.maintext
+ANSWER: possible
+CONTEXT: Tommy Thompson said, "As an investigational new drug, the vaccine would  have to be given with the full informed consent of the individual as to  possible risks.
+
+CONTEXT: "The possible risk of cases after 60 days is based solely on a very limited  amount of data from animal studies," said Dr Henderson.
+
+CONTEXT: They raise a question of possible risk, but this is the best we have  to go on."
+
+
+FILE: 20011224.3108.maintext
+ANSWER: confirmed
+
+FILE: 20011227.3118.maintext
+ANSWER: confirmed
+CONTEXT: confirmed as Mf ...
+
+
+FILE: 20020113.3249.maintext
+ANSWER: confirmed
+CONTEXT: Health Department communicable disease control acting director Gary Dowse said 9 cases of measles had been confirmed in the past 5 weeks, 4 of which required hospitalisation.
+
+
+FILE: 20020126.3402.maintext
+ANSWER: confirmed
+
+FILE: 20020209.3520.maintext
+ANSWER: confirmed
+CONTEXT: According to the latest bulletin from the State Secretary of Health, 12 957 cases of dengue have been notified, including 207 (5 fatal, confirmed) of dengue hemorrhagic fever (DHF).
+
+CONTEXT: Bravim said 5 deaths had been confirmed as caused by dengue, while another 12 were being investigated.
+
+
+FILE: 20020302.3659.maintext
+ANSWER: possible
+CONTEXT: It would be of interest to know if a possible food allergen might be  the culprit in some or all of these current outbreak occurrences --  perhaps a common food preparation product distributed to schools for  use in school lunch programs.
+
+
+FILE: 20020302.3660.maintext
+ANSWER: confirmed
+CONTEXT: [See also 2001 ---- Eosinophilic meningitis - USA ex Jamaica20011007.24262000 ---- Eosinophilic meningitis, CDC confirmed - USA (Chicago)20000511.0716Eosinophilic meningitis - USA (Chicago) ex Jamaica (03)20000508.0705Eosinophilic meningitis - USA (Chicago) ex Jamaica (02)20000505.0685Eosinophilic meningitis - USA (Chicago) ex Jamaica20000504.06811998 ---- Angiostrongyliasis & eosinophilic meningitis19980508.0902Angiostrongyliasis & eosinophilic meningitis (02)19980509.0925Angiostrongyliasis & eosinophilic meningitis (03)19980511.09281997 ---- Angiostrongylus costaricensis - Dominica19970613.1245Angiostrongylus costaricensis - Dominica (02)19970614.1250Angiostrongylus costaricensis - Dominica (03)19970616.1263Angiostrongylus costaricensis - Dominica (04)19970617.1276Angiostrongylus costaricensis - Dominica (05)19970619.1306] [A recent study reported that] a 2000 outbreak in tourists visiting  Jamaica of eosinophilic meningitis [was] due to _Angiostrongylus  cantonensis_ [and that the parasite was recently] found in rats and  snails on the island.
+
+
+FILE: 20020408.3903.maintext
+ANSWER: confirmed
+
+FILE: 20020415.3958.maintext
+ANSWER: confirmed
+
+FILE: 20020516.4232.maintext
+ANSWER: confirmed
+CONTEXT: - Mod.CP] [See also: Newcastle disease - Australia (Victoria) :suspected20020510.4156Newcastle disease - Australia (Victoria) (02):confirmed20020512.4173] ...............................as/pg/mpp
+
+
+FILE: 20020527.4334.maintext
+ANSWER: suspected
+CONTEXT: [It is suspected this is a condition known as bovine acute hepatopathy or  bovine acute liver necrosis.
+
+
+FILE: 20020606.4423.maintext
+ANSWER: confirmed
+CONTEXT: One more case of sylvan yellow fever has been confirmed in 2002.
+
+
+FILE: 20020608.4437.maintext
+ANSWER: confirmed
+
+FILE: 20020624.4584.maintext
+ANSWER: possible
+
+FILE: 20020627.4617.maintext
+ANSWER: confirmed
+
+FILE: 20020704.4667.maintext
+ANSWER: confirmed
+
+FILE: 20020708.4702.maintext
+ANSWER: suspected
+CONTEXT: This is an excellent reminder of the proper method of specimen submission  in cases of suspected domoic acid toxicosis.
+
+
+FILE: 20020714.4756.maintext
+ANSWER: confirmed
+
+FILE: 20020726.4865.maintext
+ANSWER: confirmed
+CONTEXT: [See also: [See also: Foot & mouth disease - Palestinian Authority: suspected20020724.4854Foot & mouth disease - Palestinian Authority (confirmed)20020725.4859] ...............................as/lm
+
+
+FILE: 20020812.5028.maintext
+ANSWER: suspected
+
+FILE: 20020812.5029.maintext
+ANSWER: confirmed
+
+FILE: 20020901.5206.maintext
+ANSWER: confirmed
+
+FILE: 20020906.5246.maintext
+ANSWER: suspected
+
+FILE: 20020907.5253.maintext
+ANSWER: confirmed
+
+FILE: 20020908.5259.maintext
+ANSWER: confirmed
+CONTEXT: Source: Yahoo noticias 2 Sep 2002 <http://mx.news.yahoo.com/020902/6/ibcq.html> The state secretary of health announced that as of 31 Aug 2002 660 cases of  dengue and 47 of DHF have been reported, of which 11 were [laboratory]  confirmed, 4 of those being fatal.
+
+
+FILE: 20020912.5292.maintext
+ANSWER: confirmed
+CONTEXT: One of these has been confirmed by PCR, the other 4  are pending.
+
+
+FILE: 20020919.5356.maintext
+ANSWER: suspected
+
+FILE: 20021008.5500.maintext
+ANSWER: confirmed
+
+FILE: 20021024.5634.maintext
+ANSWER: confirmed
+CONTEXT: As of Tue 22 Oct 2002, Health Canada has reported a total number of  96 human cases of West Nile virus infection: 65 suspected cases, 31  confirmed cases, including 1 death.
+
+CONTEXT: One confirmed case is resident in  the province of Alberta [For details see: ProMED-mail post "West Nile  virus, human, imported - Canada (Alberta)20021023.5625" - Mod.CP],  one suspected case and 3 confirmed cases are resident in the province  of Quebec, and the remaining 64 suspected cases and 27 confirmed  cases are resident in the province of Ontario (see previous report: <http://www.who.int/disease-outbreak-news/n2002/october/22aoctober2002.html>).
+
+CONTEXT: The one confirmed case in Alberta and one confirmed case in Ontario  likely acquired infection while travelling in the United States,  whereas all other cases acquired their infection within their home  province.
+
+
+FILE: 20021105.5726.maintext
+ANSWER: confirmed
+CONTEXT: This marks the first time the disease  has been confirmed in Pennsylvania.
+
+CONTEXT: EHD also was  confirmed earlier this year in Maryland, Ohio, Virginia, and Wisconsin.
+
+CONTEXT: "While we await test results from the other 5 samples sent, we are  relatively certain that they also died of EHD, which was recently confirmed  across the state border in West Virginia," DuBrock said.
+
+
+FILE: 20021117.5831.maintext
+ANSWER: confirmed
+
+FILE: 20021122.5872.maintext
+ANSWER: possible
+CONTEXT: The  possible diagnosis of a rabies-like illness is being considered because of  some aspects of the clinical presentation and because the man is a bat  handler who has been bitten by a bat in Scotland on at least one occasion  within the possible incubation period for rabies.
+
+CONTEXT: Anyone who has been scratched or bitten by a bat, or who has experienced  contact between bat saliva or neural tissue and their eyes, broken skin, or  mucous membrane should, after assessment, be offered post-exposure  vaccination as soon as possible after the incident.
+
+
+FILE: 20021123.5881.maintext
+ANSWER: confirmed
+
+FILE: 20021126.5903.maintext
+ANSWER: confirmed
+CONTEXT: Winter vomiting disease is caused by infection with a Norwalk-like virus, although this is seldom confirmed microbiologically.
+
+
+FILE: 20021203.5955.maintext
+ANSWER: suspected
+
+FILE: 20021207.6005.maintext
+ANSWER: suspected
+
+FILE: 20021211.6038.maintext
+ANSWER: confirmed
+CONTEXT: There has been no confirmed case of yellow fever on the  Island up to the present; the order is intended to prevent the  introduction of the virus into the Island.
+
+
+FILE: 20021213.6056.maintext
+ANSWER: confirmed
+
+FILE: 20030114.0114.maintext
+ANSWER: confirmed
+CONTEXT: As of Friday [10 Jan 2003], the Epidemiological Surveillance Unit confirmed  the first death this year [2003] attributable to visceral leishmaniasis,  signifying the 11th death due to this disease since its reappearance in the  region in the summer of 1998.
+
+
+FILE: 20030208.0338.maintext
+ANSWER: suspected
+
+FILE: 20030222.0461.maintext
+ANSWER: confirmed
+CONTEXT: On Wed 19 Feb 2003, the World Health Organisation confirmed the outbreak of  haemorrhagic fever was Ebola, and put the death toll at 64.
+
+
+FILE: 20030302.0524.maintext
+ANSWER: confirmed
+
+FILE: 20030310.0589.maintext
+ANSWER: confirmed
+CONTEXT: In Cairns, Australia, 3 locally acquired cases of dengue fever have been confirmed.
+
+CONTEXT: Dengue serotype 2 has been confirmed in one of the cases (Brian Montgomery, Scientific Officer, Tropical Public Health Unit, Queensland Heath, personal communication, Wed 5 March 2003).
+
+
+FILE: 20030315.0645.maintext
+ANSWER: confirmed
+CONTEXT: [There were 4161 cases and 277 deaths  reported to have occurred in the USA during 2002 as of data available on  the CDC WNV website current to 13 Mar 2003  <http://www.cdc.gov/od/oc/media/wncount.htm> - Mod.MPP] The health authorities stated that a laboratory analysis conducted in the  United States last February [2003?], confirmed that some blood specimens  collected in November [2002?] from birds in the Los Haitises National Park  had specific antibodies against WNV.
+
+CONTEXT: These specimens were sent to the CDC  laboratory, and nine of the specimens collected were positive for  flaviviruses, and five of these were confirmed to have antibodies against  WNV.
+
+
+FILE: 20030322.0707.maintext
+ANSWER: confirmed
+
+FILE: 20030324.0729.maintext
+ANSWER: confirmed
+CONTEXT: In this update: [1] [2] & [3] Australia (North Queensland) There are now 85 confirmed cases of dengue fever in Cairns as of 19 Mar  2003.
+
+CONTEXT: The first confirmed cases have been reported in the inner-suburb of  Westcourt and in Machans Beach, north of the city.
+
+CONTEXT: Most confirmed cases are still in the  inner suburbs of Parramatta Park and Manunda where the first cases were  detected almost a month ago.
+
+
+FILE: 20030325.0744.maintext
+ANSWER: confirmed
+
+FILE: 20030326.0750.maintext
+ANSWER: confirmed
+
+FILE: 20030403.0819.maintext
+ANSWER: confirmed
+
+FILE: 20030407.0845.maintext
+ANSWER: confirmed
+CONTEXT: Exotic Newcastle disease (END) was confirmed on 1 Oct 2002 in the State of  California, and has now spread beyond backyard flocks to affect 22  commercial operations in California.
+
+CONTEXT: On 16 Jan 2003, END was also  confirmed in a backyard flock in the State of Nevada.
+
+CONTEXT: A backyard flock was  confirmed with END on 4 Feb 2003, in the State of Arizona.
+
+
+FILE: 20030412.0890.maintext
+ANSWER: suspected
+CONTEXT: Due to differences in the case definitions being used at a national  level, probable cases are reported by all countries except the United  States of America, which is reporting suspected cases under investigation.
+
+CONTEXT: [In the 11 Apr 2003 ProMED-mail  posting SARS - worldwide (43): cases20030411.0883there was a newswire  with information about this incident, with one suspected case admitted to  the hospital in Singapore, and a second suspected case in another crew  member admitted to a hospital in Malaysia.
+
+CONTEXT: 2 Singaporean women were admitted to TTSH in the evening on 10 Apr 2003 as  suspected SARS cases.
+
+CONTEXT: From another Jakarta Post article  <http://www.thejakartapost.com/detaillatestnews.asp?fileid=20030412183254&irec=2> The number of suspected cases of SARS in Indonesia rose to 2 on Saturday, a  health ministry official said.
+
+CONTEXT: "As of today, we have 2 suspected cases of  SARS in Indonesia and yesterday one probable case was recorded," health  ministry spokeswoman Mariani Reksoprojo told AFP.
+
+CONTEXT: In addition, there are another 2  suspected cases of SARS in Indonesia.
+
+
+FILE: 20030416.0928.maintext
+ANSWER: confirmed
+
+FILE: 20030425.1014.maintext
+ANSWER: confirmed
+CONTEXT: On 9 April 2003, NVSL confirmed the isolation of END virus from backyard  fowl in El Paso, Texas, USA, and OIE was notified on 10 April 2003.
+
+CONTEXT: One outbreak of Newcastle disease has been confirmed (clinical and  laboratory diagnosis) in backyard birds (164 birds) in El Paso County,  Texas, which is outside the current quarantine area."
+
+CONTEXT: Subsequent to the April 10 report, DNA sequence analysis has confirmed  that the TX END outbreak was caused by a separate introduction of a  related, but distinctly different, END virus strain, not by the movement of  END virus from the affected areas in CA-NV-AZ.
+
+CONTEXT: Further DNA sequencing  analysis, however, has confirmed that the cases detected in El Paso county,  Texas, were caused by a separate introduction of virus and not by the  movement of virus from the affected areas in California, Nevada, or  Arizona.
+
+
+FILE: 20030429.1061.maintext
+ANSWER: confirmed
+
+FILE: 20030501.1093.maintext
+ANSWER: confirmed
+CONTEXT: In Belgium, where 3 outbreaks have been confirmed, and 2 suspected  outbreaks are under investigation, the same measures have been  adopted by the Commission as for the Netherlands.
+
+
+FILE: 20030513.1183.maintext
+ANSWER: confirmed
+
+FILE: 20030516.1217.maintext
+ANSWER: confirmed
+CONTEXT: Home Compulsory Quarantines Update  As of 9:00 AM 15 May 2003: Level A Home Compulsory Quarantines 11 767 Released from the above quarantines 6578 Level B Home Compulsory Quarantines  20 533 Released from the above quarantines  7172 The following is jointly issued by the Department of Health and the Hospital Authority: As of 1 PM 16 May 2003, 3 additional patients have been confirmed to have Severe Acute Respiratory Syndrome (SARS) following admission to public hospitals.
+
+CONTEXT: 2 alleged cases have been reported, one at a military hospital and the other at the Minorities University, both in Xining, the capital of Qinghai province (known to Tibetans traditionally as Amdo), but these have not been confirmed and therefore do not appear in official statistics.
+
+
+FILE: 20030516.1218.maintext
+ANSWER: confirmed
+CONTEXT: Testing will end in a county once a positive bird is confirmed, and we know virus is present in the county.
+
+
+FILE: 20030523.1271.maintext
+ANSWER: confirmed
