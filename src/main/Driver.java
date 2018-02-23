@@ -256,7 +256,12 @@ public class Driver {
 		diseaseRules.put("POSITIVE CASES", "<DISEASE> POSITIVE CASES");
 		diseaseRules.put("VACCINE", "<DISEASE> VACCINE");
 		diseaseRules.put("STRAIN", "<DISEASE> STRAIN");
-		
+		diseaseRules.put("WERE REPORTED", "<DISEASE> WERE REPORTED");
+		diseaseRules.put("INFECTED BY", "INFECTED BY <DISEASE>");
+		diseaseRules.put("DIED FROM", "DIED FROM <DISEASE>");
+		diseaseRules.put("CONTAMINATED BY", "CONTAMINATED BY <DISEASE>");
+		diseaseRules.put("EPIDEMIC OF", "EPIDEMIC OF <DISEASE>");
+
 
 
 	}
