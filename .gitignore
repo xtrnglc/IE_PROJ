@@ -1,4 +1,3 @@
 *.jar
 /stanford-postagger-full-2017-06-09/
-/target/
 *.templates
