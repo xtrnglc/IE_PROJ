@@ -234,6 +234,7 @@ public class Driver {
 //		diseaseRules.put("PATIENTS", "<DISEASE> PATIENTS");
 //		diseaseRules.put("ACCOMPANIED BY", "<DISEASE> ACCOMPANIED BY <DISEASE>");
 		diseaseRules.put("SUFFERING WITH", "SUFFERING WITH <DISEASE>");
+		diseaseRules.put("SUFFERING FROM", "SUFFERING FROM <DISEASE>");
 		diseaseRules.put("DIAGNOSED AS HAVING", "DIAGNOSED AS HAVING <DISEASE>");
 		diseaseRules.put("DIAGNOSED WITH HAVING", "DIAGNOSED WITH HAVING <DISEASE>");
 		diseaseRules.put("DIAGNOSED WITH", "DIAGNOSED WITH <DISEASE>");
@@ -261,6 +262,7 @@ public class Driver {
 		diseaseRules.put("DIED FROM", "DIED FROM <DISEASE>");
 		diseaseRules.put("CONTAMINATED BY", "CONTAMINATED BY <DISEASE>");
 		diseaseRules.put("EPIDEMIC OF", "EPIDEMIC OF <DISEASE>");
+		diseaseRules.put("DOCUMENTED EPISODE", "DOCUMENTED EPISODE <DISEASE>");
 
 
 
