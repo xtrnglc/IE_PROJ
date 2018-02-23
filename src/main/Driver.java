@@ -41,10 +41,13 @@ public class Driver {
 	public static HashMap<String, String> perpOrgRules = new HashMap<String, String>();
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
+	
+	public static HashSet<String> countriesList = new HashSet<String>();
 
 	public static void main(String args[]) throws FileNotFoundException, IOException {
 		
 //		File dev_folder = new File(args[1]);
+		parseSeeds();
 		File dev_folder = new File("data/labeled-docs");
 		
 		File[] listOfDevFiles = dev_folder.listFiles();
@@ -65,9 +68,17 @@ public class Driver {
 		}
 		
 		generateTemplate();
-
+	}
+	
+	public static void parseSeeds() throws FileNotFoundException, IOException {
+		File countriesFile = new File("countries.txt");
 		
-
+		try (BufferedReader br = new BufferedReader(new FileReader(countriesFile))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				countriesList.add(line);
+			}
+		}
 	}
 	
 	public static Article parseAnswerFile(File file) throws FileNotFoundException, IOException {
@@ -386,8 +397,49 @@ public class Driver {
 		}
 	}
 	
-	public static void getCountry(String text) {
+	public static String getCountry(String text) {
+		String country = null;
+		for(String s : countriesList) {
+			if(text.contains(s)) {
+				return s.toUpperCase();
+			}
+		}
 		
+		if(country == null) {
+			if(text.contains("USA")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("U.S.A")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("US")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("U.S.")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("U.S")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("USA")) {
+				return "UNITED STATES";
+			}
+			if(text.contains("UK")) {
+				return "UNITED KINGDOM";
+			}
+			if(text.contains("U.K.")) {
+				return "UNITED KINGDOM";
+			}
+			if(text.contains("U.K")) {
+				return "UNITED KINGDOM";
+			}
+		}
+		
+		return "----";
+	}
+	
+	public static String getEvent() {
+		return "outbreak";
 	}
 	
 	public static void generateTemplate() throws FileNotFoundException, IOException {
@@ -410,10 +462,12 @@ public class Driver {
 			
 		    Article a = new Article();
 		    a.story = file.getName();
+		    a.id = "1";
 		    a.status = getStatus(text);
+		    a.country = getCountry(text);
+		    a.event = getEvent();
 		    
 			Document d = new Document(text);
-			// System.out.println(id);
 //			for (Sentence s : d.sentences()) {
 //				// System.out.println(s.text());
 //				for (String s1 : weaponGeneralRules.keySet()) {
