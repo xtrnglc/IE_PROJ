@@ -38,8 +38,14 @@ Chile
 China
 Colombia
 Comoros
+<<<<<<< HEAD
 Congo, Democratic Republic of the
 Congo, Republic of the
+=======
+Democratic Republic of the Congo
+Republic of the Congo
+Congo
+>>>>>>> core-logic-branch-1
 Costa Rica
 Cote d'Ivoire
 Croatia
@@ -92,8 +98,13 @@ Jordan
 Kazakhstan
 Kenya
 Kiribati
+<<<<<<< HEAD
 Korea, North
 Korea, South
+=======
+North Korea
+South Korea
+>>>>>>> core-logic-branch-1
 Kosovo
 Kuwait
 Kyrgyzstan
