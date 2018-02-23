@@ -93,7 +93,7 @@ public class Driver {
 					String[] split = line.split(":");
 					if(split[0].equals("Story")) {
 						a.story = line.substring(21);
-						System.out.println(a.story);
+						//System.out.println(a.story);
 						//System.out.println(line.substring(21, line.length()-1));
 					}
 					if(split[0].equals("ID")) {
@@ -372,12 +372,26 @@ public class Driver {
 		
 	}
 	
+	public static String getStatus(String text) {
+		if(text.contains("confirmed")) {
+			return "confirmed";
+		}
+		else if(text.contains("suspected")) {
+			return "suspected";
+		}
+		else if(text.contains("possible") || text.contains("possibly")) {
+			return "possible";
+		} else {
+			return "confirmed";
+		}
+	}
+	
 	public static void generateTemplate() throws FileNotFoundException, IOException {
 		for (File file : dev_files) {
 			String id = "";
 			String text = "";
 			int i = 0;
-
+			
 			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 				String line;
 				while ((line = br.readLine()) != null) {
@@ -389,27 +403,11 @@ public class Driver {
 					i++;
 				}
 			}
-//			text = text.replaceAll("\\s*\\p{Punct}+\\s*$", "");
-//			text = text.replaceAll("\"", "");
-//			text = text.replaceAll(",", "");
-//			text = text.replaceAll("\\[", "").replaceAll("\\]", "");
-//			text = text.replaceAll("\\(", "").replaceAll("\\)", "");
-//			text = text.replaceAll("\\{", "").replaceAll("\\}", "");
-//			text = text.replaceAll("\\$", "").replaceAll("\\$", "");
-//			text = text.replaceAll("--", "");
-
-//			String incident = getIncident(text);
-//			oursIncident.put(id, incident);
-
-			// oursPerpOrg.put(id, po);
-			// HashSet<String> perpetrator_orgs = getAnswers(perp_orgs, text);
-
-			// DEV-MUC3-0126, DEV-MUC3-0231, DEV-MUC3-0253, DEV-MUC3-0277, DEV-MUC3-031
-
-//			HashSet<String> weaponsSet = parseWeaponsSpecificRules(text);
-			HashSet<String> perpOrgs = new HashSet<String>();
-			HashSet<String> victims = new HashSet<String>();
-
+			
+		    Article a = new Article();
+		    a.story = file.getName();
+		    a.status = getStatus(text);
+		    
 			Document d = new Document(text);
 			// System.out.println(id);
 //			for (Sentence s : d.sentences()) {
@@ -457,6 +455,8 @@ public class Driver {
 //				System.out.println(printTemplate(id, "date", "event", "status", "country", new HashSet<String>(), new HashSet<String>()));
 //				// System.out.println();
 //			}
+			
+			ans_templates.add(a);
 		}
 	}
 
