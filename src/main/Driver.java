@@ -217,6 +217,9 @@ public class Driver {
 		return template;
 	}
 	
-	
-	
+	public static void instantiateRules() {
+		containmentRules.put("BLASTS", "<WEAPON> BLASTS");
+		containmentRules.put("BLASTS", "<WEAPON> BLASTS");
+
+	}
 }
