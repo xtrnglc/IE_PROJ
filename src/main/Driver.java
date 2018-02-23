@@ -594,6 +594,50 @@ public class Driver {
 		//body += template + "\n";
 		generateOutputFile(fileName, template);
 	}
+	
+	public static void instantiateRules() {
+		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
+		diseaseRules.put("RECORD OF", "REPORT OF <DISEASE>");
+		diseaseRules.put("REPORTS OF", "REPORTS OF <DISEASE>");
+		diseaseRules.put("STRAIN OF", "STRAIN OF <DISEASE>");
+		diseaseRules.put("OUTBREAK OF", "OUTBREAK OF <DISEASE>");
+		diseaseRules.put("OUTBREAK", "<DISEASE> OUTBREAK");
+//		diseaseRules.put("CONTAIN THE", "CONTAIN THE <DISEASE>");
+		diseaseRules.put("TEST FOR", "TEST FOR <DISEASE>");
+		diseaseRules.put("TESTING FOR", "TESTING FOR <DISEASE>");
+		diseaseRules.put("POSITIVE FOR", "POSITIVE FOR <DISEASE>");
+		diseaseRules.put("TRANSMISSION OF", "TRANSMISSION OF <DISEASE>");
+		diseaseRules.put("ERADICATION OF", "ERADICATION OF <DISEASE>");
+		diseaseRules.put("ADMITTED WITH", "ADMITTED WITH <DISEASE>");
+//		diseaseRules.put("PATIENTS", "<DISEASE> PATIENTS");
+//		diseaseRules.put("ACCOMPANIED BY", "<DISEASE> ACCOMPANIED BY <DISEASE>");
+		diseaseRules.put("SUFFERING WITH", "SUFFERING WITH <DISEASE>");
+		diseaseRules.put("DIAGNOSED AS HAVING", "DIAGNOSED AS HAVING <DISEASE>");
+		diseaseRules.put("DIAGNOSED WITH HAVING", "DIAGNOSED WITH HAVING <DISEASE>");
+		diseaseRules.put("DIAGNOSED WITH", "DIAGNOSED WITH <DISEASE>");
+		diseaseRules.put("CASES OF", "CASES OF <DISEASE>");
+		diseaseRules.put("CASE OF", "CASE OF <DISEASE>");
+		diseaseRules.put("STAGES OF", "STAGES OF <DISEASE>");
+		diseaseRules.put("EXPOSURE TO", "EXPOSURE TO <DISEASE>");
+		diseaseRules.put("SPREAD OF", "SPREAD OF <DISEASE>");
+		diseaseRules.put("SPREADING OF", "SPREADING OF <DISEASE>");
+		diseaseRules.put("DETECTION OF", "DETECTION OF <DISEASE>");
+		diseaseRules.put("CHARACTERIZED BY", "<DISEASE> IS CHARACTERIZED BY");
+		diseaseRules.put("TRANSMITS", "TRANSMITS <DISEASE>");
+		diseaseRules.put("DEVELOPED", "DEVELOPED <DISEASE>");
+		diseaseRules.put("IS SPREAD BY", "<DISEASE> IS SPREAD BY");
+		diseaseRules.put("EPIDEMIC", "<DISEASE> EPIDEMIC");
+		diseaseRules.put("DEATH FROM", "DEATH FROM <DISEASE>");
+		diseaseRules.put("DEATH BY", "DEATH BY <DISEASE>");
+		diseaseRules.put("DISTRIBUTION OF", "DISTRIBUTION OF <DISEASE>");
+		diseaseRules.put("POSITIVE CASE", "<DISEASE> POSITIVE CASE");
+		diseaseRules.put("POSITIVE CASES", "<DISEASE> POSITIVE CASES");
+		diseaseRules.put("VACCINE", "<DISEASE> VACCINE");
+		diseaseRules.put("STRAIN", "<DISEASE> STRAIN");
+		
+
+
+	}
 
 	public static void generateOutputFile(String fileName, String body) throws FileNotFoundException, UnsupportedEncodingException {
 		PrintWriter printWriter = new PrintWriter(fileName + ".templates", "UTF-8");
