@@ -640,7 +640,7 @@ public class Driver {
 		diseaseRules.put("DIED FROM", "DIED FROM <DISEASE>");
 		diseaseRules.put("CONTAMINATED BY", "CONTAMINATED BY <DISEASE>");
 		diseaseRules.put("EPIDEMIC OF", "EPIDEMIC OF <DISEASE>");
-		diseaseRules.put("DOCUMENTED EPISODE", "DOCUMENTED EPISODE <DISEASE>");
+		diseaseRules.put("DOCUMENTED EPISODE OF", "DOCUMENTED EPISODE OF <DISEASE>");
 
 
 
