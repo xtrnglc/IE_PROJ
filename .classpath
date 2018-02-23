@@ -16,5 +16,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/trungle/Documents/workspace/IE_PROJ/stanford-corenlp-3.8.0-models-english.jar"/>
+	<classpathentry kind="lib" path="/Users/trungle/Documents/workspace/IE_PROJ/stanford-corenlp-3.8.0-models.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
