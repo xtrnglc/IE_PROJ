@@ -218,8 +218,7 @@ public class Driver {
 	}
 	
 	public static void instantiateRules() {
-		containmentRules.put("BLASTS", "<WEAPON> BLASTS");
-		containmentRules.put("BLASTS", "<WEAPON> BLASTS");
-
+		diseaseRules.put("BLASTS", "<WEAPON> BLASTS");
+		diseaseRules.put("BLASTS", "<WEAPON> BLASTS");
 	}
 }
