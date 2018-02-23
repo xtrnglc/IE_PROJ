@@ -5,22 +5,21 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             FINLAND
-Disease:             news
-                     reports
-                     -LSB-
+
+Disease:             phase
+                     influenza
                      cases
-                     decision
-                     Ministry
-                     mass
+                     IMH
+                     reasoning
                      patients
-                     JAA
-                     recommendations
-                     decrease
-                     Guidance
-                     Observation
-                     days
+                     SARS
+                     coronavirus
+                     countries
+                     -RSB-
                      guidelines
-                     decisions
-                     table
-                     PCR
+                     personnel
+                     fevers
+                     misdiagnosis
+                     deaths
+                     illness
 VICTIM:              ----

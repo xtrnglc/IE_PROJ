@@ -5,5 +5,7 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             CHILE
-Disease:             Hospitals
+
+Disease:             country
+                     virus
 VICTIM:              ----

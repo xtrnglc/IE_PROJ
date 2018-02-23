@@ -5,7 +5,10 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             NETHERLANDS
-Disease:             accordance
+
+Disease:             influenza
+                     development
+                     transmission
                      surveillance
                      spread
 VICTIM:              ----

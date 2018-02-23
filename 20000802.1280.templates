@@ -5,6 +5,7 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             ----
-Disease:             Department
-                     testing
+
+Disease:             Health
+                     WNV
 VICTIM:              ----

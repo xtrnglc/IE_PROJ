@@ -5,6 +5,10 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             UGANDA
-Disease:             people
-                     case
+
+Disease:             world
+                     complications
+                     Gulu
+                     fever
+                     Ebola
 VICTIM:              ----

@@ -5,7 +5,9 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             OMAN
-Disease:             number
-                     cases
-                     onset
+
+Disease:             cases
+                     disease
+                     A+C
+                     case
 VICTIM:              ----

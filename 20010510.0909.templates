@@ -5,7 +5,11 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             RUSSIA
-Disease:             Apr
-                     -LSB-
-                     diagnosis
+
+Disease:             strain
+                     liquidation
+                     province
+                     Health
+                     isolation
+                     dysentery
 VICTIM:              ----

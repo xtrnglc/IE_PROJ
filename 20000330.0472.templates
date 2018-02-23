@@ -5,6 +5,7 @@ Event:               outbreak
 Status:              possible
 Containment          ----
 Country:             ----
-Disease:             problem
-                     views
+
+Disease:             transmission
+                     sources
 VICTIM:              ----

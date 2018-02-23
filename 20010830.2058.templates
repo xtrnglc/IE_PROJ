@@ -5,9 +5,10 @@ Event:               outbreak
 Status:              suspected
 Containment          ----
 Country:             INDIA
-Disease:             Amarasingha
-                     cases
-                     report
+
+Disease:             disease
+                     typhus
+                     Observer
+                     -RSB-
                      region
-                     flea
 VICTIM:              ----

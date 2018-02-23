@@ -5,9 +5,12 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             COSTA RICA
-Disease:             Department
-                     -LSB-
-                     Yahoo
-                     Health
-                     people
+
+Disease:             cases
+                     DHF
+                     Surveillance
+                     person
+                     health
+                     dengue
+                     serotype
 VICTIM:              ----

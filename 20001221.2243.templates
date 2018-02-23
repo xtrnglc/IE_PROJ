@@ -5,6 +5,8 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             UNITED STATES
-Disease:             skunk
-                     County
+
+Disease:             kind
+                     coyote
+                     skunk
 VICTIM:              ----

@@ -5,8 +5,8 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             DOMINICA
-Disease:             snails
-                     paper
-                     evidence
-                     report
+
+Disease:             Angiostrongyliasis
+                     meningitis
+                     -RSB-
 VICTIM:              ----

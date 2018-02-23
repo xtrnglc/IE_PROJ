@@ -5,7 +5,10 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             AUSTRALIA
-Disease:             transmission
-                     time
-                     spread
+
+Disease:             psittacosis
+                     development
+                     disease
+                     organisms
+                     Louisiana
 VICTIM:              ----

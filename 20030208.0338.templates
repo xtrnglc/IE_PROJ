@@ -5,5 +5,9 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             UNITED KINGDOM
-Disease:             reports
+
+Disease:             influenza
+                     management
+                     outbreaks
+                     strains
 VICTIM:              ----

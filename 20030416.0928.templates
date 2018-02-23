@@ -5,6 +5,9 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             ERITREA
+
 Disease:             detection
+                     outbreak
+                     animals
                      Date
 VICTIM:              ----

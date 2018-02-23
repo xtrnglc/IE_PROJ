@@ -5,10 +5,17 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             CONGO
-Disease:             cases
-                     disease
-                     task
-                     proximity
-                     Uganda
-                     World
+
+Disease:             disease
+                     cases
+                     illnesses
+                     response
+                     fever
+                     cause
+                     investigation
+                     mining
+                     Ebola
+                     virus
+                     troops
+                     Congo
 VICTIM:              ----

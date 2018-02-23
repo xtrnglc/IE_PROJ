@@ -5,9 +5,8 @@ Event:               outbreak
 Status:              suspected
 Containment          ----
 Country:             FINLAND
-Disease:             reference
-                     possibilities
-                     product
-                     cases
-                     countries
+
+Disease:             BSE
+                     milk
+                     farmers
 VICTIM:              ----

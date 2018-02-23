@@ -5,5 +5,6 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             UNITED KINGDOM
-Disease:             ----
+
+Disease:             victims
 VICTIM:              ----

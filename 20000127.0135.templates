@@ -5,6 +5,10 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             TAIWAN
-Disease:             Friday
+
+Disease:             traders
+                     Friday
                      feedlots
+                     industry
+                     FMD
 VICTIM:              ----

@@ -5,7 +5,10 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             UNITED STATES
-Disease:             Mod.MHJ
-                     carrier
-                     people
+
+Disease:             doses
+                     approval
+                     presence
+                     anthrax
+                     supply
 VICTIM:              ----

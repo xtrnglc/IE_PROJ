@@ -5,5 +5,7 @@ Event:               outbreak
 Status:              possible
 Containment          ----
 Country:             GERMANY
-Disease:             ----
+
+Disease:             culprit
+                     illness
 VICTIM:              ----

@@ -5,6 +5,9 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             AUSTRALIA
-Disease:             questions
-                     spread
+
+Disease:             infection
+                     freedom
+                     precursor
+                     Ridge
 VICTIM:              ----

@@ -5,8 +5,8 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             PAKISTAN
-Disease:             Vice
-                     day
-                     article
-                     child
+
+Disease:             symptoms
+                     skin
+                     anthrax
 VICTIM:              ----

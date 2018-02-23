@@ -5,6 +5,7 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             ----
-Disease:             date
-                     blue
+
+Disease:             West
+                     virus
 VICTIM:              ----

@@ -5,8 +5,13 @@ Event:               outbreak
 Status:              possible
 Containment          ----
 Country:             KAZAKHSTAN
+
 Disease:             inhalation
-                     vaccines
+                     -LSB-
+                     cases
+                     typhus
                      report
-                     outbreak
+                     outbreaks
+                     none
+                     resistance
 VICTIM:              ----

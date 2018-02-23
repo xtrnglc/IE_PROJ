@@ -5,5 +5,7 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             URUGUAY
-Disease:             ----
+
+Disease:             cases
+                     FMD
 VICTIM:              ----

@@ -5,8 +5,11 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             AUSTRALIA
-Disease:             cases
-                     Weekly
-                     update
-                     residents
+
+Disease:             Cairns
+                     fever
+                     outbreak
+                     list
+                     dengue
+                     illness
 VICTIM:              ----

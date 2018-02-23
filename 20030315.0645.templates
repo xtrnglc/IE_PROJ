@@ -5,6 +5,8 @@ Event:               outbreak
 Status:              confirmed
 Containment          ----
 Country:             HAITI
-Disease:             specimens
-                     virus
+
+Disease:             system
+                     flaviviruses
+                     antibodies
 VICTIM:              ----

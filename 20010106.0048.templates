@@ -5,6 +5,8 @@ Event:               outbreak
 Status:              suspected
 Containment          ----
 Country:             CONGO
-Disease:             part
+
+Disease:             operations
+                     outbreak
                      onset
 VICTIM:              ----
