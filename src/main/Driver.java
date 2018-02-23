@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
+import edu.stanford.nlp.trees.Tree;
 
 class Article {
 	public String id;
@@ -634,9 +635,103 @@ public class Driver {
 		diseaseRules.put("POSITIVE CASES", "<DISEASE> POSITIVE CASES");
 		diseaseRules.put("VACCINE", "<DISEASE> VACCINE");
 		diseaseRules.put("STRAIN", "<DISEASE> STRAIN");
-		
+		diseaseRules.put("WERE REPORTED", "<DISEASE> WERE REPORTED");
+		diseaseRules.put("INFECTED BY", "INFECTED BY <DISEASE>");
+		diseaseRules.put("DIED FROM", "DIED FROM <DISEASE>");
+		diseaseRules.put("CONTAMINATED BY", "CONTAMINATED BY <DISEASE>");
+		diseaseRules.put("EPIDEMIC OF", "EPIDEMIC OF <DISEASE>");
+	}
+	
+	public static String parseWeaponRule(String rule, String s) {
+		// rule = "DESTROYED BY <WEAPON>";
+		// s = "BOGOTA WAS DESTROYED BY A BOMB, POLICE REPORTED.";
+		//analyzeSentence(s);
+		String[] rules = rule.split("\\s+");
 
+		String weapon = "";
 
+		boolean after = true;
+
+		Sentence sentence = new Sentence(s).caseless();
+		String[] split = sentence.caseless().words().stream().toArray(String[]::new);
+		List<String> posSplit = sentence.caseless().posTags();
+		// System.out.println(sentence.caseless().parse());
+		int index = 0;
+		int indexOfTriggerWord = 0;
+		int indexOfWeapon = 0;
+
+		for (int i = 0; i < rules.length; i++) {
+			if (!rules[i].contains("<")) {
+				indexOfTriggerWord = i;
+			} else {
+				indexOfWeapon = i;
+			}
+		}
+
+		if (indexOfTriggerWord > indexOfWeapon) {
+			after = false;
+		} else if (indexOfTriggerWord < indexOfWeapon) {
+			after = true;
+		}
+		String s1;
+		for (int i = 0; i < split.length; i++) {
+			s1 = split[i].replaceAll("\\s*\\p{Punct}+\\s*$", "");
+			if (s1.equals(rules[indexOfTriggerWord])) {
+				index = i;
+				break;
+			}
+		}
+
+		if (after) {	
+			String subStr = "";
+			for (int i = index + 1; i < split.length; i++) {
+				subStr += split[i] + " ";
+			}
+
+			Sentence subSentence = new Sentence(subStr);
+			boolean found = false;
+			// System.out.println(subSentence.parse());
+			
+			for (Tree subtree : subSentence.caseless().parse()) {
+				if (subtree.label().value().equals("NP") && !found) {
+					for (Tree t : subtree.getLeaves()) {
+						weapon += t.value() + " ";
+						found = true;
+					}
+				}
+				if (found) {
+					weapon = removeStopWords(weapon);
+					if (weapons.contains(weapon)) {
+						return weapon;
+					} else {
+						found = false;
+						weapon = "";
+					}
+				}
+			}
+		} else {
+
+			String subStr = "";
+			for (int i = 0; i < index; i++) {
+				subStr += split[i] + " ";
+			}
+			Sentence subSentence = new Sentence(subStr);
+			// System.out.println(subSentence.caseless().parse());
+			for (Tree subtree : subSentence.caseless().parse()) {
+				if (subtree.label().value().equals("NP")) {
+					weapon = "";
+					for (Tree t : subtree.getLeaves()) {
+						weapon += t.value() + " ";
+					}
+				}
+			}
+			weapon = removeStopWords(weapon);
+			if (weapons.contains(weapon)) {
+				return weapon;
+			}
+		}
+
+		return weapon;
 	}
 
 	public static void generateOutputFile(String fileName, String body) throws FileNotFoundException, UnsupportedEncodingException {
