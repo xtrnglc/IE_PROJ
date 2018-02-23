@@ -386,6 +386,10 @@ public class Driver {
 		}
 	}
 	
+	public static void getCountry(String text) {
+		
+	}
+	
 	public static void generateTemplate() throws FileNotFoundException, IOException {
 		for (File file : dev_files) {
 			String id = "";
