@@ -33,10 +33,10 @@ public class GetContextFiles {
 		}
 
 		generateStatusFile();
-//		generateContainmentFile();
-//		generateCountryFile();
-//		generateDiseaseFile();
-//		generateVictimsFile();
+		generateContainmentFile();
+		generateCountryFile();
+		generateDiseaseFile();
+		generateVictimsFile();
 	}
 
 	public static void generateStatusFile() throws FileNotFoundException, IOException {
