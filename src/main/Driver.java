@@ -87,7 +87,9 @@ public class Driver {
 		generateTemplate();
 
 		// scoringProgram.evaluate(output_templates, ans_templates);
-		scoringProgram.printTotals();
+		if (!singleFile) {
+			scoringProgram.printTotals();
+		}
 	}
 
 	public static void parseSeeds() throws FileNotFoundException, IOException {
