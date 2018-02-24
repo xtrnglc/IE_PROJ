@@ -102,13 +102,13 @@ public class ScoringProgram {
 		precisionTotalNumerator.put("victim",  precisionTotalNumerator.get("victim") + Integer.parseInt(precision.get("victim").split(" ")[1].substring(1, 2)));
 		precisionTotalNumerator.put("date",  precisionTotalNumerator.get("date") + Integer.parseInt(precision.get("date").split(" ")[1].substring(1, 2)));
 
-		precisionTotalDenominator.put("status", precisionTotalDenominator.get("status") + Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("event", precisionTotalDenominator.get("event") + Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("country", precisionTotalDenominator.get("country") + Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("containment", precisionTotalDenominator.get("containment") + Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("disease", precisionTotalDenominator.get("disease") + Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("victim", precisionTotalDenominator.get("victim") + Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("date", precisionTotalDenominator.get("date") + Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("status", precisionTotalDenominator.get("status") + Integer.parseInt(precision.get("status").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("event", precisionTotalDenominator.get("event") + Integer.parseInt(precision.get("event").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("country", precisionTotalDenominator.get("country") + Integer.parseInt(precision.get("country").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("containment", precisionTotalDenominator.get("containment") + Integer.parseInt(precision.get("containment").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("disease", precisionTotalDenominator.get("disease") + Integer.parseInt(precision.get("disease").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("victim", precisionTotalDenominator.get("victim") + Integer.parseInt(precision.get("victim").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("date", precisionTotalDenominator.get("date") + Integer.parseInt(precision.get("date").split(" ")[1].substring(3, 4)));
 
 		List<Double> s = f1Total.get("status");
 		s.add(Double.parseDouble(f1.get("status")));
