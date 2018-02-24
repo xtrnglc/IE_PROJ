@@ -35,40 +35,40 @@ public class ScoringProgram {
 	public static void printTotals() {
 		System.out.println("Overall");
 		DecimalFormat dec = new DecimalFormat("#0.00");
-		System.out.format("%1s%30s%30s%30s", "", "RECALL", "PRECISION", "F-MEASURE");
+		System.out.format("%-20s%-30s%-30s%-30s", "Label", "RECALL", "PRECISION", "F-MEASURE");
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Status:",dec.format(recallTotalNumerator.get("status")/recallTotalDenominator.get("status")) + " (" + recallTotalNumerator.get("status") + "/" + recallTotalDenominator.get("status") +")", 
-				dec.format(precisionTotalNumerator.get("status")/precisionTotalDenominator.get("status")) + " (" + " (" + precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") +")",
+		System.out.format("%-20s%-30s%-30s%-30s", "Status:",dec.format(recallTotalNumerator.get("status")/recallTotalDenominator.get("status")) + " (" + recallTotalNumerator.get("status") + "/" + recallTotalDenominator.get("status") +")", 
+				dec.format(precisionTotalNumerator.get("status")/precisionTotalDenominator.get("status")) + " (" + precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") +")",
 				f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Date:",dec.format(recallTotalNumerator.get("date")/recallTotalDenominator.get("date")) + " (" + recallTotalNumerator.get("date") + "/" + recallTotalDenominator.get("date") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Date:",dec.format(recallTotalNumerator.get("date")/recallTotalDenominator.get("date")) + " (" + recallTotalNumerator.get("date") + "/" + recallTotalDenominator.get("date") +")", 
 				dec.format(precisionTotalNumerator.get("date")/precisionTotalDenominator.get("date")) + " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date") +")",
 				f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Event:", dec.format(recallTotalNumerator.get("event")/recallTotalDenominator.get("event")) + " (" + recallTotalNumerator.get("event") + "/" + recallTotalDenominator.get("event") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Event:", dec.format(recallTotalNumerator.get("event")/recallTotalDenominator.get("event")) + " (" + recallTotalNumerator.get("event") + "/" + recallTotalDenominator.get("event") +")", 
 				dec.format(precisionTotalNumerator.get("event")/precisionTotalDenominator.get("event")) + " (" + precisionTotalNumerator.get("event") + "/" + precisionTotalDenominator.get("event") +")",
 				f1Total.get("event").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Country:", dec.format(recallTotalNumerator.get("country")/recallTotalDenominator.get("country")) + " (" + recallTotalNumerator.get("country") + "/" + recallTotalDenominator.get("country") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Country:", dec.format(recallTotalNumerator.get("country")/recallTotalDenominator.get("country")) + " (" + recallTotalNumerator.get("country") + "/" + recallTotalDenominator.get("country") +")", 
 				dec.format(precisionTotalNumerator.get("country")/precisionTotalDenominator.get("country")) + " (" + precisionTotalNumerator.get("country") + "/" + precisionTotalDenominator.get("country") +")",
 				f1Total.get("country").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%22s%17s%14s", "Containment:", dec.format(recallTotalNumerator.get("containment")/recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format(recallTotalNumerator.get("containment")/recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
 				dec.format(precisionTotalNumerator.get("containment")/precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
 				f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Disease:", dec.format(recallTotalNumerator.get("disease")/recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", dec.format(recallTotalNumerator.get("disease")/recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
 				dec.format(precisionTotalNumerator.get("disease")/precisionTotalDenominator.get("disease")) + " (" + precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") +")",
 				f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%30s%30s%30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
 				dec.format(precisionTotalNumerator.get("victim")/precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
 				f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println("\n");
@@ -184,25 +184,25 @@ public class ScoringProgram {
 	public static void printEvaluation(String story, String id, HashMap<String, String> recall,
 			HashMap<String, String> precision, HashMap<String, String> f1) {
 		System.out.println("Story: " + story);
-		System.out.format("%25s%20s%20s", "RECALL", "PRECISION", "F-MEASURE");
+		System.out.format("%-20s%-30s%-30s%-30s", "Label", "RECALL", "PRECISION", "F-MEASURE");
 		System.out.println();
-		System.out.format("%1s%22s%17s%14s", "Status:", recall.get("status"), precision.get("status"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Status:", recall.get("status"), precision.get("status"),
 				f1.get("status"));
 		System.out.println();
-		System.out.format("%1s%24s%17s%14s", "Date:", recall.get("date"), precision.get("date"), f1.get("date"));
+		System.out.format("%-20s%-30s%-30s%-30s", "Date:", recall.get("date"), precision.get("date"), f1.get("date"));
 		System.out.println();
-		System.out.format("%1s%23s%17s%14s", "Event:", recall.get("event"), precision.get("event"), f1.get("event"));
+		System.out.format("%-20s%-30s%-30s%-30s", "Event:", recall.get("event"), precision.get("event"), f1.get("event"));
 		System.out.println();
-		System.out.format("%1s%21s%17s%14s", "Country:", recall.get("country"), precision.get("country"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Country:", recall.get("country"), precision.get("country"),
 				f1.get("country"));
 		System.out.println();
-		System.out.format("%1s%17s%17s%14s", "Containment:", recall.get("containment"), precision.get("containment"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Containment:", recall.get("containment"), precision.get("containment"),
 				f1.get("containment"));
 		System.out.println();
-		System.out.format("%1s%21s%17s%14s", "Disease:", recall.get("disease"), precision.get("disease"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", recall.get("disease"), precision.get("disease"),
 				f1.get("disease"));
 		System.out.println();
-		System.out.format("%1s%22s%17s%14s", "Victim:", recall.get("victim"), precision.get("victim"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", recall.get("victim"), precision.get("victim"),
 				f1.get("victim"));
 		System.out.println("\n");
 	}
