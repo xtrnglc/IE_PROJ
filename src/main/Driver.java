@@ -315,8 +315,14 @@ public class Driver {
 			a.victim = new HashSet<String>();
 			output_templates.put(a.story, a);
 
+			System.out.println("Output");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
+			Article goldAnswer = ans_templates.get(a.story);
+			System.out.println("Answer");
+			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event, goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
+					goldAnswer.victim);
+			System.out.println("====================================================================================");
 		}
 	}
 
@@ -392,7 +398,7 @@ public class Driver {
 
 			count3++;
 		}
-		// System.out.println(template);
+		System.out.println(template);
 		// body += template + "\n";
 		generateOutputFile(fileName, template);
 	}

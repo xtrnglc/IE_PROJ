@@ -68,7 +68,7 @@ public class ScoringProgram {
 				f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println();
 		
-		System.out.format("%1s%-30s%-30s%-30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+		System.out.format("%1s%30s%30s%30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
 				dec.format(precisionTotalNumerator.get("victim")/precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
 				f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble());
 		System.out.println("\n");
