@@ -7,11 +7,8 @@ import java.util.List;
 import java.util.Map.Entry;
 
 public class ScoringProgram {
-	static boolean singleFile;
-
-	public ScoringProgram(boolean singleFile) {
+	public ScoringProgram() {
 		instantiateTotals();
-		this.singleFile = singleFile;
 	}
 
 	public static HashMap<String, Integer> recallTotalNumerator = new HashMap<String, Integer>();

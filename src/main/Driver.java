@@ -83,7 +83,7 @@ public class Driver {
 			}
 		}
 		HashMap<String, Article> m = ans_templates;
-		scoringProgram = new ScoringProgram(singleFile);
+		scoringProgram = new ScoringProgram();
 		generateTemplate();
 
 		// scoringProgram.evaluate(output_templates, ans_templates);
