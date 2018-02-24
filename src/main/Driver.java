@@ -326,12 +326,11 @@ public class Driver {
 			a.containment = new HashSet<String>();
 			a.victim = new HashSet<String>();
 			output_templates.put(a.story, a);
-
-			System.out.println("Output");
+			System.out.println("          SYSTEM OUTPUT\n");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
 			Article goldAnswer = ans_templates.get(a.story);
-			System.out.println("Answer");
+			System.out.println("          ANSWER KEY\n");
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event, goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
 			scoringProgram.evaluateSingle(a, goldAnswer);
