@@ -189,7 +189,8 @@ public class Driver {
 
 	public static String getCountry(String text) {
 		String country = null;
-		for (String s : countriesList) {
+		HashSet<String> c = countriesList;
+		for (String s : c) {
 			if (text.contains(s)) {
 				return s.toUpperCase();
 			}

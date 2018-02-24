@@ -1,34 +1,24 @@
 package main;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 public class ScoringProgram {
 	public ScoringProgram() {
 	}
+	
+	public static HashMap<String, Integer> recallTotalNumerator = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> recallTotalDenominator = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> precisionTotalNumerator = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> precisionTotalDenominator = new HashMap<String, Integer>();
+	public static HashMap<String, List<Double>> f1Total = new HashMap<String, List<Double>>();
 
-	public void evaluate(HashMap<String, Article> outputs, HashMap<String, Article> answers) {
-
-		// RECALL PRECISION F-MEASURE
-		// Incident 1.00 (1/1) 1.00 (1/1) 1.00
-		// Weapons 0.00 (0/0) 0.00 (0/1) 0.00
-		// Perp_Ind 0.00 (0/1) 0.00 (0/0) 0.00
-		// Perp_Org 0.00 (0/0) 0.00 (0/0) 0.00
-		// Targets 0.00 (0/0) 0.00 (0/0) 0.00
-		// Victims 0.00 (0/1) 0.00 (0/2) 0.00
-		// -------- -------------- -------------- ----
-		// TOTAL 0.33 (1/3) 0.25 (1/4) 0.29
-		// Story: 20000123.0120
-		// ID: 1
-		// Date: February 23, 2000
-		// Event: outbreak
-		// Status: confirmed
-		// Containment: quarantine
-		// culling
-		// Country: UNITED STATES
-		// Disease: Plum pox potyvirus (PPV- EPPO A2 quarantine pest) / PPV
-		// Victims: a fruit farm
+	public static void evaluate(HashMap<String, Article> outputs, HashMap<String, Article> answers) {
+		
+		instantiateTotals();
 		for (Entry<String, Article> s : outputs.entrySet()) {
 			Article output = s.getValue();
 			Article answer = answers.get(s.getKey());
@@ -36,9 +26,160 @@ public class ScoringProgram {
 			HashMap<String, String> recall = calculateRecall(output, answer);
 			HashMap<String, String> precision = calculatePrecision(output, answer);
 			HashMap<String, String> f1 = calculateF1(output, answer);
+			appendTotals(recall, precision, f1);
 			printEvaluation(output.story, output.id, recall, precision, f1);
 		}
+		printTotals();
 	}
+	
+	public static void printTotals() {
+		System.out.println("Overall");
+		DecimalFormat dec = new DecimalFormat("#0.00");
+		System.out.format("%1s%30s%30s%30s", "", "RECALL", "PRECISION", "F-MEASURE");
+		System.out.println();
+		
+		System.out.format("%1s%30s%30s%30s", "Status:",dec.format(recallTotalNumerator.get("status")/recallTotalDenominator.get("status")) + " (" + recallTotalNumerator.get("status") + "/" + recallTotalDenominator.get("status") +")", 
+				dec.format(precisionTotalNumerator.get("status")/precisionTotalDenominator.get("status")) + " (" + " (" + precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") +")",
+				f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%30s%30s%30s", "Date:",dec.format(recallTotalNumerator.get("date")/recallTotalDenominator.get("date")) + " (" + recallTotalNumerator.get("date") + "/" + recallTotalDenominator.get("date") +")", 
+				dec.format(precisionTotalNumerator.get("date")/precisionTotalDenominator.get("date")) + " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date") +")",
+				f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%30s%30s%30s", "Event:", dec.format(recallTotalNumerator.get("event")/recallTotalDenominator.get("event")) + " (" + recallTotalNumerator.get("event") + "/" + recallTotalDenominator.get("event") +")", 
+				dec.format(precisionTotalNumerator.get("event")/precisionTotalDenominator.get("event")) + " (" + precisionTotalNumerator.get("event") + "/" + precisionTotalDenominator.get("event") +")",
+				f1Total.get("event").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%30s%30s%30s", "Country:", dec.format(recallTotalNumerator.get("country")/recallTotalDenominator.get("country")) + " (" + recallTotalNumerator.get("country") + "/" + recallTotalDenominator.get("country") +")", 
+				dec.format(precisionTotalNumerator.get("country")/precisionTotalDenominator.get("country")) + " (" + precisionTotalNumerator.get("country") + "/" + precisionTotalDenominator.get("country") +")",
+				f1Total.get("country").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%22s%17s%14s", "Containment:", dec.format(recallTotalNumerator.get("containment")/recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
+				dec.format(precisionTotalNumerator.get("containment")/precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
+				f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%30s%30s%30s", "Disease:", dec.format(recallTotalNumerator.get("disease")/recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
+				dec.format(precisionTotalNumerator.get("disease")/precisionTotalDenominator.get("disease")) + " (" + precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") +")",
+				f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println();
+		
+		System.out.format("%1s%-30s%-30s%-30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+				dec.format(precisionTotalNumerator.get("victim")/precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
+				f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.println("\n");
+
+	}
+	
+	public static void appendTotals(HashMap<String, String> recall, HashMap<String, String> precision, HashMap<String, String> f1) {
+		recallTotalNumerator.put("status",  Integer.parseInt(recall.get("status").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(1, 2)));
+
+		recallTotalDenominator.put("status", Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+		
+		precisionTotalNumerator.put("status",  Integer.parseInt(precision.get("status").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("event",  Integer.parseInt(precision.get("event").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("country",  Integer.parseInt(precision.get("country").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("containment",  Integer.parseInt(precision.get("containment").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("disease",  Integer.parseInt(precision.get("disease").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("victim",  Integer.parseInt(precision.get("victim").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("date",  Integer.parseInt(precision.get("date").split(" ")[1].substring(1, 2)));
+
+		precisionTotalDenominator.put("status", Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+
+		List<Double> s = f1Total.get("status");
+		s.add(Double.parseDouble(f1.get("status")));
+		f1Total.put("status", s);
+		
+		List<Double> e = f1Total.get("event");
+		e.add(Double.parseDouble(f1.get("event")));
+		f1Total.put("event", e);
+		
+		List<Double> coun = f1Total.get("country");
+		coun.add(Double.parseDouble(f1.get("country")));
+		f1Total.put("country", e);
+		
+		List<Double> cont = f1Total.get("containment");
+		cont.add(Double.parseDouble(f1.get("containment")));
+		f1Total.put("containment", cont);
+		
+		List<Double> d = f1Total.get("date");
+		d.add(Double.parseDouble(f1.get("date")));
+		f1Total.put("date", d);
+		
+		List<Double> dis = f1Total.get("disease");
+		dis.add(Double.parseDouble(f1.get("disease")));
+		f1Total.put("disease", dis);
+		
+		List<Double> vic = f1Total.get("victim");
+		vic.add(Double.parseDouble(f1.get("victim")));
+		f1Total.put("victim", vic);
+		
+	}
+	public static void instantiateTotals() {
+		recallTotalNumerator.put("status", 0);
+		recallTotalNumerator.put("event", 0);
+		recallTotalNumerator.put("date", 0);
+		recallTotalNumerator.put("country", 0);
+		recallTotalNumerator.put("containment", 0);
+		recallTotalNumerator.put("disease", 0);
+		recallTotalNumerator.put("victim", 0);
+		
+		recallTotalDenominator.put("status", 0);
+		recallTotalDenominator.put("event", 0);
+		recallTotalDenominator.put("date", 0);
+		recallTotalDenominator.put("country", 0);
+		recallTotalDenominator.put("containment", 0);
+		recallTotalDenominator.put("disease", 0);
+		recallTotalDenominator.put("victim", 0);
+		
+		precisionTotalNumerator.put("status", 0);
+		precisionTotalNumerator.put("event", 0);
+		precisionTotalNumerator.put("date", 0);
+		precisionTotalNumerator.put("country", 0);
+		precisionTotalNumerator.put("containment", 0);
+		precisionTotalNumerator.put("disease", 0);
+		precisionTotalNumerator.put("victim", 0);
+		
+		precisionTotalDenominator.put("status", 0);
+		precisionTotalDenominator.put("event", 0);
+		precisionTotalDenominator.put("date", 0);
+		precisionTotalDenominator.put("country", 0);
+		precisionTotalDenominator.put("containment", 0);
+		precisionTotalDenominator.put("disease", 0);
+		precisionTotalDenominator.put("victim", 0);
+
+		f1Total.put("status", new ArrayList<Double>());
+		f1Total.put("event", new ArrayList<Double>());
+		f1Total.put("date", new ArrayList<Double>());
+		f1Total.put("country", new ArrayList<Double>());
+		f1Total.put("containment", new ArrayList<Double>());
+		f1Total.put("disease", new ArrayList<Double>());
+		f1Total.put("victim", new ArrayList<Double>());
+		
+	}
+	
 
 	public static void printEvaluation(String story, String id, HashMap<String, String> recall,
 			HashMap<String, String> precision, HashMap<String, String> f1) {
