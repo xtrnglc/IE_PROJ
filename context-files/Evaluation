@@ -1,0 +1,23 @@
+Evaluation
+
+Status:
+	Most successful slot. The status slot uses a "bag of words" model. There are three valid labels: confirmed, suspected and possible.
+	By default, the system returns confirmed. The system has a 0.67 f-score on the test templates with 0.67 recall and 0.67 precision.
+
+Date:
+	Not implemented in baseline system.
+
+Event:
+	Always returns outbreak. 1.00 f score.
+
+Country:	
+	Uses a "bag of words" model that checks the text for existence of a country in the bag of words. If the text contains the country then the country will be returned. This implementation fails when there is more than one country in the article. For example, when the disease's country of origin is mentioned but is not the country the gold template is looking for. The system also performs poorly when cities or regions are mentioned and an inference is needed to extract the country. Baseline system has 0.44 test f-score, 0.41 recall and 0.48 precision.
+
+Containment:
+	For the baseline system, containment always return "-----". Signaling no containment method was mentioned in the article.
+
+Disease:
+	Disease is filled using a pattern based extraction method. The patterns are manually "slogged" by generating context files from the templates and examining the sentence in which the answer appears. The pattern is then instantiated and each pattern is of the form <TRIGGER PHRASE> <DISEASE> or <DISEASE> <TRIGGER PHRASE>. The system has an f score of 0.07 with 0.05 recall and 0.11 precision. The patterns expects the disease to be either the first NP before or after the trigger phrase. This is a heuristic and fails on more complex sentences.
+
+Victims:
+	Victims is implemented similarly to disease. For the baseline system, our rules are primarily focused on human beings and thus fails when the slot expects flora or fauna. Victims has a 0.02 f score with a 0.03 recall and 0.01 precision.
