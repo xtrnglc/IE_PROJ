@@ -1,13 +1,10 @@
 Story:               20011224.3108
 ID:                  1
-Date:                ----
+Date:                January 24, 2002
 Event:               outbreak
-Status:              suspected
-Containment          ----
-Country:             FINLAND
-Disease:             reference
-                     possibilities
-                     product
-                     cases
-                     countries
-VICTIM:              ----
+Status:              confirmed
+Containment          -----
+Country:             DENMARK
+Disease:             BSE
+VICTIM:              7 cases
+                     cattle

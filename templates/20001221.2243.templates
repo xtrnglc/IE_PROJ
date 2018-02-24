@@ -1,10 +1,11 @@
 Story:               20001221.2243
 ID:                  1
-Date:                ----
+Date:                January 21, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          ----
+Containment          vaccine
 Country:             UNITED STATES
-Disease:             skunk
-                     County
-VICTIM:              ----
+Disease:             Rabies Case
+VICTIM:              the skunk
+                     another skunk
+                     a rabid skunk

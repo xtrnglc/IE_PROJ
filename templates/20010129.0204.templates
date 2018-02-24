@@ -1,9 +1,11 @@
 Story:               20010129.0204
 ID:                  1
-Date:                ----
+Date:                March 1, 2001
 Event:               outbreak
-Status:              confirmed
-Containment          ----
+Status:              suspected
+Containment          -----
 Country:             AUSTRALIA
-Disease:             transmission
-VICTIM:              ----
+Disease:             _Coxiella burnetii_
+                     Q fever
+                     the potentially fatal disease Q fever
+VICTIM:              4  people

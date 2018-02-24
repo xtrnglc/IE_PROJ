@@ -1,9 +1,11 @@
 Story:               20000519.0790
 ID:                  1
-Date:                ----
+Date:                June 19, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
+Containment          -----
 Country:             FRANCE
-Disease:             ----
-VICTIM:              ----
+Disease:             _Rickettsia mongolotimonae_
+                     this rickettsia
+                     _R. mongolotimonae_
+VICTIM:              a second patient

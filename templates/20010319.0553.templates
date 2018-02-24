@@ -1,9 +1,12 @@
 Story:               20010319.0553
 ID:                  1
-Date:                ----
+Date:                April 19, 2001
 Event:               outbreak
-Status:              confirmed
-Containment          ----
-Country:             ----
-Disease:             ----
-VICTIM:              ----
+Status:              suspected
+Containment          facility closing
+        medicine
+        disinfecting
+Country:             RUSSIA
+Disease:             cutaneous anthrax
+                     anthrax
+VICTIM:              A 43-year-old loader

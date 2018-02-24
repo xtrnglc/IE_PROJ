@@ -1,12 +1,12 @@
 Story:               20000713.1163
 ID:                  1
-Date:                ----
+Date:                August 13, 2000
 Event:               outbreak
-Status:              possible
-Containment          ----
-Country:             KAZAKHSTAN
-Disease:             inhalation
-                     vaccines
-                     report
-                     outbreak
-VICTIM:              ----
+Status:              confirmed
+Containment          -----
+Country:             KAZAKSTAN
+Disease:             louse-borne classical typhus
+                     typhus
+                     _Rickettsia prowazekii_
+VICTIM:              The 18 children
+                     18 cases

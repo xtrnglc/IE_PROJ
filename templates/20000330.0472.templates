@@ -1,10 +1,14 @@
 Story:               20000330.0472
 ID:                  1
-Date:                ----
+Date:                April 30, 2000
 Event:               outbreak
-Status:              possible
-Containment          ----
-Country:             ----
-Disease:             problem
-                     views
-VICTIM:              ----
+Status:              suspected
+Containment          other
+Country:             UNITED KINGDOM
+Disease:             nvCJD
+                     vCJD
+                     Variant CJD (nvCJD)
+                     CJD
+VICTIM:              A mother
+                     this patient
+                     The child

@@ -33,80 +33,82 @@ public class ScoringProgram {
 	}
 	
 	public static void printTotals() {
+		
+		System.out.println("====================================================================================");
 		System.out.println("Overall");
 		DecimalFormat dec = new DecimalFormat("#0.00");
 		System.out.format("%-20s%-30s%-30s%-30s", "Label", "RECALL", "PRECISION", "F-MEASURE");
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Status:",dec.format(recallTotalNumerator.get("status")/recallTotalDenominator.get("status")) + " (" + recallTotalNumerator.get("status") + "/" + recallTotalDenominator.get("status") +")", 
-				dec.format(precisionTotalNumerator.get("status")/precisionTotalDenominator.get("status")) + " (" + precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") +")",
-				f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Status:",dec.format((double)recallTotalNumerator.get("status")/(double)recallTotalDenominator.get("status")) + " (" + recallTotalNumerator.get("status") + "/" + recallTotalDenominator.get("status") +")", 
+				dec.format((double)precisionTotalNumerator.get("status")/(double)precisionTotalDenominator.get("status")) + " (" + precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") +")",
+				dec.format(f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Date:",dec.format(recallTotalNumerator.get("date")/recallTotalDenominator.get("date")) + " (" + recallTotalNumerator.get("date") + "/" + recallTotalDenominator.get("date") +")", 
-				dec.format(precisionTotalNumerator.get("date")/precisionTotalDenominator.get("date")) + " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date") +")",
-				f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Date:",dec.format((double)recallTotalNumerator.get("date")/(double)recallTotalDenominator.get("date")) + " (" + recallTotalNumerator.get("date") + "/" + recallTotalDenominator.get("date") +")", 
+				dec.format((double)precisionTotalNumerator.get("date")/(double)precisionTotalDenominator.get("date")) + " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date") +")",
+				dec.format(f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Event:", dec.format(recallTotalNumerator.get("event")/recallTotalDenominator.get("event")) + " (" + recallTotalNumerator.get("event") + "/" + recallTotalDenominator.get("event") +")", 
-				dec.format(precisionTotalNumerator.get("event")/precisionTotalDenominator.get("event")) + " (" + precisionTotalNumerator.get("event") + "/" + precisionTotalDenominator.get("event") +")",
-				f1Total.get("event").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Event:", dec.format((double)recallTotalNumerator.get("event")/(double)recallTotalDenominator.get("event")) + " (" + recallTotalNumerator.get("event") + "/" + recallTotalDenominator.get("event") +")", 
+				dec.format((double)precisionTotalNumerator.get("event")/(double)precisionTotalDenominator.get("event")) + " (" + precisionTotalNumerator.get("event") + "/" + precisionTotalDenominator.get("event") +")",
+				dec.format(f1Total.get("event").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Country:", dec.format(recallTotalNumerator.get("country")/recallTotalDenominator.get("country")) + " (" + recallTotalNumerator.get("country") + "/" + recallTotalDenominator.get("country") +")", 
-				dec.format(precisionTotalNumerator.get("country")/precisionTotalDenominator.get("country")) + " (" + precisionTotalNumerator.get("country") + "/" + precisionTotalDenominator.get("country") +")",
-				f1Total.get("country").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Country:", dec.format((double)recallTotalNumerator.get("country")/(double)recallTotalDenominator.get("country")) + " (" + recallTotalNumerator.get("country") + "/" + recallTotalDenominator.get("country") +")", 
+				dec.format((double)precisionTotalNumerator.get("country")/(double)precisionTotalDenominator.get("country")) + " (" + precisionTotalNumerator.get("country") + "/" + precisionTotalDenominator.get("country") +")",
+				dec.format(f1Total.get("country").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format(recallTotalNumerator.get("containment")/recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
-				dec.format(precisionTotalNumerator.get("containment")/precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
-				f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format((double)recallTotalNumerator.get("containment")/(double)recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
+				dec.format((double)precisionTotalNumerator.get("containment")/(double)precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
+				dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", dec.format(recallTotalNumerator.get("disease")/recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
-				dec.format(precisionTotalNumerator.get("disease")/precisionTotalDenominator.get("disease")) + " (" + precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") +")",
-				f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", dec.format((double)recallTotalNumerator.get("disease")/(double)recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
+				dec.format((double)precisionTotalNumerator.get("disease")/(double)precisionTotalDenominator.get("disease")) + " (" + precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") +")",
+				dec.format(f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format(recallTotalNumerator.get("victim")/recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
-				dec.format(precisionTotalNumerator.get("victim")/precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
-				f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble());
+		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format((double)recallTotalNumerator.get("victim")/(double)recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+				dec.format((double)precisionTotalNumerator.get("victim")/(double)precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
+				dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println("\n");
 
 	}
 	
 	public static void appendTotals(HashMap<String, String> recall, HashMap<String, String> precision, HashMap<String, String> f1) {
-		recallTotalNumerator.put("status",  Integer.parseInt(recall.get("status").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(1, 2)));
-		recallTotalNumerator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("status", recallTotalNumerator.get("status") + Integer.parseInt(recall.get("status").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("event", recallTotalNumerator.get("event") + Integer.parseInt(recall.get("event").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("country", recallTotalNumerator.get("country") + Integer.parseInt(recall.get("country").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("containment", recallTotalNumerator.get("containment") + Integer.parseInt(recall.get("containment").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("disease", recallTotalNumerator.get("disease") + Integer.parseInt(recall.get("disease").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("victim", recallTotalNumerator.get("victim") + Integer.parseInt(recall.get("victim").split(" ")[1].substring(1, 2)));
+		recallTotalNumerator.put("date", recallTotalNumerator.get("date") + Integer.parseInt(recall.get("date").split(" ")[1].substring(1, 2)));
 
-		recallTotalDenominator.put("status", Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
-		recallTotalDenominator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("status", recallTotalDenominator.get("status") + Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("event", recallTotalDenominator.get("event") + Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("country", recallTotalDenominator.get("country") + Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("containment", recallTotalDenominator.get("containment") + Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("disease", recallTotalDenominator.get("disease") + Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("victim", recallTotalDenominator.get("victim") + Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
+		recallTotalDenominator.put("date", recallTotalDenominator.get("date") + Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
 		
-		precisionTotalNumerator.put("status",  Integer.parseInt(precision.get("status").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("event",  Integer.parseInt(precision.get("event").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("country",  Integer.parseInt(precision.get("country").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("containment",  Integer.parseInt(precision.get("containment").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("disease",  Integer.parseInt(precision.get("disease").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("victim",  Integer.parseInt(precision.get("victim").split(" ")[1].substring(1, 2)));
-		precisionTotalNumerator.put("date",  Integer.parseInt(precision.get("date").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("status",  precisionTotalNumerator.get("status") + Integer.parseInt(precision.get("status").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("event",  precisionTotalNumerator.get("event") + Integer.parseInt(precision.get("event").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("country",  precisionTotalNumerator.get("country") + Integer.parseInt(precision.get("country").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("containment",  precisionTotalNumerator.get("containment") + Integer.parseInt(precision.get("containment").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("disease",  precisionTotalNumerator.get("disease") + Integer.parseInt(precision.get("disease").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("victim",  precisionTotalNumerator.get("victim") + Integer.parseInt(precision.get("victim").split(" ")[1].substring(1, 2)));
+		precisionTotalNumerator.put("date",  precisionTotalNumerator.get("date") + Integer.parseInt(precision.get("date").split(" ")[1].substring(1, 2)));
 
-		precisionTotalDenominator.put("status", Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("event", Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("country", Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("containment", Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("disease", Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("victim", Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
-		precisionTotalDenominator.put("date", Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("status", precisionTotalDenominator.get("status") + Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("event", precisionTotalDenominator.get("event") + Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("country", precisionTotalDenominator.get("country") + Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("containment", precisionTotalDenominator.get("containment") + Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("disease", precisionTotalDenominator.get("disease") + Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("victim", precisionTotalDenominator.get("victim") + Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
+		precisionTotalDenominator.put("date", precisionTotalDenominator.get("date") + Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
 
 		List<Double> s = f1Total.get("status");
 		s.add(Double.parseDouble(f1.get("status")));

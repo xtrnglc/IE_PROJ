@@ -1,10 +1,14 @@
 Story:               20010513.0920
 ID:                  1
-Date:                ----
+Date:                June 13, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          ----
+Containment          vaccine
+        other
 Country:             UNITED KINGDOM
-Disease:             Government
-                     Committee
-VICTIM:              ----
+Disease:             salmonellae
+                     salmonellosis
+                     _Salmonella_
+                     egg-borne salmonellosis
+                     food poisoning
+VICTIM:              14 845 people

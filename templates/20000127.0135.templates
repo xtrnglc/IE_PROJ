@@ -1,10 +1,12 @@
 Story:               20000127.0135
 ID:                  1
-Date:                ----
+Date:                February 27, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
+Containment          vaccine
+        culling
 Country:             TAIWAN
-Disease:             Friday
-                     feedlots
-VICTIM:              ----
+Disease:             the foot-and-mouth (FMD) virus
+                     FMD
+VICTIM:              southern feedlots
+                     neighboring areas

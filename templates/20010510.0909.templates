@@ -1,11 +1,10 @@
 Story:               20010510.0909
-ID:                  1
-Date:                ----
+ID:                  2
+Date:                June 10, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          ----
+Containment          -----
 Country:             RUSSIA
-Disease:             Apr
-                     -LSB-
-                     diagnosis
-VICTIM:              ----
+Disease:             dysentery
+                     a _Shigella sonnei_ strain
+VICTIM:              93 cases

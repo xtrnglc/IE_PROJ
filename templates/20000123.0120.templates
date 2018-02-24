@@ -1,9 +1,11 @@
 Story:               20000123.0120
 ID:                  1
-Date:                ----
+Date:                February 23, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             CHILE
-Disease:             strain
-VICTIM:              ----
+Containment          culling
+        quarantine
+Country:             UNITED STATES
+Disease:             PPV
+                     Plum pox potyvirus (PPV- EPPO A2 quarantine pest)
+VICTIM:              a fruit farm

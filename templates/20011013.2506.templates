@@ -1,14 +1,20 @@
 Story:               20011013.2506
-ID:                  1
-Date:                ----
+ID:                  5
+Date:                November 13, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             ISRAEL
-Disease:             CDC
-                     episode
-                     areas
-                     Poliovirus
-                     case
-                     addition
-VICTIM:              ----
+Containment          -----
+Country:             HAITI
+Disease:             cVDPV outbreaks
+                     vaccine-derived poliovirus (VDPV) isolates
+                     poliomyelitis-like illness (acute flaccid paralysis - AFP)
+                     poliomyelitis
+                     all polioviruses
+                     acute flaccid paralysis (AFP) associated with circulating vaccine-derived poliovirus (cVDPV) isolates
+                     cVDPVs
+                     Acute Flaccid Paralysis Associated with Circulating Vaccine-Derived Poliovirus
+                     VDPV
+                     cVDPV emergence
+                     cVDPV
+                     type 1 polioviruses
+VICTIM:              -----

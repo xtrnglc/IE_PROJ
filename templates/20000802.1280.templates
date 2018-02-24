@@ -1,10 +1,14 @@
 Story:               20000802.1280
 ID:                  1
-Date:                ----
+Date:                September 2, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             ----
-Disease:             Department
-                     testing
-VICTIM:              ----
+Containment          other
+        pesticide
+Country:             UNITED STATES
+Disease:             West Nile Virus
+                     WNV
+VICTIM:              a crow
+                     This crow
+                     The crow
+                     Crow

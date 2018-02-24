@@ -1,9 +1,12 @@
 Story:               20001020.1814
 ID:                  1
-Date:                ----
+Date:                November 20, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             CONGO
-Disease:             outbreak
-VICTIM:              ----
+Containment          quarantine
+Country:             UGANDA
+Disease:             Ebola virus
+                     EHF
+                     Ebola haemorrhagic fever (EHF)
+                     Ebola haemorrhagic Fever
+VICTIM:              122 cases

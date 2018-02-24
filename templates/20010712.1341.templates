@@ -1,9 +1,10 @@
 Story:               20010712.1341
 ID:                  1
-Date:                ----
+Date:                August 12, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             ----
-Disease:             ----
-VICTIM:              ----
+Containment          inspection
+Country:             SPAIN
+Disease:             Legionnaires' disease
+                     the _Legionella_ bacterium
+VICTIM:              192

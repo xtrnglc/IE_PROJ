@@ -143,7 +143,7 @@ public class Driver {
 						a.containment = new HashSet<String>();
 						String[] v = line.substring(21).split("/");
 						for(String s : v) {
-							a.containment.add(s);
+							a.containment.add(s.trim());
 						}
 						prev = "Containment";
 					}
@@ -151,7 +151,7 @@ public class Driver {
 						a.disease = new HashSet<String>();
 						String[] v = line.substring(21).split("/");
 						for(String s : v) {
-							a.disease.add(s);
+							a.disease.add(s.trim());
 						}
 						prev = "Disease";
 					}
@@ -159,7 +159,7 @@ public class Driver {
 						a.victim = new HashSet<String>();
 						String[] v = line.substring(21).split("/");
 						for(String s : v) {
-							a.victim.add(s);
+							a.victim.add(s.trim());
 						}
 						prev = "Victim";
 					}

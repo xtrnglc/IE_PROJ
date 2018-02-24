@@ -1,11 +1,12 @@
 Story:               20000423.0604
-ID:                  1
-Date:                ----
+ID:                  6
+Date:                May 23, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             OMAN
-Disease:             number
-                     cases
-                     onset
-VICTIM:              ----
+Containment          -----
+Country:             GERMANY
+Disease:             Neisseria meningitidis Serogroup B
+                     Subtype PI.2
+                     A meningitis
+                     Serotype 2a
+VICTIM:              A 55 year-old female

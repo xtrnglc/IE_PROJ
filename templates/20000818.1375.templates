@@ -1,11 +1,10 @@
 Story:               20000818.1375
-ID:                  1
-Date:                ----
+ID:                  2
+Date:                September 18, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          ----
-Country:             CONGO
-Disease:             ProMED-mail
-                     today
-                     course
-VICTIM:              ----
+Containment          -----
+Country:             GERMANY
+Disease:             meningococcal disease
+                     _N. meningitidis_ serogroup A
+VICTIM:              a traveller
