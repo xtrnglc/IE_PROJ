@@ -632,7 +632,7 @@ public class Driver {
 //		}
 		diseases.add(disease.trim());
 
-		return checkDisease(diseases);
+		return diseases;
 	}
 
 	public static HashSet<String> checkDisease(HashSet<String> diseases) {
@@ -640,11 +640,11 @@ public class Driver {
 		for (String s : diseases) {
 			if (s.length() > 0) {
 				Sentence s1 = new Sentence(s).caseless();
-				for (String s2 : s1.posTags()) {
-					if (!s2.contains("NN")) {
-						diseasesCopy.remove(s);
-					}
-				}
+//				for (String s2 : s1.posTags()) {
+//					if (!s2.contains("NN") || !s) {
+//						diseasesCopy.remove(s);
+//					}
+//				}
 			} else {
 				diseasesCopy.remove(s);
 			}
