@@ -14,6 +14,8 @@ import java.util.List;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 
+
+//20000127.0135.maintext -s
 class Article {
 	public String id;
 	public String story;
@@ -37,6 +39,7 @@ public class Driver {
 	public static HashMap<String, String> perpOrgRules = new HashMap<String, String>();
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
+	public static ScoringProgram scoringProgram = new ScoringProgram();
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
@@ -80,8 +83,8 @@ public class Driver {
 		HashMap<String, Article> m = ans_templates;
 		generateTemplate();
 
-		ScoringProgram scoringProgram = new ScoringProgram();
-		scoringProgram.evaluate(output_templates, ans_templates);
+		//scoringProgram.evaluate(output_templates, ans_templates);
+		scoringProgram.printTotals();
 	}
 
 	public static void parseSeeds() throws FileNotFoundException, IOException {
@@ -331,6 +334,7 @@ public class Driver {
 			System.out.println("Answer");
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event, goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
+			scoringProgram.evaluateSingle(a, goldAnswer);
 			System.out.println("====================================================================================");
 		}
 	}
@@ -366,7 +370,7 @@ public class Driver {
 				template += s;
 				template += "\n";
 			} else {
-				template += "        " + s;
+				template += "                     " + s;
 				template += "\n";
 			}
 			count++;

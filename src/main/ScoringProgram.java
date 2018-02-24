@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 public class ScoringProgram {
 	public ScoringProgram() {
+		instantiateTotals();
 	}
 	
 	public static HashMap<String, Integer> recallTotalNumerator = new HashMap<String, Integer>();
@@ -15,10 +16,18 @@ public class ScoringProgram {
 	public static HashMap<String, Integer> precisionTotalNumerator = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> precisionTotalDenominator = new HashMap<String, Integer>();
 	public static HashMap<String, List<Double>> f1Total = new HashMap<String, List<Double>>();
+	
+	public static void evaluateSingle(Article output, Article answer) {
+		HashMap<String, String> recall = calculateRecall(output, answer);
+		HashMap<String, String> precision = calculatePrecision(output, answer);
+		HashMap<String, String> f1 = calculateF1(output, answer);
+		appendTotals(recall, precision, f1);
+		printEvaluation(output.story, output.id, recall, precision, f1);
+
+	}
 
 	public static void evaluate(HashMap<String, Article> outputs, HashMap<String, Article> answers) {
 		
-		instantiateTotals();
 		for (Entry<String, Article> s : outputs.entrySet()) {
 			Article output = s.getValue();
 			Article answer = answers.get(s.getKey());
@@ -60,20 +69,36 @@ public class ScoringProgram {
 				dec.format(f1Total.get("country").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format((double)recallTotalNumerator.get("containment")/(double)recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
-				dec.format((double)precisionTotalNumerator.get("containment")/(double)precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
-				dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
-		System.out.println();
+		if((double)precisionTotalDenominator.get("containment") == 0.0) {
+			System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format((double)recallTotalNumerator.get("containment")/(double)recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
+					"0.00 (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
+					dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
+			System.out.println();
+		} else {
+			System.out.format("%-20s%-30s%-30s%-30s", "Containment:", dec.format((double)recallTotalNumerator.get("containment")/(double)recallTotalDenominator.get("containment")) + " (" + recallTotalNumerator.get("containment") + "/" + recallTotalDenominator.get("containment") +")", 
+					dec.format((double)precisionTotalNumerator.get("containment")/(double)precisionTotalDenominator.get("containment")) + " (" + precisionTotalNumerator.get("containment") + "/" + precisionTotalDenominator.get("containment") +")",
+					dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
+			System.out.println();
+		}
+		
 		
 		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", dec.format((double)recallTotalNumerator.get("disease")/(double)recallTotalDenominator.get("disease")) + " (" + recallTotalNumerator.get("disease") + "/" + recallTotalDenominator.get("disease") +")", 
 				dec.format((double)precisionTotalNumerator.get("disease")/(double)precisionTotalDenominator.get("disease")) + " (" + precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") +")",
 				dec.format(f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble()));
 		System.out.println();
 		
-		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format((double)recallTotalNumerator.get("victim")/(double)recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
-				dec.format((double)precisionTotalNumerator.get("victim")/(double)precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
-				dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
-		System.out.println("\n");
+		if((double)precisionTotalDenominator.get("victim") == 0.0) {
+			System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format((double)recallTotalNumerator.get("victim")/(double)recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+					"0.00 (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
+					dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
+			System.out.println("\n");
+		} else {
+			System.out.format("%-20s%-30s%-30s%-30s", "Victim:", dec.format((double)recallTotalNumerator.get("victim")/(double)recallTotalDenominator.get("victim")) + " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim") +")", 
+					dec.format((double)precisionTotalNumerator.get("victim")/(double)precisionTotalDenominator.get("victim")) + " (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim") +")",
+					dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
+			System.out.println("\n");
+		}
+		
 
 	}
 	
