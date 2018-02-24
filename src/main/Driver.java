@@ -73,8 +73,8 @@ public class Driver {
 		}
 
 		// Change this to data/templates if working on dev
-		// Change to data/test-set-tempates if working on test
-		File ans_folder = new File("data/templates");
+		// Change to data/test-set-templates if working on test
+		File ans_folder = new File("data/test-set-templates");
 		File[] list = ans_folder.listFiles();
 
 		for (File file : list) {
@@ -662,7 +662,7 @@ public class Driver {
 			throws FileNotFoundException, UnsupportedEncodingException {
 		// Change this to /dev-templates if working on dev
 		// Change to /test-templates if working on test
-		PrintWriter printWriter = new PrintWriter("dev-templates/" + fileName + ".templates", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("test-templates/" + fileName + ".templates", "UTF-8");
 		printWriter.write(body);
 		printWriter.close();
 	}
