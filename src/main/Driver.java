@@ -182,6 +182,10 @@ public class Driver {
 			return "confirmed";
 		}
 	}
+	
+	public static String getDate() {
+		return "----";
+	}
 
 	public static String getCountry(String text) {
 		String country = null;
@@ -253,7 +257,7 @@ public class Driver {
 			a.status = getStatus(text);
 			a.country = getCountry(text);
 			a.event = getEvent();
-			a.date = "----";
+			a.date = getDate();
 
 			HashSet<String> diseases = new HashSet<String>();
 
