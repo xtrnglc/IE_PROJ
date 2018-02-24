@@ -145,7 +145,7 @@ public class ScoringProgram {
 		
 		List<Double> coun = f1Total.get("country");
 		coun.add(Double.parseDouble(f1.get("country")));
-		f1Total.put("country", e);
+		f1Total.put("country", coun);
 		
 		List<Double> cont = f1Total.get("containment");
 		cont.add(Double.parseDouble(f1.get("containment")));
@@ -261,7 +261,12 @@ public class ScoringProgram {
 		} else {
 			result.put("event", "0.00 (0/1)");
 		}
-
+		
+		for(String s : answer.containment) {
+			System.out.println(s);
+		}
+		
+		
 		int containmentTrueCount = answer.containment.size();
 		int containmentLabeledCount = 0;
 		for (String s : output.containment) {
