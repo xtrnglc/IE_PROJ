@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
-
+import edu.stanford.nlp.trees.Tree;
 
 //20000127.0135.maintext -s
 class Article {
@@ -39,7 +39,7 @@ public class Driver {
 	public static HashMap<String, String> perpOrgRules = new HashMap<String, String>();
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
-	public static ScoringProgram scoringProgram = new ScoringProgram();
+	public static ScoringProgram scoringProgram;
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
@@ -49,7 +49,7 @@ public class Driver {
 		if (args.length > 1 && args[1].equals("-s")) {
 			singleFile = true;
 		}
-		
+
 		parseSeeds();
 		instantiateRules();
 		if (!singleFile) {
@@ -57,7 +57,8 @@ public class Driver {
 
 			File[] listOfDevFiles = dev_folder.listFiles();
 			if (dev_folder.listFiles() == null) {
-				System.out.println("Please include a '-s' flag on the command line following the file name if passing in a single file!");
+				System.out.println(
+						"Please include a '-s' flag on the command line following the file name if passing in a single file!");
 				System.exit(0);
 			} else {
 				for (File file : listOfDevFiles) {
@@ -66,12 +67,13 @@ public class Driver {
 					}
 				}
 			}
-		} else
-		{
+		} else {
 			File file = new File(args[0]);
 			dev_files.add(file);
 		}
 
+		// Change this to data/templates if working on dev
+		// Change to data/test-set-tempates if working on test
 		File ans_folder = new File("data/templates");
 		File[] list = ans_folder.listFiles();
 
@@ -81,9 +83,10 @@ public class Driver {
 			}
 		}
 		HashMap<String, Article> m = ans_templates;
+		scoringProgram = new ScoringProgram(singleFile);
 		generateTemplate();
 
-		//scoringProgram.evaluate(output_templates, ans_templates);
+		// scoringProgram.evaluate(output_templates, ans_templates);
 		scoringProgram.printTotals();
 	}
 
@@ -144,8 +147,9 @@ public class Driver {
 					}
 					if (split[0].equals("Containment")) {
 						a.containment = new HashSet<String>();
+
 						String[] v = line.substring(21).split("/");
-						for(String s : v) {
+						for (String s : v) {
 							a.containment.add(s.trim());
 						}
 						prev = "Containment";
@@ -153,7 +157,7 @@ public class Driver {
 					if (split[0].equals("Disease")) {
 						a.disease = new HashSet<String>();
 						String[] v = line.substring(21).split("/");
-						for(String s : v) {
+						for (String s : v) {
 							a.disease.add(s.trim());
 						}
 						prev = "Disease";
@@ -161,7 +165,7 @@ public class Driver {
 					if (split[0].equals("Victims")) {
 						a.victim = new HashSet<String>();
 						String[] v = line.substring(21).split("/");
-						for(String s : v) {
+						for (String s : v) {
 							a.victim.add(s.trim());
 						}
 						prev = "Victim";
@@ -194,7 +198,7 @@ public class Driver {
 			return "confirmed";
 		}
 	}
-	
+
 	public static String getDate() {
 		return "----";
 	}
@@ -235,7 +239,7 @@ public class Driver {
 			}
 		}
 
-		return "----";
+		return "-----";
 	}
 
 	public static String getEvent() {
@@ -273,7 +277,7 @@ public class Driver {
 			a.date = getDate();
 
 			HashSet<String> diseases = new HashSet<String>();
-
+			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
 			for (Sentence s : d.sentences()) {
 				// // System.out.println(s.text());
@@ -300,7 +304,7 @@ public class Driver {
 				// }
 				//
 				for (String s2 : diseaseRules.keySet()) {
-					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+					if (s.text().toLowerCase().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
 						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2), s.text());
 						// System.out.println(w);
 						if (w != null) {
@@ -308,30 +312,31 @@ public class Driver {
 						}
 					}
 				}
+				for (String s2 : victimRules.keySet()) {
+					if (s.text().toLowerCase().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+						HashSet<String> w = parseDiseaseRule(victimRules.get(s2), s.text());
+						// System.out.println(w);
+						if (w != null) {
 
-				//
-				// }
-				// System.out.print(id + " ");
-				// for(String s : perpOrgs) {
-				// System.out.print(s + " ");
-				// }
-				// System.out.println();
-
-				// if (id.startsWith("DEV") || id.startsWith("TST")) {
-				// System.out.println(printTemplate(id, "date", "event", "status", "country",
-				// new HashSet<String>(), new HashSet<String>()));
-				// // System.out.println();
+							victims.addAll(w);
+						}
+					}
+				}
 			}
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
-			a.victim = new HashSet<String>();
+			a.containment.add("-----");
+			a.victim = victims;
 			output_templates.put(a.story, a);
+
+			System.out.println();
 			System.out.println("          SYSTEM OUTPUT\n");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
 			Article goldAnswer = ans_templates.get(a.story);
 			System.out.println("          ANSWER KEY\n");
-			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event, goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
+			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
+					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
 			scoringProgram.evaluateSingle(a, goldAnswer);
 			System.out.println("====================================================================================");
@@ -361,7 +366,7 @@ public class Driver {
 		template += "Containment          ";
 		int count = 0;
 		if (containment.size() == 0) {
-			template += "----";
+			template += "-----";
 			template += "\n";
 		}
 		for (String s : containment) {
@@ -378,7 +383,7 @@ public class Driver {
 		template += "Disease:             ";
 		int count2 = 0;
 		if (disease.size() == 0) {
-			template += "----";
+			template += "-----";
 			template += "\n";
 		}
 		for (String s : disease) {
@@ -393,10 +398,10 @@ public class Driver {
 			count2++;
 		}
 
-		template += "VICTIM:              ";
+		template += "Victims:             ";
 		int count3 = 0;
 		if (victim.size() == 0) {
-			template += "----";
+			template += "-----";
 			template += "\n";
 		}
 		for (String s : victim) {
@@ -417,11 +422,11 @@ public class Driver {
 
 	public static void instantiateRules() {
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
-		diseaseRules.put("RECORD OF", "REPORT OF <DISEASE>");
+		diseaseRules.put("RECORD OF", "RECORD OF <DISEASE>");
 		diseaseRules.put("REPORTS OF", "REPORTS OF <DISEASE>");
 		diseaseRules.put("STRAIN OF", "STRAIN OF <DISEASE>");
 		diseaseRules.put("OUTBREAK OF", "OUTBREAK OF <DISEASE>");
-		diseaseRules.put("OUTBREAK", "<DISEASE> OUTBREAK");
+		// diseaseRules.put("OUTBREAK", "<DISEASE> OUTBREAK");
 		// diseaseRules.put("CONTAIN THE", "CONTAIN THE <DISEASE>");
 		diseaseRules.put("TEST FOR", "TEST FOR <DISEASE>");
 		diseaseRules.put("TESTING FOR", "TESTING FOR <DISEASE>");
@@ -461,17 +466,58 @@ public class Driver {
 		diseaseRules.put("CONTAMINATED BY", "CONTAMINATED BY <DISEASE>");
 		diseaseRules.put("EPIDEMIC OF", "EPIDEMIC OF <DISEASE>");
 		diseaseRules.put("DOCUMENTED EPISODE OF", "DOCUMENTED EPISODE OF <DISEASE>");
+
+		victimRules.put("diagnosed with", "<victim> diagnosed with");
+		victimRules.put("died", "<victim> died");
+		victimRules.put("infected with", "<victim> infected with");
+		victimRules.put("were infected", "<victim> were infected");
+		victimRules.put("illness among", "illness among <victim>");
+		victimRules.put("die from", "<victim> die from");
+		victimRules.put("died", "<victim> died");
+		victimRules.put("admitted to", "<victim> admitted to");
+		victimRules.put("discharged from", "<victim> discharged from");
+		victimRules.put("killed", "killed <victim>");
+		victimRules.put("with diagnosis", "<victim> with diagnosis");
+		victimRules.put("tested positive", "<victim> tested positive");
+		victimRules.put("testing positive", "<victim> testing positive");
+		victimRules.put("killed", "<victim> have been killed");
+		victimRules.put("killed", "<victim> has been killed");
+		victimRules.put("contracted", "<victim> contracted");
+		victimRules.put("reported", "reported <victim>");
+		victimRules.put("reported", "<victim> reported");
+		victimRules.put("total of", "total of <victim>");
+		victimRules.put("suffering from", "<victim> suffering from");
+		victimRules.put("suffered from", "<victim> suffered from");
+		victimRules.put("detected in", "detected in <victim>");
+		victimRules.put("infected", "<victim> was infected");
+		victimRules.put("infected", "<victim> is infected");
+		victimRules.put("taken to hospital", "<victim> taken to hospital");
+		victimRules.put("in hospital", "<victim> in hospital");
+		victimRules.put("affected", "affected <victim>");
+		victimRules.put("affects", "affects <victim>");
+		victimRules.put("virus in", "virus in <victim>");
+	}
+
+	public static void analyzeSentence(String s) {
+		Sentence sent1 = new Sentence(s);
+		Sentence sent = sent1.caseless();
+		System.out.println(s);
+		System.out.println(sent.caseless().parse());
+		for (int i = 0; i < sent.words().size(); i++) {
+			System.out.print(sent.word(i) + " (" + sent.nerTag(i) + ") " + "(" + sent.posTag(i) + ")");
+		}
+
+		System.out.println("");
 	}
 
 	public static HashSet<String> parseDiseaseRule(String rule, String s) {
-		// rule = "DESTROYED BY <WEAPON>";
-		// s = "BOGOTA WAS DESTROYED BY A BOMB, POLICE REPORTED.";
 		String[] rules = rule.split("\\s+");
 		Sentence sentence = new Sentence(s).caseless();
+		String[] split = sentence.caseless().words().stream().toArray(String[]::new);
 
 		String disease = "";
 		HashSet<String> diseases = new HashSet<String>();
-
+		// analyzeSentence(s);
 		boolean after = true;
 
 		// List<String> posSplit = sentence.caseless().posTags();
@@ -497,32 +543,101 @@ public class Driver {
 
 		String s1;
 		for (int i = 0; i < sentence.words().size(); i++) {
-			s1 = sentence.word(i).replaceAll("\\s*\\p{Punct}+\\s*$", "");
-			if (s1.equals(rules[indexOfTriggerWord])) {
+			s1 = sentence.word(i).replaceAll("\\s*\\p{Punct}+\\s*$", "").toLowerCase();
+			if (s1.equals(rules[indexOfTriggerWord].toLowerCase())) {
 				index = i;
 				break;
 			}
 		}
-
+		List<String> wordSplit = sentence.words();
 		if (after) {
-			for (int i = index + 1; i < sentence.words().size(); i++) {
-				if (posSplit[i].contains("NN")) {
-					disease = sentence.word(i);
-					break;
+
+			String subStr = "";
+			for (int i = index + 1; i < split.length; i++) {
+				subStr += split[i] + " ";
+			}
+
+			Sentence subSentence = new Sentence(subStr);
+			boolean found = false;
+			// System.out.println(subSentence.parse());
+
+			for (Tree subtree : subSentence.caseless().parse()) {
+				if (subtree.label().value().equals("NP") && !found) {
+					for (Tree t : subtree.getChildrenAsList()) {
+						if (t.label().value().equals("NP")) {
+							for (Tree c : t.getLeaves()) {
+								disease += c.value() + " ";
+							}
+						}
+
+						found = true;
+					}
 				}
 			}
 		} else {
-			for (int i = index - 1; i > -1; i--) {
-
-				if (posSplit[i].contains("NN")) {
-					disease = sentence.word(i);
-					break;
+			String subStr = "";
+			for (int i = 0; i < index; i++) {
+				subStr += split[i] + " ";
+			}
+			if (subStr.length() > 0) {
+				Sentence subSentence = new Sentence(subStr);
+				// System.out.println(subSentence.caseless().parse());
+				for (Tree subtree : subSentence.caseless().parse()) {
+					if (subtree.label().value().equals("NP")) {
+						disease = "";
+						for (Tree t : subtree.getChildrenAsList()) {
+							if (t.label().value().equals("NP")) {
+								for (Tree c : t.getLeaves()) {
+									disease += c.value() + " ";
+								}
+							}
+						}
+					}
 				}
 			}
 		}
-		diseases.add(disease);
+		// if (after) {
+		// for (int i = index + 1; i < sentence.words().size(); i++) {
+		// if (posSplit[i].contains("NN")) {
+		// disease = sentence.word(i);
+		// int k = i-1;
+		// String pre = "";
+		// while(posSplit[k].equals("JJ")) {
+		// pre += sentence.word(k) + " ";
+		// k--;
+		// }
+		//
+		// disease = pre + sentence.word(i);
+		//
+		// break;
+		// }
+		// }
+		// } else {
+		// for (int i = index - 1; i > -1; i--) {
+		//
+		// if (posSplit[i].contains("NN")) {
+		// int k = i-1;
+		// String pre = "";
+		// try {
+		// while(posSplit[k].equals("JJ")) {
+		// pre += sentence.word(k) + " ";
+		// k--;
+		// }
+		// } catch(Exception e) {
+		//
+		// }
+		//
+		//
+		// disease = pre + sentence.word(i);
+		// break;
+		// }
+		// }
+		// }
+		if (disease.length() > 0) {
+			diseases.add(disease.trim());
+		}
 
-		return checkDisease(diseases);
+		return diseases;
 	}
 
 	public static HashSet<String> checkDisease(HashSet<String> diseases) {
@@ -530,11 +645,11 @@ public class Driver {
 		for (String s : diseases) {
 			if (s.length() > 0) {
 				Sentence s1 = new Sentence(s).caseless();
-				for (String s2 : s1.posTags()) {
-					if (!s2.contains("NN")) {
-						diseasesCopy.remove(s);
-					}
-				}
+				// for (String s2 : s1.posTags()) {
+				// if (!s2.contains("NN") || !s) {
+				// diseasesCopy.remove(s);
+				// }
+				// }
 			} else {
 				diseasesCopy.remove(s);
 			}
@@ -545,8 +660,14 @@ public class Driver {
 
 	public static void generateOutputFile(String fileName, String body)
 			throws FileNotFoundException, UnsupportedEncodingException {
-		PrintWriter printWriter = new PrintWriter("templates/" + fileName + ".templates", "UTF-8");
+		// Change this to /dev-templates if working on dev
+		// Change to /test-templates if working on test
+		PrintWriter printWriter = new PrintWriter("dev-templates/" + fileName + ".templates", "UTF-8");
 		printWriter.write(body);
 		printWriter.close();
+	}
+
+	public static String getContainment() {
+		return "culling";
 	}
 }

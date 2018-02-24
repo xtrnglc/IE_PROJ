@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Map.Entry;
 
 public class ScoringProgram {
-	public ScoringProgram() {
+	static boolean singleFile;
+
+	public ScoringProgram(boolean singleFile) {
 		instantiateTotals();
+		this.singleFile = singleFile;
 	}
 
 	public static HashMap<String, Integer> recallTotalNumerator = new HashMap<String, Integer>();
@@ -38,7 +41,6 @@ public class ScoringProgram {
 			appendTotals(recall, precision, f1);
 			printEvaluation(output.story, output.id, recall, precision, f1);
 		}
-		printTotals();
 	}
 
 	public static void printTotals() {
@@ -46,7 +48,7 @@ public class ScoringProgram {
 		System.out.println("====================================================================================\n");
 		System.out.println("          SCORES for ALL Templates\n");
 		DecimalFormat dec = new DecimalFormat("#0.00");
-		System.out.format("%-20s%-30s%-30s%-30s", "Label", "RECALL", "PRECISION", "F-MEASURE");
+		System.out.format("%-20s%-30s%-30s%-30s", "", "RECALL", "PRECISION", "F-MEASURE");
 		System.out.println();
 
 		System.out.format("%-20s%-30s%-30s%-30s", "Status:",
@@ -103,7 +105,11 @@ public class ScoringProgram {
 							+ ")",
 					"0.00 (" + precisionTotalNumerator.get("containment") + "/"
 							+ precisionTotalDenominator.get("containment") + ")",
-					dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
+					dec.format(getFScore(
+							(double) recallTotalNumerator.get("containment")
+									/ (double) recallTotalDenominator.get("containment"),
+							(double) precisionTotalNumerator.get("containment")
+									/ (double) precisionTotalDenominator.get("containment"))));
 			System.out.println();
 		} else {
 			System.out.format("%-20s%-30s%-30s%-30s", "Containment:",
@@ -115,7 +121,11 @@ public class ScoringProgram {
 							/ (double) precisionTotalDenominator.get("containment")) + " ("
 							+ precisionTotalNumerator.get("containment") + "/"
 							+ precisionTotalDenominator.get("containment") + ")",
-					dec.format(f1Total.get("containment").stream().mapToDouble(val -> val).average().getAsDouble()));
+					dec.format(getFScore(
+							(double) recallTotalNumerator.get("containment")
+									/ (double) recallTotalDenominator.get("containment"),
+							(double) precisionTotalNumerator.get("containment")
+									/ (double) precisionTotalDenominator.get("containment"))));
 			System.out.println();
 		}
 
@@ -127,21 +137,27 @@ public class ScoringProgram {
 				dec.format((double) precisionTotalNumerator.get("disease")
 						/ (double) precisionTotalDenominator.get("disease")) + " ("
 						+ precisionTotalNumerator.get("disease") + "/" + precisionTotalDenominator.get("disease") + ")",
-				dec.format(f1Total.get("disease").stream().mapToDouble(val -> val).average().getAsDouble()));
+				dec.format(getFScore(
+						(double) recallTotalNumerator.get("disease") / (double) recallTotalDenominator.get("disease"),
+						(double) precisionTotalNumerator.get("disease")
+								/ (double) precisionTotalDenominator.get("disease"))));
 		System.out.println();
 
 		if ((double) precisionTotalDenominator.get("victim") == 0.0) {
-			System.out.format("%-20s%-30s%-30s%-30s", "Victim:",
+			System.out.format("%-20s%-30s%-30s%-30s", "Victims:",
 					dec.format(
 							(double) recallTotalNumerator.get("victim") / (double) recallTotalDenominator.get("victim"))
 							+ " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim")
 							+ ")",
 					"0.00 (" + precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim")
 							+ ")",
-					dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
+					dec.format(getFScore(
+							(double) recallTotalNumerator.get("victim") / (double) recallTotalDenominator.get("victim"),
+							(double) precisionTotalNumerator.get("victim")
+									/ (double) precisionTotalDenominator.get("victim"))));
 			System.out.println();
 		} else {
-			System.out.format("%-20s%-30s%-30s%-30s", "Victim:",
+			System.out.format("%-20s%-30s%-30s%-30s", "Victims:",
 					dec.format(
 							(double) recallTotalNumerator.get("victim") / (double) recallTotalDenominator.get("victim"))
 							+ " (" + recallTotalNumerator.get("victim") + "/" + recallTotalDenominator.get("victim")
@@ -150,7 +166,10 @@ public class ScoringProgram {
 							/ (double) precisionTotalDenominator.get("victim")) + " ("
 							+ precisionTotalNumerator.get("victim") + "/" + precisionTotalDenominator.get("victim")
 							+ ")",
-					dec.format(f1Total.get("victim").stream().mapToDouble(val -> val).average().getAsDouble()));
+					dec.format(getFScore(
+							(double) recallTotalNumerator.get("victim") / (double) recallTotalDenominator.get("victim"),
+							(double) precisionTotalNumerator.get("victim")
+									/ (double) precisionTotalDenominator.get("victim"))));
 			System.out.println();
 		}
 
@@ -184,7 +203,11 @@ public class ScoringProgram {
 	}
 
 	public static double getFScore(Double r, Double p) {
-		return 2 * ((r * p) / (r + p));
+		if (Double.isNaN(2 * ((r * p) / (r + p)))) {
+			return 0.0;
+		} else {
+			return 2 * ((r * p) / (r + p));
+		}
 	}
 
 	public static void appendTotals(HashMap<String, String> recall, HashMap<String, String> precision,
@@ -324,8 +347,8 @@ public class ScoringProgram {
 
 	public static void printEvaluation(String story, String id, HashMap<String, String> recall,
 			HashMap<String, String> precision, HashMap<String, String> f1) {
-		System.out.println("Story: " + story);
-		System.out.format("%-20s%-30s%-30s%-30s", "Label", "RECALL", "PRECISION", "F-MEASURE");
+		System.out.println("          SCORES for " + story + "\n");
+		System.out.format("%-20s%-30s%-30s%-30s", "", "RECALL", "PRECISION", "F-MEASURE");
 		System.out.println();
 		System.out.format("%-20s%-30s%-30s%-30s", "Status:", recall.get("status"), precision.get("status"),
 				f1.get("status"));
@@ -344,7 +367,7 @@ public class ScoringProgram {
 		System.out.format("%-20s%-30s%-30s%-30s", "Disease:", recall.get("disease"), precision.get("disease"),
 				f1.get("disease"));
 		System.out.println();
-		System.out.format("%-20s%-30s%-30s%-30s", "Victim:", recall.get("victim"), precision.get("victim"),
+		System.out.format("%-20s%-30s%-30s%-30s", "Victims:", recall.get("victim"), precision.get("victim"),
 				f1.get("victim"));
 		System.out.println("\n");
 	}
