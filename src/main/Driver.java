@@ -74,7 +74,7 @@ public class Driver {
 
 		// Change this to data/templates if working on dev
 		// Change to data/test-set-templates if working on test
-		File ans_folder = new File("data/test-set-templates");
+		File ans_folder = new File("data/templates");
 		File[] list = ans_folder.listFiles();
 
 		for (File file : list) {
@@ -331,6 +331,7 @@ public class Driver {
 			a.victim = victims;
 			output_templates.put(a.story, a);
 
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println();
 			System.out.println("          SYSTEM OUTPUT\n");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
@@ -341,7 +342,6 @@ public class Driver {
 					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
 			scoringProgram.evaluateSingle(a, goldAnswer);
-			System.out.println("====================================================================================");
 		}
 	}
 
@@ -664,7 +664,7 @@ public class Driver {
 			throws FileNotFoundException, UnsupportedEncodingException {
 		// Change this to /dev-templates if working on dev
 		// Change to /test-templates if working on test
-		PrintWriter printWriter = new PrintWriter("test-templates/" + fileName + ".templates", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("dev-templates/" + fileName + ".templates", "UTF-8");
 		printWriter.write(body);
 		printWriter.close();
 	}

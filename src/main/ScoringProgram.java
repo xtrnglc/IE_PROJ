@@ -16,6 +16,7 @@ public class ScoringProgram {
 	public static HashMap<String, Integer> precisionTotalNumerator = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> precisionTotalDenominator = new HashMap<String, Integer>();
 	public static HashMap<String, List<Double>> f1Total = new HashMap<String, List<Double>>();
+	static DecimalFormat dec = new DecimalFormat("#0.00");
 
 	public static void evaluateSingle(Article output, Article answer) {
 		HashMap<String, String> recall = calculateRecall(output, answer);
@@ -366,12 +367,54 @@ public class ScoringProgram {
 		System.out.println();
 		System.out.format("%-20s%-30s%-30s%-30s", "Victims:", recall.get("victim"), precision.get("victim"),
 				f1.get("victim"));
-		System.out.println("\n");
+		System.out.println();
+		System.out.format("%-20s%-30s%-30s%-30s", "--------", "--------------", "--------------", "----");
+		System.out.println();
+
+		int recallNumerator = getNumerator(recall.get("status")) + getNumerator(recall.get("date"))
+				+ getNumerator(recall.get("event")) + getNumerator(recall.get("country"))
+				+ getNumerator(recall.get("containment")) + getNumerator(recall.get("disease"))
+				+ getNumerator(recall.get("victim"));
+		int recallDenominator = getDenominator(recall.get("status")) + getDenominator(recall.get("date"))
+				+ getDenominator(recall.get("event")) + getDenominator(recall.get("country"))
+				+ getDenominator(recall.get("containment")) + getDenominator(recall.get("disease"))
+				+ getDenominator(recall.get("victim"));
+		int precisionNumerator = getNumerator(precision.get("status")) + getNumerator(precision.get("date"))
+				+ getNumerator(precision.get("event")) + getNumerator(precision.get("country"))
+				+ getNumerator(precision.get("containment")) + getNumerator(precision.get("disease"))
+				+ getNumerator(precision.get("victim"));
+		int precisionDenominator = getDenominator(precision.get("status")) + getDenominator(precision.get("date"))
+				+ getDenominator(precision.get("event")) + getDenominator(precision.get("country"))
+				+ getDenominator(precision.get("containment")) + getDenominator(precision.get("disease"))
+				+ getDenominator(precision.get("victim"));
+
+		System.out.format("%-20s%-30s%-30s%-30s", "TOTAL",
+				dec.format((double) recallNumerator / (double) recallDenominator) + " (" + recallNumerator + "/"
+						+ recallDenominator + ")",
+				dec.format((double) precisionNumerator / (double) precisionDenominator) + " (" + precisionNumerator
+						+ "/" + precisionDenominator + ")",
+				dec.format(getFScore((double) recallNumerator / (double) recallDenominator,
+						(double) precisionNumerator / (double) precisionDenominator)));
+		System.out.println();
+		System.out.println();
+	}
+
+	public static int getNumerator(String input) {
+		String total = input.split("\\s+")[1];
+		String withoutParentheses = total.substring(1, total.length()-1);
+		return Integer
+				.parseInt(withoutParentheses.split("/")[0]);		
+	}
+
+	public static int getDenominator(String input) {
+		String total = input.split("\\s+")[1];
+		String withoutParentheses = total.substring(1, total.length()-1);
+		return Integer
+				.parseInt(withoutParentheses.split("/")[1]);
 	}
 
 	public static HashMap<String, String> calculateRecall(Article output, Article answer) {
 		HashMap<String, String> result = new HashMap<String, String>();
-		DecimalFormat dec = new DecimalFormat("#0.00");
 
 		if (output.status.equals(answer.status)) {
 			result.put("status", "1.00 (1/1)");
@@ -404,7 +447,7 @@ public class ScoringProgram {
 				containmentLabeledCount++;
 			}
 		}
-		double containmentRecall = containmentLabeledCount / containmentTrueCount;
+		double containmentRecall = (double) containmentLabeledCount / containmentTrueCount;
 		result.put("containment", dec.format(containmentRecall).toString() + " (" + containmentLabeledCount + "/"
 				+ containmentTrueCount + ")");
 
@@ -415,7 +458,7 @@ public class ScoringProgram {
 				victimLabeledCount++;
 			}
 		}
-		double victimRecall = victimLabeledCount / victimTrueCount;
+		double victimRecall = (double) victimLabeledCount / victimTrueCount;
 		result.put("victim",
 				dec.format(victimRecall).toString() + " (" + victimLabeledCount + "/" + victimTrueCount + ")");
 
@@ -426,7 +469,7 @@ public class ScoringProgram {
 				diseaseLabeledCount++;
 			}
 		}
-		double diseaseRecall = diseaseLabeledCount / diseaseTrueCount;
+		double diseaseRecall = (double) diseaseLabeledCount / diseaseTrueCount;
 		result.put("disease",
 				dec.format(diseaseRecall).toString() + " (" + diseaseLabeledCount + "/" + diseaseTrueCount + ")");
 
@@ -487,7 +530,7 @@ public class ScoringProgram {
 		}
 		double containmentPrecision = 0;
 		if (containmentLabeledCount > 0) {
-			containmentPrecision = containmentCorrectlyLabeledCount / containmentLabeledCount;
+			containmentPrecision = (double) containmentCorrectlyLabeledCount / containmentLabeledCount;
 		}
 		result.put("containment", dec.format(containmentPrecision).toString() + " (" + containmentCorrectlyLabeledCount
 				+ "/" + containmentLabeledCount + ")");
@@ -502,7 +545,7 @@ public class ScoringProgram {
 		}
 		double victimPrecision = 0;
 		if (victimLabeledCount > 0) {
-			victimPrecision = victimCorrectlyLabeledCount / victimLabeledCount;
+			victimPrecision = (double) victimCorrectlyLabeledCount / victimLabeledCount;
 		}
 		result.put("victim", dec.format(victimPrecision).toString() + " (" + victimCorrectlyLabeledCount + "/"
 				+ victimLabeledCount + ")");
@@ -517,7 +560,7 @@ public class ScoringProgram {
 		}
 		double diseasePrecision = 0;
 		if (diseaseLabeledCount > 0) {
-			diseasePrecision = diseaseCorrectlyLabeledCount / diseaseLabeledCount;
+			diseasePrecision = (double) diseaseCorrectlyLabeledCount / diseaseLabeledCount;
 		}
 		result.put("disease", dec.format(diseasePrecision).toString() + " (" + diseaseCorrectlyLabeledCount + "/"
 				+ diseaseLabeledCount + ")");
@@ -526,7 +569,6 @@ public class ScoringProgram {
 	}
 
 	public static HashMap<String, String> calculateF1(Article output, Article answer) {
-		DecimalFormat dec = new DecimalFormat("#0.00");
 		HashMap<String, String> recall = calculateRecall(output, answer);
 		HashMap<String, String> precision = calculatePrecision(output, answer);
 		HashMap<String, String> result = new HashMap<String, String>();
