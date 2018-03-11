@@ -355,7 +355,7 @@ public class Driver {
 				// }
 				//
 				for (String s2 : diseaseRules.keySet()) {
-					if (s.text().toLowerCase().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
 						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2), s.text());
 						// System.out.println(w);
 						if (w != null) {
@@ -364,7 +364,7 @@ public class Driver {
 					}
 				}
 				for (String s2 : victimRules.keySet()) {
-					if (s.text().toLowerCase().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
 						HashSet<String> w = parseDiseaseRule(victimRules.get(s2), s.text());
 						// System.out.println(w);
 						if (w != null) {
@@ -555,9 +555,9 @@ public class Driver {
 
 	public static void analyzeSentence(String s) {
 		Sentence sent1 = new Sentence(s);
-		Sentence sent = sent1.caseless();
+		Sentence sent = sent1;
 		System.out.println(s);
-		System.out.println(sent.caseless().parse());
+		System.out.println(sent.parse());
 		for (int i = 0; i < sent.words().size(); i++) {
 			System.out.print(sent.word(i) + " (" + sent.nerTag(i) + ") " + "(" + sent.posTag(i) + ")");
 		}
@@ -567,8 +567,8 @@ public class Driver {
 
 	public static HashSet<String> parseDiseaseRule(String rule, String s) {
 		String[] rules = rule.split("\\s+");
-		Sentence sentence = new Sentence(s).caseless();
-		String[] split = sentence.caseless().words().stream().toArray(String[]::new);
+		Sentence sentence = new Sentence(s);
+		String[] split = sentence.words().stream().toArray(String[]::new);
 
 		String disease = "";
 		HashSet<String> diseases = new HashSet<String>();
@@ -576,7 +576,8 @@ public class Driver {
 		boolean after = true;
 
 		// List<String> posSplit = sentence.caseless().posTags();
-		String[] posSplit = sentence.caseless().posTags().stream().toArray(String[]::new);
+		String[] posSplit = sentence.posTags().stream().toArray(String[]::new);
+
 		// System.out.println(sentence.caseless().parse());
 		int index = 0;
 		int indexOfTriggerWord = 0;
@@ -598,8 +599,8 @@ public class Driver {
 
 		String s1;
 		for (int i = 0; i < sentence.words().size(); i++) {
-			s1 = sentence.word(i).replaceAll("\\s*\\p{Punct}+\\s*$", "").toLowerCase();
-			if (s1.equals(rules[indexOfTriggerWord].toLowerCase())) {
+			s1 = sentence.word(i).replaceAll("\\s*\\p{Punct}+\\s*$", "");
+			if (s1.equals(rules[indexOfTriggerWord])) {
 				index = i;
 				break;
 			}
@@ -616,7 +617,7 @@ public class Driver {
 			boolean found = false;
 			// System.out.println(subSentence.parse());
 
-			for (Tree subtree : subSentence.caseless().parse()) {
+			for (Tree subtree : subSentence.parse()) {
 				if (subtree.label().value().equals("NP") && !found) {
 					for (Tree t : subtree.getChildrenAsList()) {
 						if (t.label().value().equals("NP")) {
@@ -637,7 +638,7 @@ public class Driver {
 			if (subStr.length() > 0) {
 				Sentence subSentence = new Sentence(subStr);
 				// System.out.println(subSentence.caseless().parse());
-				for (Tree subtree : subSentence.caseless().parse()) {
+				for (Tree subtree : subSentence.parse()) {
 					if (subtree.label().value().equals("NP")) {
 						disease = "";
 						for (Tree t : subtree.getChildrenAsList()) {
@@ -699,7 +700,7 @@ public class Driver {
 		HashSet<String> diseasesCopy = new HashSet<String>(diseases);
 		for (String s : diseases) {
 			if (s.length() > 0) {
-				Sentence s1 = new Sentence(s).caseless();
+				Sentence s1 = new Sentence(s);
 				// for (String s2 : s1.posTags()) {
 				// if (!s2.contains("NN") || !s) {
 				// diseasesCopy.remove(s);
