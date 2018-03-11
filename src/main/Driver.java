@@ -253,12 +253,15 @@ public class Driver {
 	public static String getDate(String story) {
 //		Story:               20040626.1701
 //		Date:                July 26, 2004
-		String year = story.substring(0,4);
+		int year = Integer.parseInt(story.substring(0,4));
 		String month  = getMonth(story.substring(4,6));
-		String day = story.substring(6,8);
+		if(month.equals("January")) {
+			year++;
+		}
+		
+		int day = Integer.parseInt(story.substring(6,8));
 		
 		String date = month + " " + day + ", " + year;
-		
 		
 		return date;
 	}
