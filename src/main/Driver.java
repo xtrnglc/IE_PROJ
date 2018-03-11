@@ -250,8 +250,51 @@ public class Driver {
 		}
 	}
 
-	public static String getDate() {
-		return "----";
+	public static String getDate(String story) {
+//		Story:               20040626.1701
+//		Date:                July 26, 2004
+		String year = story.substring(0,4);
+		String month  = getMonth(story.substring(4,6));
+		String day = story.substring(6,8);
+		
+		String date = month + " " + day + ", " + year;
+		
+		
+		return date;
+	}
+	
+	public static String getMonth(String month) {
+		String monthString;
+		switch (month) {
+	        case "01":  monthString = "February";
+	                 break;
+	        case "02":  monthString = "March";
+	                 break;
+	        case "03":  monthString = "April";
+	                 break;
+	        case "04":  monthString = "May";
+	                 break;
+	        case "05":  monthString = "June";
+	                 break;
+	        case "06":  monthString = "July";
+	                 break;
+	        case "07":  monthString = "August";
+	                 break;
+	        case "08":  monthString = "September";
+	                 break;
+	        case "09":  monthString = "October";
+	                 break;
+	        case "10": monthString = "November";
+	                 break;
+	        case "11": monthString = "December";
+	                 break;
+	        case "12": monthString = "January";
+	                 break;
+	        default: monthString = "Invalid month";
+	                 break;
+		}
+		
+		return monthString;
 	}
 
 	public static String getCountry(String text) {
@@ -325,7 +368,7 @@ public class Driver {
 			a.status = getStatus(text);
 			a.country = getCountry(text);
 			a.event = getEvent();
-			a.date = getDate();
+			a.date = getDate(a.story);
 
 			HashSet<String> diseases = new HashSet<String>();
 			HashSet<String> victims = new HashSet<String>();
