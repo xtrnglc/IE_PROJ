@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
+
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 import edu.stanford.nlp.trees.Tree;
@@ -40,55 +42,102 @@ public class Driver {
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
 	public static ScoringProgram scoringProgram;
+	public static Scanner scanner = new Scanner(System.in);
+	boolean singleFile;
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
-	public static void main(String args[]) throws FileNotFoundException, IOException {
-		boolean singleFile = false;
+	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException {
+		printPrompt();
+	}
 
-		if (args.length > 1 && args[1].equals("-s")) {
-			singleFile = true;
+	public static void printPrompt() throws FileNotFoundException, IOException, InterruptedException {
+		System.out.println(
+				"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
+		System.out.println("1) Pass in a data folder (data/test-set-docs)");
+		System.out.println("2) Pass in a single file");
+		System.out.println("3) Edit an existing data file and print a template");
+
+		int choice = scanner.nextInt();
+
+		switch (choice) {
+		case 1:
+			System.out.println("Input received. Loading...");
+			performResults(false, false);
+			break;
+		case 2:
+			System.out.println("Which file would you like to evaluate?");
+			performResults(true, false);
+			break;
+		case 3:
+			System.out.println(
+					"Which file do you want to edit?\n**Please note that templates for edited documents cannot be scored by our system due to a lack of an answer template\n");
+			performResults(true, true);
+			break;
 		}
+
+	}
+
+	public static void performResults(boolean singleFile, boolean editingAFile)
+			throws FileNotFoundException, IOException, InterruptedException {
+		File dev_folder = new File("data/test-set-docs");
+		File[] listOfDevFiles = dev_folder.listFiles();
 
 		parseSeeds();
 		instantiateRules();
-		if (!singleFile) {
-			File dev_folder = new File(args[0]);
 
-			File[] listOfDevFiles = dev_folder.listFiles();
-			if (dev_folder.listFiles() == null) {
-				System.out.println(
-						"Please include a '-s' flag on the command line following the file name if passing in a single file!");
-				System.exit(0);
-			} else {
-				for (File file : listOfDevFiles) {
-					if (file.isFile()) {
-						dev_files.add(file);
-					}
+		if (singleFile) {
+			int count = 1;
+
+			for (File file : listOfDevFiles) {
+				if (file.isFile()) {
+					System.out.println(count + ") " + file.getName());
+					count++;
 				}
 			}
+
+			int index = scanner.nextInt();
+			File file = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+
+			if (!editingAFile) {
+				System.out.println("Input received. Loading...");
+				dev_files.add(file);
+			} else {
+				Process p = new ProcessBuilder("emacs", file.getName()).start();
+				p.waitFor();
+				File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+				dev_files.add(updatedFile);
+				System.out.println("Evaluating edited file. Loading...");
+			}
 		} else {
-			File file = new File(args[0]);
-			dev_files.add(file);
+			for (File file : listOfDevFiles) {
+				if (file.isFile()) {
+					dev_files.add(file);
+				}
+			}
 		}
 
 		// Change this to data/templates if working on dev
 		// Change to data/test-set-templates if working on test
-		File ans_folder = new File("data/templates");
+		File ans_folder = new File("data/test-set-templates");
 		File[] list = ans_folder.listFiles();
-
 		for (File file : list) {
 			if (file.isFile()) {
 				parseAnswerFile(file);
 			}
 		}
-		HashMap<String, Article> m = ans_templates;
-		scoringProgram = new ScoringProgram();
-		generateTemplate();
 
-		// scoringProgram.evaluate(output_templates, ans_templates);
+		scoringProgram = new ScoringProgram();
+
 		if (!singleFile) {
+			if (editingAFile) {
+				generateTemplate(true);
+			} else {
+				generateTemplate(false);
+			}
 			scoringProgram.printTotals();
+		} else {
+			generateTemplate(false);
 		}
 	}
 
@@ -248,7 +297,7 @@ public class Driver {
 		return "outbreak";
 	}
 
-	public static void generateTemplate() throws FileNotFoundException, IOException {
+	public static void generateTemplate(boolean editingAFile) throws FileNotFoundException, IOException {
 		for (File file : dev_files) {
 			String id = "";
 			String text = "";
@@ -331,17 +380,21 @@ public class Driver {
 			a.victim = victims;
 			output_templates.put(a.story, a);
 
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println(
+					">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println();
 			System.out.println("          SYSTEM OUTPUT\n");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
-			Article goldAnswer = ans_templates.get(a.story);
-			System.out.println("          ANSWER KEY\n");
-			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
-					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
-					goldAnswer.victim);
-			scoringProgram.evaluateSingle(a, goldAnswer);
+
+			if (!editingAFile) {
+				Article goldAnswer = ans_templates.get(a.story);
+				System.out.println("          ANSWER KEY\n");
+				printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
+						goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
+						goldAnswer.victim);
+				scoringProgram.evaluateSingle(a, goldAnswer);
+			}
 		}
 	}
 

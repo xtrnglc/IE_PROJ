@@ -41,7 +41,7 @@ public class ScoringProgram {
 		}
 	}
 
-	public static void printTotals() {
+	public void printTotals() {
 
 		System.out.println("====================================================================================\n");
 		System.out.println("          SCORES for ALL Templates\n");
@@ -55,7 +55,10 @@ public class ScoringProgram {
 				dec.format((double) precisionTotalNumerator.get("status")
 						/ (double) precisionTotalDenominator.get("status")) + " ("
 						+ precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") + ")",
-				dec.format(f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble()));
+				dec.format(getFScore(
+						(double) recallTotalNumerator.get("status") / (double) recallTotalDenominator.get("status"),
+						(double) precisionTotalNumerator.get("status")
+								/ (double) precisionTotalDenominator.get("status"))));
 		System.out.println();
 
 		System.out.format("%-20s%-30s%-30s%-30s", "Date:",
@@ -65,7 +68,10 @@ public class ScoringProgram {
 						(double) precisionTotalNumerator.get("date") / (double) precisionTotalDenominator.get("date"))
 						+ " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date")
 						+ ")",
-				dec.format(f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble()));
+				dec.format(getFScore(
+						(double) recallTotalNumerator.get("date") / (double) recallTotalDenominator.get("date"),
+						(double) precisionTotalNumerator.get("date")
+								/ (double) precisionTotalDenominator.get("date"))));
 		System.out.println();
 
 		System.out.format("%-20s%-30s%-30s%-30s", "Event:",
