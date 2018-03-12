@@ -105,7 +105,8 @@ public class Driver {
 			} else {
 				Process p = new ProcessBuilder("emacs", file.getName()).start();
 				p.waitFor();
-				File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+				//File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+				File updatedFile = new File(file.getName());
 				dev_files.add(updatedFile);
 				System.out.println("Evaluating edited file. Loading...");
 			}
@@ -402,7 +403,7 @@ public class Driver {
 				//
 				for (String s2 : diseaseRules.keySet()) {
 					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
-						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2), s.text());
+						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
 						// System.out.println(w);
 						if (w != null) {
 							diseases.addAll(w);
@@ -411,7 +412,7 @@ public class Driver {
 				}
 				for (String s2 : victimRules.keySet()) {
 					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
-						HashSet<String> w = parseDiseaseRule(victimRules.get(s2), s.text());
+						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
 						// System.out.println(w);
 						if (w != null) {
 
