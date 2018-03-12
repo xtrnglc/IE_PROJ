@@ -11,8 +11,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
+import edu.stanford.nlp.ie.AbstractSequenceClassifier;
+import edu.stanford.nlp.ie.NERClassifierCombiner;
+import edu.stanford.nlp.ie.crf.CRFClassifier;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 import edu.stanford.nlp.trees.Tree;
@@ -43,15 +49,16 @@ public class Driver {
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
 	public static ScoringProgram scoringProgram;
 	public static Scanner scanner = new Scanner(System.in);
+	public static AbstractSequenceClassifier<CoreLabel> classifier;
 	boolean singleFile;
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
-	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException {
+	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
 		printPrompt();
 	}
 
-	public static void printPrompt() throws FileNotFoundException, IOException, InterruptedException {
+	public static void printPrompt() throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
 		System.out.println(
 				"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
 		System.out.println("1) Pass in a data folder (data/test-set-docs)");
@@ -79,7 +86,7 @@ public class Driver {
 	}
 
 	public static void performResults(boolean singleFile, boolean editingAFile)
-			throws FileNotFoundException, IOException, InterruptedException {
+			throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
 		File dev_folder = new File("data/test-set-docs");
 		File[] listOfDevFiles = dev_folder.listFiles();
 
@@ -113,7 +120,9 @@ public class Driver {
 		} else {
 			for (File file : listOfDevFiles) {
 				if (file.isFile()) {
-					dev_files.add(file);
+					if(!file.getName().contains("DS")) {
+						dev_files.add(file);
+					}
 				}
 			}
 		}
@@ -378,29 +387,6 @@ public class Driver {
 			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
 			for (Sentence s : d.sentences()) {
-				// // System.out.println(s.text());
-				// for (String s1 : weaponGeneralRules.keySet()) {
-				// // System.out.println(s1);
-				// if (s.text().matches(".*\\b" + s1 + "\\b.*")) {
-				// String w = parseWeaponRule(weaponGeneralRules.get(s1), s.text());
-				// if (w != null) {
-				// if(weapons.contains(w)) {
-				// weaponsSet.add(w);
-				// }
-				// }
-				// }
-				// }
-				//
-				// for (String s1 : perpOrgRules.keySet()) {
-				// // System.out.println(s1);
-				// if (s.text().matches(".*\\b" + s1 + "\\b.*")) {
-				// String w = parsePerpOrgRule(perpOrgRules.get(s1), s.text());
-				// if (w != null) {
-				// perpOrgs.add(w);
-				// }
-				// }
-				// }
-				//
 				for (String s2 : diseaseRules.keySet()) {
 					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
 						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
@@ -410,16 +396,20 @@ public class Driver {
 						}
 					}
 				}
-				for (String s2 : victimRules.keySet()) {
-					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
-						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
-						// System.out.println(w);
-						if (w != null) {
-
-							victims.addAll(w);
-						}
-					}
+				HashSet<String> disease = parseDiseaseRuleWithNER(s.text());
+				if(disease.size() > 0){
+					diseases.addAll(disease);
 				}
+//				for (String s2 : victimRules.keySet()) {
+//					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
+//						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
+//						// System.out.println(w);
+//						if (w != null) {
+//
+//							victims.addAll(w);
+//						}
+//					}
+//				}
 			}
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
@@ -522,7 +512,11 @@ public class Driver {
 		generateOutputFile(fileName, template);
 	}
 
-	public static void instantiateRules() {
+	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
+	    String serializedClassifier = "disease-ner-model.ser.gz";
+	    classifier = CRFClassifier.getClassifier(serializedClassifier);
+
+
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
 		diseaseRules.put("RECORD OF", "RECORD OF <DISEASE>");
 		diseaseRules.put("REPORTS OF", "REPORTS OF <DISEASE>");
@@ -598,6 +592,8 @@ public class Driver {
 		victimRules.put("affected", "affected <victim>");
 		victimRules.put("affects", "affects <victim>");
 		victimRules.put("virus in", "virus in <victim>");
+		
+		
 	}
 
 	public static void analyzeSentence(String s) {
@@ -605,11 +601,37 @@ public class Driver {
 		Sentence sent = sent1;
 		System.out.println(s);
 		System.out.println(sent.parse());
+		
 		for (int i = 0; i < sent.words().size(); i++) {
 			System.out.print(sent.word(i) + " (" + sent.nerTag(i) + ") " + "(" + sent.posTag(i) + ")");
 		}
 
 		System.out.println("");
+	}
+	
+	public static HashSet<String> parseDiseaseRuleWithNER(String sentence) {
+		HashSet<String> diseases = new HashSet<String>();
+	    String disease = "";
+		String output = classifier.classifyToString(sentence, "tsv", false);
+		String lines[] = output.split("\\r?\\n");
+		for(String s : lines) {
+			String split[] = s.split("\\t");
+			if (split[1].equals("DIS")) {
+				if(disease.length() > 0) {
+					disease += " " + split[0];
+				} else {
+					disease +=  split[0];
+				}
+			}
+			else {
+				if(disease.length() > 0) {
+					diseases.add(disease);
+					disease = "";
+				}
+			}
+		}
+		
+		return diseases;
 	}
 
 	public static HashSet<String> parseDiseaseRule(String rule, String s) {
