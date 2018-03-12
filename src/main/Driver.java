@@ -402,7 +402,7 @@ public class Driver {
 				// }
 				//
 				for (String s2 : diseaseRules.keySet()) {
-					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
+					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
 						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
 						// System.out.println(w);
 						if (w != null) {
@@ -646,13 +646,30 @@ public class Driver {
 
 		String s1;
 		for (int i = 0; i < sentence.words().size(); i++) {
-			s1 = sentence.word(i).replaceAll("\\s*\\p{Punct}+\\s*$", "");
+			s1 = sentence.word(i);
 			if (s1.equals(rules[indexOfTriggerWord])) {
-				index = i;
-				break;
+				if(rules.length > 2) {
+					try {
+						if(after) {
+							if(sentence.word(i-1).equals(rules[0])) {
+								index = i;
+								break;
+
+							}
+						} else {
+							if(sentence.word(i+1).equals(rules[1])) {
+								index = i;
+								break;
+
+							}
+						}
+					}
+					catch(Exception e) {
+						return null;
+					}
+				}
 			}
 		}
-		List<String> wordSplit = sentence.words();
 		if (after) {
 
 			String subStr = "";
