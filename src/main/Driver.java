@@ -103,7 +103,7 @@ public class Driver {
 				System.out.println("Input received. Loading...");
 				dev_files.add(file);
 			} else {
-				Process p = new ProcessBuilder("emacs", file.getName()).start();
+				Process p = new ProcessBuilder("emacs", "/data/test-set-docs/" + file.getName()).start();
 				p.waitFor();
 				//File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
 				File updatedFile = new File(file.getName());
