@@ -43,7 +43,7 @@ public class ScoringProgram {
 
 	public void printTotals() {
 
-		System.out.println("====================================================================================\n");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 		System.out.println("          SCORES for ALL Templates\n");
 		DecimalFormat dec = new DecimalFormat("#0.00");
 		System.out.format("%-20s%-30s%-30s%-30s", "", "RECALL", "PRECISION", "F-MEASURE");

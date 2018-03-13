@@ -3,7 +3,7 @@ ID:                  1
 Date:                February 23, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          culling
+Containment:         culling
                      quarantine
 Country:             UNITED STATES
 Disease:             PPV

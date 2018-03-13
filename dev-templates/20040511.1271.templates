@@ -3,7 +3,7 @@ ID:                  1
 Date:                June 11, 2004
 Event:               outbreak
 Status:              confirmed
-Containment          vaccine
+Containment:         vaccine
                      quarantine
                      inspection
 Country:             ISRAEL

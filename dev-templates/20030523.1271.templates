@@ -3,7 +3,7 @@ ID:                  2
 Date:                June 23, 2003
 Event:               outbreak
 Status:              confirmed
-Containment          culling
+Containment:         culling
                      inspection
 Country:             CANADA
 Disease:             CWD

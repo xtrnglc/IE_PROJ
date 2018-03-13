@@ -3,7 +3,7 @@ ID:                  1
 Date:                October 16, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          culling
+Containment:         culling
 Country:             FINLAND
 Disease:             Pepino mosaic potexvirus
                      PepMV
