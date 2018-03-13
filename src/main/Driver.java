@@ -387,19 +387,24 @@ public class Driver {
 			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
 			for (Sentence s : d.sentences()) {
-				for (String s2 : diseaseRules.keySet()) {
-					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
-						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
-						// System.out.println(w);
-						if (w != null) {
-							diseases.addAll(w);
-						}
-					}
-				}
+//				for (String s2 : diseaseRules.keySet()) {
+//					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+//						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
+//						// System.out.println(w);
+//						if (w != null) {
+//							diseases.addAll(w);
+//						}
+//					}
+//				}
 				HashSet<String> disease = parseDiseaseRuleWithNER(s.text());
 				if(disease.size() > 0){
 					diseases.addAll(disease);
 				}
+				
+//				HashSet<String> victim = parseVictimRuleWithNER(s.text());
+//				if(victim.size() > 0){
+//					victims.addAll(victim);
+//				}
 //				for (String s2 : victimRules.keySet()) {
 //					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
 //						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
@@ -513,9 +518,9 @@ public class Driver {
 	}
 
 	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
-	    String serializedClassifier = "disease-ner-model.ser.gz";
-	    classifier = CRFClassifier.getClassifier(serializedClassifier);
-
+	    String serializedDiseaseClassifier = "disease-ner-model.ser.gz";
+	    String victimDiseaseClassifier = "victim-ner-model.ser.gz";
+	    classifier = CRFClassifier.getClassifier(serializedDiseaseClassifier).getClassifier(victimDiseaseClassifier);
 
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
 		diseaseRules.put("RECORD OF", "RECORD OF <DISEASE>");
@@ -607,6 +612,31 @@ public class Driver {
 		}
 
 		System.out.println("");
+	}
+	
+	public static HashSet<String> parseVictimRuleWithNER(String sentence) {
+		HashSet<String> victims = new HashSet<String>();
+	    String victim = "";
+		String output = classifier.classifyToString(sentence, "tsv", false);
+		String lines[] = output.split("\\r?\\n");
+		for(String s : lines) {
+			String split[] = s.split("\\t");
+			if (split[1].equals("VIC")) {
+				if(victim.length() > 0) {
+					victim += " " + split[0];
+				} else {
+					victim +=  split[0];
+				}
+			}
+			else {
+				if(victim.length() > 0) {
+					victims.add(victim);
+					victim = "";
+				}
+			}
+		}
+		
+		return victims;
 	}
 	
 	public static HashSet<String> parseDiseaseRuleWithNER(String sentence) {

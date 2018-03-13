@@ -15,8 +15,10 @@ import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 
 public class nerTrainer {
+	static String outputDisease = "";
+	static String outputVictim = "";
 	static String output = "";
-
+	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		HashMap<String, File> answer_files = new HashMap<String, File>();
 		HashMap<String, File> text_files = new HashMap<String, File>();
@@ -44,14 +46,19 @@ public class nerTrainer {
 		
 		for(Entry<String, File> s : text_files.entrySet()) {
 			generateDiseaseTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+			generateVictimTrainingFile(s.getValue(), answer_files.get(s.getKey()));
 		}
 		
 		//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
 		
 		
 		PrintWriter printWriter = new PrintWriter("diseaseTrain.tsv", "UTF-8");
-		printWriter.write(output);
+		printWriter.write(outputDisease);
 		printWriter.close();
+		
+		PrintWriter printWriter1 = new PrintWriter("vicTrain.tsv", "UTF-8");
+		printWriter1.write(outputVictim);
+		printWriter1.close();
 
 		System.out.println("Done");
 	}
@@ -62,11 +69,65 @@ public class nerTrainer {
 		for(String s : set) {
 			String[] split = s.split("\\s+");
 			for(String s1 : split) {
-				words.add(s1);
+				words.add(s1.replaceAll("\\s*\\p{Punct}+\\s*$", "").replaceAll("[()]", ""));
 			}
 		}
 		
 		return words;
+	}
+	
+	public static void generateVictimTrainingFile(File textFile, File answerFile) throws FileNotFoundException, IOException {
+		Article answerArticle = Driver.parseAnswerFile(answerFile);
+		String text = "";
+		int i = 0;
+		String outputString = "";
+
+		try (BufferedReader br = new BufferedReader(new FileReader(textFile))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				if (i == 0) {
+				} else {
+					text += " " + line;
+				}
+				i++;
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Please remove the '-s' flag on the command line if passing in a folder path!");
+			System.exit(0);
+		}
+		
+		Document d = new Document(text);
+		
+		HashSet<String> keyWords = getKeyWords(answerArticle.victim);
+		for (Sentence s : d.sentences()) {
+			for(i = 0; i < s.words().size(); i++) {
+				if(keyWords.contains(s.word(i))) {
+					if(s.word(i).equals("the")) {
+						if(keyWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					} 
+					else if(s.word(i).equals("and")) {
+						if(keyWords.contains(s.word(i+1)) && keyWords.contains(s.word(i-1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					}
+					else if(s.word(i).equals("at")) {
+						if(keyWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					}
+					else {
+						outputString += s.word(i) + "	VIC\n";
+					}
+				} else {
+					
+					outputString += s.word(i) + "	O\n";
+				}
+			}
+			
+		}
+		outputVictim += outputString;
 	}
 	
 	public static void generateDiseaseTrainingFile(File textFile, File answerFile) throws FileNotFoundException, IOException {
@@ -103,11 +164,12 @@ public class nerTrainer {
 						outputString += s.word(i) + "	DIS\n";
 					}
 				} else {
-					outputString += s.word(i) + "	0\n";
+					
+					outputString += s.word(i) + "	O\n";
 				}
 			}
 			
 		}
-		output += outputString;
+		outputDisease += outputString;
 	}
 }
