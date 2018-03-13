@@ -130,18 +130,18 @@ public class nerTrainer {
 						outputString += s.word(i) + "	DIS\n";
 					}
 				} else {
-					if(s.word(i).equals("-LRB-")) {
-						if(keyDiseaseWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	DIS\n";
-						}
-					}
-					else if(s.word(i).equals("-RRB-")) {
-						if(keyDiseaseWords.contains(s.word(i-1))) {
-							outputString += s.word(i) + "	DIS\n";
-						}
-					} else {
+//					if(s.word(i).equals("-LRB-")) {
+//						if(keyDiseaseWords.contains(s.word(i+1))) {
+//							outputString += s.word(i) + "	DIS\n";
+//						}
+//					}
+//					else if(s.word(i).equals("-RRB-")) {
+//						if(keyDiseaseWords.contains(s.word(i-1))) {
+//							outputString += s.word(i) + "	DIS\n";
+//						}
+//					} else {
 						outputString += s.word(i) + "	O\n";
-					}
+					//}
 				}
 			}
 			

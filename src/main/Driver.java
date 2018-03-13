@@ -401,10 +401,10 @@ public class Driver {
 					diseases.addAll(disease);
 				}
 				
-				HashSet<String> victim = parseVictimRuleWithNER(s.text());
-				if(victim.size() > 0){
-					victims.addAll(victim);
-				}
+//				HashSet<String> victim = parseVictimRuleWithNER(s.text());
+//				if(victim.size() > 0){
+//					victims.addAll(victim);
+//				}
 				
 //				for (String s2 : victimRules.keySet()) {
 //					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
