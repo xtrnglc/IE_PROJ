@@ -45,7 +45,7 @@ public class nerTrainer {
 		//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
 		
 		
-		PrintWriter printWriter = new PrintWriter("Train.tsv", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
 		printWriter.write(output);
 		printWriter.close();
 		
