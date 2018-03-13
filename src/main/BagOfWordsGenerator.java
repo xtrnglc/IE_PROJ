@@ -23,6 +23,18 @@ public class BagOfWordsGenerator {
 	static ArrayList<File> templates = new ArrayList<File>();
 
 	public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException {
+		init();
+
+		System.out.println("Generating word mappings");
+		generateWordMappings();
+		System.out.println("Generating vectors for containment");
+		generateBagOfWordsFile(true);
+		System.out.println("Generating vectors for status");
+		generateBagOfWordsFile(false);
+		System.out.println("DONE");
+	}
+
+	public static void init() {
 		File docFolder = new File("data/labeled-docs/");
 		File templateFolder = new File("data/templates/");
 
@@ -44,16 +56,8 @@ public class BagOfWordsGenerator {
 				}
 			}
 		}
-
-		System.out.println("Generating word mappings");
-		generateWordMappings();
-		System.out.println("Generating vectors for containment");
-		generateBagOfWordsFile(true);
-		System.out.println("Generating vectors for status");
-		generateBagOfWordsFile(false);
-		System.out.println("DONE");
 	}
-
+	
 	public static void generateBagOfWordsFile(boolean containment)
 			throws FileNotFoundException, UnsupportedEncodingException {
 		Scanner scanner = null;
@@ -117,28 +121,36 @@ public class BagOfWordsGenerator {
 		} else {
 			slot = "status.txt";
 		}
-		PrintWriter printWriter = new PrintWriter("word-vectors/" + slot, "UTF-8");
+		PrintWriter printWriter = new PrintWriter("train-word-vectors/" + slot, "UTF-8");
 		printWriter.write(vectorLine);
 		printWriter.close();
 	}
 
 	public static String generateWordVector(String input) {
+		HashMap<Integer, Integer> wordCounts = new HashMap<Integer, Integer>();
+		HashSet<Integer> sortedVector = new HashSet<Integer>();
 		Scanner scanner = new Scanner(input);
 		String vector = "";
-		List<Integer> sortedVector = new ArrayList<Integer>();
 		while (scanner.hasNext()) {
 			String word = scanner.next().replaceAll("\\W", "");
 			int index = wordMapping.indexOf(word);
 			if (index != -1) {
+				if(wordCounts.containsKey(index)) {
+					int val = wordCounts.get(index) + 1;
+					wordCounts.put(index, val);
+				} else {
+					wordCounts.put(index, 1);
+				}
 				sortedVector.add(index);
 			}
 		}
-		Collections.sort(sortedVector);
-		scanner.close();
-		for(int i : sortedVector) {
+		List<Integer> sortedList = new ArrayList(sortedVector);
+		Collections.sort(sortedList);
+		for(int i : sortedList) {
 			int index = i +1;
-			vector += index +":1";
+			vector += index +":" + wordCounts.get(i) + " ";
 		}
+		vector += "\n";
 		return vector;
 	}
 
@@ -163,7 +175,7 @@ public class BagOfWordsGenerator {
 			output += s + "	" + index + "\n";
 		}
 		
-		PrintWriter printWriter = new PrintWriter("word-vectors/wordmapping", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("train-word-vectors/wordmapping", "UTF-8");
 		printWriter.write(output);
 		printWriter.close();
 	}

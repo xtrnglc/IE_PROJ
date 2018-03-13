@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -64,7 +65,10 @@ public class Driver {
 		System.out.println("1) Pass in a data folder (data/test-set-docs)");
 		System.out.println("2) Pass in a single file");
 		System.out.println("3) Edit an existing data file and print a template");
-
+		
+		BagOfWordsGenerator.init();
+		BagOfWordsGenerator.generateWordMappings();
+		
 		int choice = scanner.nextInt();
 
 		switch (choice) {
@@ -419,7 +423,7 @@ public class Driver {
 			}
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
-			a.containment.add("-----");
+			a.containment.add(getContainment(text, a.story));
 			a.victim = victims;
 			output_templates.put(a.story, a);
 
@@ -519,7 +523,7 @@ public class Driver {
 	}
 
 	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
-	    String serializedClassifier = "train-ner-model.ser.gz";
+	    String serializedClassifier = "model-files/train-ner-model.ser.gz";
 	    classifier = CRFClassifier.getClassifier(serializedClassifier);
 
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
@@ -839,7 +843,36 @@ public class Driver {
 		printWriter.close();
 	}
 
-	public static String getContainment() {
+	public static String getContainment(String text, String fileName) throws FileNotFoundException, UnsupportedEncodingException {
+		String vector = BagOfWordsGenerator.generateWordVector(text);
+		//run liblinear here
+		PrintWriter printWriter = new PrintWriter("/test-word-vectors/" + fileName + ".vector", "UTF-8");
+		printWriter.write(vector);
+		printWriter.close();
 		return "culling";
+	}
+	
+	public String executeCommand(String fileName) {
+		String command = "./liblinear-1.93/predict /test-word-vectors/" + fileName + ".vector /liblinear-1.93/containmentClassifier containmentPrediction";
+	    StringBuffer output = new StringBuffer();
+
+	    Process p;
+	    try {
+	        p = Runtime.getRuntime().exec(command);
+	        p.waitFor();
+	        BufferedReader reader = 
+	                        new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+	        String line = "";           
+	        while ((line = reader.readLine())!= null) {
+	            output.append(line + "\n");
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return output.toString();
+
 	}
 }
