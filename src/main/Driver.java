@@ -110,10 +110,10 @@ public class Driver {
 				System.out.println("Input received. Loading...");
 				dev_files.add(file);
 			} else {
-				Process p = new ProcessBuilder("emacs", "/data/test-set-docs/" + file.getName()).start();
+				Process p = new ProcessBuilder("gedit", "./data/editable/" + file.getName()).start();
 				p.waitFor();
 				//File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
-				File updatedFile = new File(file.getName());
+				File updatedFile = new File("./data/editable/" + file.getName());
 				dev_files.add(updatedFile);
 				System.out.println("Evaluating edited file. Loading...");
 			}
@@ -140,14 +140,14 @@ public class Driver {
 		scoringProgram = new ScoringProgram();
 
 		if (!singleFile) {
+			generateTemplate(false);
+			scoringProgram.printTotals();
+		} else {
 			if (editingAFile) {
 				generateTemplate(true);
 			} else {
 				generateTemplate(false);
 			}
-			scoringProgram.printTotals();
-		} else {
-			generateTemplate(false);
 		}
 	}
 
@@ -370,7 +370,7 @@ public class Driver {
 					i++;
 				}
 			} catch (FileNotFoundException e) {
-				System.out.println("Please remove the '-s' flag on the command line if passing in a folder path!");
+				System.out.println("Please save the original file in the data/editable folder!");
 				System.exit(0);
 			}
 
@@ -460,7 +460,7 @@ public class Driver {
 		template += "Date:                " + date + "\n";
 		template += "Event:               " + event + "\n";
 		template += "Status:              " + status + "\n";
-		template += "Containment          ";
+		template += "Containment:         ";
 		int count = 0;
 		if (containment.size() == 0) {
 			template += "-----";
