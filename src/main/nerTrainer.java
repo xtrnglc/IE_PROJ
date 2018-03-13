@@ -29,36 +29,26 @@ public class nerTrainer {
 
 		for (File file : listOfAnswerFolders) {
 			if (file.isFile() && !file.getName().startsWith(".")) {
-				if(file.getName().contains("20020516.4232.maintext")) {
-					System.out.println("here");
-				}
 				answer_files.put(file.getName().substring(0,22), file);
 			}
 		}
 		for (File file : listOfTextFolders) {
 			if (file.isFile() && !file.getName().startsWith(".")) {
-				if(file.getName().contains("20020516.4232.maintext")) {
-					System.out.println("here");
-				}
 				text_files.put(file.getName(), file);
 			}
 		}
 		
 		for(Entry<String, File> s : text_files.entrySet()) {
-			generateDiseaseTrainingFile(s.getValue(), answer_files.get(s.getKey()));
-			generateVictimTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+			generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
 		}
 		
 		//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
 		
 		
-		PrintWriter printWriter = new PrintWriter("diseaseTrain.tsv", "UTF-8");
-		printWriter.write(outputDisease);
+		PrintWriter printWriter = new PrintWriter("Train.tsv", "UTF-8");
+		printWriter.write(output);
 		printWriter.close();
 		
-		PrintWriter printWriter1 = new PrintWriter("vicTrain.tsv", "UTF-8");
-		printWriter1.write(outputVictim);
-		printWriter1.close();
 
 		System.out.println("Done");
 	}
@@ -74,6 +64,93 @@ public class nerTrainer {
 		}
 		
 		return words;
+	}
+	
+	public static void generateTrainingFile(File textFile, File answerFile) throws FileNotFoundException, IOException {
+		Article answerArticle = Driver.parseAnswerFile(answerFile);
+		String text = "";
+		int i = 0;
+		String outputString = "";
+
+		try (BufferedReader br = new BufferedReader(new FileReader(textFile))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				if (i == 0) {
+				} else {
+					text += " " + line;
+				}
+				i++;
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Please remove the '-s' flag on the command line if passing in a folder path!");
+			System.exit(0);
+		}
+		
+		Document d = new Document(text);
+		
+		HashSet<String> keyVictimWords = getKeyWords(answerArticle.victim);
+		HashSet<String> keyDiseaseWords = getKeyWords(answerArticle.disease);
+		
+		for (Sentence s : d.sentences()) {
+			for(i = 0; i < s.words().size(); i++) {
+
+				if(keyVictimWords.contains(s.word(i))) {
+					if(s.word(i).equals("the")) {
+						if(keyVictimWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					} 
+					else if(s.word(i).equals("and")) {
+						if(keyVictimWords.contains(s.word(i+1)) && keyVictimWords.contains(s.word(i-1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					}
+					else if(s.word(i).equals("at")) {
+						if(keyVictimWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					}
+					else if(s.word(i).equals("other")) {
+						if(keyVictimWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	VIC\n";
+						}
+					}
+					else {
+						outputString += s.word(i) + "	VIC\n";
+					}
+				} 
+				
+				
+				else if(keyDiseaseWords.contains(s.word(i))) {
+					if(s.word(i).equals("the")) {
+						if(keyDiseaseWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	DIS\n";
+						}
+					} else {
+						outputString += s.word(i) + "	DIS\n";
+					}
+				} else {
+					if(s.word(i).equals("-LRB-")) {
+						if(keyDiseaseWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	DIS\n";
+						}
+					}
+					else if(s.word(i).equals("-RRB-")) {
+						if(keyDiseaseWords.contains(s.word(i-1))) {
+							outputString += s.word(i) + "	DIS\n";
+						}
+					} else {
+						outputString += s.word(i) + "	O\n";
+					}
+				}
+			}
+			
+		}
+		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/" + textFile.getName() +".tsv", "UTF-8");
+		printWriter.write(output);
+		printWriter.close();
+		
+		output += outputString;
 	}
 	
 	public static void generateVictimTrainingFile(File textFile, File answerFile) throws FileNotFoundException, IOException {
@@ -98,27 +175,41 @@ public class nerTrainer {
 		
 		Document d = new Document(text);
 		
-		HashSet<String> keyWords = getKeyWords(answerArticle.victim);
+		HashSet<String> keyVictimWords = getKeyWords(answerArticle.victim);
+		HashSet<String> keyDiseaseWords = getKeyWords(answerArticle.disease);
+		
 		for (Sentence s : d.sentences()) {
 			for(i = 0; i < s.words().size(); i++) {
-				if(keyWords.contains(s.word(i))) {
+				if(keyVictimWords.contains(s.word(i))) {
 					if(s.word(i).equals("the")) {
-						if(keyWords.contains(s.word(i+1))) {
+						if(keyVictimWords.contains(s.word(i+1))) {
 							outputString += s.word(i) + "	VIC\n";
 						}
 					} 
 					else if(s.word(i).equals("and")) {
-						if(keyWords.contains(s.word(i+1)) && keyWords.contains(s.word(i-1))) {
+						if(keyVictimWords.contains(s.word(i+1)) && keyVictimWords.contains(s.word(i-1))) {
 							outputString += s.word(i) + "	VIC\n";
 						}
 					}
 					else if(s.word(i).equals("at")) {
-						if(keyWords.contains(s.word(i+1))) {
+						if(keyVictimWords.contains(s.word(i+1))) {
 							outputString += s.word(i) + "	VIC\n";
 						}
 					}
 					else {
 						outputString += s.word(i) + "	VIC\n";
+					}
+				} else {
+					outputString += s.word(i) + "	O\n";
+				}
+				
+				if(keyDiseaseWords.contains(s.word(i))) {
+					if(s.word(i).equals("the")) {
+						if(keyDiseaseWords.contains(s.word(i+1))) {
+							outputString += s.word(i) + "	DIS\n";
+						}
+					} else {
+						outputString += s.word(i) + "	DIS\n";
 					}
 				} else {
 					

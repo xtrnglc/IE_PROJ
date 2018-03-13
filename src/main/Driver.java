@@ -401,10 +401,11 @@ public class Driver {
 					diseases.addAll(disease);
 				}
 				
-//				HashSet<String> victim = parseVictimRuleWithNER(s.text());
-//				if(victim.size() > 0){
-//					victims.addAll(victim);
-//				}
+				HashSet<String> victim = parseVictimRuleWithNER(s.text());
+				if(victim.size() > 0){
+					victims.addAll(victim);
+				}
+				
 //				for (String s2 : victimRules.keySet()) {
 //					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
 //						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
@@ -518,9 +519,8 @@ public class Driver {
 	}
 
 	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
-	    String serializedDiseaseClassifier = "disease-ner-model.ser.gz";
-	    String victimDiseaseClassifier = "victim-ner-model.ser.gz";
-	    classifier = CRFClassifier.getClassifier(serializedDiseaseClassifier).getClassifier(victimDiseaseClassifier);
+	    String serializedClassifier = "train-ner-model.ser.gz";
+	    classifier = CRFClassifier.getClassifier(serializedClassifier);
 
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
 		diseaseRules.put("RECORD OF", "RECORD OF <DISEASE>");
