@@ -16446,7 +16446,7 @@ Documented	O
 outbreaks	O
 due	O
 to	O
-Poliovirus	O
+Poliovirus	DIS
 -LRB-	O
 PV	O
 -RRB-	O
@@ -16555,7 +16555,7 @@ to	O
 ``	O
 Cutter	O
 inactivated	O
-poliovirus	O
+poliovirus	DIS
 incident	O
 ,	O
 ''	O

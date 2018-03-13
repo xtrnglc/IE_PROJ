@@ -119,7 +119,12 @@ public class nerTrainer {
 						outputString += s.word(i) + "	VIC\n";
 					}
 				} 
-				
+				else if(s.word(i).contains("polio") || s.word(i).contains("Polio") ) {
+					outputString += s.word(i) + "	DIS\n";
+				}
+				else if(s.word(i).contains("Herpes") || s.word(i).contains("herpes") ) {
+					outputString += s.word(i) + "	DIS\n";
+				}
 				
 				else if(keyDiseaseWords.contains(s.word(i))) {
 					if(s.word(i).equals("the")) {
@@ -140,7 +145,17 @@ public class nerTrainer {
 //							outputString += s.word(i) + "	DIS\n";
 //						}
 //					} else {
+					try {
+						if(s.word(i-1).contains("herpes") || s.word(i-1).contains("Herpes")) {
+							outputString += s.word(i) + "	DIS\n";
+						} else {
+							outputString += s.word(i) + "	O\n";
+						}
+						
+					} catch(Exception e) {
 						outputString += s.word(i) + "	O\n";
+
+					}
 					//}
 				}
 			}
