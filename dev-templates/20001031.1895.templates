@@ -3,7 +3,7 @@ ID:                  1
 Date:                December 1, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          other
+Containment:         other
                      quarantine
 Country:             UNITED KINGDOM
 Disease:             classical swine fever (CSF)

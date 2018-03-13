@@ -3,7 +3,7 @@ ID:                  1
 Date:                May 25, 2003
 Event:               outbreak
 Status:              confirmed
-Containment          quarantine
+Containment:         quarantine
 Country:             UNITED STATES
 Disease:             exotic Newcastle disease virus (ENDV)
                      Newcastle disease

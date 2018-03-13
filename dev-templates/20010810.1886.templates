@@ -3,7 +3,7 @@ ID:                  1
 Date:                September 10, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          other
+Containment:         other
 Country:             UNITED STATES
 Disease:             _Vibrio vulnificus_ illnesses
                      _Vibrio vulnificus_ bacteria

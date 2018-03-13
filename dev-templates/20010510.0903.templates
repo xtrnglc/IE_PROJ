@@ -3,7 +3,7 @@ ID:                  1
 Date:                June 10, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          vaccine
+Containment:         vaccine
 Country:             URUGUAY
 Disease:             a foot-and-mouth  disease (FMD) outbreak
 Victims:             At least 190 cases

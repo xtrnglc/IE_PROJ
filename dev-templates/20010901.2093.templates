@@ -3,7 +3,7 @@ ID:                  1
 Date:                October 1, 2001
 Event:               outbreak
 Status:              confirmed
-Containment          vaccine
+Containment:         vaccine
                      quarantine
 Country:             ZIMBABWE
 Disease:             FMD infection
