@@ -1,7 +1,10 @@
 package main;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -18,44 +21,66 @@ public class BagOfWordsGenerator {
 	static List<String> containmentMapping = Arrays.asList("vaccine", "-----", "other", "culling", "pesticide",
 			"facility closing", "quarantine", "disinfecting", "inspection");
 	static List<String> statusMapping = Arrays.asList("suspected", "possible", "confirmed");
-	static ArrayList<String> wordMapping = new ArrayList<String>();
+	static HashMap<String, Integer> wordMapping = new  HashMap<String, Integer>();
 	static ArrayList<File> documents = new ArrayList<File>();
 	static ArrayList<File> templates = new ArrayList<File>();
+	static int count = 0;
 
-	public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException {
+	public static void main(String args[]) throws IOException {
 		init();
 
-		System.out.println("Generating word mappings");
-		generateWordMappings();
-		System.out.println("Generating vectors for containment");
-		generateBagOfWordsFile(true);
-		System.out.println("Generating vectors for status");
-		generateBagOfWordsFile(false);
-		System.out.println("DONE");
+		
 	}
 
-	public static void init() {
+	public static void init() throws IOException {
+		
 		File docFolder = new File("data/labeled-docs/");
 		File templateFolder = new File("data/templates/");
 
 		File[] listOfDocuments = docFolder.listFiles();
 		File[] listOfTemplates = templateFolder.listFiles();
+		
+		File f = new File("train-word-vectors/wordmapping");
+		if(f.exists() && !f.isDirectory()) { 
+			int i = 0;
 
-		for (File file : listOfDocuments) {
-			if (file.isFile()) {
-				if (!file.getName().contains("DS")) {
-					documents.add(file);
+			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if(line.length()>0) {
+						String[] split = line.split(":");
+						wordMapping.put(split[0], Integer.parseInt(split[1]));
+					}
+		
+				}
+			} catch (FileNotFoundException e) {
+				System.out.println("Please save the original file in the data/editable folder!");
+				System.exit(0);
+			}
+		} else {
+			for (File file : listOfDocuments) {
+				if (file.isFile()) {
+					if (!file.getName().contains("DS")) {
+						documents.add(file);
+					}
 				}
 			}
-		}
 
-		for (File file : listOfTemplates) {
-			if (file.isFile()) {
-				if (!file.getName().contains("DS")) {
-					templates.add(file);
+			for (File file : listOfTemplates) {
+				if (file.isFile()) {
+					if (!file.getName().contains("DS")) {
+						templates.add(file);
+					}
 				}
 			}
+			System.out.println("Generating word mappings");
+			generateWordMappings();
+			System.out.println("Generating vectors for containment");
+			generateBagOfWordsFile(true);
+			System.out.println("Generating vectors for status");
+			generateBagOfWordsFile(false);
 		}
+		
 	}
 	
 	public static void generateBagOfWordsFile(boolean containment)
@@ -93,16 +118,19 @@ public class BagOfWordsGenerator {
 			HashMap<Integer, Integer> wordCounts = new HashMap<Integer, Integer>();
 			while (scanner2.hasNext()) {
 				String word = scanner2.next().replaceAll("\\W", "");
-				int index = wordMapping.indexOf(word);
-				if (index != -1) {
-					if(wordCounts.containsKey(index)) {
-						int val = wordCounts.get(index) + 1;
-						wordCounts.put(index, val);
-					} else {
-						wordCounts.put(index, 1);
+				if(word.length() > 0) {
+					int index = wordMapping.get(word);
+					if (index != -1) {
+						if(wordCounts.containsKey(index)) {
+							int val = wordCounts.get(index) + 1;
+							wordCounts.put(index, val);
+						} else {
+							wordCounts.put(index, 1);
+						}
+						sortedVector.add(index);
 					}
-					sortedVector.add(index);
 				}
+				
 			}
 			List<Integer> sortedList = new ArrayList(sortedVector);
 			Collections.sort(sortedList);
@@ -133,16 +161,22 @@ public class BagOfWordsGenerator {
 		String vector = "";
 		while (scanner.hasNext()) {
 			String word = scanner.next().replaceAll("\\W", "");
-			int index = wordMapping.indexOf(word);
-			if (index != -1) {
-				if(wordCounts.containsKey(index)) {
-					int val = wordCounts.get(index) + 1;
-					wordCounts.put(index, val);
-				} else {
-					wordCounts.put(index, 1);
+			if(word.length() > 0){
+				if(wordMapping.containsKey(word)) {
+					int index = wordMapping.get(word);
+					if (index != -1) {
+						if(wordCounts.containsKey(index)) {
+							int val = wordCounts.get(index) + 1;
+							wordCounts.put(index, val);
+						} else {
+							wordCounts.put(index, 1);
+						}
+						sortedVector.add(index);
+					}
 				}
-				sortedVector.add(index);
+				
 			}
+			
 		}
 		List<Integer> sortedList = new ArrayList(sortedVector);
 		Collections.sort(sortedList);
@@ -167,12 +201,17 @@ public class BagOfWordsGenerator {
 		}
 
 		scanner.close();
-		wordMapping = new ArrayList<String>(uniqueWords);
+//		wordMapping = new ArrayList<String>(uniqueWords);
 		
 		String output = "";
-		for(String s : wordMapping) {
-			int index = wordMapping.indexOf(s) + 1;
-			output += s + "	" + index + "\n";
+		for(String s : uniqueWords) {
+			if(s.length()>0) {
+				int index = ++count;
+				wordMapping.put(s, index);
+				
+				output += s + ":" + index + "\n";
+			}
+			
 		}
 		
 		PrintWriter printWriter = new PrintWriter("train-word-vectors/wordmapping", "UTF-8");

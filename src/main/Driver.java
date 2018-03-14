@@ -67,7 +67,7 @@ public class Driver {
 		System.out.println("3) Edit an existing data file and print a template");
 		
 		BagOfWordsGenerator.init();
-		BagOfWordsGenerator.generateWordMappings();
+		//BagOfWordsGenerator.generateWordMappings();
 		
 		int choice = scanner.nextInt();
 
@@ -846,7 +846,7 @@ public class Driver {
 	public static String getContainment(String text, String fileName) throws FileNotFoundException, UnsupportedEncodingException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
 		//run liblinear here
-		PrintWriter printWriter = new PrintWriter("/test-word-vectors/" + fileName + ".vector", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
 		printWriter.write(vector);
 		printWriter.close();
 		return "culling";
