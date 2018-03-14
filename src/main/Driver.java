@@ -858,6 +858,9 @@ public class Driver {
 	public static String getStatus(String text, String fileName) throws IOException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
 		//run liblinear here
+		if(fileName.contains("0589")) {
+			System.out.println("");
+		}
 		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
 		printWriter.write("0 "+ vector);
 		printWriter.close();
@@ -869,10 +872,10 @@ public class Driver {
 		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName;
 
 		if(containment) {
-			command += ".vector liblinear-1.93/containmentClassifier prediction";
+			command += ".vector liblinear-1.93/containmentClassifier prediction.txt > accuracy.txt";
 
 		} else {
-			command += ".vector liblinear-1.93/statusClassifier prediction";
+			command += ".vector liblinear-1.93/statusClassifier prediction.txt > accuracy.txt";
 
 		}
 	    StringBuffer output = new StringBuffer();
@@ -895,7 +898,7 @@ public class Driver {
 	        e.printStackTrace();
 	    }
 	    
-	    File f = new File("prediction");
+	    File f = new File("prediction.txt");
 	    
 	    if(f.exists() && !f.isDirectory()) { 
 

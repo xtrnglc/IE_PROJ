@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "../linear.h"
+#include "linear.h"
 
 #include "mex.h"
 #include "linear_model_matlab.h"
@@ -29,7 +28,7 @@ void exit_with_help()
 	"-s type : set type of solver (default 1)\n"
 	"  for multi-class classification\n"
 	"	 0 -- L2-regularized logistic regression (primal)\n"
-	"	 1 -- L2-regularized L2-loss support vector classification (dual)\n"	
+	"	 1 -- L2-regularized L2-loss support vector classification (dual)\n"
 	"	 2 -- L2-regularized L2-loss support vector classification (primal)\n"
 	"	 3 -- L2-regularized L1-loss support vector classification (dual)\n"
 	"	 4 -- support vector classification by Crammer and Singer\n"
@@ -43,12 +42,12 @@ void exit_with_help()
 	"-c cost : set the parameter C (default 1)\n"
 	"-p epsilon : set the epsilon in loss function of SVR (default 0.1)\n"
 	"-e epsilon : set tolerance of termination criterion\n"
-	"	-s 0 and 2\n" 
-	"		|f'(w)|_2 <= eps*min(pos,neg)/l*|f'(w0)|_2,\n" 
-	"		where f is the primal function and pos/neg are # of\n" 
+	"	-s 0 and 2\n"
+	"		|f'(w)|_2 <= eps*min(pos,neg)/l*|f'(w0)|_2,\n"
+	"		where f is the primal function and pos/neg are # of\n"
 	"		positive/negative data (default 0.01)\n"
 	"	-s 11\n"
-	"		|f'(w)|_2 <= eps*|f'(w0)|_2 (default 0.001)\n" 
+	"		|f'(w)|_2 <= eps*|f'(w0)|_2 (default 0.001)\n"
 	"	-s 1, 3, 4 and 7\n"
 	"		Dual maximal violation <= eps; similar to libsvm (default 0.1)\n"
 	"	-s 5 and 6\n"
@@ -60,6 +59,7 @@ void exit_with_help()
 	"-B bias : if bias >= 0, instance x becomes [x; bias]; if < 0, no bias term added (default -1)\n"
 	"-wi weight: weights adjust the parameter C of different classes (see README for details)\n"
 	"-v n: n-fold cross validation mode\n"
+	"-C : find parameter C (only for -s 0 and 2)\n"
 	"-q : quiet mode (no outputs)\n"
 	"col:\n"
 	"	if 'col' is setted, training_instance_matrix is parsed in column format, otherwise is in row format\n"
@@ -71,10 +71,27 @@ struct parameter param;		// set by parse_command_line
 struct problem prob;		// set by read_problem
 struct model *model_;
 struct feature_node *x_space;
-int cross_validation_flag;
+int flag_cross_validation;
+int flag_find_C;
+int flag_C_specified;
+int flag_solver_specified;
 int col_format_flag;
 int nr_fold;
 double bias;
+
+
+void do_find_parameter_C(double *best_C, double *best_rate)
+{
+	double start_C;
+	double max_C = 1024;
+	if (flag_C_specified)
+		start_C = param.C;
+	else
+		start_C = -1.0;
+	find_parameter_C(&prob, &param, nr_fold, start_C, max_C, best_C, best_rate);
+	mexPrintf("Best C = %lf  CV accuracy = %g%%\n", *best_C, 100.0**best_rate);
+}
+
 
 double do_cross_validation()
 {
@@ -86,8 +103,8 @@ double do_cross_validation()
 	double retval = 0.0;
 
 	cross_validation(&prob,&param,nr_fold,target);
-	if(param.solver_type == L2R_L2LOSS_SVR || 
-	   param.solver_type == L2R_L1LOSS_SVR_DUAL || 
+	if(param.solver_type == L2R_L2LOSS_SVR ||
+	   param.solver_type == L2R_L1LOSS_SVR_DUAL ||
 	   param.solver_type == L2R_L2LOSS_SVR_DUAL)
 	{
 		for(i=0;i<prob.l;i++)
@@ -101,8 +118,8 @@ double do_cross_validation()
                         sumyy += y*y;
                         sumvy += v*y;
                 }
-                printf("Cross Validation Mean squared error = %g\n",total_error/prob.l);
-                printf("Cross Validation Squared correlation coefficient = %g\n",
+                mexPrintf("Cross Validation Mean squared error = %g\n",total_error/prob.l);
+                mexPrintf("Cross Validation Squared correlation coefficient = %g\n",
                         ((prob.l*sumvy-sumv*sumy)*(prob.l*sumvy-sumv*sumy))/
                         ((prob.l*sumvv-sumv*sumv)*(prob.l*sumyy-sumy*sumy))
                         );
@@ -113,7 +130,7 @@ double do_cross_validation()
 		for(i=0;i<prob.l;i++)
 			if(target[i] == prob.y[i])
 				++total_correct;
-		printf("Cross Validation Accuracy = %g%%\n",100.0*total_correct/prob.l);
+		mexPrintf("Cross Validation Accuracy = %g%%\n",100.0*total_correct/prob.l);
 		retval = 100.0*total_correct/prob.l;
 	}
 
@@ -137,8 +154,12 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 	param.nr_weight = 0;
 	param.weight_label = NULL;
 	param.weight = NULL;
-	cross_validation_flag = 0;
+	param.init_sol = NULL;
+	flag_cross_validation = 0;
 	col_format_flag = 0;
+	flag_C_specified = 0;
+	flag_solver_specified = 0;
+	flag_find_C = 0;
 	bias = -1;
 
 
@@ -166,15 +187,17 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 	{
 		if(argv[i][0] != '-') break;
 		++i;
-		if(i>=argc && argv[i-1][1] != 'q') // since option -q has no parameter
+		if(i>=argc && argv[i-1][1] != 'q' && argv[i-1][1] != 'C') // since options -q and -C have no parameter
 			return 1;
 		switch(argv[i-1][1])
 		{
 			case 's':
 				param.solver_type = atoi(argv[i]);
+				flag_solver_specified = 1;
 				break;
 			case 'c':
 				param.C = atof(argv[i]);
+				flag_C_specified = 1;
 				break;
 			case 'p':
 				param.p = atof(argv[i]);
@@ -186,7 +209,7 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 				bias = atof(argv[i]);
 				break;
 			case 'v':
-				cross_validation_flag = 1;
+				flag_cross_validation = 1;
 				nr_fold = atoi(argv[i]);
 				if(nr_fold < 2)
 				{
@@ -205,6 +228,10 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 				print_func = &print_null;
 				i--;
 				break;
+			case 'C':
+				flag_find_C = 1;
+				i--;
+				break;
 			default:
 				mexPrintf("unknown option\n");
 				return 1;
@@ -213,24 +240,41 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 
 	set_print_string_function(print_func);
 
+	// default solver for parameter selection is L2R_L2LOSS_SVC
+	if(flag_find_C)
+	{
+		if(!flag_cross_validation)
+			nr_fold = 5;
+		if(!flag_solver_specified)
+		{
+			mexPrintf("Solver not specified. Using -s 2\n");
+			param.solver_type = L2R_L2LOSS_SVC;
+		}
+		else if(param.solver_type != L2R_LR && param.solver_type != L2R_L2LOSS_SVC)
+		{
+			mexPrintf("Warm-start parameter search only available for -s 0 and -s 2\n");
+			return 1;
+		}
+	}
+
 	if(param.eps == INF)
 	{
 		switch(param.solver_type)
 		{
-			case L2R_LR: 
+			case L2R_LR:
 			case L2R_L2LOSS_SVC:
 				param.eps = 0.01;
 				break;
 			case L2R_L2LOSS_SVR:
 				param.eps = 0.001;
 				break;
-			case L2R_L2LOSS_SVC_DUAL: 
-			case L2R_L1LOSS_SVC_DUAL: 
-			case MCSVM_CS: 
-			case L2R_LR_DUAL: 
+			case L2R_L2LOSS_SVC_DUAL:
+			case L2R_L1LOSS_SVC_DUAL:
+			case MCSVM_CS:
+			case L2R_LR_DUAL:
 				param.eps = 0.1;
 				break;
-			case L1R_L2LOSS_SVC: 
+			case L1R_L2LOSS_SVC:
 			case L1R_LR:
 				param.eps = 0.01;
 				break;
@@ -243,16 +287,19 @@ int parse_command_line(int nrhs, const mxArray *prhs[], char *model_file_name)
 	return 0;
 }
 
-static void fake_answer(mxArray *plhs[])
+static void fake_answer(int nlhs, mxArray *plhs[])
 {
-	plhs[0] = mxCreateDoubleMatrix(0, 0, mxREAL);
+	int i;
+	for(i=0;i<nlhs;i++)
+		plhs[i] = mxCreateDoubleMatrix(0, 0, mxREAL);
 }
 
 int read_problem_sparse(const mxArray *label_vec, const mxArray *instance_mat)
 {
-	int i, j, k, low, high;
-	mwIndex *ir, *jc;
-	int elements, max_index, num_samples, label_vector_row_num;
+	mwIndex *ir, *jc, low, high, k;
+	// using size_t due to the output type of matlab functions
+	size_t i, j, l, elements, max_index, label_vector_row_num;
+	mwSize num_samples;
 	double *samples, *labels;
 	mxArray *instance_mat_col; // instance sparse matrix in column format
 
@@ -277,38 +324,39 @@ int read_problem_sparse(const mxArray *label_vec, const mxArray *instance_mat)
 	}
 
 	// the number of instance
-	prob.l = (int) mxGetN(instance_mat_col);
-	label_vector_row_num = (int) mxGetM(label_vec);
+	l = mxGetN(instance_mat_col);
+	label_vector_row_num = mxGetM(label_vec);
+	prob.l = (int) l;
 
-	if(label_vector_row_num!=prob.l)
+	if(label_vector_row_num!=l)
 	{
 		mexPrintf("Length of label vector does not match # of instances.\n");
 		return -1;
 	}
-	
+
 	// each column is one instance
 	labels = mxGetPr(label_vec);
 	samples = mxGetPr(instance_mat_col);
 	ir = mxGetIr(instance_mat_col);
 	jc = mxGetJc(instance_mat_col);
 
-	num_samples = (int) mxGetNzmax(instance_mat_col);
+	num_samples = mxGetNzmax(instance_mat_col);
 
-	elements = num_samples + prob.l*2;
-	max_index = (int) mxGetM(instance_mat_col);
+	elements = num_samples + l*2;
+	max_index = mxGetM(instance_mat_col);
 
-	prob.y = Malloc(double, prob.l);
-	prob.x = Malloc(struct feature_node*, prob.l);
+	prob.y = Malloc(double, l);
+	prob.x = Malloc(struct feature_node*, l);
 	x_space = Malloc(struct feature_node, elements);
 
 	prob.bias=bias;
 
 	j = 0;
-	for(i=0;i<prob.l;i++)
+	for(i=0;i<l;i++)
 	{
 		prob.x[i] = &x_space[j];
 		prob.y[i] = labels[i];
-		low = (int) jc[i], high = (int) jc[i+1];
+		low = jc[i], high = jc[i+1];
 		for(k=low;k<high;k++)
 		{
 			x_space[j].index = (int) ir[k]+1;
@@ -317,7 +365,7 @@ int read_problem_sparse(const mxArray *label_vec, const mxArray *instance_mat)
 	 	}
 		if(prob.bias>=0)
 		{
-			x_space[j].index = max_index+1;
+			x_space[j].index = (int) max_index+1;
 			x_space[j].value = prob.bias;
 			j++;
 		}
@@ -325,9 +373,9 @@ int read_problem_sparse(const mxArray *label_vec, const mxArray *instance_mat)
 	}
 
 	if(prob.bias>=0)
-		prob.n = max_index+1;
+		prob.n = (int) max_index+1;
 	else
-		prob.n = max_index;
+		prob.n = (int) max_index;
 
 	return 0;
 }
@@ -342,14 +390,29 @@ void mexFunction( int nlhs, mxArray *plhs[],
 	// (for cross validation)
 	srand(1);
 
+	if(nlhs > 1)
+	{
+		exit_with_help();
+		fake_answer(nlhs, plhs);
+		return;
+	}
+
 	// Transform the input Matrix to libsvm format
 	if(nrhs > 1 && nrhs < 5)
 	{
 		int err=0;
 
-		if(!mxIsDouble(prhs[0]) || !mxIsDouble(prhs[1])) {
+		if(!mxIsDouble(prhs[0]) || !mxIsDouble(prhs[1]))
+		{
 			mexPrintf("Error: label vector and instance matrix must be double\n");
-			fake_answer(plhs);
+			fake_answer(nlhs, plhs);
+			return;
+		}
+
+		if(mxIsSparse(prhs[0]))
+		{
+			mexPrintf("Error: label vector should not be in sparse format");
+			fake_answer(nlhs, plhs);
 			return;
 		}
 
@@ -357,7 +420,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 		{
 			exit_with_help();
 			destroy_param(&param);
-			fake_answer(plhs);
+			fake_answer(nlhs, plhs);
 			return;
 		}
 
@@ -368,7 +431,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 			mexPrintf("Training_instance_matrix must be sparse; "
 				"use sparse(Training_instance_matrix) first\n");
 			destroy_param(&param);
-			fake_answer(plhs);
+			fake_answer(nlhs, plhs);
 			return;
 		}
 
@@ -383,11 +446,22 @@ void mexFunction( int nlhs, mxArray *plhs[],
 			free(prob.y);
 			free(prob.x);
 			free(x_space);
-			fake_answer(plhs);
+			fake_answer(nlhs, plhs);
 			return;
 		}
 
-		if(cross_validation_flag)
+		if (flag_find_C)
+		{
+			double best_C, best_rate, *ptr;
+
+			do_find_parameter_C(&best_C, &best_rate);
+
+			plhs[0] = mxCreateDoubleMatrix(2, 1, mxREAL);
+			ptr = mxGetPr(plhs[0]);
+			ptr[0] = best_C;
+			ptr[1] = best_rate;
+		}
+		else if(flag_cross_validation)
 		{
 			double *ptr;
 			plhs[0] = mxCreateDoubleMatrix(1, 1, mxREAL);
@@ -412,7 +486,7 @@ void mexFunction( int nlhs, mxArray *plhs[],
 	else
 	{
 		exit_with_help();
-		fake_answer(plhs);
+		fake_answer(nlhs, plhs);
 		return;
 	}
 }

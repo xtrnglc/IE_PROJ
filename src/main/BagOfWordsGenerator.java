@@ -80,7 +80,7 @@ public class BagOfWordsGenerator {
 			System.out.println("Generating vectors for status");
 			generateBagOfWordsFile(false);
 		}
-		
+
 	}
 	
 	public static void generateBagOfWordsFile(boolean containment)
