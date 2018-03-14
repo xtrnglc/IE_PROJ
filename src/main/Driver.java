@@ -382,7 +382,7 @@ public class Driver {
 			String split[] = file.getName().split("\\.");
 			a.story = split[0] + "." + split[1];
 			a.id = "1";
-			a.status = getStatus(text);
+			a.status = getStatus(text, a.story);
 			a.country = getCountry(text);
 			a.event = getEvent();
 			a.date = getDate(a.story);
@@ -405,10 +405,10 @@ public class Driver {
 					diseases.addAll(disease);
 				}
 				
-//				HashSet<String> victim = parseVictimRuleWithNER(s.text());
-//				if(victim.size() > 0){
-//					victims.addAll(victim);
-//				}
+				HashSet<String> victim = parseVictimRuleWithNER(s.text());
+				if(victim.size() > 0){
+					victims.addAll(victim);
+				}
 				
 //				for (String s2 : victimRules.keySet()) {
 //					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
@@ -426,6 +426,8 @@ public class Driver {
 			a.containment.add(getContainment(text, a.story));
 			a.victim = victims;
 			output_templates.put(a.story, a);
+			
+			
 
 			System.out.println(
 					">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -846,18 +848,36 @@ public class Driver {
 	public static String getContainment(String text, String fileName) throws IOException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
 		//run liblinear here
-		String prediction = executeCommand(fileName);
 		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
-		printWriter.write(vector);
+		printWriter.write("0 "+ vector);
 		printWriter.close();
+		String prediction = executeCommand(fileName, true);
 		return prediction;
 	}
 	
-	public static String executeCommand(String fileName) throws IOException {
-		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName + ".vector liblinear-1.93/containmentClassifier containmentPrediction";
+	public static String getStatus(String text, String fileName) throws IOException {
+		String vector = BagOfWordsGenerator.generateWordVector(text);
+		//run liblinear here
+		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
+		printWriter.write("0 "+ vector);
+		printWriter.close();
+		String prediction = executeCommand(fileName, false);
+		return prediction;
+	}
+	
+	public static String executeCommand(String fileName, boolean containment) throws IOException {
+		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName;
+
+		if(containment) {
+			command += ".vector liblinear-1.93/containmentClassifier prediction";
+
+		} else {
+			command += ".vector liblinear-1.93/statusClassifier prediction";
+
+		}
 	    StringBuffer output = new StringBuffer();
 	    String prediction = "-----";
-	    
+	    String predictionIndex = "0";
 	   
 	    Process p;
 	    try {
@@ -875,7 +895,7 @@ public class Driver {
 	        e.printStackTrace();
 	    }
 	    
-	    File f = new File("containmentPrediction");
+	    File f = new File("prediction");
 	    
 	    if(f.exists() && !f.isDirectory()) { 
 
@@ -883,7 +903,7 @@ public class Driver {
 				String line;
 				while ((line = br.readLine()) != null) {
 					if(line.length()>0) {
-						prediction = line;
+						predictionIndex = line;
 					}
 		
 				}
@@ -893,7 +913,13 @@ public class Driver {
 		} else {
 			prediction = "-----";
 		}
-	    System.out.println(output.toString());
+	    
+	    if(containment) {
+		    prediction = BagOfWordsGenerator.containmentMapping.get(Integer.parseInt(predictionIndex));
+	    } else {
+		    prediction = BagOfWordsGenerator.statusMapping.get(Integer.parseInt(predictionIndex));
+	    }
+	   
 
 	    return prediction;
 
