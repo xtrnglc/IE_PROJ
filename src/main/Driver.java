@@ -843,19 +843,22 @@ public class Driver {
 		printWriter.close();
 	}
 
-	public static String getContainment(String text, String fileName) throws FileNotFoundException, UnsupportedEncodingException {
+	public static String getContainment(String text, String fileName) throws IOException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
 		//run liblinear here
+		String prediction = executeCommand(fileName);
 		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
 		printWriter.write(vector);
 		printWriter.close();
-		return "culling";
+		return prediction;
 	}
 	
-	public String executeCommand(String fileName) {
-		String command = "./liblinear-1.93/predict /test-word-vectors/" + fileName + ".vector /liblinear-1.93/containmentClassifier containmentPrediction";
+	public static String executeCommand(String fileName) throws IOException {
+		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName + ".vector liblinear-1.93/containmentClassifier containmentPrediction";
 	    StringBuffer output = new StringBuffer();
-
+	    String prediction = "-----";
+	    
+	   
 	    Process p;
 	    try {
 	        p = Runtime.getRuntime().exec(command);
@@ -871,8 +874,28 @@ public class Driver {
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
+	    
+	    File f = new File("containmentPrediction");
+	    
+	    if(f.exists() && !f.isDirectory()) { 
 
-	    return output.toString();
+			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if(line.length()>0) {
+						prediction = line;
+					}
+		
+				}
+			} catch (FileNotFoundException e) {
+
+			}
+		} else {
+			prediction = "-----";
+		}
+	    System.out.println(output.toString());
+
+	    return prediction;
 
 	}
 }
