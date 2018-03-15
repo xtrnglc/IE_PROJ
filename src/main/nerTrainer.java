@@ -149,11 +149,11 @@ public class nerTrainer {
 						if(s.word(i-1).contains("herpes") || s.word(i-1).contains("Herpes")) {
 							outputString += s.word(i) + "	DIS\n";
 						} else {
-							outputString += s.word(i) + "	O\n";
+							outputString += s.word(i) + "	" + s.nerTag(i) +"\n";
 						}
 						
 					} catch(Exception e) {
-						outputString += s.word(i) + "	O\n";
+						outputString += s.word(i) + "	" + s.nerTag(i) +"\n";
 
 					}
 					//}

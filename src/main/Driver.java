@@ -356,7 +356,7 @@ public class Driver {
 	public static String getEvent() {
 		return "outbreak";
 	}
-
+	@SuppressWarnings("Untokenizable")
 	public static void generateTemplate(boolean editingAFile) throws FileNotFoundException, IOException {
 		for (File file : dev_files) {
 			String id = "";
