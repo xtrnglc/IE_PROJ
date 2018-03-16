@@ -11,18 +11,16 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Properties;
 import java.util.Scanner;
-
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
-import edu.stanford.nlp.ie.NERClassifierCombiner;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.util.logging.RedwoodConfiguration;
 
 //20000127.0135.maintext -s
 class Article {
@@ -55,21 +53,38 @@ public class Driver {
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
-	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
-		printPrompt();
+	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException,
+			ClassCastException, ClassNotFoundException {
+		RedwoodConfiguration.current().clear().apply();
+		printPrompt(true);
 	}
 
-	public static void printPrompt() throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
-		System.out.println(
-				"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
+	public static void printPrompt(boolean firstTime) throws FileNotFoundException, IOException, InterruptedException,
+			ClassCastException, ClassNotFoundException {
+		if (firstTime) {
+			System.out.println(
+					"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
+		} else {
+			System.out.println(
+					"\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+			System.out.println("What would you like to do now?\n");
+		}
 		System.out.println("1) Pass in a data folder (data/test-set-docs)");
 		System.out.println("2) Pass in a single file");
 		System.out.println("3) Edit an existing data file and print a template");
-		
+		System.out.println();
+		System.out.println("Type 'q' to quit the program");
+
 		BagOfWordsGenerator.init();
-		//BagOfWordsGenerator.generateWordMappings();
-		
-		int choice = scanner.nextInt();
+		// BagOfWordsGenerator.generateWordMappings();
+
+		int choice = -1;
+		try {
+			choice = scanner.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Goodbye");
+			System.exit(1);
+		}
 
 		switch (choice) {
 		case 1:
@@ -89,8 +104,8 @@ public class Driver {
 
 	}
 
-	public static void performResults(boolean singleFile, boolean editingAFile)
-			throws FileNotFoundException, IOException, InterruptedException, ClassCastException, ClassNotFoundException {
+	public static void performResults(boolean singleFile, boolean editingAFile) throws FileNotFoundException,
+			IOException, InterruptedException, ClassCastException, ClassNotFoundException {
 		File dev_folder = new File("data/test-set-docs");
 		File[] listOfDevFiles = dev_folder.listFiles();
 
@@ -101,14 +116,21 @@ public class Driver {
 			int count = 1;
 
 			for (File file : listOfDevFiles) {
-				if (file.isFile()) {
+				if (file.isFile() && !file.getName().startsWith(".DS")) {
 					System.out.println(count + ") " + file.getName());
 					count++;
 				}
 			}
 
-			int index = scanner.nextInt();
-			File file = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+			int index = -1;
+			try {
+				index = scanner.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Goodbye");
+				System.exit(1);
+			}
+
+			File file = new File("data/test-set-docs/" + listOfDevFiles[index].getName());
 
 			if (!editingAFile) {
 				System.out.println("Input received. Loading...");
@@ -116,7 +138,8 @@ public class Driver {
 			} else {
 				Process p = new ProcessBuilder("gedit", "./data/editable/" + file.getName()).start();
 				p.waitFor();
-				//File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
+				// File updatedFile = new File("data/test-set-docs/" + listOfDevFiles[index -
+				// 1].getName());
 				File updatedFile = new File("./data/editable/" + file.getName());
 				dev_files.add(updatedFile);
 				System.out.println("Evaluating edited file. Loading...");
@@ -124,7 +147,7 @@ public class Driver {
 		} else {
 			for (File file : listOfDevFiles) {
 				if (file.isFile()) {
-					if(!file.getName().contains("DS")) {
+					if (!file.getName().contains("DS")) {
 						dev_files.add(file);
 					}
 				}
@@ -153,6 +176,8 @@ public class Driver {
 				generateTemplate(false);
 			}
 		}
+
+		printPrompt(false);
 	}
 
 	public static void parseSeeds() throws FileNotFoundException, IOException {
@@ -265,52 +290,65 @@ public class Driver {
 	}
 
 	public static String getDate(String story) {
-//		Story:               20040626.1701
-//		Date:                July 26, 2004
-		int year = Integer.parseInt(story.substring(0,4));
-		String month  = getMonth(story.substring(4,6));
-		if(month.equals("January")) {
+		// Story: 20040626.1701
+		// Date: July 26, 2004
+		int year = Integer.parseInt(story.substring(0, 4));
+		String month = getMonth(story.substring(4, 6));
+		if (month.equals("January")) {
 			year++;
 		}
-		
-		int day = Integer.parseInt(story.substring(6,8));
-		
+
+		int day = Integer.parseInt(story.substring(6, 8));
+
 		String date = month + " " + day + ", " + year;
-		
+
 		return date;
 	}
-	
+
 	public static String getMonth(String month) {
 		String monthString;
 		switch (month) {
-	        case "01":  monthString = "February";
-	                 break;
-	        case "02":  monthString = "March";
-	                 break;
-	        case "03":  monthString = "April";
-	                 break;
-	        case "04":  monthString = "May";
-	                 break;
-	        case "05":  monthString = "June";
-	                 break;
-	        case "06":  monthString = "July";
-	                 break;
-	        case "07":  monthString = "August";
-	                 break;
-	        case "08":  monthString = "September";
-	                 break;
-	        case "09":  monthString = "October";
-	                 break;
-	        case "10": monthString = "November";
-	                 break;
-	        case "11": monthString = "December";
-	                 break;
-	        case "12": monthString = "January";
-	                 break;
-	        default: monthString = "Invalid month";
-	                 break;
+		case "01":
+			monthString = "February";
+			break;
+		case "02":
+			monthString = "March";
+			break;
+		case "03":
+			monthString = "April";
+			break;
+		case "04":
+			monthString = "May";
+			break;
+		case "05":
+			monthString = "June";
+			break;
+		case "06":
+			monthString = "July";
+			break;
+		case "07":
+			monthString = "August";
+			break;
+		case "08":
+			monthString = "September";
+			break;
+		case "09":
+			monthString = "October";
+			break;
+		case "10":
+			monthString = "November";
+			break;
+		case "11":
+			monthString = "December";
+			break;
+		case "12":
+			monthString = "January";
+			break;
+		default:
+			monthString = "Invalid month";
+			break;
 		}
-		
+
 		return monthString;
 	}
 
@@ -356,7 +394,7 @@ public class Driver {
 	public static String getEvent() {
 		return "outbreak";
 	}
-	@SuppressWarnings("Untokenizable")
+
 	public static void generateTemplate(boolean editingAFile) throws FileNotFoundException, IOException {
 		for (File file : dev_files) {
 			String id = "";
@@ -391,43 +429,43 @@ public class Driver {
 			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
 			for (Sentence s : d.sentences()) {
-//				for (String s2 : diseaseRules.keySet()) {
-//					if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
-//						HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(), s.text());
-//						// System.out.println(w);
-//						if (w != null) {
-//							diseases.addAll(w);
-//						}
-//					}
-//				}
+				// for (String s2 : diseaseRules.keySet()) {
+				// if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
+				// HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(),
+				// s.text());
+				// // System.out.println(w);
+				// if (w != null) {
+				// diseases.addAll(w);
+				// }
+				// }
+				// }
 				HashSet<String> disease = parseDiseaseRuleWithNER(s.text());
-				if(disease.size() > 0){
+				if (disease.size() > 0) {
 					diseases.addAll(disease);
 				}
-				
+
 				HashSet<String> victim = parseVictimRuleWithNER(s.text());
-				if(victim.size() > 0){
+				if (victim.size() > 0) {
 					victims.addAll(victim);
 				}
-				
-//				for (String s2 : victimRules.keySet()) {
-//					if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
-//						HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(), s.text());
-//						// System.out.println(w);
-//						if (w != null) {
-//
-//							victims.addAll(w);
-//						}
-//					}
-//				}
+
+				// for (String s2 : victimRules.keySet()) {
+				// if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
+				// HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(),
+				// s.text());
+				// // System.out.println(w);
+				// if (w != null) {
+				//
+				// victims.addAll(w);
+				// }
+				// }
+				// }
 			}
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
 			a.containment.add(getContainment(text, a.story));
 			a.victim = victims;
 			output_templates.put(a.story, a);
-			
-			
 
 			System.out.println(
 					">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -436,12 +474,19 @@ public class Driver {
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
 
+			Article goldAnswer = ans_templates.get(a.story);
+			if (editingAFile)
+			{
+				System.out.println("          ORIGINAL ANSWER KEY\n");
+
+			} else
+			{
+			System.out.println("          ANSWER KEY\n");
+			}
+			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
+					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
+					goldAnswer.victim);
 			if (!editingAFile) {
-				Article goldAnswer = ans_templates.get(a.story);
-				System.out.println("          ANSWER KEY\n");
-				printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
-						goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
-						goldAnswer.victim);
 				scoringProgram.evaluateSingle(a, goldAnswer);
 			}
 		}
@@ -525,8 +570,8 @@ public class Driver {
 	}
 
 	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
-	    String serializedClassifier = "model-files/train-ner-model.ser.gz";
-	    classifier = CRFClassifier.getClassifier(serializedClassifier);
+		String serializedClassifier = "model-files/train-ner-model.ser.gz";
+		classifier = CRFClassifier.getClassifier(serializedClassifier);
 
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
 		diseaseRules.put("RECORD OF", "RECORD OF <DISEASE>");
@@ -603,8 +648,7 @@ public class Driver {
 		victimRules.put("affected", "affected <victim>");
 		victimRules.put("affects", "affects <victim>");
 		victimRules.put("virus in", "virus in <victim>");
-		
-		
+
 	}
 
 	public static void analyzeSentence(String s) {
@@ -612,61 +656,59 @@ public class Driver {
 		Sentence sent = sent1;
 		System.out.println(s);
 		System.out.println(sent.parse());
-		
+
 		for (int i = 0; i < sent.words().size(); i++) {
 			System.out.print(sent.word(i) + " (" + sent.nerTag(i) + ") " + "(" + sent.posTag(i) + ")");
 		}
 
 		System.out.println("");
 	}
-	
+
 	public static HashSet<String> parseVictimRuleWithNER(String sentence) {
 		HashSet<String> victims = new HashSet<String>();
-	    String victim = "";
+		String victim = "";
 		String output = classifier.classifyToString(sentence, "tsv", false);
 		String lines[] = output.split("\\r?\\n");
-		for(String s : lines) {
+		for (String s : lines) {
 			String split[] = s.split("\\t");
 			if (split[1].equals("VIC")) {
-				if(victim.length() > 0) {
+				if (victim.length() > 0) {
 					victim += " " + split[0];
 				} else {
-					victim +=  split[0];
+					victim += split[0];
 				}
-			}
-			else {
-				if(victim.length() > 0) {
+			} else {
+				if (victim.length() > 0) {
 					victims.add(victim);
 					victim = "";
 				}
 			}
 		}
-		
+
 		return victims;
 	}
-	
+
 	public static HashSet<String> parseDiseaseRuleWithNER(String sentence) {
 		HashSet<String> diseases = new HashSet<String>();
-	    String disease = "";
+		String disease = "";
 		String output = classifier.classifyToString(sentence, "tsv", false);
 		String lines[] = output.split("\\r?\\n");
-		for(String s : lines) {
+		for (String s : lines) {
 			String split[] = s.split("\\t");
 			if (split[1].equals("DIS")) {
-				if(disease.length() > 0) {
+				if (disease.length() > 0) {
 					disease += " " + split[0];
 				} else {
-					disease +=  split[0];
+					disease += split[0];
 				}
-			}
-			else {
-				if(disease.length() > 0) {
+			} else {
+				if (disease.length() > 0) {
 					diseases.add(disease);
 					disease = "";
 				}
 			}
 		}
-		
+
 		return diseases;
 	}
 
@@ -706,23 +748,22 @@ public class Driver {
 		for (int i = 0; i < sentence.words().size(); i++) {
 			s1 = sentence.word(i);
 			if (s1.equals(rules[indexOfTriggerWord])) {
-				if(rules.length > 2) {
+				if (rules.length > 2) {
 					try {
-						if(after) {
-							if(sentence.word(i-1).equals(rules[0])) {
+						if (after) {
+							if (sentence.word(i - 1).equals(rules[0])) {
 								index = i;
 								break;
 
 							}
 						} else {
-							if(sentence.word(i+1).equals(rules[1])) {
+							if (sentence.word(i + 1).equals(rules[1])) {
 								index = i;
 								break;
 
 							}
 						}
-					}
-					catch(Exception e) {
+					} catch (Exception e) {
 						return null;
 					}
 				}
@@ -840,75 +881,71 @@ public class Driver {
 			throws FileNotFoundException, UnsupportedEncodingException {
 		// Change this to /dev-templates if working on dev
 		// Change to /test-templates if working on test
-		PrintWriter printWriter = new PrintWriter("dev-templates/" + fileName + ".templates", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("test-templates " + fileName + ".templates", "UTF-8");
 		printWriter.write(body);
 		printWriter.close();
 	}
 
 	public static String getContainment(String text, String fileName) throws IOException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
-		//run liblinear here
+		// run liblinear here
 		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
-		printWriter.write("0 "+ vector);
+		printWriter.write("0 " + vector);
 		printWriter.close();
 		String prediction = executeCommand(fileName, true);
 		return prediction;
 	}
-	
+
 	public static String getStatus(String text, String fileName) throws IOException {
 		String vector = BagOfWordsGenerator.generateWordVector(text);
-		//run liblinear here
-		if(fileName.contains("0589")) {
-			System.out.println("");
-		}
+		// run liblinear here
 		PrintWriter printWriter = new PrintWriter("test-word-vectors/" + fileName + ".vector", "UTF-8");
-		printWriter.write("0 "+ vector);
+		printWriter.write("0 " + vector);
 		printWriter.close();
 		String prediction = executeCommand(fileName, false);
 		return prediction;
 	}
-	
+
 	public static String executeCommand(String fileName, boolean containment) throws IOException {
 		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName;
 
-		if(containment) {
-			command += ".vector liblinear-1.93/containmentClassifier prediction.txt > accuracy.txt";
+		if (containment) {
+			command += ".vector liblinear-1.93/containmentClassifier prediction";
 
 		} else {
-			command += ".vector liblinear-1.93/statusClassifier prediction.txt > accuracy.txt";
+			command += ".vector liblinear-1.93/statusClassifier prediction";
 
 		}
-	    StringBuffer output = new StringBuffer();
-	    String prediction = "-----";
-	    String predictionIndex = "0";
-	   
-	    Process p;
-	    try {
-	        p = Runtime.getRuntime().exec(command);
-	        p.waitFor();
-	        BufferedReader reader = 
-	                        new BufferedReader(new InputStreamReader(p.getInputStream()));
+		StringBuffer output = new StringBuffer();
+		String prediction = "-----";
+		String predictionIndex = "0";
 
-	        String line = "";           
-	        while ((line = reader.readLine())!= null) {
-	            output.append(line + "\n");
-	        }
+		Process p;
+		try {
+			p = Runtime.getRuntime().exec(command);
+			p.waitFor();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    
-	    File f = new File("prediction.txt");
-	    
-	    if(f.exists() && !f.isDirectory()) { 
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				output.append(line + "\n");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		File f = new File("prediction");
+
+		if (f.exists() && !f.isDirectory()) {
 
 			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
 				String line;
 				while ((line = br.readLine()) != null) {
-					if(line.length()>0) {
+					if (line.length() > 0) {
 						predictionIndex = line;
 					}
-		
+
 				}
 			} catch (FileNotFoundException e) {
 
@@ -916,15 +953,14 @@ public class Driver {
 		} else {
 			prediction = "-----";
 		}
-	    
-	    if(containment) {
-		    prediction = BagOfWordsGenerator.containmentMapping.get(Integer.parseInt(predictionIndex));
-	    } else {
-		    prediction = BagOfWordsGenerator.statusMapping.get(Integer.parseInt(predictionIndex));
-	    }
-	   
 
-	    return prediction;
+		if (containment) {
+			prediction = BagOfWordsGenerator.containmentMapping.get(Integer.parseInt(predictionIndex));
+		} else {
+			prediction = BagOfWordsGenerator.statusMapping.get(Integer.parseInt(predictionIndex));
+		}
+
+		return prediction;
 
 	}
 }

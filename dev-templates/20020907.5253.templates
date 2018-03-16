@@ -3,7 +3,7 @@ ID:                  1
 Date:                October 7, 2002
 Event:               outbreak
 Status:              confirmed
-Containment          quarantine
+Containment:         quarantine
 Country:             CANADA
 Disease:             PWD
                      potato wart disease [PWD]

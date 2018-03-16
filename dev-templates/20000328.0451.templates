@@ -3,7 +3,7 @@ ID:                  1
 Date:                April 28, 2000
 Event:               outbreak
 Status:              confirmed
-Containment          disinfecting
+Containment:         disinfecting
 Country:             AUSTRALIA
 Disease:             _Legionella_
                      legionnaire's disease

@@ -3,7 +3,7 @@ ID:                  1
 Date:                May 16, 2003
 Event:               outbreak
 Status:              confirmed
-Containment          culling
+Containment:         culling
                      quarantine
 Country:             ERITREA
 Disease:             Mycoplasma mycoides subsp. mycoides SC (MmmSC)

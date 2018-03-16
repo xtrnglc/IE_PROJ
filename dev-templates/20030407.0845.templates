@@ -3,7 +3,7 @@ ID:                  1
 Date:                May 7, 2003
 Event:               outbreak
 Status:              confirmed
-Containment          culling
+Containment:         culling
                      quarantine
                      disinfecting
 Country:             UNITED STATES
