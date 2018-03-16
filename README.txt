@@ -1,7 +1,6 @@
+**Please move ie.jar into the IE_PROJ directory**
 
 To run our program, cd into the IE_PROJ directory in this tar submission.
-
-Afterwards, compile all of the java files with a javac command.\
 
 Then run the program through the command line. The program takes in the test file/folder path for the first argument and a flag '-s'denoting whether the user is passing in a single file or not. Presence of the flag means the system will look for a single file, an omitted flag means the user is passing in a folder of files.
 

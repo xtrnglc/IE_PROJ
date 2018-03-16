@@ -130,7 +130,7 @@ public class Driver {
 				System.exit(1);
 			}
 
-			File file = new File("data/test-set-docs/" + listOfDevFiles[index].getName());
+			File file = new File("data/test-set-docs/" + listOfDevFiles[index-1].getName());
 
 			if (!editingAFile) {
 				System.out.println("Input received. Loading...");
