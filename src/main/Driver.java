@@ -881,7 +881,7 @@ public class Driver {
 			throws FileNotFoundException, UnsupportedEncodingException {
 		// Change this to /dev-templates if working on dev
 		// Change to /test-templates if working on test
-		PrintWriter printWriter = new PrintWriter("test-templates " + fileName + ".templates", "UTF-8");
+		PrintWriter printWriter = new PrintWriter("test-templates/ " + fileName + ".templates", "UTF-8");
 		printWriter.write(body);
 		printWriter.close();
 	}
