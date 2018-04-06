@@ -238,26 +238,25 @@ public class Driver {
 					if (split[0].equals("Containment")) {
 						a.containment = new HashSet<String>();
 
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.containment.add(s.trim());
-						}
+						String v = line.substring(21);
+
+						a.containment.add(v.trim());
+						
 						prev = "Containment";
 					}
 					if (split[0].equals("Disease")) {
 						a.disease = new HashSet<String>();
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.disease.add(s.trim());
-						}
+						String v = line.substring(21);
+						
+						a.disease.add(v.trim());
+						
 						prev = "Disease";
 					}
 					if (split[0].equals("Victims")) {
 						a.victim = new HashSet<String>();
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.victim.add(s.trim());
-						}
+						String v = line.substring(21);
+						a.victim.add(v.trim());
+						
 						prev = "Victim";
 					}
 				} else {

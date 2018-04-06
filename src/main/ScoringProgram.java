@@ -449,8 +449,10 @@ public class ScoringProgram {
 		int containmentTrueCount = answer.containment.size();
 		int containmentLabeledCount = 0;
 		for (String s : output.containment) {
-			if (answer.containment.contains(s)) {
-				containmentLabeledCount++;
+			for(String ans : answer.containment) {
+				if (ans.contains(s)) {
+					containmentLabeledCount++;
+				}
 			}
 		}
 		double containmentRecall = (double) containmentLabeledCount / containmentTrueCount;
@@ -460,8 +462,10 @@ public class ScoringProgram {
 		int victimTrueCount = answer.victim.size();
 		int victimLabeledCount = 0;
 		for (String s : output.victim) {
-			if (answer.victim.contains(s)) {
-				victimLabeledCount++;
+			for(String ans : answer.victim) {
+				if (ans.contains(s)) {
+					victimLabeledCount++;
+				}
 			}
 		}
 		double victimRecall = (double) victimLabeledCount / victimTrueCount;
@@ -471,8 +475,10 @@ public class ScoringProgram {
 		int diseaseTrueCount = answer.disease.size();
 		int diseaseLabeledCount = 0;
 		for (String s : output.disease) {
-			if (answer.disease.contains(s)) {
-				diseaseLabeledCount++;
+			for(String ans : answer.disease) {
+				if (ans.contains(s)) {
+					diseaseLabeledCount++;
+				}
 			}
 		}
 		double diseaseRecall = (double) diseaseLabeledCount / diseaseTrueCount;
@@ -529,11 +535,14 @@ public class ScoringProgram {
 		int containmentLabeledCount = 0;
 		int containmentCorrectlyLabeledCount = 0;
 		for (String s : output.containment) {
-			if (answer.containment.contains(s)) {
-				containmentCorrectlyLabeledCount++;
+			for(String ans : answer.containment) {
+				if(ans.contains(s)) {
+					containmentCorrectlyLabeledCount++;
+				}
 			}
 			containmentLabeledCount++;
 		}
+		
 		double containmentPrecision = 0;
 		if (containmentLabeledCount > 0) {
 			containmentPrecision = (double) containmentCorrectlyLabeledCount / containmentLabeledCount;
@@ -544,8 +553,10 @@ public class ScoringProgram {
 		int victimLabeledCount = 0;
 		int victimCorrectlyLabeledCount = 0;
 		for (String s : output.victim) {
-			if (answer.victim.contains(s)) {
-				victimCorrectlyLabeledCount++;
+			for(String ans : answer.victim) {
+				if(ans.contains(s)) {
+					victimCorrectlyLabeledCount++;
+				}
 			}
 			victimLabeledCount++;
 		}
@@ -559,8 +570,10 @@ public class ScoringProgram {
 		int diseaseLabeledCount = 0;
 		int diseaseCorrectlyLabeledCount = 0;
 		for (String s : output.disease) {
-			if (answer.disease.contains(s)) {
-				diseaseCorrectlyLabeledCount++;
+			for(String ans : answer.disease) {
+				if(ans.contains(s)) {
+					diseaseCorrectlyLabeledCount++;
+				}
 			}
 			diseaseLabeledCount++;
 		}
