@@ -93,7 +93,7 @@ public class nerTrainer {
 		
 		for (Sentence s : d.sentences()) {
 			for(i = 0; i < s.words().size(); i++) {
-
+				//System.out.println(s.word(i));
 				if(keyVictimWords.contains(s.word(i))) {
 					if(s.word(i).equals("the")) {
 						if(keyVictimWords.contains(s.word(i+1))) {
@@ -116,7 +116,16 @@ public class nerTrainer {
 						}
 					}
 					else {
-						outputString += s.word(i) + "	B-VIC\n";
+						try{
+							if(keyVictimWords.contains(s.word(i-1))) {
+								outputString += s.word(i) + "	I-VIC\n";
+							} else {
+								outputString += s.word(i) + "	B-VIC\n";
+							}
+						} catch(Exception e) {
+							outputString += s.word(i) + "	B-VIC\n";
+						}
+						
 					}
 				} 
 				else if(s.word(i).contains("polio") || s.word(i).contains("Polio") ) {
@@ -129,10 +138,18 @@ public class nerTrainer {
 				else if(keyDiseaseWords.contains(s.word(i))) {
 					if(s.word(i).equals("the")) {
 						if(keyDiseaseWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	DIS\n";
+							outputString += s.word(i) + "	B-DIS\n";
 						}
 					} else {
-						outputString += s.word(i) + "	DIS\n";
+						try{
+							if(keyDiseaseWords.contains(s.word(i-1))) {
+								outputString += s.word(i) + "	I-DIS\n";
+							} else {
+								outputString += s.word(i) + "	B-DIS\n";
+							}
+						} catch(Exception e) {
+							outputString += s.word(i) + "	B-DIS\n";
+						}
 					}
 				} else {
 //					if(s.word(i).equals("-LRB-")) {
@@ -147,14 +164,13 @@ public class nerTrainer {
 //					} else {
 					try {
 						if(s.word(i-1).contains("herpes") || s.word(i-1).contains("Herpes")) {
-							outputString += s.word(i) + "	DIS\n";
+							outputString += s.word(i) + "	I-DIS\n";
 						} else {
-							outputString += s.word(i) + "	" + s.nerTag(i) +"\n";
+							outputString += s.word(i) + "	O"  +"\n";
 						}
 						
 					} catch(Exception e) {
-						outputString += s.word(i) + "	" + s.nerTag(i) +"\n";
-
+						outputString += s.word(i) + "	O"  +"\n";
 					}
 					//}
 				}

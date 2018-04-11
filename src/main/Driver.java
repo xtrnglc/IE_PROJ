@@ -673,7 +673,7 @@ public class Driver {
 		String lines[] = output.split("\\r?\\n");
 		for (String s : lines) {
 			String split[] = s.split("\\t");
-			if (split[1].equals("VIC")) {
+			if (split[1].contains("VIC")) {
 				if (victim.length() > 0) {
 					victim += " " + split[0];
 				} else {
@@ -697,7 +697,7 @@ public class Driver {
 		String lines[] = output.split("\\r?\\n");
 		for (String s : lines) {
 			String split[] = s.split("\\t");
-			if (split[1].equals("DIS")) {
+			if (split[1].contains("DIS")) {
 				if (disease.length() > 0) {
 					disease += " " + split[0];
 				} else {
