@@ -63,7 +63,6 @@ public class Driver {
 		RedwoodConfiguration.current().clear().apply();
 		containment = new Containment();
 		printPrompt(true);
-		parseSeeds();
 	}
 
 	public static void printPrompt(boolean firstTime) throws FileNotFoundException, IOException, InterruptedException,
@@ -507,16 +506,16 @@ public class Driver {
 			System.out.println(
 					">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println();
-			System.out.println("          SYSTEM OUTPUT\n");
+			System.out.println(" SYSTEM OUTPUT\n");
 			printTemplate(a.story, a.story, a.id, a.date, a.event, a.status, a.containment, a.country, a.disease,
 					a.victim);
 
 			Article goldAnswer = ans_templates.get(a.story);
 			if (editingAFile) {
-				System.out.println("          ORIGINAL ANSWER KEY\n");
+				System.out.println(" ORIGINAL ANSWER KEY\n");
 
 			} else {
-				System.out.println("          ANSWER KEY\n");
+				System.out.println(" ANSWER KEY\n");
 			}
 			if (a.story.equals("20040212.0474")) {
 				System.out.println("here");
