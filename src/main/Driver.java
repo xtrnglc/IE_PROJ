@@ -382,14 +382,6 @@ public class Driver {
 	public static String getCountry(String text) {
 		String country = null;
 
-		for (Entry<String, ArrayList<String>> entry : citiesCountriesList.entrySet()) {
-			for (String city : entry.getValue()) {
-				if (text.contains(city)) {
-					return entry.getKey().toUpperCase();
-				}
-			}
-		}
-
 		HashSet<String> c = countriesList;
 		for (String s : c) {
 			if (text.contains(s)) {
@@ -421,6 +413,14 @@ public class Driver {
 			}
 			if (text.contains("U.K")) {
 				return "UNITED KINGDOM";
+			}
+		}
+
+		for (Entry<String, ArrayList<String>> entry : citiesCountriesList.entrySet()) {
+			for (String city : entry.getValue()) {
+				if (text.contains(city)) {
+					return entry.getKey().toUpperCase();
+				}
 			}
 		}
 
