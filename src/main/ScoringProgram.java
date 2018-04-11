@@ -41,9 +41,9 @@ public class ScoringProgram {
 		}
 	}
 
-	public static void printTotals() {
+	public void printTotals() {
 
-		System.out.println("====================================================================================\n");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 		System.out.println("          SCORES for ALL Templates\n");
 		DecimalFormat dec = new DecimalFormat("#0.00");
 		System.out.format("%-20s%-30s%-30s%-30s", "", "RECALL", "PRECISION", "F-MEASURE");
@@ -55,7 +55,10 @@ public class ScoringProgram {
 				dec.format((double) precisionTotalNumerator.get("status")
 						/ (double) precisionTotalDenominator.get("status")) + " ("
 						+ precisionTotalNumerator.get("status") + "/" + precisionTotalDenominator.get("status") + ")",
-				dec.format(f1Total.get("status").stream().mapToDouble(val -> val).average().getAsDouble()));
+				dec.format(getFScore(
+						(double) recallTotalNumerator.get("status") / (double) recallTotalDenominator.get("status"),
+						(double) precisionTotalNumerator.get("status")
+								/ (double) precisionTotalDenominator.get("status"))));
 		System.out.println();
 
 		System.out.format("%-20s%-30s%-30s%-30s", "Date:",
@@ -65,7 +68,10 @@ public class ScoringProgram {
 						(double) precisionTotalNumerator.get("date") / (double) precisionTotalDenominator.get("date"))
 						+ " (" + precisionTotalNumerator.get("date") + "/" + precisionTotalDenominator.get("date")
 						+ ")",
-				dec.format(f1Total.get("date").stream().mapToDouble(val -> val).average().getAsDouble()));
+				dec.format(getFScore(
+						(double) recallTotalNumerator.get("date") / (double) recallTotalDenominator.get("date"),
+						(double) precisionTotalNumerator.get("date")
+								/ (double) precisionTotalDenominator.get("date"))));
 		System.out.println();
 
 		System.out.format("%-20s%-30s%-30s%-30s", "Event:",
@@ -211,64 +217,64 @@ public class ScoringProgram {
 	public static void appendTotals(HashMap<String, String> recall, HashMap<String, String> precision,
 			HashMap<String, String> f1) {
 		recallTotalNumerator.put("status", recallTotalNumerator.get("status")
-				+ Integer.parseInt(recall.get("status").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("status").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("event", recallTotalNumerator.get("event")
-				+ Integer.parseInt(recall.get("event").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("event").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("country", recallTotalNumerator.get("country")
-				+ Integer.parseInt(recall.get("country").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("country").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("containment", recallTotalNumerator.get("containment")
-				+ Integer.parseInt(recall.get("containment").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("containment").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("disease", recallTotalNumerator.get("disease")
-				+ Integer.parseInt(recall.get("disease").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("disease").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("victim", recallTotalNumerator.get("victim")
-				+ Integer.parseInt(recall.get("victim").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(recall.get("victim").split(" ")[1].split("/")[0].replace("(", "")));
 		recallTotalNumerator.put("date",
 				recallTotalNumerator.get("date") + Integer.parseInt(recall.get("date").split(" ")[1].substring(1, 2)));
 
 		recallTotalDenominator.put("status", recallTotalDenominator.get("status")
-				+ Integer.parseInt(recall.get("status").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("status").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("event", recallTotalDenominator.get("event")
-				+ Integer.parseInt(recall.get("event").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("event").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("country", recallTotalDenominator.get("country")
-				+ Integer.parseInt(recall.get("country").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("country").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("containment", recallTotalDenominator.get("containment")
-				+ Integer.parseInt(recall.get("containment").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("containment").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("disease", recallTotalDenominator.get("disease")
-				+ Integer.parseInt(recall.get("disease").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("disease").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("victim", recallTotalDenominator.get("victim")
-				+ Integer.parseInt(recall.get("victim").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("victim").split(" ")[1].split("/")[1].replace(")", "")));
 		recallTotalDenominator.put("date", recallTotalDenominator.get("date")
-				+ Integer.parseInt(recall.get("date").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(recall.get("date").split(" ")[1].split("/")[1].replace(")", "")));
 
 		precisionTotalNumerator.put("status", precisionTotalNumerator.get("status")
-				+ Integer.parseInt(precision.get("status").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("status").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("event", precisionTotalNumerator.get("event")
-				+ Integer.parseInt(precision.get("event").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("event").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("country", precisionTotalNumerator.get("country")
-				+ Integer.parseInt(precision.get("country").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("country").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("containment", precisionTotalNumerator.get("containment")
-				+ Integer.parseInt(precision.get("containment").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("containment").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("disease", precisionTotalNumerator.get("disease")
-				+ Integer.parseInt(precision.get("disease").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("disease").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("victim", precisionTotalNumerator.get("victim")
-				+ Integer.parseInt(precision.get("victim").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("victim").split(" ")[1].split("/")[0].replace("(", "")));
 		precisionTotalNumerator.put("date", precisionTotalNumerator.get("date")
-				+ Integer.parseInt(precision.get("date").split(" ")[1].substring(1, 2)));
+				+ Integer.parseInt(precision.get("date").split(" ")[1].split("/")[0].replace("(", "")));
 
 		precisionTotalDenominator.put("status", precisionTotalDenominator.get("status")
-				+ Integer.parseInt(precision.get("status").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("status").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("event", precisionTotalDenominator.get("event")
-				+ Integer.parseInt(precision.get("event").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("event").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("country", precisionTotalDenominator.get("country")
-				+ Integer.parseInt(precision.get("country").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("country").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("containment", precisionTotalDenominator.get("containment")
-				+ Integer.parseInt(precision.get("containment").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("containment").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("disease", precisionTotalDenominator.get("disease")
-				+ Integer.parseInt(precision.get("disease").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("disease").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("victim", precisionTotalDenominator.get("victim")
-				+ Integer.parseInt(precision.get("victim").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("victim").split(" ")[1].split("/")[1].replace(")", "")));
 		precisionTotalDenominator.put("date", precisionTotalDenominator.get("date")
-				+ Integer.parseInt(precision.get("date").split(" ")[1].substring(3, 4)));
+				+ Integer.parseInt(precision.get("date").split(" ")[1].split("/")[1].replace(")", "")));
 
 		List<Double> s = f1Total.get("status");
 		s.add(Double.parseDouble(f1.get("status")));
@@ -443,8 +449,10 @@ public class ScoringProgram {
 		int containmentTrueCount = answer.containment.size();
 		int containmentLabeledCount = 0;
 		for (String s : output.containment) {
-			if (answer.containment.contains(s)) {
-				containmentLabeledCount++;
+			for(String ans : answer.containment) {
+				if (ans.contains(s)) {
+					containmentLabeledCount++;
+				}
 			}
 		}
 		double containmentRecall = (double) containmentLabeledCount / containmentTrueCount;
@@ -454,8 +462,20 @@ public class ScoringProgram {
 		int victimTrueCount = answer.victim.size();
 		int victimLabeledCount = 0;
 		for (String s : output.victim) {
-			if (answer.victim.contains(s)) {
-				victimLabeledCount++;
+			for(String ans : answer.victim) {
+				if (ans.contains("/")) {
+					String[] split = ans.split("/");
+					for(String s1 : split) {
+						if(s1.trim().equals(s)){
+							victimLabeledCount++;
+							break;
+						}
+					}
+				} else {
+					if(ans.equals(s)){
+						victimLabeledCount++;
+					}
+				}
 			}
 		}
 		double victimRecall = (double) victimLabeledCount / victimTrueCount;
@@ -465,8 +485,20 @@ public class ScoringProgram {
 		int diseaseTrueCount = answer.disease.size();
 		int diseaseLabeledCount = 0;
 		for (String s : output.disease) {
-			if (answer.disease.contains(s)) {
-				diseaseLabeledCount++;
+			for(String ans : answer.disease) {
+				if (ans.contains("/")) {
+					String[] split = ans.split("/");
+					for(String s1 : split) {
+						if(s1.trim().equals(s)){
+							diseaseLabeledCount++;
+							break;
+						}
+					}
+				} else {
+					if(ans.equals(s)){
+						diseaseLabeledCount++;
+					}
+				}
 			}
 		}
 		double diseaseRecall = (double) diseaseLabeledCount / diseaseTrueCount;
@@ -523,11 +555,14 @@ public class ScoringProgram {
 		int containmentLabeledCount = 0;
 		int containmentCorrectlyLabeledCount = 0;
 		for (String s : output.containment) {
-			if (answer.containment.contains(s)) {
-				containmentCorrectlyLabeledCount++;
+			for(String ans : answer.containment) {
+				if(ans.contains(s)) {
+					containmentCorrectlyLabeledCount++;
+				}
 			}
 			containmentLabeledCount++;
 		}
+		
 		double containmentPrecision = 0;
 		if (containmentLabeledCount > 0) {
 			containmentPrecision = (double) containmentCorrectlyLabeledCount / containmentLabeledCount;
@@ -538,11 +573,25 @@ public class ScoringProgram {
 		int victimLabeledCount = 0;
 		int victimCorrectlyLabeledCount = 0;
 		for (String s : output.victim) {
-			if (answer.victim.contains(s)) {
-				victimCorrectlyLabeledCount++;
+			for(String ans : answer.victim) {
+				if (ans.contains("/")) {
+					String[] split = ans.split("/");
+					for(String s1 : split) {
+						if(s1.trim().equals(s)){
+							victimCorrectlyLabeledCount++;
+							break;
+						}
+					}
+				} else {
+					if(ans.equals(s)){
+						victimCorrectlyLabeledCount++;
+					}
+				}
 			}
 			victimLabeledCount++;
 		}
+	
+		
 		double victimPrecision = 0;
 		if (victimLabeledCount > 0) {
 			victimPrecision = (double) victimCorrectlyLabeledCount / victimLabeledCount;
@@ -553,8 +602,20 @@ public class ScoringProgram {
 		int diseaseLabeledCount = 0;
 		int diseaseCorrectlyLabeledCount = 0;
 		for (String s : output.disease) {
-			if (answer.disease.contains(s)) {
-				diseaseCorrectlyLabeledCount++;
+			for(String ans : answer.disease) {
+				if (ans.contains("/")) {
+					String[] split = ans.split("/");
+					for(String s1 : split) {
+						if(s1.trim().equals(s)){
+							diseaseCorrectlyLabeledCount++;
+							break;
+						}
+					}
+				} else {
+					if(ans.equals(s)){
+						diseaseCorrectlyLabeledCount++;
+					}
+				}
 			}
 			diseaseLabeledCount++;
 		}
