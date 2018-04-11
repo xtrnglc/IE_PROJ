@@ -5,17 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         quarantine
 Country:             UNITED STATES
-Disease:             exotic Newcastle disease virus (ENDV)
-                     Newcastle disease
-                     paramyxovirus type-1
-                     END virus
-                     END virus strain
-                     END
-                     APMV-1
-                     ENDV
-                     exotic Newcastle disease virus
-                     the TX END
-                     the TX El Paso END virus
-Victims:             backyard  fowl
-                     164 birds
-                     backyard birds
+Disease:             END / END virus / Newcastle disease / END virus strain / paramyxovirus type-1 / the TX END / APMV-1 / exotic Newcastle disease virus (ENDV) / ENDV / exotic Newcastle disease virus / the TX El Paso END virus
+Victims:             backyard  fowl / 164 birds / backyard birds

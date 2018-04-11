@@ -5,8 +5,5 @@ Event:               outbreak
 Status:              possible
 Containment:         culling
 Country:             NETHERLANDS
-Disease:             avian  influenza [virus]
-                     the [avian  influenza] virus
-                     fowl plague
-                     the mild variant [avian influenza virus]
+Disease:             fowl plague / avian  influenza [virus] / the [avian  influenza] virus / the mild variant [avian influenza virus]
 Victims:             the affected birds

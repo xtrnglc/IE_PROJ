@@ -5,6 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             UNITED STATES
-Disease:             _Yersinia pestis_
-                     plague
+Disease:             plague / _Yersinia pestis_
 Victims:             a prairie dog population

@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             UNITED KINGDOM
-Disease:             vCJD
-                     mad cow disease [variant  Creutzfeldt-Jakob disease or vCJD]
-                     the fatal brain wasting disease
+Disease:             mad cow disease [variant  Creutzfeldt-Jakob disease or vCJD] / vCJD / the fatal brain wasting disease
 Victims:             3 men

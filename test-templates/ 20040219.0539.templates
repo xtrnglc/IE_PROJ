@@ -5,9 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         other
 Country:             RUSSIA
-Disease:             the anthrax  situation
-                     anthrax spores
-                     positively  identified anthrax spores
-                     anthrax
-Victims:             105 anthrax-infected cattle graveyards
-                     105 cattle graveyards
+Disease:             anthrax spores / anthrax / positively  identified anthrax spores / the anthrax  situation
+Victims:             105 cattle graveyards / 105 anthrax-infected cattle graveyards

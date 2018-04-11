@@ -6,9 +6,5 @@ Status:              confirmed
 Containment:         vaccine
                      other
 Country:             UNITED KINGDOM
-Disease:             salmonellae
-                     salmonellosis
-                     _Salmonella_
-                     egg-borne salmonellosis
-                     food poisoning
+Disease:             _Salmonella_ / food poisoning / salmonellae / salmonellosis / egg-borne salmonellosis
 Victims:             14 845 people

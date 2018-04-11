@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             CANADA
-Disease:             Severe Acute Respiratory Syndrome
-                     SARS
-Victims:             Canadian SARS patients
-                     the 10 patients
+Disease:             Severe Acute Respiratory Syndrome / SARS
+Victims:             the 10 patients / Canadian SARS patients

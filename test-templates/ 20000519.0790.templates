@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             FRANCE
-Disease:             _Rickettsia mongolotimonae_
-                     this rickettsia
-                     _R. mongolotimonae_
+Disease:             _Rickettsia mongolotimonae_ / this rickettsia / _R. mongolotimonae_
 Victims:             a second patient

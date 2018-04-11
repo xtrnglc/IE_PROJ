@@ -5,10 +5,5 @@ Event:               outbreak
 Status:              suspected
 Containment:         -----
 Country:             AUSTRALIA
-Disease:             bovine acute hepatopathy
-                     the toxin
-                     the fungus
-                     the fungal toxin
-                     A mystery pasture toxin
-                     bovine acute liver necrosis
+Disease:             A mystery pasture toxin / the fungal toxin / bovine acute hepatopathy / bovine acute liver necrosis / the toxin / the fungus
 Victims:             cattle

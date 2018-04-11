@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         vaccine
 Country:             AUSTRALIA
-Disease:             locally circulating measles virus
-                     Measles
-                     A measles outbreak
+Disease:             A measles outbreak / Measles / locally circulating measles virus
 Victims:             9 cases

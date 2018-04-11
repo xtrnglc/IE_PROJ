@@ -5,19 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             UNITED KINGDOM
-Disease:             definite or probable vCJD
-                     variant CJD prions
-                     established vCJD disease
-                     Creutzfeldt-Jakob disease
-                     variant Creutzfeldt-Jakob disease
-                     CJD (new var.)
-                     vCJD incidence
-                     vCJD
-                     probable vCJD
-                     variant CJD
-                     a vCJD-like phenotype
-                     variant  Creutzfeldt-Jakob disease (vCJD)
-                     definite vCJD
-                     human vCJD
-Victims:             143
-                     definite or probable vCJD cases
+Disease:             Creutzfeldt-Jakob disease / variant Creutzfeldt-Jakob disease / vCJD / CJD (new var.) / variant CJD / definite vCJD / definite or probable vCJD / probable vCJD / vCJD incidence / variant CJD prions / a vCJD-like phenotype / variant  Creutzfeldt-Jakob disease (vCJD) / established vCJD disease / human vCJD
+Victims:             143 / definite or probable vCJD cases

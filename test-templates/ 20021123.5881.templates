@@ -5,11 +5,6 @@ Event:               outbreak
 Status:              confirmed
 Containment:         other
 Country:             AUSTRALIA
-Disease:             _P.vivax_ malaria
-                     _Pl. vivax_
-                     malaria
-                     _Plasmodium vivax_ malaria
-                     _Pl. vivax_ infection
+Disease:             _P.vivax_ malaria / _Plasmodium vivax_ malaria / malaria / _Pl. vivax_ infection / _Pl. vivax_
 Victims:             The individual
-                     10 people
-                     tourists
+                     10 people / tourists

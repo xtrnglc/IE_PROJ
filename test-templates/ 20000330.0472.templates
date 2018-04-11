@@ -5,10 +5,6 @@ Event:               outbreak
 Status:              suspected
 Containment:         other
 Country:             UNITED KINGDOM
-Disease:             nvCJD
-                     vCJD
-                     Variant CJD (nvCJD)
-                     CJD
-Victims:             A mother
-                     this patient
+Disease:             Variant CJD (nvCJD) / CJD / nvCJD / vCJD
+Victims:             A mother / this patient
                      The child

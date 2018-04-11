@@ -5,8 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             KAZAKSTAN
-Disease:             louse-borne classical typhus
-                     typhus
-                     _Rickettsia prowazekii_
-Victims:             The 18 children
-                     18 cases
+Disease:             louse-borne classical typhus / _Rickettsia prowazekii_ / typhus
+Victims:             18 cases / The 18 children

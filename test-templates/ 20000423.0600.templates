@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         other
 Country:             UNITED KINGDOM
-Disease:             oocysts
-                     cryptosporidial oocysts
-                     cryptosporidiosis
+Disease:             cryptosporidiosis / cryptosporidial oocysts / oocysts
 Victims:             -----

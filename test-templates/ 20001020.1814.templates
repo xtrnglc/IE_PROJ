@@ -5,8 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         quarantine
 Country:             UGANDA
-Disease:             Ebola virus
-                     EHF
-                     Ebola haemorrhagic fever (EHF)
-                     Ebola haemorrhagic Fever
+Disease:             Ebola haemorrhagic Fever / Ebola haemorrhagic fever (EHF) / EHF / Ebola virus
 Victims:             122 cases

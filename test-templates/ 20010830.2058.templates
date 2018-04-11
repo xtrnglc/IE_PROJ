@@ -5,12 +5,5 @@ Event:               outbreak
 Status:              suspected
 Containment:         -----
 Country:             SRI LANKA
-Disease:             endemic typhus
-                     typhus
-                     a febrile disease
-                     _Rickettsia mooseri_
-                     _Rickettsia typhi_
-                     typhus fever
-Victims:             children
-                     83 cases
-                     Eighty-three cases
+Disease:             a febrile disease / endemic typhus / typhus / _Rickettsia mooseri_ / _Rickettsia typhi_ / typhus fever
+Victims:             Eighty-three cases / children / 83 cases

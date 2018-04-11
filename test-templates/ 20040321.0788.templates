@@ -5,8 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             CHAD
-Disease:             poliomyelitis
-                     wild polio virus
-                     wild poliovirus
-                     polio
+Disease:             wild polio virus / poliomyelitis / polio / wild poliovirus
 Victims:             24 cases

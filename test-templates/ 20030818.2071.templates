@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              suspected
 Containment:         -----
 Country:             UNITED STATES
-Disease:             diarrheal illnesses
-                     gastrointestinal illness
-                     Food-Borne Illnesses
+Disease:             gastrointestinal illness / diarrheal illnesses / Food-Borne Illnesses
 Victims:             a higher-than-usual number

@@ -5,11 +5,6 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             BRAZIL
-Disease:             the protozoan _Leishmania_ spp
-                     Leishmania
-                     _L.chagasi_
-                     human visceral leishmaniasis
-                     leishmaniasis
-                     visceral leishmaniasis
+Disease:             human visceral leishmaniasis / visceral leishmaniasis / leishmaniasis / the protozoan _Leishmania_ spp / _L.chagasi_ / Leishmania
 Victims:             43 cases
                      an adult male

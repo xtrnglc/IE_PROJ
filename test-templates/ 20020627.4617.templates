@@ -5,9 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         vaccine
 Country:             ITALY
-Disease:             the measles outbreak
-                     a measles epidemic
-                     measles
-Victims:             children
-                     approximately 1600 cases per 100 000 population
-                     more than 15 000 cases
+Disease:             the measles outbreak / a measles epidemic / measles
+Victims:             approximately 1600 cases per 100 000 population / more than 15 000 cases / children

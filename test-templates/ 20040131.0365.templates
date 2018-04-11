@@ -5,8 +5,6 @@ Event:               outbreak
 Status:              confirmed
 Containment:         -----
 Country:             CHINA
-Disease:             SARS-CoV
-                     SARS
-                     the SARS coronavirus  (SARS-CoV)
+Disease:             the SARS coronavirus  (SARS-CoV) / SARS / SARS-CoV
 Victims:             305 cases
                      apparently "sporadic" cases

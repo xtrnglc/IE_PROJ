@@ -97,33 +97,33 @@ public class nerTrainer {
 				if(keyVictimWords.contains(s.word(i))) {
 					if(s.word(i).equals("the")) {
 						if(keyVictimWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	VIC\n";
+							outputString += s.word(i) + "	B-VIC\n";
 						}
 					} 
 					else if(s.word(i).equals("and")) {
 						if(keyVictimWords.contains(s.word(i+1)) && keyVictimWords.contains(s.word(i-1))) {
-							outputString += s.word(i) + "	VIC\n";
+							outputString += s.word(i) + "	I-VIC\n";
 						}
 					}
 					else if(s.word(i).equals("at")) {
 						if(keyVictimWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	VIC\n";
+							outputString += s.word(i) + "	I-VIC\n";
 						}
 					}
 					else if(s.word(i).equals("other")) {
 						if(keyVictimWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	VIC\n";
+							outputString += s.word(i) + "	I-VIC\n";
 						}
 					}
 					else {
-						outputString += s.word(i) + "	VIC\n";
+						outputString += s.word(i) + "	B-VIC\n";
 					}
 				} 
 				else if(s.word(i).contains("polio") || s.word(i).contains("Polio") ) {
-					outputString += s.word(i) + "	DIS\n";
+					outputString += s.word(i) + "	B-DIS\n";
 				}
 				else if(s.word(i).contains("Herpes") || s.word(i).contains("herpes") ) {
-					outputString += s.word(i) + "	DIS\n";
+					outputString += s.word(i) + "	B-DIS\n";
 				}
 				
 				else if(keyDiseaseWords.contains(s.word(i))) {

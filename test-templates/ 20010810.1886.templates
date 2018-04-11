@@ -5,7 +5,5 @@ Event:               outbreak
 Status:              confirmed
 Containment:         other
 Country:             UNITED STATES
-Disease:             _Vibrio vulnificus_ illnesses
-                     _Vibrio vulnificus_ bacteria
-                     the _Vibrio vulnificus_ infection
+Disease:             the _Vibrio vulnificus_ infection / _Vibrio vulnificus_ bacteria / _Vibrio vulnificus_ illnesses
 Victims:             the 5 patients

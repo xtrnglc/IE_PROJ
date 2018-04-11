@@ -482,6 +482,9 @@ public class Driver {
 			{
 			System.out.println("          ANSWER KEY\n");
 			}
+			if(a.story.equals("20040212.0474")) {
+				System.out.println("here");
+			}
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
 					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
