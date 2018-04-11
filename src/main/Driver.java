@@ -50,12 +50,14 @@ public class Driver {
 	public static Scanner scanner = new Scanner(System.in);
 	public static AbstractSequenceClassifier<CoreLabel> classifier;
 	boolean singleFile;
+	static Containment containment;
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
 	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException,
 			ClassCastException, ClassNotFoundException {
 		RedwoodConfiguration.current().clear().apply();
+		containment = new Containment();
 		printPrompt(true);
 	}
 
@@ -461,8 +463,9 @@ public class Driver {
 				// }
 			}
 			a.disease = diseases;
-			a.containment = new HashSet<String>();
-			a.containment.add(getContainment(text, a.story));
+			//a.containment = new HashSet<String>();
+			//a.containment.add(getContainment(text, a.story));
+			a.containment = containment.getContainment(text);
 			a.victim = victims;
 			output_templates.put(a.story, a);
 
