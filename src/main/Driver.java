@@ -8,11 +8,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
@@ -53,12 +56,14 @@ public class Driver {
 	static Containment containment;
 
 	public static HashSet<String> countriesList = new HashSet<String>();
+	public static HashMap<String, ArrayList<String>> citiesCountriesList = new HashMap<String, ArrayList<String>>();
 
 	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException,
 			ClassCastException, ClassNotFoundException {
 		RedwoodConfiguration.current().clear().apply();
 		containment = new Containment();
 		printPrompt(true);
+		parseSeeds();
 	}
 
 	public static void printPrompt(boolean firstTime) throws FileNotFoundException, IOException, InterruptedException,
@@ -132,7 +137,7 @@ public class Driver {
 				System.exit(1);
 			}
 
-			File file = new File("data/test-set-docs/" + listOfDevFiles[index-1].getName());
+			File file = new File("data/test-set-docs/" + listOfDevFiles[index - 1].getName());
 
 			if (!editingAFile) {
 				System.out.println("Input received. Loading...");
@@ -183,12 +188,33 @@ public class Driver {
 	}
 
 	public static void parseSeeds() throws FileNotFoundException, IOException {
+		/** PHASE TWO STUFF **/
 		File countriesFile = new File("countries.txt");
 
 		try (BufferedReader br = new BufferedReader(new FileReader(countriesFile))) {
 			String line;
 			while ((line = br.readLine()) != null) {
 				countriesList.add(line);
+			}
+		}
+
+		/** PHASE THREE STUFF **/
+		File file = new File("cities.csv");
+		List<String> lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+		for (String line : lines) {
+			String[] array = line.split(",");
+			String country = array[5].replaceAll("\"", "");
+			String city = array[10].replaceAll("\"", "");
+			if (!city.isEmpty() && city.length() > 5) {
+				ArrayList<String> cities = citiesCountriesList.get(country);
+				if (cities == null) {
+					cities = new ArrayList<String>();
+					cities.add(city);
+					citiesCountriesList.put(country, cities);
+				} else {
+					cities.add(city);
+					citiesCountriesList.put(country, cities);
+				}
 			}
 		}
 	}
@@ -243,22 +269,22 @@ public class Driver {
 						String v = line.substring(21);
 
 						a.containment.add(v.trim());
-						
+
 						prev = "Containment";
 					}
 					if (split[0].equals("Disease")) {
 						a.disease = new HashSet<String>();
 						String v = line.substring(21);
-						
+
 						a.disease.add(v.trim());
-						
+
 						prev = "Disease";
 					}
 					if (split[0].equals("Victims")) {
 						a.victim = new HashSet<String>();
 						String v = line.substring(21);
 						a.victim.add(v.trim());
-						
+
 						prev = "Victim";
 					}
 				} else {
@@ -355,6 +381,15 @@ public class Driver {
 
 	public static String getCountry(String text) {
 		String country = null;
+
+		for (Entry<String, ArrayList<String>> entry : citiesCountriesList.entrySet()) {
+			for (String city : entry.getValue()) {
+				if (text.contains(city)) {
+					return entry.getKey().toUpperCase();
+				}
+			}
+		}
+
 		HashSet<String> c = countriesList;
 		for (String s : c) {
 			if (text.contains(s)) {
@@ -463,8 +498,8 @@ public class Driver {
 				// }
 			}
 			a.disease = diseases;
-			//a.containment = new HashSet<String>();
-			//a.containment.add(getContainment(text, a.story));
+			// a.containment = new HashSet<String>();
+			// a.containment.add(getContainment(text, a.story));
 			a.containment = containment.getContainment(text);
 			a.victim = victims;
 			output_templates.put(a.story, a);
@@ -477,15 +512,13 @@ public class Driver {
 					a.victim);
 
 			Article goldAnswer = ans_templates.get(a.story);
-			if (editingAFile)
-			{
+			if (editingAFile) {
 				System.out.println("          ORIGINAL ANSWER KEY\n");
 
-			} else
-			{
-			System.out.println("          ANSWER KEY\n");
+			} else {
+				System.out.println("          ANSWER KEY\n");
 			}
-			if(a.story.equals("20040212.0474")) {
+			if (a.story.equals("20040212.0474")) {
 				System.out.println("here");
 			}
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
