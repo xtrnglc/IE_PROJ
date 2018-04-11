@@ -3,6 +3,7 @@ package main;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -43,7 +44,8 @@ public class ScoringProgram {
 
 	public void printTotals() {
 
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+		System.out.println(
+				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 		System.out.println("          SCORES for ALL Templates\n");
 		DecimalFormat dec = new DecimalFormat("#0.00");
 		System.out.format("%-20s%-30s%-30s%-30s", "", "RECALL", "PRECISION", "F-MEASURE");
@@ -407,16 +409,14 @@ public class ScoringProgram {
 
 	public static int getNumerator(String input) {
 		String total = input.split("\\s+")[1];
-		String withoutParentheses = total.substring(1, total.length()-1);
-		return Integer
-				.parseInt(withoutParentheses.split("/")[0]);		
+		String withoutParentheses = total.substring(1, total.length() - 1);
+		return Integer.parseInt(withoutParentheses.split("/")[0]);
 	}
 
 	public static int getDenominator(String input) {
 		String total = input.split("\\s+")[1];
-		String withoutParentheses = total.substring(1, total.length()-1);
-		return Integer
-				.parseInt(withoutParentheses.split("/")[1]);
+		String withoutParentheses = total.substring(1, total.length() - 1);
+		return Integer.parseInt(withoutParentheses.split("/")[1]);
 	}
 
 	public static HashMap<String, String> calculateRecall(Article output, Article answer) {
@@ -449,7 +449,7 @@ public class ScoringProgram {
 		int containmentTrueCount = answer.containment.size();
 		int containmentLabeledCount = 0;
 		for (String s : output.containment) {
-			for(String ans : answer.containment) {
+			for (String ans : answer.containment) {
 				if (ans.contains(s)) {
 					containmentLabeledCount++;
 				}
@@ -459,20 +459,24 @@ public class ScoringProgram {
 		result.put("containment", dec.format(containmentRecall).toString() + " (" + containmentLabeledCount + "/"
 				+ containmentTrueCount + ")");
 
+		HashSet<String> victimAnswerSeen = new HashSet<String>();
 		int victimTrueCount = answer.victim.size();
 		int victimLabeledCount = 0;
 		for (String s : output.victim) {
-			for(String ans : answer.victim) {
+			for (String ans : answer.victim) {
 				if (ans.contains("/")) {
-					String[] split = ans.split("/");
-					for(String s1 : split) {
-						if(s1.trim().equals(s)){
-							victimLabeledCount++;
-							break;
+					if (!victimAnswerSeen.contains(ans)) {
+						String[] split = ans.split("/");
+						for (String s1 : split) {
+							if (s1.trim().equals(s)) {
+								victimLabeledCount++;
+								victimAnswerSeen.add(ans);
+								break;
+							}
 						}
 					}
 				} else {
-					if(ans.equals(s)){
+					if (ans.equals(s)) {
 						victimLabeledCount++;
 					}
 				}
@@ -481,21 +485,24 @@ public class ScoringProgram {
 		double victimRecall = (double) victimLabeledCount / victimTrueCount;
 		result.put("victim",
 				dec.format(victimRecall).toString() + " (" + victimLabeledCount + "/" + victimTrueCount + ")");
-
+		HashSet<String> diseaseAnswerSeen = new HashSet<String>();
 		int diseaseTrueCount = answer.disease.size();
 		int diseaseLabeledCount = 0;
 		for (String s : output.disease) {
-			for(String ans : answer.disease) {
+			for (String ans : answer.disease) {
 				if (ans.contains("/")) {
-					String[] split = ans.split("/");
-					for(String s1 : split) {
-						if(s1.trim().equals(s)){
-							diseaseLabeledCount++;
-							break;
+					if (!diseaseAnswerSeen.contains(ans)) {
+						String[] split = ans.split("/");
+						for (String s1 : split) {
+							if (s1.trim().equals(s)) {
+								diseaseLabeledCount++;
+								diseaseAnswerSeen.add(ans);
+								break;
+							}
 						}
 					}
 				} else {
-					if(ans.equals(s)){
+					if (ans.equals(s)) {
 						diseaseLabeledCount++;
 					}
 				}
@@ -555,14 +562,14 @@ public class ScoringProgram {
 		int containmentLabeledCount = 0;
 		int containmentCorrectlyLabeledCount = 0;
 		for (String s : output.containment) {
-			for(String ans : answer.containment) {
-				if(ans.contains(s)) {
+			for (String ans : answer.containment) {
+				if (ans.contains(s)) {
 					containmentCorrectlyLabeledCount++;
 				}
 			}
 			containmentLabeledCount++;
 		}
-		
+
 		double containmentPrecision = 0;
 		if (containmentLabeledCount > 0) {
 			containmentPrecision = (double) containmentCorrectlyLabeledCount / containmentLabeledCount;
@@ -572,26 +579,44 @@ public class ScoringProgram {
 
 		int victimLabeledCount = 0;
 		int victimCorrectlyLabeledCount = 0;
+
+		HashSet<String> victimSeen = new HashSet<String>();
+		victimSeen.add("");
 		for (String s : output.victim) {
-			for(String ans : answer.victim) {
+			for (String ans : answer.victim) {
 				if (ans.contains("/")) {
-					String[] split = ans.split("/");
-					for(String s1 : split) {
-						if(s1.trim().equals(s)){
-							victimCorrectlyLabeledCount++;
-							break;
+					if (!victimSeen.contains(ans)) {
+						String[] split = ans.split("/");
+						for (String s1 : split) {
+							if (s1.trim().equals(s)) {
+								victimCorrectlyLabeledCount++;
+								victimSeen.add(ans);
+								break;
+							}
 						}
 					}
 				} else {
-					if(ans.equals(s)){
+					if (ans.equals(s)) {
 						victimCorrectlyLabeledCount++;
+						break;
 					}
 				}
 			}
-			victimLabeledCount++;
+			boolean seenBefore = false;
+			for (String s1 : victimSeen) {
+				String[] split = s1.split("/");
+				for (String s2 : split) {
+					if (s2.trim().equals(s)) {
+						seenBefore = true;
+						break;
+					}
+				}
+			}
+			if (!seenBefore) {
+				victimLabeledCount++;
+			}
 		}
-	
-		
+
 		double victimPrecision = 0;
 		if (victimLabeledCount > 0) {
 			victimPrecision = (double) victimCorrectlyLabeledCount / victimLabeledCount;
@@ -601,23 +626,42 @@ public class ScoringProgram {
 
 		int diseaseLabeledCount = 0;
 		int diseaseCorrectlyLabeledCount = 0;
+
+		HashSet<String> diseaseSeen = new HashSet<String>();
+		diseaseSeen.add("");
 		for (String s : output.disease) {
-			for(String ans : answer.disease) {
+			for (String ans : answer.disease) {
 				if (ans.contains("/")) {
-					String[] split = ans.split("/");
-					for(String s1 : split) {
-						if(s1.trim().equals(s)){
-							diseaseCorrectlyLabeledCount++;
-							break;
+					if (!diseaseSeen.contains(ans)) {
+						String[] split = ans.split("/");
+						for (String s1 : split) {
+							if (s1.trim().equals(s)) {
+								diseaseCorrectlyLabeledCount++;
+								diseaseSeen.add(ans);
+								break;
+							}
 						}
 					}
 				} else {
-					if(ans.equals(s)){
+					if (ans.equals(s)) {
 						diseaseCorrectlyLabeledCount++;
+						break;
 					}
 				}
 			}
-			diseaseLabeledCount++;
+			boolean seenBefore = false;
+			for (String s1 : diseaseSeen) {
+				String[] split = s1.split("/");
+				for (String s2 : split) {
+					if (s2.trim().equals(s)) {
+						seenBefore = true;
+						break;
+					}
+				}
+			}
+			if (!seenBefore) {
+				diseaseLabeledCount++;
+			}
 		}
 		double diseasePrecision = 0;
 		if (diseaseLabeledCount > 0) {
