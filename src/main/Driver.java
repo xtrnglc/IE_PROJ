@@ -8,11 +8,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
@@ -52,6 +55,7 @@ public class Driver {
 	public static Scanner scanner = new Scanner(System.in);
 	public static AbstractSequenceClassifier<CoreLabel> classifier;
 	boolean singleFile;
+	public static HashMap<String, ArrayList<String>> citiesCountriesList = new HashMap<String, ArrayList<String>>();
 
 	public static HashSet<String> countriesList = new HashSet<String>();
 
@@ -188,16 +192,7 @@ public class Driver {
 		printPrompt(false);
 	}
 
-	public static void parseSeeds() throws FileNotFoundException, IOException {
-		File countriesFile = new File("countries.txt");
 
-		try (BufferedReader br = new BufferedReader(new FileReader(countriesFile))) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				countriesList.add(line);
-			}
-		}
-	}
 
 	public static Article parseAnswerFile(File file) throws FileNotFoundException, IOException {
 		// Story: 20030416.0928
@@ -361,6 +356,7 @@ public class Driver {
 
 	public static String getCountry(String text) {
 		String country = null;
+
 		HashSet<String> c = countriesList;
 		for (String s : c) {
 			if (text.contains(s)) {
@@ -392,6 +388,14 @@ public class Driver {
 			}
 			if (text.contains("U.K")) {
 				return "UNITED KINGDOM";
+			}
+		}
+
+		for (Entry<String, ArrayList<String>> entry : citiesCountriesList.entrySet()) {
+			for (String city : entry.getValue()) {
+				if (text.contains(city)) {
+					return entry.getKey().toUpperCase();
+				}
 			}
 		}
 
@@ -972,5 +976,37 @@ public class Driver {
 
 		return prediction;
 
+	}
+	
+	public static void parseSeeds() throws FileNotFoundException, IOException {
+		/** PHASE TWO STUFF **/
+		File countriesFile = new File("countries.txt");
+
+		try (BufferedReader br = new BufferedReader(new FileReader(countriesFile))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				countriesList.add(line);
+			}
+		}
+
+		/** PHASE THREE STUFF **/
+		File file = new File("cities.csv");
+		List<String> lines = Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+		for (String line : lines) {
+			String[] array = line.split(",");
+			String country = array[5].replaceAll("\"", "");
+			String city = array[10].replaceAll("\"", "");
+			if (!city.isEmpty() && city.length() > 5) {
+				ArrayList<String> cities = citiesCountriesList.get(country);
+				if (cities == null) {
+					cities = new ArrayList<String>();
+					cities.add(city);
+					citiesCountriesList.put(country, cities);
+				} else {
+					cities.add(city);
+					citiesCountriesList.put(country, cities);
+				}
+			}
+		}
 	}
 }
