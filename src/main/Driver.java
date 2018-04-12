@@ -166,22 +166,7 @@ public class Driver {
 		}
 	}
 
-	public static Article parseAnswerFile(File file) throws FileNotFoundException, IOException {
-		// Story: 20030416.0928
-		// ID: 1
-		// Date: May 16, 2003
-		// Event: outbreak
-		// Status: confirmed
-		// Containment: quarantine
-		// culling
-		// Country: ERITREA
-		// Disease: Contagious Bovine Pleuropneumonia / Mycoplasma mycoides subsp.
-		// mycoides SC (MmmSC)
-		// Victims: imported cattle
-		//
-		//
-		// Bytespans (Template 1): 443-476 1743-1789 2001-2017
-		Article a = new Article();
+	Article a = new Article();
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line;
 			String prev = "";
@@ -213,26 +198,25 @@ public class Driver {
 					if (split[0].equals("Containment")) {
 						a.containment = new HashSet<String>();
 
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.containment.add(s.trim());
-						}
+						String v = line.substring(21);
+
+						a.containment.add(v.trim());
+						
 						prev = "Containment";
 					}
 					if (split[0].equals("Disease")) {
 						a.disease = new HashSet<String>();
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.disease.add(s.trim());
-						}
+						String v = line.substring(21);
+						
+						a.disease.add(v.trim());
+						
 						prev = "Disease";
 					}
 					if (split[0].equals("Victims")) {
 						a.victim = new HashSet<String>();
-						String[] v = line.substring(21).split("/");
-						for (String s : v) {
-							a.victim.add(s.trim());
-						}
+						String v = line.substring(21);
+						a.victim.add(v.trim());
+						
 						prev = "Victim";
 					}
 				} else {
