@@ -46,6 +46,8 @@ public class Driver {
 	public static HashMap<String, String> perpOrgRules = new HashMap<String, String>();
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
+	public static HashMap<String, Integer> labels = new HashMap<String, Integer>();
+
 	public static ScoringProgram scoringProgram;
 	public static Scanner scanner = new Scanner(System.in);
 	public static AbstractSequenceClassifier<CoreLabel> classifier;
@@ -55,13 +57,24 @@ public class Driver {
 
 	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException,
 			ClassCastException, ClassNotFoundException {
+		labels.put("O", 0);
+		labels.put("B-VIC", 1);
+		labels.put("I-VIC", 2);
+		labels.put("B-DIS", 3);
+		labels.put("I-DIS", 4);
 		RedwoodConfiguration.current().clear().apply();
 		printPrompt(true);
 	}
+	
+	
 
 	public static void printPrompt(boolean firstTime) throws FileNotFoundException, IOException, InterruptedException,
 			ClassCastException, ClassNotFoundException {
+
 		if (firstTime) {
+			System.out.println("Loading...");
+
+			BagOfWordsGenerator.init();
 			System.out.println(
 					"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
 		} else {
@@ -75,7 +88,6 @@ public class Driver {
 		System.out.println();
 		System.out.println("Type 'q' to quit the program");
 
-		BagOfWordsGenerator.init();
 		// BagOfWordsGenerator.generateWordMappings();
 
 		int choice = -1;
@@ -483,7 +495,7 @@ public class Driver {
 			System.out.println("          ANSWER KEY\n");
 			}
 			if(a.story.equals("20040212.0474")) {
-				System.out.println("here");
+				//System.out.println("here");
 			}
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
 					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
@@ -909,13 +921,13 @@ public class Driver {
 	}
 
 	public static String executeCommand(String fileName, boolean containment) throws IOException {
-		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName;
+		String command = "./liblinear-1.93-mac/predict test-word-vectors/" + fileName;
 
 		if (containment) {
-			command += ".vector liblinear-1.93/containmentClassifier prediction";
+			command += ".vector liblinear-1.93-mac/containmentClassifier prediction";
 
 		} else {
-			command += ".vector liblinear-1.93/statusClassifier prediction";
+			command += ".vector liblinear-1.93-mac/statusClassifier prediction";
 
 		}
 		StringBuffer output = new StringBuffer();

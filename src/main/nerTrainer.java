@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,7 +20,12 @@ public class nerTrainer {
 	static String outputVictim = "";
 	static String output = "";
 	
+	public static HashMap<String, Integer> features = new HashMap<String, Integer>();
+	public static int f = 1;
+	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		boolean newNer = true;
+		
 		HashMap<String, File> answer_files = new HashMap<String, File>();
 		HashMap<String, File> text_files = new HashMap<String, File>();
 		File answer_folder = new File("./data/templates");
@@ -38,19 +44,120 @@ public class nerTrainer {
 			}
 		}
 		
-		for(Entry<String, File> s : text_files.entrySet()) {
-			generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+		
+		
+		if(!newNer) {
+			for(Entry<String, File> s : text_files.entrySet()) {
+				//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
+				generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
+				printWriter.write(output);
+				printWriter.close();
+			}
+		} else {
+			File featureFile = new File("nerTrainingFiles/features.tsv");
+			if(featureFile.exists() && !featureFile.isDirectory()) { 
+				populateFeatures(featureFile);
+			} else {
+				generateFeatures();
+				for(Entry<String, File> s : text_files.entrySet()) {
+					System.out.println(s.getKey());
+					getFeaturesFromFile(s.getValue());
+					printFeatures();
+				}
+			}
+			
+		}
+	
+		System.out.println("Done");
+	}
+	
+	public static void generateTrainingFV(File file, File answerFile) {
+		
+	}
+	
+	public static void populateFeatures(File file) throws FileNotFoundException, IOException {
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				String split[] = line.split("\t");
+				features.put(split[0], Integer.parseInt(split[1]));
+			}
+		} catch (FileNotFoundException e) {
+			
+		}
+	}
+	
+	public static void getFeaturesFromFile(File file) throws FileNotFoundException, IOException {
+		String text = "";
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				text += line +" ";
+			}
+		} catch (FileNotFoundException e) {
+			
 		}
 		
-		//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
+		Document d = new Document(text);
+		for (Sentence s : d.sentences()) {
+			for(int i = 0; i < s.words().size(); i++) {
+				String wordPrev = "prev-" + s.word(i);
+				String wordNext = "next-" + s.word(i);
+				String word = s.word(i);
+				
+				if(!features.containsKey(word)) {
+					features.put(word, f++);
+				}
+				if(!features.containsKey(wordPrev)) {
+					features.put(wordPrev, f++);
+				}
+				if(!features.containsKey(wordNext)) {
+					features.put(wordNext, f++);
+				}
+				
+				String posPrev = "prev-" + s.posTag(i);
+				String posNext = "next-" + s.posTag(i);
+				String pos = s.posTag(i);
+				
+				if(!features.containsKey(pos)) {
+					features.put(pos, f++);
+				}
+				if(!features.containsKey(posPrev)) {
+					features.put(posPrev, f++);
+				}
+				if(!features.containsKey(posNext)) {
+					features.put(posNext, f++);
+				}
+			}
+		}
+	}
+	
+	public static void printFeatures() throws FileNotFoundException, UnsupportedEncodingException {
+		String text = "";
+		for(Entry<String, Integer> s : features.entrySet()){
+			text += s.getKey() + "\t" + s.getValue() + "\n";
+		}
 		
-		
-		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
-		printWriter.write(output);
+		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/features.tsv", "UTF-8");
+		printWriter.write(text);
 		printWriter.close();
 		
-
-		System.out.println("Done");
+	}
+	
+	public static void generateFeatures() {
+		features.put("UNKPOS", f++);
+		features.put("UNK", f++);	
+		
+		features.put("prev-PHIPOS", f++);
+		features.put("next-OMEGAPOS", f++);
+		features.put("prev-UNKPOS", f++);
+		features.put("next-UNKPOS", f++);
+		
+		features.put("prev-PHI", f++);
+		features.put("next-OMEGA", f++);
+		features.put("prev-UNK", f++);
+		features.put("next-UNK", f++);
 	}
 	
 	public static HashSet<String> getKeyWords (HashSet<String> set) {
