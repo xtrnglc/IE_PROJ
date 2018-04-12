@@ -47,7 +47,7 @@ public class Driver {
 	public static HashMap<String, String> diseaseRules = new HashMap<String, String>();
 	public static HashMap<String, String> victimRules = new HashMap<String, String>();
 	public static HashMap<String, Integer> labels = new HashMap<String, Integer>();
-
+	public static Containment containment;
 	public static ScoringProgram scoringProgram;
 	public static Scanner scanner = new Scanner(System.in);
 	public static AbstractSequenceClassifier<CoreLabel> classifier;
@@ -57,11 +57,7 @@ public class Driver {
 
 	public static void main(String args[]) throws FileNotFoundException, IOException, InterruptedException,
 			ClassCastException, ClassNotFoundException {
-		labels.put("O", 0);
-		labels.put("B-VIC", 1);
-		labels.put("I-VIC", 2);
-		labels.put("B-DIS", 3);
-		labels.put("I-DIS", 4);
+		containment = new Containment();
 		RedwoodConfiguration.current().clear().apply();
 		printPrompt(true);
 	}
@@ -474,7 +470,7 @@ public class Driver {
 			}
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
-			a.containment.add(getContainment(text, a.story));
+			a.containment = containment.getContainment(text);
 			a.victim = victims;
 			output_templates.put(a.story, a);
 
