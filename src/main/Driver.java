@@ -903,7 +903,7 @@ public class Driver {
 	}
 	
 	public static ArrayList<String> executeCommand(String fileName) throws IOException {
-		String command = "./liblinear-1.93-mac/predict nerTestingFiles/" + fileName + ".tsv liblinear-1.93-mac/nerClassifier prediction";
+		String command = "./liblinear-1.93/predict nerTestingFiles/" + fileName + ".tsv liblinear-1.93/nerClassifier prediction";
 		ArrayList<String> predictions = new ArrayList<String>();
 	
 
@@ -946,13 +946,13 @@ public class Driver {
 	}
 
 	public static String executeCommand(String fileName, boolean containment) throws IOException {
-		String command = "./liblinear-1.93-mac/predict test-word-vectors/" + fileName;
+		String command = "./liblinear-1.93/predict test-word-vectors/" + fileName;
 
 		if (containment) {
-			command += ".vector liblinear-1.93-mac/containmentClassifier prediction";
+			command += ".vector liblinear-1.93/containmentClassifier prediction";
 
 		} else {
-			command += ".vector liblinear-1.93-mac/statusClassifier prediction";
+			command += ".vector liblinear-1.93/statusClassifier prediction";
 
 		}
 		StringBuffer output = new StringBuffer();

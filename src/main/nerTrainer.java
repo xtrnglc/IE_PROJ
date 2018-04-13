@@ -35,7 +35,7 @@ public class nerTrainer {
 	public static int f = 1;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		boolean newNer = false;
+		boolean newNer = true;
 		
 		init();
 		
