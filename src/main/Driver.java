@@ -442,16 +442,19 @@ public class Driver {
 			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
 			
+			for (Sentence s : d.sentences()) {
+				HashSet<String> victim = parseVictimRuleWithNER(s.text());
+				if (victim.size() > 0) {
+					victims.addAll(victim);
+				}
+			}
+			
 			HashMap<String, HashSet<String>> results = getVictimsAndDisease(file);
 			HashSet<String> disease = results.get("disease");
 			if (disease.size() > 0) {
 				diseases.addAll(disease);
 			}
 
-			HashSet<String> victim = results.get("victim");
-			if (victim.size() > 0) {
-				victims.addAll(victim);
-			}
 			
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
@@ -563,7 +566,7 @@ public class Driver {
 	}
 
 	public static void instantiateRules() throws ClassCastException, ClassNotFoundException, IOException {
-		String serializedClassifier = "model-files/train-ner-model.ser.gz";
+		String serializedClassifier = "model-files/victim-ner-model.ser.gz";
 		classifier = CRFClassifier.getClassifier(serializedClassifier);
 
 		diseaseRules.put("REPORT OF", "REPORT OF <DISEASE>");
@@ -1090,7 +1093,7 @@ public class Driver {
 		printWriter.write(output);
 		printWriter.close();
 		
-		results.put("victim", victims);
+		//results.put("victim", victims);
 		results.put("disease", diseases);
 		return results;
 	}
