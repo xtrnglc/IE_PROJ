@@ -846,7 +846,7 @@ public class nerTrainer {
 							outputString += s.word(i) + "	B-VIC\n";
 						}
 					} else {
-						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
+						outputString += s.word(i) + "	O\n";
 					}
 				//last word
 				} else if (i == s.words().size()-1) {
@@ -855,7 +855,7 @@ public class nerTrainer {
 							outputString += s.word(i) + "	I-VIC\n";
 						}
 					} else {
-						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
+						outputString += s.word(i) + "	O\n";
 					}
 				} 
 				//all other words
@@ -866,7 +866,7 @@ public class nerTrainer {
 					} else if(keyVictimWords.contains(s.word(i)) && keyVictimWords.contains(s.word(i+1))) {
 						outputString += s.word(i) + "	B-VIC\n";
 					} else {
-						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
+						outputString += s.word(i) + "	O\n";
 					}
 				}
 				
