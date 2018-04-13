@@ -52,13 +52,14 @@ public class nerTrainer {
 			
 			for(Entry<String, File> s : text_files.entrySet()) {
 				generateTrainingFV(s.getValue(), answer_files.get(s.getKey()));
-				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train_fv.tsv", "UTF-8");
-				printWriter.write(output);
-				printWriter.close();
-				PrintWriter printWriter2 = new PrintWriter("nerTrainingFiles/Train_fv.words.tsv", "UTF-8");
-				printWriter2.write(output2);
-				printWriter2.close();
+				
 			}
+			PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train_fv.tsv", "UTF-8");
+			printWriter.write(output);
+			printWriter.close();
+			PrintWriter printWriter2 = new PrintWriter("nerTrainingFiles/Train_fv.words.tsv", "UTF-8");
+			printWriter2.write(output2);
+			printWriter2.close();
 			
 		}
 	
@@ -94,7 +95,7 @@ public class nerTrainer {
 		} else {
 			generateFeatures();
 			for(Entry<String, File> s : text_files.entrySet()) {
-				System.out.println(s.getKey());
+				System.out.println("Getting features from " + s.getKey());
 				getFeaturesFromFile(s.getValue());
 				printFeatures();
 			}
@@ -302,10 +303,13 @@ public class nerTrainer {
 					if(i == 0) {
 						if(victimContains(keyVictimWords, s.word(i))) {
 							outputString += labels.get("B-VIC");
+							outputString2 += "B-VIC";
 						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
 							outputString += labels.get("B-DIS");
+							outputString2 += "B-DIS";
 						} else {
 							outputString += labels.get("O");
+							outputString2 += "O";
 						}
 						
 						//add previous and next word
@@ -352,17 +356,22 @@ public class nerTrainer {
 						if(victimContains(keyVictimWords, s.word(i))) {
 							if(victimContains(keyVictimWords, s.word(i-1))) {
 								outputString += labels.get("I-VIC");
+								outputString2 += "I-VIC";
 							} else {
 								outputString += labels.get("B-VIC");
+								outputString2 += "B-VIC";
 							}
 						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
 							if(diseaseContains(keyDiseaseWords, s.word(i-1))) {
 								outputString += labels.get("I-DIS");
+								outputString2 += "I-VIC";
 							} else {
 								outputString += labels.get("B-DIS");
+								outputString2 += "B-DIS";
 							}
 						} else {
 							outputString += labels.get("O");
+							outputString2 += "O";
 						}
 						
 						
@@ -403,45 +412,73 @@ public class nerTrainer {
 						String prevWord = s.word(i-1);
 						String nextWord = s.word(i+1);
 						if(victimContains(keyVictimWords, s.word(i))) {
-							if(word.equals("and") || word.equals("or") || word.equals("at") || word.equals("other")) {
-								if(victimContains(keyVictimWords, s.word(i+1))) {
+							if(victimContains(keyVictimWords, s.word(i+1))) {
+								if(word.equals("and") || word.equals("or") || word.equals("at") || word.equals("other") || word.equals("a") || word.equals("an")){
 									if(s.word(i+1).equals("other")) {
 										outputString += labels.get("O");
+										outputString2 += "O";
 									} else {
-										outputString += labels.get("I-VIC");
+										if(victimContains(keyVictimWords, s.word(i-1))) {
+											outputString += labels.get("I-VIC");
+											outputString2 += "I-VIC";	
+										} else {
+											outputString += labels.get("B-VIC");
+											outputString2 += "B-VIC";
+										}
 									}
 								} else {
-									outputString += labels.get("O");
+									if(victimContains(keyVictimWords, s.word(i-1))) {
+										outputString += labels.get("I-VIC");
+										outputString2 += "I-VIC";	
+									} else {
+										outputString += labels.get("B-VIC");
+										outputString2 += "B-VIC";
+									}
 								}
 							} else if(victimContains(keyVictimWords, s.word(i-1))) {
-								outputString += labels.get("I-VIC");	
+								outputString += labels.get("I-VIC");
+								outputString2 += "I-VIC";
 							}  else {
-								outputString += labels.get("O");
+								if(word.equals("the") || word.equals("and") || word.equals("or") || word.equals("at") || word.equals("other") || word.equals("a") || word.equals("an")){
+									outputString += labels.get("O");
+									outputString2 += "O";
+								} else {
+									outputString += labels.get("B-VIC");
+									outputString2 += "B-VIC";
+								}
+								
 							}
 						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
 							if(diseaseContains(keyDiseaseWords, s.word(i-1))) {
-								if(word.equals("the") || word.equals("The")) {
+								if(word.equals("the") || word.equals("The") || word.equals("in")) {
 									if(diseaseContains(keyDiseaseWords, s.word(i+1))) {
 										outputString += labels.get("I-DIS");
+										outputString2 += "I-DIS";
 									} else {
 										outputString += labels.get("O");
+										outputString2 += "O";
 									}
 								} else {
 									outputString += labels.get("I-DIS");
+									outputString2 += "I-DIS";
 								}
 							} else {
-								if(word.equals("the") || word.equals("The")) {
+								if(word.equals("the") || word.equals("The") || word.equals("in") || word.equals("a") || word.equals("an")) {
 									if(diseaseContains(keyDiseaseWords, s.word(i+1))) {
 										outputString += labels.get("B-DIS");
+										outputString2 += "B-DIS";
 									} else {
 										outputString += labels.get("O");
+										outputString2 += "O";
 									}
 								} else {
 									outputString += labels.get("B-DIS");
+									outputString2 += "B-DIS";
 								}		
 							}
 						} else {
 							outputString += labels.get("O");
+							outputString2 += "O";
 						}
 						
 						
@@ -496,7 +533,7 @@ public class nerTrainer {
 						outputString2 += " " + j + ":1";
 					}
 					outputString += "\n";
-					outputString2 = outputString + " " +  word + "\n";
+					outputString2 += " " +  word + "\n";
 				}
 			}
 		}

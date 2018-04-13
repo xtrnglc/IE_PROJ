@@ -437,7 +437,6 @@ public class Driver {
 			a.event = getEvent();
 			a.date = getDate(a.story);
 			
-			System.out.println("Evaluating " + a.story);
 
 			HashSet<String> diseases = new HashSet<String>();
 			HashSet<String> victims = new HashSet<String>();
@@ -476,9 +475,7 @@ public class Driver {
 			{
 			System.out.println("          ANSWER KEY\n");
 			}
-			if(a.story.equals("20040212.0474")) {
-				//System.out.println("here");
-			}
+
 			printTemplate(goldAnswer.story, goldAnswer.story, goldAnswer.id, goldAnswer.date, goldAnswer.event,
 					goldAnswer.status, goldAnswer.containment, goldAnswer.country, goldAnswer.disease,
 					goldAnswer.victim);
@@ -1003,22 +1000,18 @@ public class Driver {
 
 	}
 	
-	public static HashMap<String, HashSet<String>> getVictimsAndDisease(File f) {
+	public static HashMap<String, HashSet<String>> getVictimsAndDisease(File f) throws FileNotFoundException, UnsupportedEncodingException {
 		HashMap<String, HashSet<String>> results = new HashMap<String, HashSet<String>>();
 		HashSet<String> victims = new HashSet<String>();
 		HashSet<String> diseases = new HashSet<String>();
 		ArrayList<String> predictions = new ArrayList<String>();
 		ArrayList<String> words = new ArrayList<String>();
-		
-		if(f.getName().contains("20030412.0890")) {
-			System.out.println("");
-		}
+		String output = "";
 		
 		try {
 			String fv = nerTrainer.generateTestingFV(f);
 			
 			predictions = executeCommand(f.getName());
-			
 			String victim = "";
 			String disease = "";
 			String wordFile = "nerTestingFiles/" + f.getName() + "words.tsv";
@@ -1046,6 +1039,7 @@ public class Driver {
 //				labels.put("I-DIS", 4);
 				
 				for(int i = 0; i < predictions.size(); i++) {
+					output += words.get(i) + " " + predictions.get(i) + "\n";
 					if(predictions.get(i).equals("1")) {
 						if(disease.length() > 0) {
 							diseases.add(disease.trim());
@@ -1091,6 +1085,10 @@ public class Driver {
 		} catch(Exception e) {
 			 
 		}
+		
+		PrintWriter printWriter = new PrintWriter("nerTestingFiles/" + f.getName() + ".predictions.tsv", "UTF-8");
+		printWriter.write(output);
+		printWriter.close();
 		
 		results.put("victim", victims);
 		results.put("disease", diseases);
