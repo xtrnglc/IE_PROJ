@@ -8,9 +8,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
 
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
@@ -19,15 +26,53 @@ public class nerTrainer {
 	static String outputDisease = "";
 	static String outputVictim = "";
 	static String output = "";
+	static String output2 = "";
 	
 	public static HashMap<String, Integer> features = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> labels = new HashMap<String,Integer>();
+	static HashMap<String, File> answer_files = new HashMap<String, File>();
+	static HashMap<String, File> text_files = new HashMap<String, File>();
 	public static int f = 1;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		boolean newNer = true;
 		
-		HashMap<String, File> answer_files = new HashMap<String, File>();
-		HashMap<String, File> text_files = new HashMap<String, File>();
+		init();
+		
+		
+		
+		if(!newNer) {
+			for(Entry<String, File> s : text_files.entrySet()) {
+				generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
+				printWriter.write(output);
+				printWriter.close();
+			}
+		} else {
+			
+			for(Entry<String, File> s : text_files.entrySet()) {
+				generateTrainingFV(s.getValue(), answer_files.get(s.getKey()));
+				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train_fv.tsv", "UTF-8");
+				printWriter.write(output);
+				printWriter.close();
+				PrintWriter printWriter2 = new PrintWriter("nerTrainingFiles/Train_fv.words.tsv", "UTF-8");
+				printWriter2.write(output2);
+				printWriter2.close();
+			}
+			
+		}
+	
+		System.out.println("Done");
+	}
+	
+	public static void init() throws FileNotFoundException, IOException {
+		labels.put("O", 0);
+		labels.put("B-VIC", 1);
+		labels.put("I-VIC", 2);
+		labels.put("B-DIS", 3);
+		labels.put("I-DIS", 4);
+		
+		
 		File answer_folder = new File("./data/templates");
 		File text_folder = new File("./data/labeled-docs");
 		File[] listOfAnswerFolders = answer_folder.listFiles();
@@ -43,36 +88,467 @@ public class nerTrainer {
 				text_files.put(file.getName(), file);
 			}
 		}
-		
-		
-		
-		if(!newNer) {
-			for(Entry<String, File> s : text_files.entrySet()) {
-				//generateTrainingFile(text_files.get("20020415.3958.maintext"), answer_files.get("20020415.3958.maintext"));
-				generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
-				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
-				printWriter.write(output);
-				printWriter.close();
-			}
+		File featureFile = new File("nerTrainingFiles/features.tsv");
+		if(featureFile.exists() && !featureFile.isDirectory()) { 
+			populateFeatures(featureFile);
 		} else {
-			File featureFile = new File("nerTrainingFiles/features.tsv");
-			if(featureFile.exists() && !featureFile.isDirectory()) { 
-				populateFeatures(featureFile);
-			} else {
-				generateFeatures();
-				for(Entry<String, File> s : text_files.entrySet()) {
-					System.out.println(s.getKey());
-					getFeaturesFromFile(s.getValue());
-					printFeatures();
+			generateFeatures();
+			for(Entry<String, File> s : text_files.entrySet()) {
+				System.out.println(s.getKey());
+				getFeaturesFromFile(s.getValue());
+				printFeatures();
+			}
+		}
+		
+	}
+ 	
+	public static String generateTestingFV(File file) throws IOException {
+		String outputString = "";
+		String outputString2 = "";
+		String text = "";
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				text += line +" ";
+			}
+		} catch (FileNotFoundException e) {
+			System.exit(0);
+		}
+		
+		Document d = new Document(text);
+		for (Sentence s : d.sentences()) {
+			if(s.length() > 3) {
+				for(int i = 0; i < s.words().size(); i++) {
+					ArrayList<Integer> fv = new ArrayList<Integer>();
+					String word = s.word(i);
+					outputString2 += word;
+					//System.out.println(word);
+					if(i == 0) {
+						outputString += labels.get("O");
+						
+						//add previous and next word
+						fv.add(features.get("prev-PHI"));
+						try{
+							if(features.containsKey(s.word(i+1))) {
+								fv.add(features.get("next-" + s.word(i+1)));
+							} else {
+								fv.add(features.get("next-UNK"));
+							}
+						} catch(Exception e) {
+							System.out.println("");
+						}
+						
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						fv.add(features.get("prev-PHIPOS"));
+						if(features.containsKey(s.posTag(i+1))) {
+							fv.add(features.get("next-" + s.posTag(i+1)));
+						} else {
+							fv.add(features.get("next-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+						
+					}
+					else if(i == s.words().size()-1) {
+						outputString += labels.get("O");
+						
+						//add previous and next word
+						fv.add(features.get("next-OMEGA"));
+						if(features.containsKey(s.word(i-1))) {
+							fv.add(features.get("prev-" + s.word(i-1)));
+						} else {
+							fv.add(features.get("prev-UNK"));
+						}
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						fv.add(features.get("next-OMEGAPOS"));
+						if(features.containsKey(s.posTag(i-1))) {
+							fv.add(features.get("prev-" + s.posTag(i-1)));
+						} else {
+							fv.add(features.get("prev-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+					} else {
+						String prevWord = s.word(i-1);
+						String nextWord = s.word(i+1);
+						
+						outputString += labels.get("O");
+
+						//add previous and next word
+						if(features.containsKey(s.word(i+1))) {
+							fv.add(features.get("next-" + s.word(i+1)));
+						} else {
+							fv.add(features.get("next-UNK"));
+						}
+						if(features.containsKey(s.word(i-1))) {
+							fv.add(features.get("prev-" + s.word(i-1)));
+						} else {
+							fv.add(features.get("prev-UNK"));
+						}
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						if(features.containsKey(s.posTag(i+1))) {
+							fv.add(features.get("next-" + s.posTag(i+1)));
+						} else {
+							fv.add(features.get("next-UNKPOS"));
+						}
+						if(features.containsKey(s.posTag(i-1))) {
+							fv.add(features.get("prev-" + s.posTag(i-1)));
+						} else {
+							fv.add(features.get("prev-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+					}
+					
+					Collections.sort(fv);
+					List<Integer> sortedUniqueFV = fv.stream().distinct().collect(Collectors.toList());
+					for(int j : sortedUniqueFV) {
+						outputString += " " + j + ":1";
+						outputString2 += " " + j + ":1";
+					}
+					outputString2 += "\n";
+					outputString += "\n";
 				}
 			}
-			
 		}
-	
-		System.out.println("Done");
+		
+		PrintWriter printWriter = new PrintWriter("nerTestingFiles/" + file.getName() + ".tsv", "UTF-8");
+		printWriter.write(outputString);
+		printWriter.close();
+		
+		PrintWriter printWriter2 = new PrintWriter("nerTestingFiles/" + file.getName() + "words.tsv", "UTF-8");
+		printWriter2.write(outputString2);
+		printWriter2.close();
+		
+		return outputString;
 	}
 	
-	public static void generateTrainingFV(File file, File answerFile) {
+	public static void generateTrainingFV(File file, File answerFile) throws IOException {
+		String outputString = "";
+		String outputString2 = "";
+		String text = "";
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				text += line +" ";
+			}
+		} catch (FileNotFoundException e) {
+			
+		}
+		
+		Article answerArticle = Driver.parseAnswerFile(answerFile);
+		
+		HashSet<String> keyVictimWords = getKeyWords(answerArticle.victim);
+		HashSet<String> keyDiseaseWords = getKeyWords(answerArticle.disease);
+		System.out.println(file.getName());
+		Document d = new Document(text);
+		for (Sentence s : d.sentences()) {
+			if(s.length() > 3) {
+				for(int i = 0; i < s.words().size(); i++) {
+					ArrayList<Integer> fv = new ArrayList<Integer>();
+					String word = s.word(i);
+					//System.out.println(word);
+					if(i == 0) {
+						if(victimContains(keyVictimWords, s.word(i))) {
+							outputString += labels.get("B-VIC");
+						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
+							outputString += labels.get("B-DIS");
+						} else {
+							outputString += labels.get("O");
+						}
+						
+						//add previous and next word
+						fv.add(features.get("prev-PHI"));
+						try{
+							if(features.containsKey(s.word(i+1))) {
+								fv.add(features.get("next-" + s.word(i+1)));
+							} else {
+								fv.add(features.get("next-UNK"));
+							}
+						} catch(Exception e) {
+							System.out.println("");
+						}
+						
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						fv.add(features.get("prev-PHIPOS"));
+						if(features.containsKey(s.posTag(i+1))) {
+							fv.add(features.get("next-" + s.posTag(i+1)));
+						} else {
+							fv.add(features.get("next-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+						
+					}
+					else if(i == s.words().size()-1) {
+						if(victimContains(keyVictimWords, s.word(i))) {
+							if(victimContains(keyVictimWords, s.word(i-1))) {
+								outputString += labels.get("I-VIC");
+							} else {
+								outputString += labels.get("B-VIC");
+							}
+						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
+							if(diseaseContains(keyDiseaseWords, s.word(i-1))) {
+								outputString += labels.get("I-DIS");
+							} else {
+								outputString += labels.get("B-DIS");
+							}
+						} else {
+							outputString += labels.get("O");
+						}
+						
+						
+						//add previous and next word
+						fv.add(features.get("next-OMEGA"));
+						if(features.containsKey(s.word(i-1))) {
+							fv.add(features.get("prev-" + s.word(i-1)));
+						} else {
+							fv.add(features.get("prev-UNK"));
+						}
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						fv.add(features.get("next-OMEGAPOS"));
+						if(features.containsKey(s.posTag(i-1))) {
+							fv.add(features.get("prev-" + s.posTag(i-1)));
+						} else {
+							fv.add(features.get("prev-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+					} else {
+						String prevWord = s.word(i-1);
+						String nextWord = s.word(i+1);
+						if(victimContains(keyVictimWords, s.word(i))) {
+							if(word.equals("and") || word.equals("or") || word.equals("at") || word.equals("other")) {
+								if(victimContains(keyVictimWords, s.word(i+1))) {
+									if(s.word(i+1).equals("other")) {
+										outputString += labels.get("O");
+									} else {
+										outputString += labels.get("I-VIC");
+									}
+								} else {
+									outputString += labels.get("O");
+								}
+							} else if(victimContains(keyVictimWords, s.word(i-1))) {
+								outputString += labels.get("I-VIC");	
+							}  else {
+								outputString += labels.get("O");
+							}
+						} else if(diseaseContains(keyDiseaseWords, s.word(i))) {
+							if(diseaseContains(keyDiseaseWords, s.word(i-1))) {
+								if(word.equals("the") || word.equals("The")) {
+									if(diseaseContains(keyDiseaseWords, s.word(i+1))) {
+										outputString += labels.get("I-DIS");
+									} else {
+										outputString += labels.get("O");
+									}
+								} else {
+									outputString += labels.get("I-DIS");
+								}
+							} else {
+								if(word.equals("the") || word.equals("The")) {
+									if(diseaseContains(keyDiseaseWords, s.word(i+1))) {
+										outputString += labels.get("B-DIS");
+									} else {
+										outputString += labels.get("O");
+									}
+								} else {
+									outputString += labels.get("B-DIS");
+								}		
+							}
+						} else {
+							outputString += labels.get("O");
+						}
+						
+						
+						
+						//add previous and next word
+						if(features.containsKey(s.word(i+1))) {
+							fv.add(features.get("next-" + s.word(i+1)));
+						} else {
+							fv.add(features.get("next-UNK"));
+						}
+						if(features.containsKey(s.word(i-1))) {
+							fv.add(features.get("prev-" + s.word(i-1)));
+						} else {
+							fv.add(features.get("prev-UNK"));
+						}
+						
+						//add current word
+						if(features.containsKey(s.word(i))) {
+							fv.add(features.get(s.word(i)));
+						} else {
+							fv.add(features.get("UNK"));
+						}
+						
+						//add current pos
+						if(features.containsKey(s.posTag(i))) {
+							fv.add(features.get(s.posTag(i)));
+						} else {
+							fv.add(features.get("UNKPOS"));
+						}
+						
+						//add previous and next pos
+						if(features.containsKey(s.posTag(i+1))) {
+							fv.add(features.get("next-" + s.posTag(i+1)));
+						} else {
+							fv.add(features.get("next-UNKPOS"));
+						}
+						if(features.containsKey(s.posTag(i-1))) {
+							fv.add(features.get("prev-" + s.posTag(i-1)));
+						} else {
+							fv.add(features.get("prev-UNKPOS"));
+						}
+						
+						if(cap(s.word(i))) {
+							fv.add(features.get("caps"));
+						}
+					}
+					
+					Collections.sort(fv);
+					List<Integer> sortedUniqueFV = fv.stream().distinct().collect(Collectors.toList());
+					for(int j : sortedUniqueFV) {
+						outputString += " " + j + ":1";
+						outputString2 += " " + j + ":1";
+					}
+					outputString += "\n";
+					outputString2 = outputString + " " +  word + "\n";
+				}
+			}
+		}
+		
+		output += outputString;
+		output2 += outputString2;
+
+		
+		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/" + file.getName() + ".tsv", "UTF-8");
+		printWriter.write(outputString);
+		printWriter.close();
+		PrintWriter printWriter2 = new PrintWriter("nerTrainingFiles/" + file.getName() + ".words.tsv", "UTF-8");
+		printWriter2.write(outputString2);
+		printWriter2.close();
+		
+	}
+	
+	public static boolean diseaseContains(HashSet<String> keyDiseaseWords, String word) {
+		for(String s : keyDiseaseWords) {
+			if(s.contains("/")) {
+				String split[] = s.split("/");
+				for(String s1 : split) {
+					if(isContain(s1.trim(), word)) {
+						return true;
+					}
+				}
+			}
+			else if(isContain(s, word)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	public static boolean victimContains(HashSet<String> keyVictimWords, String word) {
+		for(String s : keyVictimWords) {
+			if(isContain(s, word)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private static boolean isContain(String source, String subItem) {
+		if(StringUtils.isAlphanumeric(subItem)) {
+			String pattern = "\\b" + subItem + "\\b";
+			Pattern p = Pattern.compile(pattern);
+			Matcher m = p.matcher(source);
+			return m.find();
+		}
+		return false;
 		
 	}
 	
@@ -158,6 +634,16 @@ public class nerTrainer {
 		features.put("next-OMEGA", f++);
 		features.put("prev-UNK", f++);
 		features.put("next-UNK", f++);
+		
+		features.put("caps", f++);
+	}
+	
+	public static boolean cap(String w) {
+		if(Character.isUpperCase(w.charAt(0))){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public static HashSet<String> getKeyWords (HashSet<String> set) {

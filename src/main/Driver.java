@@ -75,6 +75,7 @@ public class Driver {
 			System.out.println("Loading...");
 
 			BagOfWordsGenerator.init();
+			nerTrainer.init();
 			System.out.println(
 					"Hello! Welcome to the Disease Domain Information Extraction System! \nPlease select an option:\n");
 		} else {
@@ -435,43 +436,24 @@ public class Driver {
 			a.country = getCountry(text);
 			a.event = getEvent();
 			a.date = getDate(a.story);
+			
+			System.out.println("Evaluating " + a.story);
 
 			HashSet<String> diseases = new HashSet<String>();
 			HashSet<String> victims = new HashSet<String>();
 			Document d = new Document(text);
-			for (Sentence s : d.sentences()) {
-				// for (String s2 : diseaseRules.keySet()) {
-				// if (s.text().matches(".*\\b" + s2.toLowerCase() + "\\b.*")) {
-				// HashSet<String> w = parseDiseaseRule(diseaseRules.get(s2).toLowerCase(),
-				// s.text());
-				// // System.out.println(w);
-				// if (w != null) {
-				// diseases.addAll(w);
-				// }
-				// }
-				// }
-				HashSet<String> disease = parseDiseaseRuleWithNER(s.text());
-				if (disease.size() > 0) {
-					diseases.addAll(disease);
-				}
-
-				HashSet<String> victim = parseVictimRuleWithNER(s.text());
-				if (victim.size() > 0) {
-					victims.addAll(victim);
-				}
-
-				// for (String s2 : victimRules.keySet()) {
-				// if (s.text().matches(".*\\b" + s2 + "\\b.*")) {
-				// HashSet<String> w = parseDiseaseRule(victimRules.get(s2).toLowerCase(),
-				// s.text());
-				// // System.out.println(w);
-				// if (w != null) {
-				//
-				// victims.addAll(w);
-				// }
-				// }
-				// }
+			
+			HashMap<String, HashSet<String>> results = getVictimsAndDisease(file);
+			HashSet<String> disease = results.get("disease");
+			if (disease.size() > 0) {
+				diseases.addAll(disease);
 			}
+
+			HashSet<String> victim = results.get("victim");
+			if (victim.size() > 0) {
+				victims.addAll(victim);
+			}
+			
 			a.disease = diseases;
 			a.containment = new HashSet<String>();
 			a.containment = containment.getContainment(text);
@@ -919,6 +901,49 @@ public class Driver {
 		String prediction = executeCommand(fileName, false);
 		return prediction;
 	}
+	
+	public static ArrayList<String> executeCommand(String fileName) throws IOException {
+		String command = "./liblinear-1.93-mac/predict nerTestingFiles/" + fileName + ".tsv liblinear-1.93-mac/nerClassifier prediction";
+		ArrayList<String> predictions = new ArrayList<String>();
+	
+
+		StringBuffer output = new StringBuffer();
+
+		Process p;
+		try {
+			p = Runtime.getRuntime().exec(command);
+			p.waitFor();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				output.append(line + "\n");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		File f = new File("prediction");
+
+		if (f.exists() && !f.isDirectory()) {
+
+			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if (line.length() > 0) {
+						predictions.add(line.trim());
+					}
+
+				}
+			} catch (FileNotFoundException e) {
+
+			}
+		} else {
+			
+		}
+		return predictions;
+	}
 
 	public static String executeCommand(String fileName, boolean containment) throws IOException {
 		String command = "./liblinear-1.93-mac/predict test-word-vectors/" + fileName;
@@ -976,6 +1001,100 @@ public class Driver {
 
 		return prediction;
 
+	}
+	
+	public static HashMap<String, HashSet<String>> getVictimsAndDisease(File f) {
+		HashMap<String, HashSet<String>> results = new HashMap<String, HashSet<String>>();
+		HashSet<String> victims = new HashSet<String>();
+		HashSet<String> diseases = new HashSet<String>();
+		ArrayList<String> predictions = new ArrayList<String>();
+		ArrayList<String> words = new ArrayList<String>();
+		
+		if(f.getName().contains("20030412.0890")) {
+			System.out.println("");
+		}
+		
+		try {
+			String fv = nerTrainer.generateTestingFV(f);
+			
+			predictions = executeCommand(f.getName());
+			
+			String victim = "";
+			String disease = "";
+			String wordFile = "nerTestingFiles/" + f.getName() + "words.tsv";
+			File wf = new File(wordFile);
+
+			if (wf.exists() && !wf.isDirectory()) {
+
+				try (BufferedReader br = new BufferedReader(new FileReader(wf))) {
+					String line;
+					while ((line = br.readLine()) != null) {
+						if (line.length() > 0) {
+							String[] split = line.trim().split("\\s+");
+							words.add(split[0]);
+						}
+
+					}
+				} catch (FileNotFoundException e) {
+
+				}
+				
+//				labels.put("O", 0);
+//				labels.put("B-VIC", 1);
+//				labels.put("I-VIC", 2);
+//				labels.put("B-DIS", 3);
+//				labels.put("I-DIS", 4);
+				
+				for(int i = 0; i < predictions.size(); i++) {
+					if(predictions.get(i).equals("1")) {
+						if(disease.length() > 0) {
+							diseases.add(disease.trim());
+							disease = "";
+						}
+						victim += words.get(i);
+					} else if(predictions.get(i).equals("2")) {
+						if(disease.length() > 0) {
+							diseases.add(disease.trim());
+							disease = "";
+						}
+						victim += " " + words.get(i);
+					} else if(predictions.get(i).equals("3")) {
+						if(victim.length() > 0) {
+							victims.add(victim.trim());
+							victim = "";
+						}
+						disease += words.get(i);
+					} else if(predictions.get(i).equals("4")) {
+						if(victim.length() > 0) {
+							victims.add(victim.trim());
+							victim = "";
+						}
+						disease += " " + words.get(i);
+					} else {
+						if(victim.length() > 0) {
+							victims.add(victim.trim());
+							victim = "";
+						}
+						if(disease.length() > 0) {
+							diseases.add(disease.trim());
+							disease = "";
+						}
+					}
+				
+				}
+			} else {
+				
+			}
+			
+			
+			
+		} catch(Exception e) {
+			 
+		}
+		
+		results.put("victim", victims);
+		results.put("disease", diseases);
+		return results;
 	}
 	
 	public static void parseSeeds() throws FileNotFoundException, IOException {

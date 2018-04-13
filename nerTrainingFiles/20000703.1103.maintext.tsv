@@ -1,6348 +1,889 @@
-------------------------------------------------------	O
-.	O
-The	O
-following	O
-report	O
-summarizes	O
-West	B-DIS
-Nile	I-DIS
-virus	I-DIS
--LRB-	O
-WNV	B-DIS
--RRB-	O
-surveillance	O
-data	O
-reported	O
-to	O
-CDC	O
-through	O
-ArboNET	O
-verified	O
-by	O
-states	O
-jurisdictions	O
-as	O
-of	O
-Tue	O
-13	O
-Nov	O
-2001	O
-.	O
-During	O
-the	O
-week	O
-of	O
-Wed	O
-7	O
-to	O
-Tue	O
-13	O
-Nov	O
-2001	O
-,	O
-3	O
-human	B-VIC
-cases	I-VIC
-of	O
-WNV	B-DIS
-encephalitis	I-DIS
-or	I-DIS
-meningitis	I-DIS
-were	O
-reported	O
-from	O
-New	O
-York	O
--LRB-	O
-2	O
--RRB-	O
-Louisiana	O
--LRB-	O
-1	O
--RRB-	O
-.	O
-During	O
-the	O
-same	O
-period	O
-,	O
-WNV	B-DIS
-infections	I-DIS
-were	O
-reported	O
-in	O
-266	O
-crows	B-VIC
-,	O
-15	O
-other	I-VIC
-birds	I-VIC
-,	O
-6	O
-horses	B-VIC
-.	O
-A	O
-total	O
-of	O
-17	O
-WNV-positive	O
-mosquito	O
-pools	O
-was	O
-reported	O
-from	O
-2	O
-jurisdictions	O
--LRB-	O
-Pennsylvania	O
-District	O
-of	O
-Columbia	O
--RRB-	O
-.	O
-During	O
-2001	O
-,	O
-a	O
-total	O
-of	O
-45	B-VIC
-human	I-VIC
-cases	I-VIC
-of	O
-WNV	B-DIS
-encephalitis	I-DIS
-or	I-DIS
-meningitis	I-DIS
-has	O
-been	O
-reported	O
-from	O
-New	O
-York	O
--LRB-	O
-12	O
--RRB-	O
-,	O
-Florida	O
--LRB-	O
-10	O
--RRB-	O
-,	O
-Connecticut	O
--LRB-	O
-6	O
--RRB-	O
-,	O
-Maryland	O
--LRB-	O
-6	O
--RRB-	O
-,	O
-New	O
-Jersey	O
--LRB-	O
-6	O
--RRB-	O
-,	O
-Pennsylvania	O
--LRB-	O
-3	O
--RRB-	O
-,	O
-Georgia	O
--LRB-	O
-1	O
--RRB-	O
-,	O
-Louisiana	O
--LRB-	O
-1	O
--RRB-	O
-.	O
-Among	O
-these	O
-45	B-VIC
-cases	I-VIC
-,	O
-24	O
--LRB-	O
-53	O
-%	O
--RRB-	O
-were	O
-in	O
-men	O
-;	O
-the	O
-median	O
-age	O
-was	O
-70	O
-years	O
--LRB-	O
-range	O
-:	O
-36	O
-to	O
-90	O
-years	O
--RRB-	O
-;	O
-dates	O
-of	O
-illness	O
-onset	O
-ranged	O
-from	O
-13	O
-Jul	O
-to	O
-7	O
-Oct	O
-2001	O
-;	O
-three	O
-persons	O
-died	O
-.	O
-During	O
-2001	O
-,	O
-totals	O
-of	O
-4517	B-VIC
-crows	I-VIC
-and	I-VIC
-1474	I-VIC
-other	I-VIC
-birds	I-VIC
-with	O
-WNV	B-DIS
-infection	I-DIS
-were	O
-reported	O
-from	O
-26	O
-states	O
-the	O
-District	O
-of	O
-Columbia	O
-.	O
-During	O
-2001	O
-,	O
-176	O
-WNV	B-DIS
-infections	I-DIS
-in	O
-other	I-VIC
-animals	I-VIC
--LRB-	O
-all	B-VIC
-horses	I-VIC
--RRB-	O
-were	O
-reported	O
-from	O
-14	O
-states	O
--LRB-	O
-Alabama	O
-,	O
-Connecticut	O
-,	O
-Florida	O
-,	O
-Georgia	O
-,	O
-Indiana	O
-,	O
-Kentucky	O
-,	O
-Louisiana	O
-,	O
-Massachusetts	O
-,	O
-Mississippi	O
-,	O
-New	O
-York	O
-,	O
-North	O
-Carolina	O
-,	O
-Pennsylvania	O
-,	O
-Tennessee	O
-,	O
-Virginia	O
--RRB-	O
-.	O
-During	O
-2001	O
-,	O
-753	O
-WNV-positive	O
-mosquito	O
-pools	O
-were	O
-reported	O
-from	O
-15	O
-states	O
--LRB-	O
-Connecticut	O
-,	O
-Florida	O
-,	O
-Georgia	O
-,	O
-Illinois	O
-,	O
-Kentucky	O
-,	O
-Maryland	O
-,	O
-Massachusetts	O
-,	O
-Michigan	O
-,	O
-New	O
-Hampshire	O
-,	O
-New	O
-Jersey	O
-,	O
-New	O
-York	O
-,	O
-Ohio	O
-,	O
-Pennsylvania	O
-,	O
-Rhode	O
-Island	O
-,	O
-Virginia	O
--RRB-	O
-the	O
-District	O
-of	O
-Columbia	O
-.	O
-Additional	O
-information	O
-about	O
-WNV	B-DIS
-activity	O
-is	O
-available	O
-<	O
-http://www.cdc.gov/ncidod/dvbid/westnile/index.htm	O
->	O
-<	O
-http://cindi.usgs.gov/hazard/event/west_nile/west_nile.html	O
->	O
-.	O
--LSB-	O
-On	O
-Wed	O
-14	O
-Nov	O
-2001	O
-,	O
-2	O
-additional	O
-cases	B-VIC
-of	O
-human	B-VIC
-West	B-DIS
-Nile	I-DIS
-virus	I-DIS
-infection	I-DIS
-were	O
-reported	O
-from	O
-Massachusetts	O
--LRB-	O
-the	O
-first	O
-in	O
-that	O
-state	O
--RRB-	O
-bringing	O
-the	O
-total	O
-of	O
-human	B-VIC
-infections	B-DIS
-to	O
-at	I-VIC
-least	I-VIC
-47	I-VIC
-for	O
-the	O
-2001	O
-season	O
-.	O
-One	O
-of	O
-the	O
-two	O
-Massachusetts	O
-patients	O
-died	O
-,	O
-bringing	O
-the	O
-total	O
-number	O
-of	O
-deaths	O
-to	O
-4	O
-for	O
-the	O
-2001	O
-season	O
-according	O
-to	O
-the	O
-above	O
-figures	O
-.	O
-The	O
-above	O
-MMWR	O
-report	O
-still	O
-under-records	O
-the	O
-number	O
-of	O
-confirmed	O
-equine	O
-cases	B-VIC
-in	O
-2001	O
-.	O
-The	O
-most	O
-recent	O
-USDA-APHIS	O
-Report	O
-covering	O
-the	O
-period	O
-1	O
-Jan	O
-to	O
-31	O
-Oct	O
-2001	O
--LRB-	O
-see	O
-:	O
-West	B-DIS
-Nile	I-DIS
-virus	I-DIS
-surveillance	O
--LRB-30-RRB-20011105	O
-.2745	O
--RRB-	O
-lists	O
-344	O
-confirmed	O
-3	O
-probable	O
-cases	B-VIC
-of	O
-clinical	O
-West	B-DIS
-Nile	I-DIS
-virus	I-DIS
--LRB-	O
-WNV	B-DIS
--RRB-	O
-infection	B-DIS
-in	O
-horses	B-VIC
-from	O
-18	O
-States	O
-.	O
--	O
-Mod.CP	O
--RSB-	O
--LSB-	O
-Note	O
-that	O
-posting	O
-of	O
-this	O
-summary	O
-was	O
-delayed	O
-.	O
-An	O
-additional	O
-human	B-VIC
-death	O
-a	O
-horse	O
-death	O
-have	O
-been	O
-reported	O
-in	O
-the	O
-interim	O
--LRB-	O
-see	O
-ProMED-mail	O
-references	O
-cited	O
-above	O
--RRB-	O
-.	O
--	O
-Mod.ES	O
--RSB-	O
-...	O
-cp/es	O
---------------------------------------------------	O
-.	O
-An	O
-outbreak	O
-of	O
-what	O
-is	O
-suspected	O
-to	O
-be	O
-winter	O
-vomiting	O
-disease	O
-forced	O
-closure	O
-of	O
-Sunnybrook	O
-Hospital	O
-'s	O
-emergency	O
-department	O
-on	O
-Monday	O
-morning	O
-.	O
-Over	O
-weekend	O
-,	O
-a	O
-number	O
-of	O
-patients	O
-and	O
-staff	O
-were	O
-stricken	O
-by	O
-bouts	O
-of	O
-vomiting	O
-and	O
-diarrhea	O
-.	O
-By	O
-Monday	O
-afternoon	O
-25	O
-Nov	O
-2002	O
-,	O
-28	O
-staff	O
-members	O
-and	O
-13	O
-patients	O
-showed	O
-symptoms	O
-of	O
-the	B-DIS
-virus	I-DIS
-infection	O
-,	O
-which	O
-is	O
-highly	O
-contagious	O
-and	O
-spread	O
-through	O
-person-to-person	O
-contact	O
-.	O
-``	O
-We	O
-have	O
-n't	O
-determined	O
-what	O
-infection	O
-is	O
-yet	O
-.	O
-We	O
-suspect	O
-it	O
-to	O
-be	O
-a	O
-case	O
-of	O
-something	O
-called	O
-winter	O
-vomiting	O
-disease	O
-,	O
-''	O
-hospital	O
-spokesman	O
-Craig	O
-DuHamel	O
-said	O
-.	O
-``	O
-Obviously	O
-we	O
-have	O
-to	O
-be	O
-very	O
-vigilant	O
-to	O
-ensure	O
-this	O
-is	O
-contained	O
-in	O
-our	O
-emergency	O
-department	O
-.	O
-''	O
-The	O
-emergency	O
-department	O
-was	O
-expected	O
-to	O
-be	O
-closed	O
-until	O
-afternoon	O
-of	O
-Wed	O
-27	O
-Nov	O
-2002	O
-at	O
-least	O
-,	O
-DuHamel	O
-said	O
-,	O
-adding	O
-that	O
-cleaning	O
-crews	O
-were	O
-on	O
-scene	O
-with	O
-anti-viral	O
-agents	O
--LSB-	O
-disinfectants	O
-?	O
--RSB-	O
-.	O
-Patients	O
-walking	O
-into	O
-emergency	O
-were	O
-told	O
-about	O
-situation	O
-upon	O
-arrival	O
-and	O
-,	O
-if	O
-their	O
-condition	O
-was	O
-stable	O
-,	O
-asked	O
-to	O
-go	O
-to	O
-another	O
-hospital	O
-.	O
-Those	O
-who	O
-were	O
-unable	O
-to	O
-go	O
-to	O
-another	O
-facility	O
-would	O
-be	O
-treated	O
-,	O
-hospital	O
-said	O
-in	O
-a	O
-news	O
-release	O
-.	O
-Winter	O
-vomiting	O
-disease	O
-is	O
-an	O
-infection	O
-caused	O
-by	O
-a	O
-virus	B-DIS
-commonly	O
-transmitted	O
-from	O
-person	O
-to	O
-person	O
-in	O
-cold	O
-weather	O
-,	O
-when	O
-people	O
-are	O
-indoors	O
-more	O
-often	O
-and	O
-in	O
-closer	O
-contact	O
-.	O
-Symptoms	O
-include	O
-severe	O
-nausea	O
-and	O
-vomiting	O
-that	O
-can	O
-last	O
-between	O
-24	O
-and	O
-48	O
-hours	O
-.	O
-DuHamel	O
-said	O
-the	B-DIS
-virus	I-DIS
-is	O
-not	O
-life-threatening	O
-and	O
-is	O
-similar	O
-to	O
-the	B-DIS
-Norwalk	I-DIS
-virus	I-DIS
-,	O
-which	O
-has	O
-made	O
-headlines	O
-recently	O
-for	O
-sickening	O
-hundreds	B-VIC
-of	O
-passengers	B-VIC
-on	O
-Florida-based	O
-cruise	O
-ship	O
-Amsterdam	O
-.	O
--LSB-	O
-As	O
-has	O
-been	O
-repeatedly	O
-stated	O
-in	O
-ProMED-mail	O
-,	O
-``	O
-winter	O
-vomiting	O
-disease	O
-''	O
-is	O
-a	O
-misnomer	O
-.	O
-Outbreaks	O
-in	O
-UK	O
-and	O
-Ireland	O
-have	O
-occurred	O
-throughout	O
-year	O
-in	O
-hospitals	O
-,	O
-health	O
-care	O
-facilities	O
-,	O
-and	O
-schools	O
-.	O
-In	O
-North	O
-America	O
-outbreaks	O
-on	O
-cruise	O
-ships	O
-have	O
-occurred	O
-during	O
-voyages	O
-to	O
-Alaska	O
-in	O
-summer	O
-and	O
-to	O
-Caribbean	O
-destinations	O
-in	O
-winter	O
-.	O
-Density	O
-and	O
-hygiene	O
-considerations	O
-are	O
-probably	O
-relevant	O
-determining	O
-factors	O
-.	O
-Winter	O
-vomiting	O
-disease	O
-is	O
-caused	O
-by	O
-infection	O
-with	O
-a	O
-Norwalk-like	O
-virus	B-DIS
-,	O
-although	O
-this	O
-is	O
-seldom	O
-confirmed	O
-microbiologically	O
-.	O
-Norwalk-like	O
-viruses	O
-are	O
-a	O
-heterogenous	O
-group	O
-of	O
-caliciviruses	O
-that	O
-is	O
-now	O
-designated	O
-as	O
-genus	O
-_	O
-Norovirus	O
-_	O
-.	O
--	O
-Mod.CP	O
--RSB-	O
---	O
-ProMED-mail	O
-<promed@promedmail.org>	O
--------------------------------------------------	O
-.	O
-The	O
-Minas	O
-Gerais	O
-State	O
-Secretary	O
-of	O
-Health	O
-confirms	O
-16	B-VIC
-cases	I-VIC
--LRB-	O
-8	O
-fatal	O
--RRB-	O
-due	O
-to	O
-hantavirus	B-DIS
-infection	I-DIS
-in	O
-the	O
-state	O
-so	O
-far	O
-in	O
-2003	O
-,	O
-with	O
-another	B-VIC
-6	I-VIC
-suspect	I-VIC
-cases	I-VIC
-under	O
-investigation	O
-.	O
-The	O
-results	O
-of	O
-confirmatory	O
-laboratory	O
-tests	O
-will	O
-be	O
-available	O
-in	O
-10	O
-days	O
-.	O
-In	O
-all	O
-of	O
-2002	O
-there	O
-were	O
-14	B-VIC
-cases	I-VIC
-with	O
-7	O
-deaths	O
-.	O
-The	O
-outbreak	O
-is	O
-being	O
-studied	O
-by	O
-specialists	O
-from	O
-the	O
-Instituto	O
-Adolfo	O
-Lutz	O
-of	O
-Sao	O
-Paulo	O
-.	O
-two	O
-of	O
-them	O
-from	O
-the	O
-same	O
-city	O
-office	O
-building	O
-,	O
-health	O
-authorities	O
-said	O
-today	O
-.	O
-Victoria	O
-'s	O
-Chief	O
-Health	O
-Officer	O
-Dr	O
-Graham	O
-Rouch	O
-said	O
-the	O
-other	O
-three	O
-patients	O
-may	O
-also	O
-be	O
-linked	O
-to	O
-the	O
-same	O
-area	O
-of	O
-Melbourne	O
-'s	O
-Exhibition	O
-Street	O
-.	O
-With	O
-the	O
-latest	O
-outbreak	O
-,	O
-Dr	O
-Rouch	O
-urged	O
-city	O
-dwellers	O
-,	O
-office	O
-workers	O
-and	O
-visitors	O
-to	O
-be	O
-alert	O
-to	O
-the	O
-signs	O
-of	O
-the	O
-disease	B-DIS
-.	O
-He	O
-said	O
-that	O
-two	O
-with	O
-the	O
-disease	B-DIS
--	O
-among	O
-three	O
-being	O
-treated	O
-in	O
-hospital	O
--	O
-worked	O
-at	O
-222	O
-Exhibition	O
-Street	O
-.	O
-One	O
-was	O
-employed	O
-by	O
-the	O
-Transport	O
-Accident	O
-Commission	O
-and	O
-the	O
-other	O
-by	O
-the	O
-Victorian	O
-Workcover	O
-Authority	O
-.	O
-Staff	O
-and	O
-other	O
-tenants	O
-in	O
-the	O
-building	O
-have	O
-been	O
-given	O
-information	O
-about	O
-the	O
-disease	B-DIS
-.	O
-Dr	O
-Rouch	O
-said	O
-the	O
-early	O
-stages	O
-of	O
-legionnaire	O
-'s	O
-disease	B-DIS
-was	O
-characterised	O
-by	O
-flu-like	O
-symptoms	O
-,	O
-including	O
-headache	O
-,	O
-fever	O
-,	O
-muscle	O
-aches	O
-and	O
-respiratory	O
-problems	O
-.	O
-The	O
-most	O
-usual	O
-method	O
-of	O
-transmission	O
-of	O
-the	O
-infection	O
-was	O
-via	O
-spray	O
-drift	O
-from	O
-air	O
-conditioning	O
-towers	O
-.	O
-He	O
-said	O
-Human	O
-Services	O
-Department	O
-officials	O
-took	O
-samples	O
-from	O
-cooling	O
-towers	O
-at	O
-222	O
-Exhibition	O
-Street	O
-and	O
-were	O
-awaiting	O
-confirmation	O
-of	O
-the	O
-results	O
-.	O
-He	O
-said	O
-the	O
-towers	O
-had	O
-been	O
-disinfected	O
-as	O
-a	O
-precaution	O
-.	O
-Dr	O
-Rouch	O
-said	O
-the	O
-recent	O
-hot	O
-weather	O
-in	O
-Melbourne	O
-had	O
-put	O
-a	O
-considerable	O
-extra	O
-load	O
-on	O
-cooling	O
-systems	O
-,	O
-`	O
-which	O
-may	O
-have	O
-provided	O
-a	O
-better	O
-environment	O
-for	O
-_	O
-Legionella	O
-_	O
-to	O
-multiply	O
-'	O
-.	O
---	O
-ProMED-mail	O
-e-mail	O
-:	O
-promed@promedmail.org......................................es	O
---	O
-Department	O
-of	O
-Crop	O
-Sciences	O
-,	O
-University	O
-of	O
-Illinois	O
-;	O
-and	O
-G.	O
-L.	O
-Hartman	O
-,	O
-USDA	O
-,	O
-ARS	O
-,	O
-and	O
-Department	O
-of	O
-Crop	O
-Sciences	O
-,	O
-University	O
-of	O
-Illinois	O
-,	O
-1101	O
-W.	O
-Peabody	O
-Dr.	O
-,	O
-Urbana	O
-61801	O
-.	O
-Plant	O
-Dis	O
-.	O
-84:100	O
-,	O
-2000	O
-;	O
-published	O
-on-line	O
-as	O
-D-1999-1117-01N	O
-1999	O
-.	O
-Accepted	O
-for	O
-publication	O
-12	O
-November	O
-1999	O
-.	O
-_	O
-Stachybotrys	B-DIS
-chartarum	I-DIS
-_	O
--LRB-	O
-Ehrenb	B-DIS
-.	O
-ex	B-DIS
-Link	I-DIS
--RRB-	O
-S.J.	O
-Hughes	O
-was	O
-isolated	O
-from	O
-surface-disinfested	B-VIC
-soybean	I-VIC
--LRB-	O
-Glycine	B-VIC
-max	I-VIC
--LRB-	O
-L.	O
--RRB-	O
-Merr	B-VIC
-.	O
--RRB-	O
-root	O
-lesions	O
-.	O
-The	O
-fungus	O
-was	O
-cultured	O
-on	O
-potato	O
-dextrose	O
-agar	O
-,	O
-and	O
-its	O
-morphology	O
-was	O
-examined	O
-by	O
-light	O
-and	O
-environmental	O
-scanning	O
-electron	O
-microscopy	O
-.	O
-Conidiophores	O
-were	O
-determinate	O
-,	O
-macronematous	O
-,	O
-solitary	O
-or	O
-in	O
-groups	O
-,	O
-and	O
-simple	O
-or	O
-irregularly	O
-branched	O
-.	O
-Phialides	O
-occurred	O
-in	O
-whorls	O
-and	O
-were	O
-obovate	O
-or	O
-ellipsoidal	O
-.	O
-Conidia	O
-were	O
-unicellular	O
-,	O
-round	O
-to	O
-ellipsoidal	O
-,	O
-5	O
-to	O
-13	O
-4	O
-to	O
-7	O
-m	O
-,	O
-initially	O
-hyaline	O
-,	O
-smooth-walled	O
-,	O
-and	O
-dark	O
-brown	O
-to	O
-black	O
-and	O
-rough-walled	O
-when	O
-mature	O
-.	O
-A	O
-pure	O
-culture	O
-obtained	O
-from	O
-infected	B-VIC
-soy-bean	I-VIC
-roots	I-VIC
-was	O
-used	O
-to	O
-test	O
-pathogenicity	O
-under	O
-greenhouse	O
-and	O
-growth-chamber	O
-conditions	O
-.	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
-was	O
-grown	O
-on	O
-sterilized	O
-sorghum	O
-grain	O
-for	O
-2	O
-weeks	O
-and	O
-placed	O
-in	O
-soil	O
-2	O
-to	O
-3	O
-cm	O
-below	O
-sown	O
-soybean	B-VIC
-seeds	O
-.	O
-Noninfested	O
-sorghum	O
-grain	O
-was	O
-used	O
-as	O
-a	O
-control	O
-.	O
-All	O
-soybean	B-VIC
-plants	O
-inoculated	O
-with	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
-had	O
-root	O
-lesions	O
-ranging	O
-from	O
-7	O
-to	O
-25	O
-mm	O
-21	O
-days	O
-after	O
-sowing	O
-,	O
-while	O
-control	O
-plants	O
-did	O
-not	O
-have	O
-any	O
-measurable	O
-root	O
-rot	O
-.	O
-The	O
-DNA	O
-sequence	O
-of	O
-the	O
-internal	O
-transcribed	O
-spacer	O
--LRB-	O
-ITS	O
--RRB-	O
-region	O
-was	O
-100	O
-%	O
-identical	O
-to	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
-strain	B-DIS
-ATCC	I-DIS
-9182	I-DIS
--LRB-	O
-1	O
--RRB-	O
-but	O
-differed	O
-from	O
-all	O
-published	O
-sequences	O
-of	O
-other	O
-_	O
-Stachybotrys	B-DIS
-_	O
-and	O
-_	O
-Memnoniella	O
-_	O
-spp	O
-.	O
-in	O
-Gen-Bank	O
--LRB-	O
-1	O
--RRB-	O
-.	O
-Polymerase	O
-chain	O
-reaction	O
-with	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
--	O
-specific	O
-primer	O
-StacR3	O
-and	O
-IT51	O
--LRB-	O
-1	O
--RRB-	O
-amplified	O
-a	O
-198-bp	O
-DNA	O
-fragment	O
-from	O
-the	O
-total	O
-genomic	O
-DNA	O
-.	O
-The	O
-molecular	O
-evidence	O
-further	O
-supports	O
-the	O
-identification	O
-of	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
-isolated	O
-from	O
-soybean	B-VIC
-.	O
-This	O
-is	O
-the	O
-first	O
-report	O
-of	O
-_	O
-S.	O
-chartarum	B-DIS
-_	O
-causing	O
-soybean	B-VIC
-root	O
-rot	O
-.	O
-Reference	O
-:	O
-R.	O
-A.	O
-Haugland	O
-and	O
-J.	O
-L.	O
-Heckman	O
-.	O
-Mol	O
-.	O
-Cell	O
-.	O
-Probes	O
-12:387	O
-,	O
-1998	O
-.	O
--LSB-	O
-_	O
-Stachybotrys	B-DIS
-chartarum	I-DIS
-_	O
-also	O
-causes	O
-disease	O
-in	O
-humans	O
-and	O
-animals	O
-through	O
-the	O
-action	O
-of	O
-a	O
-number	O
-of	O
-mycotoxins	O
-,	O
-including	O
-trichothecenes	O
-.	O
-The	O
-fungus	O
-also	O
-produces	O
-9-phenylspirodrimanes	O
-and	O
-cyclosporin	O
-which	O
-are	O
-potent	O
-immunosuppressive	O
-agents	O
-.	O
-Two	O
-good	O
-references	O
-can	O
-be	O
-found	O
-at	O
-the	O
-following	O
-URLs	O
-:	O
-<	O
-http://psychiatry.medscape.com/Medscape/GeneralMedicine/journal/public/mgm.journal.html	O
->	O
-<	O
-http://www.scisoc.org/feature/stachybotrys/Top.html	O
->	O
--	O
-Mod	O
-.	O
-DH	O
--RSB-	O
-...	O
-dh/ds	O
-------------------------------------	O
-.	O
-Between	O
-29	O
-Apr	O
-and	O
-3	O
-May	O
-2001	O
-,	O
-158	O
-cases	B-VIC
-of	O
-acute	O
-dysentery	B-DIS
-have	O
-been	O
-registered	O
-among	O
-patients	O
-in	O
-the	O
-Kaluga	O
-province	O
-psychiatric	O
-hospital	O
--LRB-	O
-for	O
-692	O
-people	O
--RRB-	O
-.	O
-23	O
-people	O
-have	O
-been	O
-hospitalized	O
-.	O
-The	O
-disease	O
-occurred	O
-in	O
-mild	O
-and	O
-moderate	O
-to	O
-serious	O
-forms	O
-.	O
-The	O
-diagnosis	O
-has	O
-been	O
-confirmed	O
-bacteriologically	O
-by	O
-isolation	O
-of	O
-strain	B-DIS
-of	O
-_	O
-Shigella	O
-flexneri	O
-_	O
-2a	O
-from	O
-66	O
-people	O
-.	O
-The	O
-outbreak	O
-is	O
-food-borne	O
-and	O
-associated	O
-with	O
-use	O
-of	O
-a	B-DIS
-curd	O
-pudding	O
-that	O
-has	O
-been	O
-prepared	O
-with	O
--LSB-	O
-violation	O
--RSB-	O
-of	O
--LSB-	O
-proper	O
-food	O
-preparation	O
-practices	O
--RSB-	O
-in	O
-the	O
-hospital	O
-kitchen	O
-on	O
-27	O
-Apr	O
-2001	O
-.	O
-The	O
-cook	O
-was	O
-found	O
-during	O
-bacteriological	O
-investigation	O
-to	O
-be	O
-an	O
-active	O
--LSB-	O
-carrier	O
--RSB-	O
-and	O
-was	O
-supposed	O
-to	O
-be	O
-the	O
-infectious	O
-source	O
-.	O
-Specialists	O
-from	O
-the	O
-center	O
-for	O
-sanitary	O
-and	O
-epidemiological	O
-surveillance	O
-in	O
-Kaluga	O
-province	O
-are	O
-carrying	O
-out	O
-an	O
-epidemic	O
-investigation	O
-.	O
-*****	O
--LSB-	O
-2	O
--RSB-	O
-Source	O
-:	O
-ITAR-TASS	O
-News	O
-Agency	O
-,	O
-5	O
-May	O
-2001	O
--LSB-	O
-edited	O
--RSB-	O
-KALUGA	O
-:	O
-The	O
-dysentery	B-DIS
-outbreak	O
-among	O
-patients	O
-of	O
-the	O
-province	O
-psychiatric	O
-hospital	O
-has	O
-waned	O
-.	O
-Today	O
-49	O
-patients	O
-are	O
-in	O
-hospital	O
-.	O
-On	O
-Friday	O
--LSB-	O
-4	O
-May	O
-2001	O
--RSB-	O
-there	O
-were	O
-almost	O
-twice	O
-as	O
-many	O
-patients	O
-.	O
-According	O
-to	O
-Anatoly	O
-Fadeev	O
-,	O
-chief	O
-state	O
-sanitary	O
-physician	O
-in	O
-Kaluga	O
-province	O
-,	O
-21	O
-patients	O
-are	O
-situated	O
-in	O
-the	O
-infectious	O
-department	O
-,	O
-and	O
-28	O
-in	O
-the	O
-isolation	O
-ward	O
-.	O
-9	O
-patients	O
-have	O
-a	B-DIS
-moderate	O
-or	O
-serious	O
--LSB-	O
-form	O
--RSB-	O
-of	O
-the	O
-disease	O
-.	O
-For	O
-the	O
-7	O
-days	O
-from	O
-the	O
-beginning	O
-of	O
-the	O
-outbreak	O
-more	O
-than	O
-900	O
-people	O
-,	O
-who	O
-could	O
-be	O
-infected	O
-,	O
-have	O
-been	O
-observed	O
-.	O
-The	O
-cooks	O
-were	O
-a	B-DIS
-source	O
-of	O
-the	O
-infection	O
-,	O
-said	O
-Anatoly	O
-Fadeev	O
-.	O
-At	O
-the	O
-present	O
-time	O
-prophylactic	O
-and	O
-treatment	O
-measures	O
-for	O
-localization	O
-and	O
-liquidation	O
-of	O
-the	O
-outbreak	O
-are	O
-continuing	O
-.	O
-*****	O
--LSB-	O
-3	O
--RSB-	O
-Source	O
-:	O
-Official	O
-information	O
-from	O
-the	O
-Website	O
-of	O
-the	O
-Health	O
-Ministry	O
-of	O
-the	O
-Russian	O
-Federation	O
--LRB-	O
-Outbreaks	O
-News	O
-Website	O
-,	O
-in	O
-Russian	O
--RRB-	O
-,	O
-4	O
-May	O
-2001	O
--LSB-	O
-edited	O
--RSB-	O
-<	O
-http://www.depart.drureg.ru/hotline/	O
->	O
-Between	O
-24	O
-Apr	O
-and	O
-1	O
-May	O
-2001	O
-93	B-VIC
-cases	I-VIC
-of	O
-dysentery	B-DIS
--LRB-	O
-including	O
-54	O
-children	O
-under	O
-14	O
-years	O
-of	O
-age	O
--RRB-	O
-have	O
-been	O
-registered	O
-among	O
-residents	O
-of	O
-Verkhnee	O
-Lyukino	O
-village	O
--LRB-	O
-345	O
-people	O
--RRB-	O
-,	O
-Blezinsky	O
-region	O
-,	O
-Udmurtskaya	O
-Republic	O
-.	O
-The	O
-disease	O
-has	O
-mild	O
-and	O
-moderate	O
-to	O
-serious	O
-course	O
-.	O
-A	O
-bacteriological	O
-diagnosis	O
-has	O
-been	O
-obtained	O
-for	O
-71	O
-people	O
-:	O
-a	B-DIS
-_	O
-Shigella	O
-sonnei	B-DIS
-_	O
-strain	B-DIS
-has	O
-been	O
-isolated	O
-from	O
-them	O
-.	O
-New	O
-cases	B-VIC
-have	O
-not	O
-been	O
-registered	O
-since	O
-2	O
-May	O
-2001	O
-.	O
-The	O
-infectious	O
-source	O
-is	O
-drinking	O
-water	O
-infected	O
-from	O
-the	O
-sewerage	O
-after	O
-a	B-DIS
-disaster	O
-in	O
-water	O
-supply	O
-on	O
-23	O
-Apr	O
-2001	O
-.	O
-Specialists	O
-from	O
-the	O
-center	O
-of	O
-the	O
-state	O
-sanitary	O
-and	O
-epidemiological	O
-surveillance	O
-and	O
-health	O
-ministry	O
-of	O
-the	O
-republic	O
-are	O
-carrying	O
-out	O
-the	O
-epidemiological	O
-investigation	O
-.	O
--LSB-	O
-These	O
-2	O
-outbreaks	O
-illustrate	O
-one	O
-of	O
-the	O
-public	O
-health	O
-impacts	O
-of	O
-continued	O
-problems	O
-with	O
-infrastructure	O
-maintenance	O
-in	O
-Russia	O
-and	O
-other	O
-regions	O
-of	O
-the	O
-former	O
-Soviet	O
-Union	O
-.	O
--	O
-Mod.ES	O
--RSB-	O
-...	O
-mpp/av/es	O
-/	O
-ds	O
---------------------------------------------------	O
-.	O
-During	O
-Cuban	O
-neuropathy	B-DIS
-outbreak	O
-in	O
-1992-1993	O
-,	O
-we	O
-worked	O
--LSB-	O
-in	O
-collaboration	O
-with	O
-team	O
-investigating	O
--RSB-	O
-theories	O
-concerning	O
-a	O
-possible	O
-toxic-nutritional	O
-physiopathological	O
-origin	O
-and	O
--LSB-	O
-involvement	O
-of	O
-oxidative	O
-stress	O
--RSB-	O
-.	O
-Later	O
-our	O
-team	O
-,	O
-with	O
-French	O
-research	O
-partners	O
-,	O
-developed	O
-different	O
-prospective	O
-studies	O
--LRB-	O
-SECUBA	O
-program	O
-1995	O
-1997	O
--RRB-	O
-in	O
-healthy	O
-volunteers	O
-and	O
-patients	O
-with	O
-neuropathy	B-DIS
-,	O
--LSB-	O
-establishing	O
--RSB-	O
-central	O
-role	O
-of	O
-antioxidants	O
-,	O
-energy	O
-,	O
-and	O
-oxidative	O
-stress	O
-in	O
-Cuban	O
-neuropathy	B-DIS
-outbreak	O
-.	O
-We	O
-were	O
-aware	O
-of	O
-the	B-DIS
-Tanzanian	I-DIS
-epidemic	I-DIS
-of	O
-bilateral	B-DIS
-optic	I-DIS
-neuropathy	I-DIS
--LRB-	O
-Dolin	O
-PJ	O
-,	O
-Mohamed	O
-AA	O
-,	O
-Plant	O
-GT	O
-.	O
-Epidemic	O
-of	O
-bilateral	B-DIS
-optic	I-DIS
-neuropathy	I-DIS
-in	O
-Dar	O
-es	O
-Salaam	O
-,	O
-Tanzania	O
-.	O
-N	O
-Engl	O
-J	O
-Med	O
-1998	O
-;	O
-338:1547	O
--8	O
--RRB-	O
-.	O
--LSB-	O
-Although	O
--RSB-	O
-most	O
-recent	O
-information	O
-is	O
-limited	O
-,	O
--LSB-	O
-a	O
-significant	O
-difference	O
-between	O
-Cuban	O
-and	O
-Tanzanian	B-DIS
-outbreaks	O
--RSB-	O
-is	O
-that	O
-no	O
-deaths	O
-occurred	O
-in	O
-Cuban	O
-neuropathy	B-DIS
-outbreak	O
-.	O
-Nonetheless	O
-we	O
-are	O
-always	O
-interested	O
-in	O
-assisting	O
-any	O
-country	O
-,	O
-including	O
-Tanzania	O
-,	O
--LSB-	O
-that	O
-suspects	O
-occurrence	O
--RSB-	O
-of	O
-an	O
-epidemic	B-DIS
-neuropathy	I-DIS
-outbreak	O
-of	O
-type	O
-experienced	O
-in	O
-Cuba	O
-.	O
-In	O
-Cuba	O
-disease	O
-is	O
-no	O
-longer	O
-a	O
-problem	O
-,	O
-and	O
-solution	O
-was	O
-related	O
-to	O
-improvements	O
-in	O
-diet	O
-,	O
-particularly	O
-antioxidants	O
--LSB-	O
-supplied	O
--RSB-	O
-by	O
-vegetables	O
-and	O
-fruits	O
-,	O
-even	O
-if	O
--LSB-	O
-overall	O
--RSB-	O
-levels	O
-of	O
-calories	O
-and	O
-some	O
--LSB-	O
-other	O
--RSB-	O
-nutrients	O
--LRB-	O
-e.g.	O
-,	O
-B	O
-vitamins	O
--RRB-	O
-were	O
-not	O
-entirely	O
-adequate	O
-.	O
-Lifestyle	O
-was	O
-also	O
-important	O
-.	O
--LSB-	O
-Dr	O
-Verdura	O
-'s	O
-comments	O
-may	O
-refer	O
-to	O
-2	O
-separate	O
-events	O
-,	O
-namely	O
-outbreak	O
-of	O
-epidemic	B-DIS
-neuropathy	I-DIS
-in	O
-coastal	O
-region	O
-of	O
-Tanzania	O
-and	O
-an	O
-outbreak	O
-of	O
-an	O
-unidentified	O
-illness	O
-affecting	O
-mainly	O
-young	O
-men	O
-on	O
-Ukerewe	O
-Island	O
-,	O
-Tanzania	O
-.	O
-I	O
-have	O
-edited	O
-Dr	O
-Verdura	O
-'s	O
-remarks	O
--LRB-	O
-I	O
-hope	O
-correctly	O
--RRB-	O
-to	O
-relate	O
-mainly	O
-to	O
-first	O
-of	O
-these	O
-2	O
-events	O
-.	O
--	O
-Mod.CP	O
--RSB-	O
--LSB-	O
-Dr	O
-Verdura	O
-rightly	O
-points	O
-out	O
-that	O
-the	B-DIS
-epidemic	I-DIS
-neuropathy	I-DIS
-seen	O
-in	O
-Cuba	O
-was	O
-not	O
-associated	O
-with	O
-mortality	O
-.	O
-A	O
-review	O
-of	O
-limited	O
-postings	O
-on	O
-the	B-DIS
-epidemic	I-DIS
-neuropathy	I-DIS
-in	O
-Tanzania	O
-Coastal	O
-area	O
-does	O
-not	O
-mention	O
-mortality	O
-either	O
-.	O
-This	O
-moderator	O
-significantly	O
-erred	O
-by	O
-provocative	O
-comments	O
-made	O
-in	O
-posting	O
-Unexplained	O
-deaths	O
--	O
-Tanzania	O
--LRB-	O
-Ukerewe	O
-Island	O
--RRB-	O
--LRB-	O
-02	O
--RRB-	O
-:	O
-RFI20030529	O
-.1314	O
-,	O
-suggesting	O
-there	O
-might	O
-be	O
-a	O
-link	O
-between	O
-the	B-DIS
-epidemic	I-DIS
-neuropathy	I-DIS
-reported	O
-in	O
-coast	O
-of	O
-Tanzania	O
-and	O
-undiagnosed	O
-deaths	O
-in	O
-young	O
-males	O
-on	O
-Ukerewe	O
-Island	O
-.	O
-A	O
-late	O
-night	O
-fruit	O
-salad	O
-mixing	O
-of	O
-apples	O
-and	O
-oranges	O
-.	O
--	O
-Mod.MPP	O
--RSB-	O
--------------------------------------------	O
-.	O
-A	B-VIC
-man	I-VIC
-has	O
-been	O
-admitted	O
-to	O
-hospital	O
-in	B-DIS
-Scotland	O
-with	O
-an	B-DIS
-acute	O
-neurological	O
-illness	B-DIS
-that	O
-is	O
-being	O
-investigated	O
-as	O
-a	B-VIC
-suspected	O
-case	B-DIS
-of	O
-rabies	B-DIS
--LRB-	O
-1,2	O
--RRB-	O
-.	O
-The	B-DIS
-possible	O
-diagnosis	O
-of	O
-a	B-VIC
-rabies-like	I-DIS
-illness	I-DIS
-is	O
-being	O
-considered	O
-because	O
-of	O
-some	O
-aspects	O
-of	O
-clinical	O
-presentation	O
-and	O
-because	O
-the	B-VIC
-man	I-VIC
-is	O
-a	B-VIC
-bat	I-VIC
-handler	O
-who	O
-has	O
-been	O
-bitten	O
-by	O
-a	B-VIC
-bat	I-VIC
-in	I-DIS
-Scotland	O
-on	O
-at	O
-least	O
-one	O
-occasion	O
-within	O
-possible	O
-incubation	O
-period	O
-for	O
-rabies	B-DIS
-.	O
-There	O
-is	O
-no	O
-documented	O
-evidence	O
-that	O
-the	B-VIC
-patient	I-VIC
-has	O
-ever	O
-received	O
-rabies	B-DIS
-immunisation	O
-or	O
-has	O
-travelled	O
-abroad	O
-since	O
-1996	O
-.	O
-Although	O
-clinical	O
-features	O
-of	O
-the	B-VIC
-man	I-VIC
-'s	O
-illness	B-DIS
-are	O
-compatible	O
-with	O
-some	O
-aspects	O
-of	O
-rabies	B-DIS
-,	O
-none	O
-of	O
-laboratory	O
-investigations	O
-yet	O
-indicates	O
-that	O
-a	B-VIC
-rabies-like	I-DIS
-virus	I-DIS
-is	O
-responsible	O
-.	O
-Testing	O
-for	O
-rabies	B-DIS
-and	O
-rabies-like	B-DIS
-virus	I-DIS
-is	O
-not	O
-,	O
-however	O
-,	O
-straightforward	O
-and	O
-more	O
-tests	O
-are	O
-being	O
-undertaken	O
-.	O
-The	B-DIS
-case	I-DIS
-has	O
-raised	O
-awareness	O
-of	O
-possibility	O
-of	O
-rabies-like	B-DIS
-virus	I-DIS
-infection	I-DIS
-of	O
-bats	B-VIC
-in	B-DIS
-United	O
-Kingdom	O
--LRB-	O
-UK	B-VIC
--RRB-	O
--LRB-	O
-3	O
--RRB-	O
-.	O
-European	B-DIS
-bat	B-VIC
-lyssavirus	I-DIS
-:	O
-The	B-DIS
-rabies-like	I-DIS
-viruses	I-DIS
-carried	O
-by	O
-insectivorous	O
-bats	B-VIC
-in	B-DIS
-Europe	O
-are	O
-referred	O
-to	O
-as	O
-European	B-DIS
-bat	B-VIC
-lyssaviruses	I-DIS
--LRB-	O
-EBLs	B-DIS
--RRB-	O
-.	O
-These	O
-are	O
-from	O
-same	O
-family	O
-of	O
-viruses	B-DIS
-that	O
-cause	O
-rabies	B-DIS
-in	I-DIS
-terrestrial	O
-mammals	O
-and	O
-in	B-DIS
-bats	B-VIC
-in	B-DIS
-Americas	O
-,	O
-but	O
-differ	O
-in	B-DIS
-genotype	O
-and	O
-serotype	O
-.	O
-They	O
-are	O
-EBL	B-DIS
-1	I-DIS
-and	O
-2	B-DIS
-,	O
-and	O
-are	O
-of	O
-rabies	B-DIS
-virus	I-DIS
-genotype	O
-5	O
-and	O
-6	O
-,	O
-respectively	O
-.	O
-Classical	O
-rabies	B-DIS
-is	O
-due	O
-to	O
-rabies	B-DIS
-virus	I-DIS
-genotype	O
-1	B-DIS
-.	O
-Between	O
-1977	O
-and	O
-2000	O
-,	O
-630	O
-cases	O
-of	O
-EBL	B-DIS
-infection	I-DIS
-in	I-DIS
-bats	B-VIC
-were	O
-reported	O
-in	B-DIS
-Europe	O
-,	O
-mostly	O
-in	B-DIS
-Denmark	O
-,	O
-Netherlands	O
-,	O
-and	O
-Germany	O
--LRB-	O
-4	O
--RRB-	O
-.	O
-Only	B-DIS
-2	I-DIS
-EBL	I-DIS
-infections	I-DIS
-have	O
-been	O
-confirmed	O
-in	B-DIS
-UK	B-VIC
-bats	I-VIC
-:	O
-one	O
-on	O
-south	O
-coast	O
-of	O
-England	O
-in	B-DIS
-1996	O
--LRB-	O
-5	O
--RRB-	O
-and	O
-another	O
-in	B-DIS
-northwest	O
-England	O
-in	B-DIS
-2002	O
--LRB-	O
-6,7	O
--RRB-	O
-.	O
-Both	O
-of	O
-these	O
-bat	B-VIC
-rabies	I-DIS
-infections	I-DIS
-were	O
-in	B-DIS
-same	O
-species	B-VIC
---	O
-Daubenton	O
-'s	O
-bat	B-VIC
-.	O
-In	O
-case	B-DIS
-in	I-DIS
-1996	O
-it	O
-was	O
-thought	O
-that	O
-the	B-VIC
-bat	I-VIC
-might	O
-have	O
-migrated	O
-from	O
-continental	O
-Europe	O
-.	O
-The	B-DIS
-location	O
-of	O
-2002	O
-Lancashire	O
-case	B-DIS
-is	O
-,	O
-however	O
-,	O
-more	O
-consistent	O
-with	O
-EBLs	B-DIS
-being	O
-present	O
-in	B-DIS
-a	B-VIC
-bat	I-VIC
-species	I-VIC
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-.	O
-The	B-DIS
-Veterinary	O
-Laboratories	O
-Agency	O
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-tests	O
-about	O
-200	O
-bats	B-VIC
-every	O
-year	O
-for	O
-EBL	B-DIS
-,	O
-but	O
-has	O
-not	O
-so	O
-far	O
-detected	O
-virus	B-DIS
-other	O
-than	O
-2	B-DIS
-cases	O
-in	B-DIS
-1996	O
-and	O
-2002	O
--LRB-	O
-8	O
--RRB-	O
-.	O
-EBLs	B-DIS
-do	O
-not	O
-readily	O
-cross	O
-the	B-VIC
-species	I-VIC
-barrier	O
-,	O
-and	O
-even	O
-in	B-DIS
-parts	O
-of	O
-Europe	O
-where	O
-bats	B-VIC
-are	O
-known	O
-to	O
-carry	O
-EBLs	B-DIS
-,	O
-it	O
-is	O
-very	O
-rare	O
-for	O
-other	O
-animals	O
-to	O
-be	O
-infected	O
--LRB-	O
-9	O
--RRB-	O
-.	O
-The	B-DIS
-risk	O
-of	O
-EBL	B-DIS
-infection	I-DIS
-being	O
-passed	O
-to	O
-domestic	O
-pets	O
-such	O
-as	O
-dogs	O
-and	O
-cats	O
-,	O
-and	O
-to	O
-wild	O
-terrestrial	O
-mammals	O
-,	O
-is	O
-very	O
-low	O
-,	O
-and	O
-rabies-free	O
-status	O
-of	O
-the	B-VIC
-UK	I-VIC
-has	O
-been	O
-unaffected	O
-by	O
-previous	O
-isolation	O
-of	O
-EBL	B-DIS
-in	I-DIS
-2	I-DIS
-bats	B-VIC
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-.	O
-As	O
-EBL	B-DIS
-does	O
-not	O
-transmit	O
-readily	O
-to	O
-other	O
-species	B-VIC
-,	O
-infection	B-DIS
-in	I-DIS
-humans	I-DIS
-is	O
-extremely	O
-rare	O
-.	O
-Only	B-DIS
-3	O
-human	O
-cases	O
-have	O
-been	O
-reported	O
-in	B-DIS
-Europe	O
-since	O
-1977	O
-,	O
-one	O
-in	B-DIS
-Finland	O
-and	O
-2	B-DIS
-in	I-DIS
-former	O
-Soviet	O
-Union	O
-.	O
-All	O
-3	O
-have	O
-been	O
-in	B-DIS
-people	O
-who	O
-had	O
-been	O
-in	B-DIS
-close	O
-contact	O
-with	O
-bats	B-VIC
-.	O
-One	O
-was	O
-a	B-VIC
-bat	I-VIC
-handler	O
-and	O
-other	O
-2	B-DIS
-had	O
-been	O
-bitten	O
--LRB-	O
-10-13	O
--RRB-	O
-.	O
-A	B-VIC
-15-year-old	O
-girl	O
-died	O
-about	O
-5	O
-weeks	O
-after	O
-being	O
-bitten	O
-by	O
-a	B-VIC
-bat	I-VIC
-on	O
-finger	O
-in	B-DIS
-Ukraine	O
-in	B-DIS
-1977	O
--LRB-	O
-13	O
--RRB-	O
-.	O
-In	O
-Russia	O
-in	B-DIS
-1985	O
-an	B-DIS
-11-year-old	O
-girl	O
-died	O
-4	O
-weeks	O
-after	O
-being	O
-bitten	O
-on	O
-lower	O
-lip	O
-by	O
-a	B-VIC
-bat	I-VIC
--LRB-	O
-13	O
--RRB-	O
-.	O
-Also	O
-in	B-DIS
-1985	O
-,	O
-a	B-VIC
-30-year-old	O
-Finnish	O
-man	B-VIC
-presented	O
-with	O
-ascending	O
-paralysis	O
-and	O
-pain	O
-in	B-DIS
-arm	O
-and	O
-neck	O
-51	O
-days	O
-following	O
-a	B-VIC
-bat	I-VIC
-bite	O
-in	B-DIS
-Finland	O
--LRB-	O
-11	O
--RRB-	O
-.	O
-He	O
-progressed	O
-to	O
-becoming	O
-agitated	O
-,	O
-with	O
-hyperventilation	O
-and	O
-spasms	O
-,	O
-and	O
-died	O
-20	O
-days	O
-following	O
-admission	O
-.	O
-None	O
-of	O
-these	O
-patients	O
-had	O
-received	O
-specific	O
-treatment	O
-after	O
-their	O
-exposure	O
-.	O
-The	B-DIS
-different	I-DIS
-rabies-like	I-DIS
-viruses	I-DIS
-and	O
-bat	B-VIC
-species	I-VIC
-found	O
-in	B-DIS
-Europe	O
-distinguish	O
-this	O
-region	O
-from	O
-Americas	O
-,	O
-where	O
-risk	O
-of	O
-rabies	B-DIS
-following	O
-human	O
-contact	O
-with	O
-bats	B-VIC
-is	O
-higher	O
--LRB-	O
-14	O
--RRB-	O
-.	O
-Prevention	O
-of	O
-European	B-DIS
-bat	B-VIC
-lyssavirus	I-DIS
-infection	I-DIS
-in	I-DIS
-humans	I-DIS
-:	O
-Bats	O
-present	O
-virtually	O
-no	O
-risk	O
-to	O
-general	O
-public	O
-and	O
-are	O
-protected	O
-by	O
-law	O
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-.	O
-If	O
-a	B-VIC
-member	O
-of	O
-public	O
-comes	O
-across	O
-a	B-VIC
-bat	I-VIC
-,	O
-for	O
-example	O
-because	O
-it	O
-is	O
-injured	O
-,	O
-they	O
-should	O
-not	O
-touch	O
-the	B-VIC
-bat	I-VIC
-but	O
-seek	O
-help	O
-.	O
-Only	B-DIS
-licensed	O
-or	O
-volunteer	O
-bat	B-VIC
-handlers	O
-should	O
-routinely	O
-come	O
-into	O
-contact	O
-with	O
-bats	B-VIC
-,	O
-and	O
-they	O
-should	O
-take	O
-suitable	O
-precautions	O
-,	O
-including	O
-wearing	O
-bite-proof	O
-gloves	O
-.	O
-The	B-DIS
-Department	O
-of	O
-Health	O
-for	O
-England	O
-has	O
-advised	O
-that	O
-all	O
-bat	B-VIC
-handlers	O
-,	O
-whether	O
-licensed	O
-or	O
-not	O
-,	O
-should	O
-have	O
-pre-exposure	O
-immunization	O
-against	O
-rabies	B-DIS
--LRB-	O
-15	O
--RRB-	O
-.	O
-Bat	O
-handlers	O
-should	O
-have	O
-booster	O
-rabies	B-DIS
-vaccination	O
-every	O
-3	O
-to	O
-5	O
-years	O
-.	O
-Post-exposure	O
-prophylaxis	O
-:	O
-The	B-DIS
-change	O
-in	B-DIS
-policy	O
-also	O
-affects	O
-management	O
-of	O
-close	O
-exposures	O
-to	O
-bats	B-VIC
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-.	O
-Prophylaxis	O
-for	O
-exposure	O
-to	O
-EBL	B-DIS
-is	O
-same	O
-as	O
-that	O
-recommended	O
-for	O
-other	O
-potential	O
-rabies	B-DIS
-virus	I-DIS
-exposures	O
-and	O
-appears	O
-to	O
-be	O
-highly	O
-effective	O
--LRB-	O
-16	O
--RRB-	O
-.	O
-Vaccine	O
-failures	O
-are	O
-very	O
-rare	O
-if	O
-an	B-DIS
-appropriate	O
-post-exposure	O
-regimen	O
-is	O
-followed	O
--LRB-	O
-17	O
--RRB-	O
-.	O
-Experience	O
-has	O
-been	O
-gained	O
-in	B-DIS
-The	I-DIS
-Netherlands	O
-,	O
-where	O
-EBLs	B-DIS
-are	O
-prevalent	O
-.	O
-There	O
-,	O
-as	O
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-,	O
-people	O
-who	O
-have	O
-been	O
-bitten	O
-by	O
-an	B-DIS
-EBL	I-DIS
-virus-positive	O
-bat	B-VIC
-are	O
-advised	O
-to	O
-be	O
-vaccinated	O
-with	O
-rabies	B-DIS
-vaccine	O
-as	O
-for	O
-classical	O
--LRB-	O
-genotype	O
-1	B-DIS
--RRB-	O
-strains	O
-.	O
-It	O
-has	O
-been	O
-shown	O
-that	O
-there	O
-is	O
-cross-immunity	O
-between	O
-genotype	O
-1	B-DIS
-and	O
-genotype	O
-5	O
--LRB-	O
-EBL	B-DIS
-1	I-DIS
--RRB-	O
-and	O
-genotype	O
-6	O
--LRB-	O
-EBL	B-DIS
-2	I-DIS
--RRB-	O
-strains	O
--LRB-	O
-18	O
--RRB-	O
-,	O
-but	O
-it	O
-is	O
-not	O
-known	O
-whether	O
-rabies	B-DIS
-vaccines	O
-are	O
-completely	O
-protective	O
-against	O
-EBLs	B-DIS
-.	O
-Over	O
-last	O
-2	B-DIS
-decades	O
-several	O
-hundred	O
-people	O
-in	B-DIS
-Netherlands	O
-have	O
-been	O
-vaccinated	O
-with	O
-genotype	O
-1	B-DIS
-rabies	I-DIS
-virus	I-DIS
-vaccines	O
-after	O
-being	O
-bitten	O
-by	O
-an	B-DIS
-EBL-positive	O
-bat	B-VIC
-,	O
-and	O
-no	O
-EBL	B-DIS
-infection	I-DIS
-has	O
-ever	O
-been	O
-confirmed	O
-in	B-DIS
-a	B-VIC
-human	O
-being	O
-in	B-DIS
-Netherlands	O
--LRB-	O
-WHM	O
-van	O
-der	O
-Poel	O
-,	O
-personal	O
-communication	O
-,	O
-20	O
-Nov	O
-2002	O
--RRB-	O
-.	O
-Anyone	O
-who	O
-has	O
-been	O
-scratched	O
-or	O
-bitten	O
-by	O
-a	B-VIC
-bat	I-VIC
-,	O
-or	O
-who	O
-has	O
-experienced	O
-contact	O
-between	O
-bat	B-VIC
-saliva	O
-or	O
-neural	O
-tissue	O
-and	O
-their	O
-eyes	O
-,	O
-broken	O
-skin	O
-,	O
-or	O
-mucous	O
-membrane	O
-should	O
-,	O
-after	O
-assessment	O
-,	O
-be	O
-offered	O
-post-exposure	O
-vaccination	O
-as	O
-soon	O
-as	O
-possible	O
-after	O
-incident	O
-.	O
-If	O
-person	O
-is	O
-already	O
-fully	O
-immunised	O
-against	O
-rabies	B-DIS
-,	O
-they	O
-should	O
-be	O
-offered	O
-2	B-DIS
-doses	O
-of	O
-vaccine	O
-.	O
-If	O
-they	O
-were	O
-previously	O
-unimmunised	O
-or	O
-incompletely	O
-immunised	O
-,	O
-they	O
-should	O
-be	O
-offered	O
-5	O
-doses	O
-of	O
-vaccine	O
-.	O
-For	O
-those	O
-who	O
-were	O
-previously	O
-unimmunised	O
-,	O
-and	O
-who	O
-have	O
-been	O
-bitten	O
-by	O
-a	B-VIC
-bat	I-VIC
-that	O
-is	O
-known	O
-,	O
-or	O
-strongly	O
-suspected	O
-,	O
-to	O
-be	O
-rabid	O
-,	O
-rabies	B-DIS
-immunoglobulin	O
-may	O
-be	O
-offered	O
-in	B-DIS
-addition	O
-to	O
-a	B-VIC
-full	O
-course	O
-of	O
-vaccine	O
-.	O
-In	O
-view	O
-of	O
-occasionally	O
-prolonged	O
-incubation	O
-period	O
-of	O
-rabies	B-DIS
-,	O
-post-exposure	O
-vaccination	O
-should	O
-also	O
-be	O
-offered	O
-to	O
-any	O
-individuals	O
-who	O
-have	O
-been	O
-exposed	O
-to	O
-bats	B-VIC
-as	O
-described	O
-above	O
-at	O
-any	O
-point	O
-in	B-DIS
-last	O
-year	O
-if	O
-they	O
-did	O
-not	O
-receive	O
-post-exposure	O
-vaccination	O
-at	O
-time	O
-of	O
-incident	O
-.	O
-General	O
-background	O
-information	O
-about	O
-bats	B-VIC
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-can	O
-be	O
-obtained	O
-from	O
-The	B-DIS
-Bat	O
-Conservation	O
-Trust	O
-website	O
-at	O
-<	O
-http://www.bats.org.uk/bat_info.htm	O
->	O
-.	O
-Public	O
-health	O
-authorities	O
-in	B-DIS
-other	O
-countries	O
-should	O
-note	O
-change	O
-of	O
-policy	O
-so	O
-that	O
-returning	O
-travellers	O
-who	O
-report	O
-exposure	O
-to	O
-bats	B-VIC
-in	B-DIS
-the	B-VIC
-UK	I-VIC
-are	O
-offered	O
-prophylaxis	O
-if	O
-appropriate	O
-.	O
-References	O
-:	O
--LRB-	O
-1	B-DIS
--RRB-	O
-CDSC	O
-.	O
-Possible	B-DIS
-rabies-like	I-DIS
-infection	I-DIS
-in	I-DIS
-Scotland	O
-.	O
-Commun	O
-Dis	O
-Rep	O
-CDR	O
-Wkly	O
-2002	O
-;	O
-12	O
--LRB-	O
-47	O
--RRB-	O
-:	O
-news	O
-.	O
-<	O
-http://www.phls.co.uk/publications/cdr/index.html	O
->	O
--LRB-	O
-2	B-DIS
--RRB-	O
-SCIEH	O
-.	O
-Suspected	B-DIS
-rabies	I-DIS
-case	I-DIS
-in	I-DIS
-Tayside	O
-.	O
-SCIEH	O
-Weekly	O
-Report	O
-2002	O
-;	O
-36	O
--LRB-	O
-46	O
--RRB-	O
-:	O
-297	O
-.	O
-<	O
-http://www.show.scot.nhs.uk/scieh/PDF/weekly_report.pdf	O
->	O
--LRB-	O
-3	O
--RRB-	O
-PHLS	O
-website	O
-.	O
-Rabies	O
-homepage	O
--LSB-	O
-online	O
--RSB-	O
--LSB-	O
-cited	O
-21	O
-Nov	O
-2002	O
--RSB-	O
--LRB-	O
-4	O
--RRB-	O
-DEFRA	O
-.	O
-Suspected	B-DIS
-case	I-DIS
-of	O
-bat	B-VIC
-rabies	I-DIS
-in	I-DIS
-Lancashire	O
-.	O
--LRB-	O
-News	O
-release	O
-389/02	O
--RRB-	O
-.	O
-London	O
-:	O
-DEFRA	O
-,	O
-28	O
-Sep	O
-2002	O
-.	O
-<	O
-http://www.defra.gov.uk/news/2002/020928b.htm	O
->	O
--LRB-	O
-5	O
--RRB-	O
-CDSC	O
-.	O
-Bat	O
-brings	O
-rabies	B-DIS
-to	O
-Britain	O
-.	O
-Commun	O
-Dis	O
-Rep	O
-CDR	O
-Wkly	O
-1996	O
-;	O
-6	O
--LRB-	O
-24	O
--RRB-	O
-:	O
-205	O
-.	O
-<	O
-http://www.phls.org.uk/publications/cdr/CDR96/cdr2496.pdf	O
->	O
--LRB-	O
-6	O
--RRB-	O
-PHLS	O
-.	O
-A	B-VIC
-case	B-DIS
-of	O
-bat	B-VIC
-rabies	I-DIS
-in	I-DIS
-Lancashire	O
-.	O
-Commun	O
-Dis	O
-Rep	O
-CDR	O
-Wkly	O
-2002	O
-;	O
-12	O
--LRB-	O
-40	O
--RRB-	O
-:	O
-news	O
-.	O
-<	O
-http://www.phls.org.uk/publications/cdr/archive02/News/news4002.html#bats	O
->	O
--LRB-	O
-7	O
--RRB-	O
-Fooks	O
-AR	O
-,	O
-Johnson	O
-N.	O
-Sporadic	O
-case	B-DIS
-of	O
-bat	B-VIC
-rabies	I-DIS
-in	I-DIS
-United	O
-Kingdom	O
-.	O
-Eurosurveillance	O
-Weekly	O
-2002	O
-;	O
-6	O
-:	O
-021003	O
-.	O
-<	O
-http://www.eurosurveillance.org/ew/2002/021003.asp	O
->	O
--LRB-	O
-8	O
--RRB-	O
-Whitby	O
-JE	O
-,	O
-Johnstone	O
-P	O
-,	O
-Parsons	O
-G	O
-,	O
-King	O
-AA	O
-,	O
-Hutson	O
-AM	O
-.	O
-Ten-year	O
-survey	O
-of	O
-British	O
-bats	B-VIC
-for	O
-existence	O
-of	O
-rabies	B-DIS
-.	O
-Vet	O
-Rec	O
-1996	O
-;	O
-139	O
-:	O
-491-3	O
-.	O
--LRB-	O
-9	O
--RRB-	O
-Danish	O
-Veterinary	O
-Institute	O
-.	O
-A	B-VIC
-new	O
-case	B-DIS
-of	O
-European	B-DIS
-bat	B-VIC
-lyassavirus	O
--LRB-	O
-EBL	B-DIS
--RRB-	O
-infection	B-DIS
-in	I-DIS
-Danish	O
-sheep	O
-.	O
-Rabies	O
-Bulletin	O
-Europe	O
-2002	O
-;	O
-2	B-DIS
-:	O
-15	O
-.	O
-<	O
-http://www.who-rabies-bulletin.org/q2_2002/contents/4.2.html	O
->	O
--LRB-	O
-10	O
--RRB-	O
-Berger	O
-R	O
-.	O
-A	B-VIC
-human	O
-rabies	B-DIS
-case	I-DIS
-in	I-DIS
-Finland	O
-possibly	O
-of	O
-bat	B-VIC
-origin	O
-.	O
-Rabies	O
-Bulletin	O
-Europe	O
-1986	O
-;	O
-4:12	O
-.	O
--LRB-	O
-11	O
--RRB-	O
-Lumio	O
-J	O
-,	O
-Hillbom	O
-M	O
-,	O
-Roine	O
-R	O
-,	O
-Ketonen	O
-L	O
-,	O
-Haltia	O
-M	O
-,	O
-Valle	O
-M	O
-,	O
-et	O
-al.	O
-.	O
-Human	O
-rabies	B-DIS
-of	O
-bat	B-VIC
-origin	O
-in	B-DIS
-Europe	O
-.	O
-Lancet	O
-1986	O
-;	O
-1	B-DIS
--LRB-	O
-8477	O
--RRB-	O
-:	O
-378	O
-.	O
--LRB-	O
-12	O
--RRB-	O
-Roine	O
-RO	O
-,	O
-Hillbom	O
-M	O
-,	O
-Valle	O
-M	O
-,	O
-Haltia	O
-M	O
-,	O
-Ketonen	O
-L	O
-,	O
-Neuvonen	O
-E	O
-,	O
-et	O
-al.	O
-.	O
-Fatal	O
-encephalitis	O
-caused	O
-by	O
-a	B-VIC
-bat-borne	I-DIS
-rabies-related	I-DIS
-virus	I-DIS
-.	O
-Brain	O
-1988	O
-;	O
-111	O
-:	O
-1505	O
-.	O
--LRB-	O
-13	O
--RRB-	O
-World	O
-Health	O
-Organization	O
-.	O
-Bat	O
-rabies	B-DIS
-in	I-DIS
-Union	O
-of	O
-Soviet	O
-Socialist	O
-Republics	O
-.	O
-Rabies	O
-Bulletin	O
-Europe	O
-1987	O
-;	O
-4	O
-:	O
-12	O
-.	O
--LRB-	O
-14	O
--RRB-	O
-Warrell	O
-MJ	O
-.	O
-Human	O
-deaths	O
-from	O
-cryptic	O
-bat	B-VIC
-rabies	I-DIS
-in	I-DIS
-USA	O
-.	O
-Lancet	O
-1995	O
-;	O
-346	O
-:	O
-65-6	O
-.	O
--LRB-	O
-15	O
--RRB-	O
-Immunisation	O
-against	O
-infectious	O
-disease	O
-,	O
-sections	O
-27.3	O
-and	O
-27.4	O
-.	O
-London	O
-:	O
-Department	O
-of	O
-Health	O
-,	O
-1996	O
-.	O
-<	O
-http://www.doh.gov.uk/greenbook/greenbookpdf/chapter-27-layout.pdf	O
->	O
--LRB-	O
-16	O
--RRB-	O
-Debbie	O
-JG	O
-,	O
-Trimarchi	O
-CV	O
-.	O
-Prophylaxis	O
-for	O
-suspected	O
-exposure	O
-to	O
-bat	B-VIC
-rabies	I-DIS
-.	O
-Lancet	O
-1997	O
-;	O
-350	O
-:	O
-1790-1	O
-.	O
--LRB-	O
-17	O
--RRB-	O
-Anonymous	O
-.	O
-Rabies	O
-vaccine	O
-failures	O
-.	O
-Lancet	O
-1988	O
-:	O
-1	B-DIS
--LRB-	O
-8591	O
--RRB-	O
-:	O
-917-8	O
-.	O
--LRB-	O
-18	O
--RRB-	O
-Badrane	O
-H	O
-,	O
-Bahloul	O
-C	O
-,	O
-Perrin	O
-P	O
-,	O
-Tordo	O
-N.	O
-Evidence	O
-of	O
-two	O
-lyssavirus	B-DIS
-phylogroups	O
-with	O
-distinct	O
-pathogenicity	O
-and	O
-immunogenicity	O
-.	O
-J	O
-Virol	O
-2001	O
-;	O
-75	O
-:	O
-3268-76	O
-.	O
-Reported	O
-by	O
-Natasha	O
-Crowcroft	O
--LRB-	O
-ncrowcroft@phls.org.uk	O
--RRB-	O
-,	O
-Public	O
-Health	O
-Laboratory	O
-Service	O
-Communicable	O
-Disease	O
-Surveillance	O
-Centre	O
-,	O
-London	O
-,	O
-England	O
-Rock	O
-Springs	O
-Run	O
-State	O
-Reserve	O
--LRB-	O
-just	O
-north	O
-of	O
-Orlando	O
-,	O
-FL	O
--RRB-	O
-I	O
-,	O
-along	O
-with	O
-other	O
-park	O
-staff	O
-completely	O
-surveyed	O
-a	O
-95	O
-acre	O
-burn	O
-zone	O
-for	O
-dead	B-VIC
-tortoises	I-VIC
-.	O
-Our	O
-group	O
-of	O
-about	O
-8	O
-people	O
-took	O
-2	O
-hours	O
-surveying	O
-the	O
-sandhill	O
-habitat	O
-and	O
-found	O
-60	O
-dead	B-VIC
-gopher	I-VIC
-tortoises	I-VIC
-.	O
-The	O
-tortoises	B-VIC
-seem	O
-to	O
-be	O
-virtually	O
-extirpated	O
-from	O
-this	O
-area	O
-.	O
-This	O
-zone	O
-has	O
-been	O
-well	O
-managed	O
-by	O
-the	O
-park	O
-staff	O
-and	O
-appears	O
-to	O
-have	O
-all	O
-the	O
-components	O
-to	O
-support	O
-a	O
-healthy	O
-g.t.	O
-population	O
-.	O
-The	O
-tortoises	B-VIC
-were	O
-clearly	O
-not	O
-killed	O
-by	O
-an	B-DIS
-animal	O
-or	O
-human	O
-.	O
-But	O
-we	O
-have	O
-not	O
-gotten	O
-blood	O
-samples	O
-from	O
-enough	O
-tortoises	B-VIC
-in	O
-the	O
-area	O
-to	O
-make	O
-an	B-DIS
-upper	I-DIS
-respiratory	I-DIS
-tract	I-DIS
-infection	I-DIS
-claim	I-DIS
-as	O
-of	O
-right	O
-now	O
-.	O
-Right	O
-now	O
-we	O
-are	O
-surveying	O
-a	O
-zone	O
-that	O
-is	O
-next	O
-to	O
-the	O
-above	O
-mentioned	O
-zone	O
-.	O
-We	O
-know	O
-there	O
-are	O
-many	O
-dead	B-VIC
-tortoises	I-VIC
-in	O
-that	O
-area	O
-as	O
-well	O
-.	O
-If	O
-I	O
-had	O
-to	O
-make	O
-an	B-DIS
-estimate	O
-I	O
-would	O
-say	O
-there	O
-are	O
-approximately	B-VIC
-120-140	I-VIC
-dead	I-VIC
-tortoises	I-VIC
-in	O
-an	B-DIS
-area	O
-of	O
-about	O
-200	O
-acres	O
-.	O
-Please	O
-call	O
-or	O
-email	O
-if	O
-you	O
-have	O
-witnessed	O
-any	O
-other	O
-die-offs	O
-in	O
-the	O
-Orlando	O
-or	O
-surrounding	O
-area	O
-.	O
---	O
-Boyd	O
-Blihovde	O
-,	O
-Park	O
-Biologist	O
-Wekiva	O
-Basin	O
-GEOpark	O
-1800	O
-Wekiwa	O
-Circle	O
-Apopka	O
-,	O
-Florida	O
-32712	O
-407-884-2006	O
-<boyd.blihovde@dep.state.fl.us>	O
-...	O
-tg/pg/jw	O
----------------------------------------------------	O
-.	O
-Chinese	O
-scientists	O
-have	O
-found	O
-that	O
-the	B-DIS
-coronavirus	I-DIS
-that	O
-causes	O
-severe	B-DIS
-acute	I-DIS
-respiratory	I-DIS
-syndrome	I-DIS
--LRB-	O
-SARS	B-DIS
--RRB-	O
-is	O
-also	O
-carried	O
-by	O
-foxes	B-VIC
--LSB-	O
-domestic	O
-?	O
--RSB-	O
-cats	B-VIC
-,	O
-not	O
-just	O
-civets	O
-,	O
-according	O
-to	O
-Guangzhou	O
-Evening	O
-Newspaper	O
-.	O
-Lin	O
-Jinyan	O
-,	O
-leader	O
-of	O
-a	B-DIS
-SARS	I-DIS
-control	O
-prevention	O
-research	O
-team	O
-in	O
-south	O
-China	O
-'s	O
-Guangdong	O
-Province	O
-,	O
-reported	O
-in	O
-a	B-DIS
-seminar	O
-held	O
-in	O
-Guangzhou	O
-that	O
-other	I-VIC
-wild	I-VIC
-animals	I-VIC
-were	O
-also	O
-found	O
-to	O
-carry	O
-virus	O
-.	O
-The	O
-team	O
-had	O
-tested	O
-thousands	O
-of	O
-people	O
--LSB-	O
-for	O
--RSB-	O
-SARS	B-DIS
-antibodies	O
-in	O
-16	O
-cities	O
-in	O
-Guangdong	O
-found	O
-that	O
-among	O
-994	O
-people	O
-working	O
-in	O
-animal	O
-markets	O
-,	O
-10.6	B-VIC
-percent	I-VIC
-carried	O
-positive	O
-antibodies	O
-,	O
-among	O
-123	O
-civet	B-VIC
-cat	O
-husbandry	O
-staff	O
-,	O
-only	O
-3.25	B-VIC
-percent	I-VIC
-tested	O
-positive	O
-.	O
-Experts	O
-have	O
-also	O
-tested	O
-foxes	B-VIC
-,	O
-hedge-shrews	B-VIC
-and	I-VIC
-cats	I-VIC
-collected	O
-in	O
-province	O
-discovered	O
-that	O
-some	O
-carried	O
-the	B-DIS
-SARS	I-DIS
-coronavirus	I-DIS
-.	O
-On	O
-16	O
-Jan	O
-2004	O
-,	O
-World	O
-Health	O
-Organization	O
-experts	O
-claimed	O
-that	O
-the	B-DIS
-SARS	I-DIS
-coronavirus	I-DIS
-or	O
-a	B-DIS
-SARS-like	I-DIS
-coronavirus	I-DIS
-was	O
-linked	O
-to	O
-civet	B-VIC
-cats	I-VIC
-.	O
-WHO	O
-epidemiologist	O
-Robert	O
-Breiman	O
-said	O
-it	O
-'s	O
-possible	O
-that	O
-other	I-VIC
-animals	I-VIC
-were	O
-also	O
-involved	O
-in	O
-spread	O
-of	O
-SARS	B-DIS
-.	O
--LSB-	O
-These	O
-observations	O
-extend	O
-range	O
-of	O
-animal	O
-species	O
-known	O
-to	O
-harbour	O
-the	B-DIS
-SARS	I-DIS
-coronavirus	I-DIS
--LRB-	O
-or	O
-a	B-DIS
-closely	O
-related	O
-coronavirus	B-DIS
--RRB-	O
-.	O
-The	O
-results	O
-of	O
-human	O
-antibody	O
-study	O
-suggest	O
-that	O
-transmission	O
-of	O
-SARS	B-DIS
-coronavirus	I-DIS
-from	O
-civets	O
-to	O
-humans	O
-,	O
-if	O
-it	O
-occurs	O
-at	O
-all	O
-,	O
-is	O
-less	O
-efficient	O
-than	O
-from	O
-some	O
-other	I-VIC
-animals	I-VIC
-.	O
-What	O
-is	O
-certain	O
-is	O
-that	O
-a	B-DIS
-very	O
-large	O
-number	O
-of	O
-civet	B-VIC
-cats	I-VIC
-was	O
-destroyed	O
-unjustifiably	O
-.	O
-These	O
-data	O
-do	O
-not	O
-establish	O
-direction	O
-of	O
-transmission	O
-of	O
-infection	O
---	O
-from	O
-animal	O
-to	O
-man	O
-,	O
-or	O
-reverse	O
-.	O
-The	O
-origin	O
-of	O
-the	B-DIS
-SARS	I-DIS
-coronavirus	I-DIS
-remains	O
-obscure	O
-,	O
-it	O
-is	O
-possible	O
-that	O
-virus	O
-has	O
-been	O
-present	O
-in	O
-human	O
-population	O
-for	O
-some	O
-time	O
-,	O
-only	O
-developing	O
-virulence	O
-recently	O
-.	O
--	O
-Mod.CP	O
--RSB-	O
--LSB-	O
-Thanks	O
-to	O
-Alfonso	O
-Rodriguez	O
-,	O
-who	O
-sent	O
-in	O
-another	O
-version	O
-of	O
-this	O
-article	O
-.	O
-This	O
-report	O
-is	O
-also	O
-interesting	O
-in	O
-apparently	O
-showing	O
-a	B-DIS
-significant	O
-number	O
-of	O
-SARS	B-DIS
-survivors	O
-in	O
-animal	O
-handling	O
-population	O
-.	O
-One	O
-might	O
-wonder	O
-at	O
-specificity	O
-of	O
-antibody	O
-test	O
-used	O
-.	O
--	O
-Mod.JW	O
--RSB-	O
-into	O
-when	O
-they	O
-camped	O
-out	O
-Saturday	O
-at	O
-Dutchman	O
-'s	O
-Grave	O
-Springs	O
-,	O
-a	O
-remote	O
-area	O
-northeast	O
-of	O
-Horseshoe	O
-Lake	O
-.	O
-The	O
-Mesa	O
-Scouts	O
-had	O
-settled	O
-in	O
-for	O
-the	O
-night	O
-after	O
-a	O
-five-mile	O
-hike	O
-to	O
-the	O
-campsite	O
-,	O
-north	O
-of	O
-Fountain	O
-Hills	O
-,	O
-when	O
-Motil	O
-,	O
-47	O
-,	O
-set	O
-out	O
-to	O
-investigate	O
-a	O
-screeching	O
-sound	O
-.	O
-He	O
-soon	O
-found	O
-himself	O
-face	O
-to	O
-face	O
-with	O
-a	O
-fox	O
-.	O
-The	O
-animal	O
-attacked	O
-,	O
-cutting	O
-into	O
-Motil	O
-'s	O
-leg	O
-.	O
-Tests	O
-would	O
-later	O
-confirm	O
-his	O
-fears	O
-:	O
-The	O
-animal	O
-had	O
-rabies	B-DIS
-.	O
-Motil	O
-'s	O
-case	O
-marks	O
-the	O
-100th	O
-rabies	B-DIS
-case	O
-this	O
-year	O
-for	O
-Arizona	O
-,	O
-the	O
-highest	O
-number	O
-in	O
-15	O
-years	O
-.	O
-Of	O
-those	O
-,	O
-there	O
-have	O
-39	B-VIC
-human	I-VIC
-exposures	I-VIC
-to	O
-rabies	B-DIS
-recorded	O
-this	O
-year	O
-,	O
-all	O
-of	O
-which	O
-were	O
-treated	O
-.	O
-Thirty-one	O
-of	O
-those	O
-cases	O
-involved	O
-people	O
-picking	O
-up	O
-grounded	O
-bats	O
-.	O
-Mira	O
-Leslie	O
-,	O
-a	O
-public	O
-health	O
-veterinarian	O
-with	O
-the	O
-Arizona	O
-Department	O
-of	O
-Health	O
-Services	O
-,	O
-said	O
-treatment	O
-has	O
-improved	O
-but	O
-doctors	O
-still	O
-know	O
-relatively	O
-little	O
-about	O
-rabies	B-DIS
-.	O
-But	O
-they	O
-say	O
-Motil	O
-did	O
-everything	O
-right	O
-.	O
-The	O
-6-foot-7	O
-Scout	O
-leader	O
-moved	O
-quickly	O
-,	O
-striking	O
-the	O
-animal	O
-with	O
-his	O
-flashlight	O
-and	O
-pinning	O
-the	O
-4-foot-long	O
-fox	O
-to	O
-the	O
-ground	O
-with	O
-one	O
-hand	O
-while	O
-gesturing	O
-to	O
-the	O
-troop	O
-for	O
-a	O
-stick	O
-and	O
-some	O
-rope	O
-.	O
-He	O
-hogtied	O
-the	O
-gray	O
-fox	O
-,	O
-then	O
-tied	O
-it	O
-to	O
-a	O
-tree	O
-as	O
-he	O
-went	O
-off	O
-to	O
-bed	O
-,	O
-wondering	O
-if	O
-he	O
-had	O
-been	O
-bitten	O
-by	O
-an	O
-animal	O
-infected	O
-with	O
-rabies	B-DIS
-.	O
-``	O
-After	O
-we	O
-had	O
-tied	O
-up	O
-the	O
-fox	O
-,	O
-we	O
-pulled	O
-off	O
-my	O
-sock	O
--LRB-	O
-expecting	O
-to	O
-see	O
-a	O
-bite	O
--RRB-	O
-and	O
-went	O
-,	O
-`	O
-Whew	O
-,	O
-that	O
-was	O
-n't	O
-much	O
-,	O
-'	O
-''	O
-Motil	O
-said	O
-.	O
-``	O
-It	O
-was	O
-n't	O
-until	O
-later	O
-that	O
-we	O
-discovered	O
-the	O
-small	O
-holes	O
-.	O
-''	O
-The	O
-fox	O
-died	O
-during	O
-the	O
-night	O
-.	O
-Motil	O
-,	O
-a	O
-lab	O
-manager	O
-at	O
-Phoenix	O
-Children	O
-'s	O
-Hospital	O
-,	O
-knew	O
-speed	O
-was	O
-a	O
-necessity	O
-as	O
-the	O
-presence	O
-of	O
-rabies	B-DIS
-deteriorates	O
-after	O
-an	O
-animal	O
-is	O
-dead	O
-.	O
-So	O
-the	O
-troop	O
-trekked	O
-back	O
-to	O
-the	O
-vans	O
-for	O
-the	O
-return	O
-trip	O
-to	O
-the	O
-Valley	O
-.	O
-State	O
-lab	O
-technicians	O
-began	O
-the	O
-grisly	O
-testing	O
-process	O
-immediately	O
-:	O
-The	O
-animal	O
-is	O
-decapitated	O
-and	O
-a	O
-fluorescent	O
-solution	O
-is	O
-spread	O
-around	O
-on	O
-parts	O
-of	O
-the	O
-brain	O
-.	O
-Areas	O
-infected	O
-by	O
-rabies	B-DIS
-begin	O
-to	O
-glow	O
-bright	O
-green	O
-,	O
-and	O
-the	O
-fox	O
-'s	O
-tissue	O
-lit	O
-up	O
-like	O
-a	O
-Christmas	O
-tree	O
-.	O
-The	O
-Scout	O
-leader	O
-began	O
-treatment	O
-for	O
-the	O
-bite	O
-Sunday	O
-with	O
-the	O
-first	O
-of	O
-five	O
-shots	O
-of	O
-serum	O
-spread	O
-over	O
-one	O
-month	O
-.	O
-``	O
-He	O
-was	O
-skilled	O
-in	O
-the	O
-way	O
-he	O
-handled	O
-the	O
-fox	O
-,	O
-''	O
-Leslie	O
-said	O
-of	O
-Motil	O
-,	O
-a	O
-troop	O
-leader	O
-for	O
-4	O
-years	O
-.	O
-``	O
-Most	O
-people	O
-do	O
-n't	O
-have	O
-that	O
-.	O
-''	O
--LSB-	O
-Thanks	O
-very	O
-much	O
-,	O
-Phyllis	O
-,	O
-for	O
-sending	O
-this	O
-to	O
-ProMED-mail	O
-.	O
-The	O
-details	O
-of	O
-how	O
-he	O
-dealt	O
-with	O
-the	O
-fox	O
-bite	O
-are	O
-impressive	O
-,	O
-to	O
-say	O
-the	O
-least	O
-.	O
-Congratulations	O
-to	O
-the	O
-scout	O
-leader	O
-.	O
-What	O
-a	O
-great	O
-example	O
-of	O
-appropriate	O
-action	O
-for	O
-the	O
-kids	O
-in	O
-his	O
-troop	O
-.	O
--	O
-Mod.PC	O
--RSB-	O
-...	O
-es	O
----------------------------------------------------------	O
-.	O
-According	O
-to	O
-the	O
-data	O
-published	O
-today	O
-by	O
-the	O
-Congolese	O
-Ministry	O
-of	O
-Health	O
-,	O
-at	I-VIC
-least	I-VIC
-81	I-VIC
-persons	I-VIC
-have	O
-died	O
-as	O
-a	O
-result	O
-of	O
-the	O
-epidemic	O
-of	O
-Ebola	B-DIS
-hemorrhagic	I-DIS
-fever	I-DIS
-in	O
-the	O
-Cuvette	O
-Ouest	O
-Region	O
--LRB-	O
-northwest	O
-Congo	O
--RRB-	O
-,	O
-on	O
-the	O
-border	O
-with	O
-Gabon	O
-.	O
-The	O
-Ministry	O
-of	O
-Health	O
-information	O
-bulletin	O
-indicates	O
-that	O
-the	O
-district	O
-of	O
-Kelle	O
-,	O
-430	O
-miles	O
-northwest	O
-of	O
-Brazzaville	O
-,	O
-where	O
-the	O
-main	O
-focus	O
-of	O
-the	O
-epidemic	O
-is	O
-located	O
-,	O
-registered	O
-72	O
-deaths	O
-,	O
-while	O
-the	O
-neighboring	O
-district	O
-of	O
-Mbomo	O
-,	O
-almost	O
-500	O
-miles	O
-further	O
-north	O
-,	O
-reported	O
-9	O
-victims	O
-since	O
-the	O
-disease	O
-appeared	O
-on	O
-4	O
-Jan	O
-2003	O
-.	O
-In	O
-1996	O
-,	O
-a	O
-similar	O
-epidemic	O
-caused	O
-the	O
-death	O
-of	O
-hundreds	O
-of	O
-people	O
-in	O
-the	O
-Democratic	O
-Republic	O
-of	O
-Congo	O
--LRB-	O
-DRC	O
--RRB-	O
-.	O
-Shortly	O
-before	O
-,	O
-WHO	O
-spokesperson	O
-Fadela	O
-Chaib	O
-had	O
-stated	O
-that	O
-in	O
-Cuvette	O
-Ouest	O
-,	O
-80	O
-of	O
-the	O
-97	O
-cases	O
-of	O
-Ebola	B-DIS
-hemorrhagic	I-DIS
-fever	I-DIS
-registered	O
-had	O
-died	O
-.	O
-According	O
-to	O
-the	O
-WHO	O
-data	O
-,	O
-72	O
-of	O
-the	O
-85	O
-cases	O
-registered	O
-in	O
-Kelle	O
-died	O
-,	O
-as	O
-did	O
-8	O
-of	O
-the	O
-12	O
-cases	O
-registered	O
-in	O
-Mbomo	O
-.	O
-According	O
-to	O
-Chaib	O
-,	O
-local	O
-communities	O
-have	O
-begun	O
-to	O
-have	O
-a	O
-better	O
-understanding	O
-of	O
-this	O
-highly	O
-contagious	O
-disease	O
-,	O
-and	O
-have	O
-less	O
-fear	O
-,	O
-thanks	O
-in	O
-part	O
-to	O
-the	O
-medical	O
-and	O
-expert	O
-teams	O
-that	O
-have	O
-arrived	O
-and	O
-who	O
-are	O
-instructing	O
-them	O
-to	O
-not	O
-eat	O
-dead	O
-monkeys	O
-found	O
-in	O
-the	O
-forest	O
-,	O
-as	O
-well	O
-as	O
-to	O
-change	O
-their	O
-burial	O
-rites	O
-.	O
--LSB-	O
-The	O
-Ministry	O
-of	O
-Health	O
-report	O
-increases	O
-the	O
-number	O
-of	O
-death	O
-reported	O
-by	O
-WHO	O
-by	O
-one	O
-.	O
--	O
-Mod.CP	O
--RSB-	O
-----------	O
-.	O
-Protecting	O
-the	O
-United	O
-Kingdom	O
-Blood	O
-Supply	O
-from	O
-Variant	B-DIS
-CJD	I-DIS
-:	O
-Donors	O
-Who	O
-Have	O
-Received	O
-a	O
-Blood	O
-Transfusion	O
-Can	O
-No	O
-Longer	O
-Donate	O
-Blood	O
--------------------------------------------------	O
-On	O
-Tue	O
-16	O
-Mar	O
-2004	O
-,	O
-the	O
-Department	O
-of	O
-Health	O
-in	O
-England	O
-announced	O
-that	O
-people	O
-who	O
-have	O
-received	O
-a	O
-blood	O
-transfusion	O
-in	O
-the	O
-United	O
-Kingdom	O
--LRB-	O
-UK	O
--RRB-	O
-since	O
-1	O
-Jan	O
-1980	O
-will	O
-no	O
-longer	O
-be	O
-able	O
-to	O
-donate	O
-blood	O
--LRB-	O
-1,2	O
--RRB-	O
-.	O
-This	O
-additional	O
-donor	O
-selection	O
-criterion	O
-will	O
-be	O
-implemented	O
-by	O
-all	O
-four	O
-of	O
-the	O
-UK	O
-Blood	O
-Services	O
--LRB-	O
-UKBS	O
--RRB-	O
-,	O
-including	O
-the	O
-National	O
-Blood	O
-Service	O
-on	O
-5	O
-Apr	O
-2004	O
-.	O
--LRB-	O
-<	O
-http://www.blood.co.uk/	O
->	O
--RRB-	O
-This	O
-additional	O
-precautionary	O
-measure	O
-to	O
-safeguard	O
-the	O
-blood	O
-supply	O
-is	O
-being	O
-taken	O
-in	O
-the	O
-light	O
-of	O
-the	O
-1st	O
-possible	O
-transmission	O
-of	O
-variant	B-DIS
-Creutzfeldt-Jakob	I-DIS
-disease	I-DIS
--LSB-	O
-abbreviated	O
-as	O
-CJD	B-DIS
--LRB-	O
-new	B-DIS
-var	I-DIS
-,	O
--RRB-	O
-or	O
-vCJD	B-DIS
-in	O
-ProMED-mail	O
--RSB-	O
-by	O
-blood	O
-transfusion	O
-,	O
-which	O
-was	O
-reported	O
-in	O
-December	O
-2003	O
--LRB-	O
-3	O
--RRB-	O
-.	O
-The	O
-transfusion	O
-occurred	O
-in	O
-1996	O
-;	O
-the	O
-blood	O
-donor	O
-was	O
-well	O
-at	O
-the	O
-time	O
-but	O
-developed	O
-symptoms	O
-of	O
-vCJD	B-DIS
-in	O
-1999	O
-and	O
-died	O
-the	O
-following	O
-year	O
-.	O
-The	O
-recipient	O
-was	O
-diagnosed	O
-with	O
-vCJD	B-DIS
-in	O
-2003	O
-.	O
-Since	O
-1997	O
-,	O
-in	O
-view	O
-of	O
-the	O
-uncertainty	O
-as	O
-to	O
-whether	O
-vCJD	B-DIS
-could	O
-be	O
-transmitted	O
-by	O
-blood	O
-or	O
-blood	O
-products	O
-,	O
-the	O
-UKBS	O
-have	O
-put	O
-in	O
-place	O
-a	O
-number	O
-of	O
-other	O
-measures	O
-to	O
-reduce	O
-the	O
-risk	O
-of	O
-a	O
-potential	O
-onward	O
-cycle	O
-of	O
-transmission	O
-:	O
--LRB-	O
-1	O
--RRB-	O
-Withdrawal	O
-and	O
-recall	O
-of	O
-any	O
-blood	O
-components	O
-,	O
-plasma	O
-derivatives	O
-,	O
-or	O
-tissues	O
-obtained	O
-from	O
-any	O
-individual	O
-who	O
-later	O
-develops	O
-vCJD	B-DIS
--LRB-	O
-December	O
-1997	O
--RRB-	O
-;	O
--LRB-	O
-2	O
--RRB-	O
-Importation	O
-of	O
-plasma	O
-from	O
-the	O
-US	O
-for	O
-fractionation	O
-to	O
-manufacture	O
-plasma	O
-derivatives	O
--LRB-	O
-announced	O
-May	O
-1998	O
-,	O
-implemented	O
-October	O
-1999	O
--RRB-	O
-;	O
--LRB-	O
-3	O
--RRB-	O
-Leucodepletion	O
--LRB-	O
-removal	O
-of	O
-white	O
-blood	O
-cells	O
--RRB-	O
-of	O
-all	O
-blood	O
-components	O
--LRB-	O
-announced	O
-July	O
-1998	O
-,	O
-implemented	O
-Autumn	O
-1999	O
--RRB-	O
-;	O
--LRB-	O
-4	O
--RRB-	O
-Importation	O
-of	O
-fresh	O
-frozen	O
-plasma	O
-from	O
-the	O
-United	O
-States	O
-for	O
-patients	O
-born	O
-on	O
-or	O
-after	O
-1	O
-Jan	O
-1996	O
--LRB-	O
-announced	O
-August	O
-2002	O
-,	O
-to	O
-be	O
-implemented	O
-spring	O
-2004	O
--RRB-	O
-;	O
--LRB-	O
-5	O
--RRB-	O
-Promotion	O
-of	O
-appropriate	O
-use	O
-of	O
-blood	O
-and	O
-tissues	O
-and	O
-alternatives	O
-throughout	O
-the	O
-National	O
-Health	O
-Service	O
--LRB-	O
-NHS	O
--RRB-	O
-.	O
-This	O
-is	O
-a	O
-highly	O
-precautionary	O
-approach	O
-,	O
-and	O
-the	O
-benefit	O
-of	O
-receiving	O
-a	O
-blood	O
-transfusion	O
-when	O
-needed	O
-far	O
-outweighs	O
-any	O
-possible	O
-risk	O
-of	O
-contracting	O
-vCJD	B-DIS
-.	O
-To	O
-date	O
-there	O
-has	O
-been	O
-only	O
-one	O
-possible	O
-case	O
-of	O
-vCJD	B-DIS
-being	O
-transmitted	O
-by	O
-blood	O
-,	O
-yet	O
-the	O
-UKBS	O
-issue	O
-over	O
-2.5	O
-million	O
-units	O
-of	O
-blood	O
-every	O
-year	O
-.	O
-As	O
-of	O
-1	O
-Mar	O
-2004	O
-there	O
-have	O
-been	O
-146	O
-definite	O
-and	O
-probable	O
-cases	B-VIC
-of	O
-vCJD	B-DIS
-in	O
-the	O
-UK	O
-,	O
-one	O
-case	O
-each	O
-in	O
-the	O
-Republic	O
-of	O
-Ireland	O
-,	O
-Italy	O
-,	O
-United	O
-States	O
-,	O
-Canada	O
-,	O
-and	O
-Hong	O
-Kong	O
-,	O
-and	O
-6	B-VIC
-cases	I-VIC
-in	O
-France	O
-.	O
-The	O
-eventual	O
-number	O
-of	O
-individuals	O
-within	O
-the	O
-UK	O
-population	O
-likely	O
-to	O
-develop	O
-vCJD	B-DIS
-remains	O
-uncertain	O
-;	O
-estimates	O
-range	O
-from	O
-the	O
-current	O
-numbers	O
-up	O
-to	O
-540	O
-.	O
-It	O
-is	O
-not	O
-known	O
-how	O
-many	O
-current	O
-or	O
-past	O
-blood	O
-or	O
-tissue	O
-donors	O
-may	O
-develop	O
-vCJD	B-DIS
-in	O
-the	O
-future	O
-.	O
-Further	O
-information	O
-and	O
-advice	O
-to	O
-blood	O
-donors	O
-and	O
-members	O
-of	O
-the	O
-public	O
-who	O
-are	O
-concerned	O
-about	O
-the	O
-risk	O
-of	O
-contracting	O
-vCJD	B-DIS
-from	O
-a	O
-blood	O
-transfusion	O
-are	O
-being	O
-offered	O
-via	O
-the	O
-NHS	O
-Direct	O
-service	O
--LRB-	O
-<	O
-http://www.nhsdirect.nhs.uk/	O
->	O
--RRB-	O
-.	O
--LSB-	O
-Byline	O
-:	O
-Nicky	O
-Connor	O
--LRB-	O
-<nicky.connor@hpa.org.uk>	O
--RRB-	O
-and	O
-Helen	O
-Janecek	O
-,	O
-Health	O
-Protection	O
-Agency	O
-Communicable	O
-Disease	O
-Surveillance	O
-Centre	O
-,	O
-London	O
-,	O
-England	O
--RSB-	O
--LRB-	O
-1	O
--RRB-	O
-Department	O
-of	O
-Health	O
-.	O
-Further	O
-precautions	O
-to	O
-protect	O
-blood	O
-supply	O
-.	O
-Press	O
-release	O
-2004/0104	O
-,	O
-16	O
-Mar	O
-2004	O
-.	O
--LRB-	O
-<	O
-http://www.dh.gov.uk/PublicationsAndStatistics/PressReleases/PressReleasesNotices/fs/en?CONTENT_ID=4076608&chk=MTwE%2Bl	O
->	O
--RRB-	O
--LRB-	O
-2	O
--RRB-	O
-Reid	O
-J.	O
-Developments	O
-in	O
-CJD	B-DIS
-.	O
-House	O
-of	O
-Commons	O
-Debate	O
--LRB-	O
-Hansard	O
--RRB-	O
-2003-04	O
-;	O
-419	O
-:	O
-March	O
-16	O
-col	O
-157	O
--LRB-	O
-<	O
-http://www.parliament.the-stationery-office.co.uk/pa/cm200304/cmhansrd/cm040316/debtext/40316-05_head0	O
->	O
--RRB-	O
--LRB-	O
-3	O
--RRB-	O
-Llewelyn	O
-CA	O
-,	O
-Hewitt	O
-PE	O
-,	O
-Knight	O
-RS	O
-,	O
-Amar	O
-K	O
-,	O
-Cousens	O
-S	O
-,	O
-Mackenzie	O
-J	O
-,	O
-et	O
-al.	O
-.	O
-Possible	O
-transmission	O
-of	O
-variant	B-DIS
-Creutzfeldt-Jakob	I-DIS
-disease	I-DIS
-by	O
-blood	O
-transfusion	O
-.	O
-Lancet	O
-2004	O
-;	O
-363:417	O
--21	O
-.	O
+0 3:1 7:1 65:1 68:1 87:1 501:1
+0 11:1 63:1 66:1 71:1 74:1 88:1 502:1
+0 26:1 64:1 67:1 69:1 72:1 653:1
+0 24:1 70:1 73:1 131:1 134:1 651:1
+0 25:1 129:1 132:1 611:1 652:1 5855:1
+0 44:1 130:1 133:1 609:1 5853:1
+0 42:1 125:1 158:1 610:1 5854:1
+0 43:1 123:1 125:1 156:1 161:1
+0 50:1 123:1 124:1 157:1 159:1 404:1
+0 26:1 48:1 124:1 160:1 402:1 5858:1
+0 11:1 24:1 49:1 50:1 403:1 1742:1 5856:1
+0 25:1 44:1 48:1 1740:1 5857:1
+0 42:1 49:1 125:1 161:1 1741:1
+0 43:1 68:1 123:1 159:1 173:1
+0 17:1 66:1 124:1 160:1 171:1 5861:1
+3 11:1 15:1 26:1 67:1 172:1 722:1 5859:1
+0 16:1 24:1 74:1 720:1 2960:1 5860:1
+0 17:1 25:1 72:1 721:1 2958:1 5864:1
+0 11:1 15:1 17:1 73:1 1304:1 2959:1 5862:1
+0 11:1 15:1 16:1 125:1 236:1 1302:1 5863:1
+0 16:1 68:1 123:1 173:1 234:1 1303:1
+0 17:1 66:1 124:1 171:1 235:1 5867:1
+0 11:1 15:1 67:1 83:1 172:1 479:1 5865:1
+0 16:1 81:1 140:1 477:1 5866:1 5870:1
+0 82:1 125:1 138:1 478:1 770:1 5868:1
+0 26:1 123:1 139:1 768:1 5869:1 5873:1
+0 24:1 124:1 125:1 161:1 769:1 5871:1
+0 25:1 68:1 123:1 159:1 173:1 5872:1
+0 17:1 66:1 124:1 160:1 171:1 5867:1
+0 11:1 15:1 17:1 67:1 172:1 1589:1 5865:1
+0 11:1 15:1 16:1 125:1 161:1 1587:1 5866:1
+0 16:1 17:1 123:1 159:1 1310:1 1588:1
+0 11:1 15:1 62:1 124:1 160:1 1308:1
+0 4:1 8:1 16:1 60:1 1309:1
+0 3:1 7:1 11:1 104:1 150:1 5375:1 5874:1
+0 102:1 113:1 116:1 151:1 5373:1 5875:1
+0 103:1 111:1 114:1 911:1 914:1 5374:1
+0 17:1 112:1 115:1 909:1 912:1 5879:1
+0 11:1 15:1 104:1 910:1 913:1 5877:1 5882:1
+0 16:1 44:1 102:1 5878:1 5880:1
+0 42:1 103:1 572:1 5881:1 5885:1
+0 43:1 113:1 116:1 570:1 5883:1
+0 17:1 111:1 114:1 571:1 1430:1 5884:1
+0 11:1 15:1 17:1 112:1 115:1 1428:1 5888:1
+0 11:1 15:1 16:1 17:1 1429:1 5886:1 5891:1
+0 11:1 15:1 16:1 131:1 134:1 5887:1 5889:1
+0 16:1 17:1 129:1 132:1 5890:1 5894:1
+0 11:1 15:1 17:1 130:1 133:1 5892:1 5897:1
+0 11:1 15:1 16:1 728:1 998:1 5893:1 5895:1
+0 16:1 572:1 726:1 996:1 5896:1 5900:1
+0 110:1 570:1 727:1 997:1 5898:1 5903:1
+0 68:1 108:1 571:1 650:1 5899:1 5901:1
+0 26:1 66:1 109:1 648:1 653:1 5902:1
+0 24:1 62:1 67:1 649:1 651:1
+0 4:1 8:1 25:1 60:1 652:1
+0 3:1 7:1 11:1 15:1 89:1 5886:1
+0 16:1 17:1 87:1 5887:1 5906:1
+0 11:1 15:1 88:1 95:1 5904:1
+0 16:1 44:1 93:1 5905:1
+0 17:1 42:1 94:1 5894:1
+0 11:1 15:1 43:1 89:1 5892:1
+0 16:1 87:1 728:1 4694:1 5893:1
+0 11:1 88:1 152:1 726:1 4692:1 5909:1
+0 11:1 26:1 150:1 727:1 4693:1 5907:1 5912:1
+0 11:1 24:1 95:1 151:1 5908:1 5910:1
+0 25:1 93:1 131:1 134:1 5911:1
+0 17:1 94:1 129:1 132:1 1724:1
+0 11:1 15:1 17:1 130:1 133:1 1722:1 5915:1
+0 11:1 15:1 16:1 17:1 1723:1 5913:1 5918:1
+0 11:1 15:1 16:1 89:1 5914:1 5916:1
+0 16:1 17:1 87:1 5917:1 5921:1
+0 11:1 15:1 17:1 88:1 5919:1 5924:1
+0 11:1 15:1 16:1 125:1 161:1 5920:1 5922:1
+0 16:1 17:1 123:1 159:1 5923:1 5927:1
+0 11:1 15:1 95:1 124:1 160:1 5925:1
+0 16:1 93:1 110:1 5039:1 5926:1
+0 94:1 108:1 125:1 770:1 5037:1
+0 17:1 109:1 123:1 768:1 5038:1 5930:1
+0 11:1 15:1 50:1 124:1 263:1 769:1 5928:1
+0 16:1 48:1 113:1 116:1 261:1 5929:1
+0 17:1 49:1 111:1 114:1 262:1 5864:1
+0 11:1 15:1 44:1 112:1 115:1 5862:1
+0 16:1 42:1 125:1 968:1 5863:1
+0 26:1 43:1 123:1 966:1 5933:1
+0 24:1 124:1 125:1 143:1 967:1 5931:1
+0 25:1 68:1 123:1 141:1 173:1 5932:1
+0 17:1 66:1 124:1 142:1 171:1 5867:1
+0 11:1 15:1 67:1 104:1 172:1 1415:1 5865:1
+0 16:1 44:1 102:1 1413:1 5866:1
+0 42:1 103:1 125:1 770:1 1414:1
+0 26:1 43:1 123:1 768:1 5873:1
+0 24:1 124:1 125:1 161:1 769:1 5871:1
+0 25:1 68:1 123:1 159:1 173:1 5872:1
+0 66:1 74:1 124:1 160:1 171:1 5936:1
+0 11:1 26:1 67:1 72:1 172:1 5934:1 5939:1
+0 11:1 24:1 73:1 125:1 161:1 5935:1 5937:1
+0 25:1 68:1 123:1 159:1 173:1 5938:1
+0 17:1 66:1 124:1 160:1 171:1 5942:1
+0 11:1 15:1 17:1 67:1 172:1 3887:1 5940:1
+0 11:1 15:1 16:1 17:1 1310:1 3885:1 5941:1
+0 11:1 15:1 16:1 17:1 1308:1 3886:1 4301:1
+0 11:1 15:1 16:1 17:1 1309:1 4299:1 5945:1
+0 11:1 15:1 16:1 44:1 4300:1 5943:1
+0 16:1 42:1 125:1 236:1 5944:1
+0 26:1 43:1 123:1 234:1 5948:1
+0 24:1 113:1 116:1 124:1 235:1 5946:1
+0 25:1 111:1 114:1 611:1 5947:1 5951:1
+0 68:1 112:1 115:1 173:1 609:1 5949:1
+0 66:1 152:1 171:1 610:1 5360:1 5950:1
+0 26:1 67:1 150:1 172:1 722:1 5358:1
+0 24:1 26:1 151:1 720:1 1340:1 5359:1
+0 24:1 25:1 131:1 134:1 721:1 1338:1
+0 25:1 26:1 129:1 132:1 1339:1 1994:1
+0 24:1 26:1 130:1 133:1 1992:1 2675:1
+0 24:1 25:1 62:1 1993:1 2673:1
+0 4:1 8:1 25:1 60:1 2674:1
+0 3:1 7:1 11:1 104:1 150:1 5375:1 5874:1
+0 102:1 151:1 572:1 1442:1 5373:1 5875:1
+0 103:1 113:1 116:1 570:1 1440:1 5374:1
+0 17:1 111:1 114:1 571:1 1441:1 1724:1
+0 11:1 15:1 17:1 112:1 115:1 1722:1 5954:1
+0 11:1 15:1 16:1 17:1 1723:1 3992:1 5952:1
+0 11:1 15:1 16:1 131:1 134:1 3990:1 5953:1
+0 16:1 17:1 129:1 132:1 3991:1 5957:1
+0 11:1 15:1 17:1 130:1 133:1 5955:1 5960:1
+0 11:1 15:1 16:1 125:1 206:1 5956:1 5958:1
+0 16:1 17:1 123:1 204:1 5864:1 5959:1
+0 11:1 15:1 17:1 124:1 205:1 1304:1 5862:1
+0 11:1 15:1 16:1 131:1 134:1 1302:1 5863:1
+0 16:1 17:1 129:1 132:1 1303:1 5867:1
+0 11:1 15:1 17:1 130:1 133:1 5865:1 5963:1
+0 11:1 15:1 16:1 17:1 1310:1 5866:1 5961:1
+0 11:1 15:1 16:1 104:1 1308:1 1415:1 5962:1
+0 16:1 62:1 102:1 1309:1 1413:1
+0 4:1 8:1 60:1 103:1 1414:1
+0 3:1 7:1 11:1 66:1 101:1 104:1 1995:1
+0 67:1 99:1 102:1 140:1 1640:1 1996:1
+0 100:1 103:1 125:1 138:1 143:1 1638:1
+0 68:1 123:1 139:1 141:1 173:1 1639:1
+0 66:1 124:1 142:1 152:1 171:1 5966:1
+0 11:1 17:1 67:1 150:1 172:1 5964:1 5969:1
+0 11:1 15:1 17:1 151:1 1589:1 5965:1 5967:1
+0 11:1 15:1 16:1 125:1 161:1 1587:1 5968:1
+0 16:1 17:1 123:1 159:1 1588:1 5864:1
+0 11:1 15:1 17:1 124:1 160:1 755:1 5862:1
+0 11:1 15:1 16:1 62:1 753:1 5863:1
+0 4:1 8:1 16:1 60:1 754:1
+0 3:1 7:1 11:1 15:1 113:1 116:1 5970:1
+0 16:1 68:1 111:1 114:1 173:1 5971:1
+0 66:1 104:1 112:1 115:1 171:1 5975:1
+0 67:1 102:1 152:1 172:1 5973:1 5978:1
+0 103:1 113:1 116:1 150:1 5974:1 5976:1
+0 68:1 111:1 114:1 151:1 173:1 5977:1
+0 62:1 66:1 112:1 115:1 171:1
+0 4:1 8:1 60:1 67:1 172:1
+0 3:1 7:1 11:1 24:1 26:1 5979:1 5984:1
+0 24:1 25:1 125:1 161:1 5980:1 5982:1
+0 17:1 25:1 123:1 159:1 5983:1 5987:1
+0 11:1 15:1 104:1 124:1 160:1 5985:1 5990:1
+0 16:1 44:1 102:1 5986:1 5988:1
+0 42:1 103:1 104:1 5989:1 5993:1
+0 43:1 102:1 131:1 134:1 5991:1
+0 103:1 104:1 129:1 132:1 5992:1 5996:1
+0 102:1 130:1 133:1 671:1 1052:1 5994:1
+0 103:1 572:1 669:1 851:1 1050:1 5995:1
+0 152:1 482:1 570:1 670:1 849:1 1051:1
+0 125:1 150:1 236:1 480:1 571:1 850:1
+0 68:1 123:1 151:1 234:1 481:1 650:1
+0 66:1 104:1 124:1 235:1 648:1 5990:1
+0 62:1 67:1 102:1 649:1 5988:1
+0 4:1 8:1 60:1 103:1 5989:1
+0 3:1 7:1 11:1 44:1 570:1 5997:1
+0 42:1 68:1 287:1 571:1 5998:1
+0 43:1 66:1 152:1 285:1 3842:1
+0 26:1 67:1 150:1 286:1 3840:1 4787:1
+0 24:1 125:1 151:1 161:1 3841:1 4785:1
+0 25:1 68:1 123:1 159:1 173:1 4786:1
+0 26:1 66:1 124:1 160:1 171:1 722:1
+0 24:1 26:1 67:1 172:1 653:1 720:1
+0 24:1 25:1 131:1 134:1 651:1 721:1
+0 25:1 129:1 132:1 611:1 652:1 5855:1
+0 130:1 133:1 609:1 1010:1 1355:1 5853:1
+0 610:1 611:1 734:1 1008:1 1353:1 5854:1
+0 152:1 482:1 609:1 732:1 1009:1 1354:1
+0 125:1 150:1 480:1 610:1 733:1 770:1
+0 68:1 123:1 151:1 173:1 481:1 768:1
+0 17:1 66:1 124:1 171:1 769:1 5906:1
+0 11:1 15:1 26:1 67:1 172:1 5904:1 6002:1
+0 16:1 24:1 125:1 3143:1 5905:1 6000:1
+0 25:1 68:1 123:1 173:1 3141:1 6001:1
+0 66:1 124:1 152:1 171:1 3142:1 4451:1
+0 50:1 67:1 150:1 172:1 326:1 4449:1
+0 48:1 104:1 151:1 324:1 1094:1 4450:1
+0 49:1 89:1 102:1 325:1 1092:1
+0 87:1 103:1 608:1 611:1 1093:1
+0 26:1 88:1 606:1 609:1 6005:1
+0 11:1 24:1 26:1 607:1 610:1 6003:1 6008:1
+0 24:1 25:1 572:1 1982:1 6004:1 6006:1
+0 25:1 32:1 570:1 1274:1 1980:1 6007:1
+0 26:1 30:1 571:1 1272:1 1981:1 6011:1
+0 11:1 24:1 31:1 95:1 641:1 1273:1 6009:1
+0 25:1 50:1 93:1 639:1 2402:1 6010:1
+0 17:1 48:1 94:1 640:1 2400:1 5861:1
+3 11:1 15:1 26:1 49:1 722:1 2401:1 5859:1
+0 16:1 24:1 125:1 236:1 720:1 5860:1
+0 25:1 123:1 152:1 234:1 721:1 6014:1
+0 11:1 101:1 104:1 124:1 150:1 235:1 6012:1
+0 99:1 102:1 151:1 671:1 5855:1 6013:1
+0 17:1 100:1 103:1 669:1 5853:1 5942:1
+0 11:1 15:1 17:1 670:1 3887:1 5854:1 5940:1
+0 11:1 15:1 16:1 17:1 1310:1 3885:1 5941:1
+0 11:1 15:1 16:1 17:1 1308:1 3886:1 4301:1
+0 11:1 15:1 16:1 17:1 1309:1 4299:1 5945:1
+0 11:1 15:1 16:1 50:1 809:1 4300:1 5943:1
+0 16:1 26:1 48:1 807:1 5858:1 5944:1
+0 11:1 24:1 49:1 50:1 808:1 1742:1 5856:1
+0 25:1 48:1 50:1 224:1 1740:1 5857:1
+0 48:1 49:1 62:1 222:1 1741:1
+0 4:1 8:1 49:1 60:1 223:1
+0 3:1 7:1 11:1 24:1 68:1 2141:1 6015:1
+0 11:1 25:1 66:1 152:1 2139:1 6016:1 6020:1
+0 67:1 150:1 671:1 2140:1 5855:1 6018:1
+0 83:1 151:1 669:1 5853:1 6019:1 6023:1
+0 68:1 81:1 173:1 670:1 5854:1 6021:1
+0 26:1 66:1 82:1 171:1 722:1 6022:1
+0 24:1 67:1 125:1 161:1 172:1 720:1
+0 25:1 26:1 123:1 159:1 721:1 6026:1
+0 24:1 124:1 125:1 160:1 770:1 6024:1
+0 17:1 25:1 123:1 768:1 5864:1 6025:1
+0 11:1 15:1 26:1 124:1 769:1 5862:1 6029:1
+0 16:1 24:1 515:1 824:1 5863:1 6027:1
+0 25:1 152:1 513:1 822:1 2612:1 6028:1
+0 26:1 150:1 514:1 823:1 1172:1 2610:1
+0 24:1 104:1 151:1 1170:1 1415:1 2611:1
+0 25:1 102:1 110:1 1171:1 1413:1 6032:1
+0 103:1 108:1 125:1 770:1 1414:1 6030:1
+0 50:1 109:1 123:1 263:1 768:1 6031:1
+0 26:1 48:1 124:1 261:1 769:1 2258:1
+0 11:1 24:1 49:1 50:1 262:1 1742:1 2256:1
+0 25:1 48:1 62:1 1740:1 2257:1
+0 4:1 8:1 49:1 60:1 1741:1
+0 3:1 7:1 11:1 83:1 293:1 846:1 3714:1
+0 81:1 140:1 291:1 296:1 847:1 3715:1
+0 82:1 138:1 140:1 292:1 294:1 6035:1
+0 125:1 138:1 139:1 206:1 295:1 6033:1
+0 123:1 139:1 152:1 204:1 6034:1 6038:1
+0 124:1 131:1 134:1 150:1 205:1 6036:1
+0 129:1 132:1 151:1 152:1 6037:1 6041:1
+0 101:1 104:1 130:1 133:1 150:1 6039:1
+0 99:1 102:1 125:1 151:1 206:1 6040:1
+0 68:1 100:1 103:1 123:1 173:1 204:1
+0 17:1 66:1 124:1 171:1 205:1 5864:1
+0 11:1 15:1 17:1 67:1 172:1 755:1 5862:1
+0 11:1 15:1 16:1 44:1 753:1 5863:1
+0 16:1 42:1 131:1 134:1 754:1
+0 43:1 129:1 132:1 152:1 6044:1
+0 104:1 130:1 133:1 150:1 6042:1 6047:1
+0 62:1 102:1 151:1 6043:1 6045:1
+0 4:1 8:1 60:1 103:1 6046:1
+0 3:1 7:1 11:1 113:1 116:1 123:1 6048:1
+0 50:1 111:1 114:1 124:1 404:1 6049:1
+0 26:1 48:1 112:1 115:1 402:1 5858:1
+0 11:1 24:1 49:1 50:1 403:1 1742:1 5856:1
+0 25:1 44:1 48:1 1740:1 5857:1
+0 42:1 49:1 1361:1 1364:1 1741:1
+0 43:1 668:1 671:1 1359:1 1362:1
+0 140:1 296:1 666:1 669:1 1360:1 1363:1
+0 50:1 138:1 294:1 667:1 670:1 6053:1
+0 48:1 104:1 139:1 191:1 295:1 6051:1
+0 49:1 102:1 125:1 161:1 189:1 6052:1
+0 103:1 123:1 152:1 159:1 190:1 2267:1
+0 124:1 150:1 152:1 160:1 2265:1 6056:1
+0 26:1 150:1 151:1 2266:1 6054:1 6059:1
+0 24:1 107:1 110:1 151:1 6055:1 6057:1
+0 25:1 105:1 108:1 125:1 2579:1 6058:1
+0 68:1 106:1 109:1 123:1 173:1 2577:1
+0 26:1 66:1 124:1 171:1 2474:1 2578:1
+0 24:1 67:1 125:1 161:1 172:1 2472:1
+0 25:1 68:1 123:1 159:1 173:1 2473:1
+0 26:1 66:1 124:1 160:1 171:1 722:1
+0 24:1 44:1 67:1 172:1 720:1
+0 25:1 42:1 721:1 821:1 824:1
+0 43:1 83:1 819:1 822:1 6062:1
+0 81:1 104:1 191:1 820:1 823:1 6060:1
+0 82:1 102:1 189:1 491:1 4733:1 6061:1
+0 103:1 125:1 190:1 489:1 2477:1 4731:1
+0 50:1 123:1 490:1 1892:1 2475:1 4732:1
+0 48:1 104:1 124:1 350:1 1890:1 2476:1
+0 49:1 102:1 125:1 161:1 348:1 1891:1
+0 26:1 103:1 123:1 159:1 344:1 349:1
+0 24:1 124:1 131:1 134:1 160:1 342:1
+0 25:1 129:1 132:1 152:1 343:1 2441:1
+0 125:1 130:1 133:1 150:1 533:1 2439:1
+0 123:1 151:1 531:1 821:1 824:1 2440:1
+0 26:1 124:1 344:1 532:1 819:1 822:1
+0 24:1 110:1 275:1 342:1 820:1 823:1
+0 25:1 108:1 273:1 343:1 572:1 1097:1
+0 109:1 140:1 274:1 570:1 854:1 1095:1
+0 62:1 138:1 571:1 852:1 1096:1
+0 4:1 8:1 60:1 139:1 853:1
+0 3:1 7:1 11:1 668:1 671:1 1362:1 3147:1
+0 140:1 296:1 666:1 669:1 1363:1 3148:1
+0 50:1 138:1 294:1 667:1 670:1 2465:1
+0 48:1 104:1 139:1 295:1 551:1 2463:1
+0 49:1 102:1 107:1 140:1 549:1 2464:1
+0 103:1 105:1 125:1 138:1 236:1 550:1
+0 26:1 106:1 123:1 139:1 234:1 6065:1
+0 24:1 124:1 125:1 235:1 398:1 6063:1
+0 25:1 68:1 123:1 173:1 396:1 6064:1
+0 26:1 66:1 124:1 171:1 397:1 722:1
+0 24:1 62:1 67:1 172:1 720:1
+0 4:1 8:1 25:1 60:1 721:1
+0 3:1 7:1 11:1 17:1 63:1 66:1 5864:1
+0 11:1 15:1 17:1 64:1 67:1 755:1 5862:1
+0 11:1 15:1 16:1 17:1 753:1 4292:1 5863:1
+0 11:1 15:1 16:1 110:1 754:1 1784:1 4290:1
+0 16:1 50:1 108:1 1268:1 1782:1 4291:1
+0 17:1 48:1 109:1 1266:1 1783:1 6068:1
+0 11:1 15:1 49:1 104:1 1267:1 6066:1 6071:1
+3 16:1 102:1 671:1 1268:1 6067:1 6069:1
+0 44:1 103:1 669:1 1266:1 6070:1
+0 42:1 125:1 158:1 670:1 1267:1
+0 43:1 68:1 123:1 156:1 173:1
+0 26:1 66:1 124:1 157:1 171:1 3248:1
+0 24:1 67:1 125:1 161:1 172:1 3246:1
+0 25:1 68:1 123:1 159:1 650:1 3247:1
+0 26:1 66:1 124:1 160:1 648:1 722:1
+0 24:1 67:1 131:1 134:1 649:1 720:1
+0 25:1 68:1 129:1 132:1 173:1 721:1
+0 26:1 66:1 130:1 133:1 171:1 3266:1
+0 24:1 67:1 83:1 172:1 293:1 3264:1
+0 25:1 81:1 140:1 291:1 296:1 3265:1
+0 82:1 138:1 140:1 292:1 294:1 578:1
+0 125:1 138:1 139:1 158:1 295:1 576:1
+0 26:1 123:1 139:1 156:1 577:1 3266:1
+0 17:1 24:1 124:1 157:1 3264:1 6074:1
+0 11:1 15:1 25:1 62:1 3265:1 6072:1
+0 4:1 8:1 16:1 60:1 6073:1
+0 3:1 7:1 11:1 26:1 63:1 66:1 6077:1
+0 24:1 64:1 67:1 83:1 479:1 6075:1
+0 25:1 81:1 477:1 572:1 1097:1 6076:1
+0 82:1 478:1 570:1 572:1 857:1 1095:1
+0 140:1 570:1 571:1 855:1 1096:1 6080:1
+0 62:1 138:1 571:1 856:1 6078:1
+0 4:1 8:1 60:1 139:1 6079:1
+0 3:1 7:1 11:1 668:1 671:1 1362:1 3147:1
+0 140:1 296:1 666:1 669:1 1363:1 3148:1
+0 50:1 138:1 294:1 667:1 670:1 6083:1
+0 48:1 104:1 139:1 191:1 295:1 6081:1
+2 49:1 102:1 125:1 161:1 189:1 6082:1
+0 103:1 123:1 140:1 159:1 190:1 731:1
+0 26:1 124:1 138:1 160:1 729:1 6026:1
+0 24:1 139:1 515:1 730:1 824:1 6024:1
+0 25:1 513:1 671:1 822:1 6025:1 6086:1
+0 68:1 173:1 514:1 669:1 823:1 6084:1
+0 17:1 66:1 171:1 670:1 4166:1 6085:1
+0 11:1 15:1 17:1 67:1 172:1 1310:1 4164:1
+0 11:1 15:1 16:1 17:1 1308:1 4165:1 4169:1
+0 11:1 15:1 16:1 26:1 866:1 1309:1 4167:1
+0 16:1 24:1 26:1 864:1 4168:1 6089:1
+0 24:1 25:1 89:1 865:1 6087:1
+0 25:1 87:1 608:1 611:1 6088:1
+0 88:1 606:1 609:1 611:1 644:1
+0 11:1 50:1 224:1 607:1 609:1 610:1 642:1
+0 48:1 125:1 222:1 610:1 643:1 1982:1
+0 49:1 95:1 123:1 223:1 1980:1
+0 62:1 93:1 124:1 1981:1
+0 4:1 8:1 60:1 94:1
+0 3:1 7:1 11:1 66:1 104:1 191:1 2601:1
+0 67:1 102:1 110:1 189:1 203:1 2602:1
+0 103:1 107:1 108:1 140:1 190:1 201:1
+0 105:1 109:1 125:1 138:1 202:1 206:1
+0 68:1 106:1 123:1 139:1 173:1 204:1
+0 66:1 104:1 124:1 171:1 205:1 6092:1
+0 44:1 67:1 102:1 172:1 6090:1
+0 42:1 103:1 104:1 6091:1 6095:1
+0 43:1 102:1 131:1 134:1 6093:1
+0 26:1 103:1 129:1 132:1 764:1 6094:1
+0 24:1 104:1 130:1 133:1 762:1 6098:1
+0 25:1 102:1 125:1 161:1 763:1 6096:1
+0 68:1 103:1 123:1 159:1 173:1 6097:1
+0 17:1 66:1 124:1 160:1 171:1 5864:1
+0 11:1 15:1 26:1 67:1 172:1 878:1 5862:1
+0 16:1 24:1 44:1 876:1 5863:1
+0 25:1 42:1 131:1 134:1 877:1
+0 43:1 125:1 129:1 132:1 206:1
+0 123:1 130:1 133:1 152:1 204:1 6044:1
+0 104:1 124:1 150:1 205:1 6042:1 6047:1
+0 62:1 102:1 151:1 6043:1 6045:1
+0 4:1 8:1 60:1 103:1 6046:1
+0 3:1 7:1 11:1 63:1 66:1 152:1 512:1
+0 64:1 67:1 150:1 152:1 510:1 5573:1
+0 104:1 150:1 151:1 191:1 511:1 5571:1
+0 102:1 110:1 151:1 189:1 203:1 5572:1
+0 103:1 108:1 140:1 190:1 201:1 6101:1
+0 109:1 125:1 138:1 202:1 236:1 6099:1
+0 68:1 123:1 139:1 173:1 234:1 6100:1
+0 26:1 66:1 124:1 171:1 235:1 6104:1
+0 24:1 67:1 125:1 161:1 172:1 6102:1
+0 17:1 25:1 123:1 159:1 6103:1 6107:1
+0 11:1 15:1 44:1 124:1 160:1 6105:1
+0 16:1 42:1 125:1 5339:1 6106:1
+0 43:1 74:1 123:1 5337:1 6110:1
+0 72:1 113:1 116:1 124:1 5338:1 6108:1
+0 17:1 73:1 111:1 114:1 6109:1 6113:1
+0 11:1 15:1 62:1 112:1 115:1 6111:1
+0 4:1 8:1 16:1 60:1 6112:1
+0 3:1 7:1 11:1 26:1 63:1 66:1 722:1
+0 24:1 64:1 67:1 572:1 720:1 5027:1
+0 25:1 83:1 570:1 721:1 3668:1 5025:1
+0 81:1 113:1 116:1 571:1 3666:1 5026:1
+0 82:1 111:1 114:1 611:1 668:1 3667:1
+0 112:1 115:1 140:1 609:1 666:1 833:1
+0 125:1 138:1 236:1 610:1 667:1 831:1
+0 68:1 123:1 139:1 234:1 287:1 832:1
+0 66:1 124:1 152:1 235:1 285:1 6116:1
+0 26:1 67:1 150:1 286:1 6114:1 6119:1
+0 24:1 125:1 151:1 5144:1 6115:1 6117:1
+0 25:1 68:1 123:1 173:1 5142:1 6118:1
+0 26:1 66:1 124:1 171:1 5143:1 6029:1
+0 24:1 67:1 125:1 172:1 206:1 6027:1
+0 17:1 25:1 123:1 204:1 6028:1 6113:1
+0 11:1 15:1 62:1 124:1 205:1 6111:1
+0 4:1 8:1 16:1 60:1 6112:1
+0 3:1 7:1 11:1 26:1 63:1 66:1 722:1
+0 24:1 64:1 67:1 83:1 479:1 720:1
+0 25:1 81:1 152:1 477:1 721:1 3338:1
+0 82:1 125:1 150:1 398:1 478:1 3336:1
+0 68:1 123:1 151:1 396:1 1022:1 3337:1
+0 66:1 124:1 152:1 397:1 1020:1 6122:1
+0 26:1 67:1 150:1 1021:1 6120:1 6125:1
+0 24:1 26:1 151:1 722:1 6121:1 6123:1
+0 24:1 25:1 125:1 485:1 720:1 6124:1
+0 25:1 68:1 123:1 287:1 483:1 721:1
+0 66:1 124:1 152:1 285:1 484:1 4745:1
+0 26:1 67:1 150:1 286:1 4743:1 6128:1
+0 24:1 125:1 151:1 236:1 4744:1 6126:1
+0 17:1 25:1 123:1 234:1 6113:1 6127:1
+0 11:1 15:1 62:1 124:1 235:1 6111:1
+0 4:1 8:1 16:1 60:1 6112:1
+0 3:1 7:1 11:1 66:1 83:1 2139:1 3668:1
+0 67:1 81:1 113:1 116:1 2140:1 3666:1
+0 82:1 111:1 114:1 611:1 668:1 3667:1
+0 112:1 115:1 140:1 296:1 609:1 666:1
+0 138:1 140:1 294:1 610:1 667:1 3689:1
+0 125:1 138:1 139:1 143:1 295:1 3687:1
+0 68:1 123:1 139:1 141:1 287:1 3688:1
+0 26:1 66:1 124:1 142:1 285:1 6131:1
+0 24:1 67:1 125:1 161:1 286:1 6129:1
+0 25:1 123:1 149:1 152:1 159:1 6130:1
+0 26:1 124:1 147:1 150:1 160:1 6125:1
+0 24:1 104:1 148:1 151:1 1190:1 6123:1
+0 25:1 102:1 131:1 134:1 1188:1 6124:1
+0 26:1 103:1 129:1 132:1 1189:1 1562:1
+0 24:1 125:1 130:1 133:1 206:1 1560:1
+0 25:1 26:1 123:1 204:1 836:1 1561:1
+0 24:1 62:1 124:1 205:1 834:1
+0 4:1 8:1 25:1 60:1 835:1
+0 3:1 7:1 11:1 63:1 66:1 104:1 6134:1
+0 64:1 67:1 102:1 125:1 161:1 6132:1
+0 17:1 103:1 123:1 159:1 6113:1 6133:1
+0 11:1 15:1 44:1 124:1 160:1 6111:1
+0 16:1 17:1 42:1 6112:1 6137:1
+0 11:1 15:1 43:1 131:1 134:1 6135:1
+0 16:1 17:1 129:1 132:1 6136:1 6140:1
+0 11:1 15:1 110:1 130:1 133:1 1610:1 6138:1
+0 16:1 68:1 108:1 173:1 1608:1 6139:1
+0 66:1 109:1 171:1 527:1 1609:1 4937:1
+0 67:1 104:1 172:1 525:1 4935:1 6143:1
+0 102:1 125:1 161:1 526:1 4936:1 6141:1
+0 26:1 103:1 123:1 159:1 3128:1 6142:1
+0 24:1 113:1 116:1 124:1 160:1 3126:1
+0 25:1 26:1 111:1 114:1 3127:1 6038:1
+0 24:1 112:1 115:1 134:1 197:1 6036:1
+0 25:1 26:1 132:1 195:1 6037:1 6041:1
+0 24:1 104:1 133:1 196:1 6039:1 6098:1
+0 25:1 62:1 102:1 6040:1 6096:1
+0 4:1 8:1 60:1 103:1 6097:1
+0 3:1 7:1 11:1 63:1 66:1 527:1 4937:1
+0 64:1 67:1 104:1 525:1 4935:1 6143:1
+0 102:1 110:1 203:1 526:1 4936:1 6141:1
+0 103:1 108:1 125:1 201:1 236:1 6142:1
+0 104:1 109:1 123:1 202:1 234:1 3056:1
+0 102:1 124:1 131:1 134:1 235:1 3054:1
+0 103:1 104:1 129:1 132:1 3055:1 6146:1
+0 102:1 125:1 130:1 133:1 236:1 6144:1
+0 68:1 103:1 123:1 173:1 234:1 6145:1
+0 50:1 66:1 124:1 171:1 235:1 6149:1
+0 26:1 48:1 67:1 172:1 1166:1 6147:1
+0 24:1 26:1 49:1 344:1 1164:1 6148:1
+0 24:1 25:1 26:1 342:1 1165:1 1253:1
+0 24:1 25:1 62:1 343:1 1251:1
+0 4:1 8:1 25:1 60:1 1252:1
+0 3:1 7:1 11:1 15:1 17:1 6150:1 6155:1
+0 11:1 15:1 16:1 125:1 6050:1 6151:1 6153:1
+0 11:1 16:1 113:1 116:1 123:1 6048:1 6154:1
+0 50:1 111:1 114:1 124:1 926:1 6049:1
+0 26:1 48:1 112:1 115:1 924:1 5858:1
+0 11:1 24:1 49:1 50:1 925:1 1742:1 5856:1
+0 25:1 44:1 48:1 1740:1 5857:1
+0 42:1 49:1 1361:1 1364:1 1741:1
+0 43:1 110:1 203:1 1359:1 1362:1
+0 50:1 108:1 201:1 1360:1 1363:1 6158:1
+0 48:1 104:1 109:1 202:1 6156:1 6161:1
+0 49:1 102:1 125:1 533:1 6157:1 6159:1
+0 103:1 123:1 152:1 531:1 2267:1 6160:1
+0 124:1 150:1 152:1 532:1 2265:1 6056:1
+0 26:1 150:1 151:1 2266:1 6054:1 6059:1
+0 24:1 113:1 116:1 151:1 6055:1 6057:1
+0 25:1 68:1 111:1 114:1 173:1 6058:1
+0 17:1 66:1 112:1 115:1 171:1 5864:1
+0 11:1 15:1 26:1 67:1 172:1 878:1 5862:1
+0 16:1 24:1 62:1 876:1 5863:1
+0 4:1 8:1 25:1 60:1 877:1
+0 3:1 7:1 11:1 48:1 50:1 3740:1 6162:1
+0 48:1 49:1 131:1 134:1 3738:1 6163:1
+0 49:1 50:1 129:1 132:1 3739:1 6167:1
+0 48:1 50:1 130:1 133:1 6165:1 6170:1
+0 48:1 49:1 89:1 6166:1 6168:1
+0 49:1 50:1 87:1 6169:1 6173:1
+0 26:1 48:1 88:1 332:1 6171:1
+0 24:1 49:1 95:1 330:1 6172:1
+0 25:1 89:1 93:1 331:1 503:1
+0 87:1 94:1 125:1 161:1 501:1
+0 68:1 88:1 123:1 159:1 173:1 502:1
+0 66:1 95:1 124:1 160:1 171:1 641:1
+0 67:1 93:1 104:1 172:1 191:1 639:1
+0 94:1 102:1 110:1 189:1 640:1 6176:1
+0 68:1 103:1 108:1 173:1 190:1 6174:1
+0 66:1 109:1 171:1 728:1 4694:1 6175:1
+0 11:1 26:1 67:1 172:1 726:1 866:1 4692:1
+0 24:1 26:1 727:1 864:1 4693:1 6089:1
+0 24:1 25:1 125:1 533:1 865:1 6087:1
+0 25:1 123:1 140:1 531:1 731:1 6088:1
+0 26:1 124:1 138:1 532:1 729:1 6026:1
+0 24:1 62:1 139:1 730:1 6024:1
+0 4:1 8:1 25:1 60:1 6025:1
+0 3:1 7:1 11:1 63:1 66:1 152:1 341:1
+0 26:1 64:1 67:1 150:1 339:1 6179:1
+0 24:1 125:1 151:1 161:1 340:1 6177:1
+0 25:1 26:1 123:1 159:1 6178:1 6182:1
+0 24:1 124:1 125:1 160:1 236:1 6180:1
+0 25:1 26:1 123:1 234:1 878:1 6181:1
+0 24:1 124:1 125:1 235:1 533:1 876:1
+0 25:1 123:1 140:1 531:1 731:1 877:1
+0 26:1 124:1 138:1 532:1 729:1 6026:1
+0 24:1 104:1 139:1 191:1 730:1 6024:1
+0 25:1 102:1 110:1 189:1 275:1 6025:1
+0 50:1 103:1 108:1 190:1 215:1 273:1
+0 48:1 104:1 109:1 213:1 274:1 1358:1
+0 49:1 89:1 102:1 214:1 1356:1
+0 26:1 87:1 103:1 353:1 1357:1
+0 24:1 50:1 88:1 351:1 6185:1
+0 25:1 48:1 104:1 352:1 1358:1 6183:1
+0 49:1 95:1 102:1 1356:1 6184:1
+0 44:1 93:1 103:1 1357:1
+0 42:1 94:1 131:1 134:1
+0 43:1 50:1 129:1 132:1 6188:1
+0 26:1 48:1 130:1 133:1 332:1 6186:1
+0 24:1 49:1 125:1 161:1 330:1 6187:1
+0 25:1 104:1 123:1 159:1 191:1 331:1
+0 102:1 110:1 124:1 160:1 189:1 203:1
+0 103:1 108:1 152:1 190:1 201:1 6191:1
+0 62:1 109:1 150:1 202:1 6189:1
+0 4:1 8:1 60:1 151:1 6190:1
+0 3:1 7:1 11:1 102:1 110:1 203:1 6192:1
+0 103:1 108:1 201:1 1058:1 1061:1 6193:1
+0 109:1 202:1 572:1 1028:1 1056:1 1059:1
+0 152:1 570:1 1026:1 1057:1 1060:1 1931:1
+0 44:1 150:1 571:1 1027:1 1929:1
+0 42:1 131:1 134:1 151:1 1930:1
+0 43:1 68:1 129:1 132:1 173:1
+0 66:1 104:1 130:1 133:1 171:1 6143:1
+0 67:1 102:1 125:1 161:1 172:1 6141:1
+0 103:1 123:1 140:1 159:1 731:1 6142:1
+0 26:1 124:1 138:1 160:1 729:1 6026:1
+0 24:1 110:1 139:1 730:1 815:1 6024:1
+0 25:1 68:1 108:1 287:1 813:1 6025:1
+0 66:1 109:1 152:1 285:1 814:1 6197:1
+0 26:1 67:1 150:1 286:1 6195:1 6200:1
+0 24:1 62:1 151:1 6196:1 6198:1
+0 4:1 8:1 25:1 60:1 6199:1
+0 3:1 7:1 11:1 63:1 66:1 527:1 4937:1
+0 64:1 67:1 104:1 525:1 4935:1 6143:1
+0 102:1 110:1 203:1 526:1 4936:1 6141:1
+0 103:1 108:1 125:1 201:1 236:1 6142:1
+0 104:1 109:1 123:1 202:1 234:1 3056:1
+0 102:1 124:1 140:1 235:1 3054:1 6203:1
+0 103:1 125:1 138:1 1088:1 3055:1 6201:1
+0 50:1 123:1 139:1 1086:1 6149:1 6202:1
+0 48:1 104:1 124:1 350:1 1087:1 6147:1
+0 44:1 49:1 102:1 348:1 6148:1
+0 42:1 103:1 104:1 349:1 6146:1
+0 43:1 50:1 102:1 4274:1 6144:1
+0 48:1 103:1 104:1 350:1 4272:1 6145:1
+0 49:1 102:1 134:1 197:1 348:1 4273:1
+0 103:1 132:1 195:1 349:1 491:1 6206:1
+0 44:1 133:1 196:1 489:1 6204:1
+0 42:1 131:1 134:1 490:1 6205:1
+0 43:1 125:1 129:1 132:1 236:1
+0 104:1 123:1 130:1 133:1 234:1 6146:1
+0 102:1 124:1 125:1 235:1 1088:1 6144:1
+0 50:1 103:1 123:1 1086:1 6145:1 6209:1
+0 48:1 104:1 124:1 350:1 1087:1 6207:1
+0 49:1 102:1 152:1 348:1 6208:1 6212:1
+0 62:1 103:1 150:1 349:1 6210:1
+0 4:1 8:1 60:1 151:1 6211:1
+0 3:1 7:1 11:1 102:1 131:1 134:1 6213:1
+0 26:1 103:1 129:1 132:1 695:1 6214:1
+0 11:1 24:1 104:1 130:1 133:1 693:1 6218:1
+0 25:1 102:1 125:1 694:1 6050:1 6216:1
+0 11:1 103:1 113:1 116:1 123:1 6048:1 6217:1
+0 50:1 111:1 114:1 124:1 926:1 6049:1
+0 26:1 48:1 112:1 115:1 924:1 5858:1
+0 11:1 24:1 49:1 50:1 925:1 1742:1 5856:1
+0 25:1 44:1 48:1 1740:1 5857:1
+0 42:1 49:1 1361:1 1364:1 1741:1
+0 43:1 110:1 203:1 1359:1 1362:1
+0 50:1 108:1 201:1 1360:1 1363:1 6221:1
+0 48:1 104:1 109:1 202:1 6218:1 6219:1
+0 49:1 102:1 125:1 533:1 6216:1 6220:1
+0 103:1 123:1 152:1 531:1 2267:1 6217:1
+0 124:1 150:1 152:1 532:1 2265:1 6056:1
+0 26:1 150:1 151:1 2266:1 6054:1 6059:1
+0 24:1 113:1 116:1 151:1 6055:1 6057:1
+0 25:1 68:1 111:1 114:1 173:1 6058:1
+0 17:1 66:1 112:1 115:1 171:1 5864:1
+0 11:1 15:1 17:1 67:1 172:1 755:1 5862:1
+0 11:1 15:1 16:1 26:1 753:1 5863:1 6041:1
+0 16:1 24:1 131:1 134:1 754:1 6039:1
+0 25:1 26:1 129:1 132:1 764:1 6040:1
+0 24:1 104:1 130:1 133:1 762:1 6098:1
+0 25:1 102:1 125:1 763:1 2579:1 6096:1
+0 50:1 103:1 123:1 263:1 2577:1 6097:1
+0 26:1 48:1 124:1 261:1 2258:1 2578:1
+0 11:1 24:1 49:1 50:1 262:1 1742:1 2256:1
+0 25:1 48:1 62:1 1740:1 2257:1
+0 4:1 8:1 49:1 60:1 1741:1
+0 3:1 7:1 11:1 48:1 50:1 3740:1 6222:1
+0 48:1 49:1 131:1 134:1 3738:1 6223:1
+0 49:1 50:1 129:1 132:1 3739:1 6227:1
+0 48:1 50:1 130:1 133:1 5177:1 6225:1
+0 48:1 49:1 89:1 5175:1 6226:1
+0 49:1 50:1 87:1 5176:1 5351:1
+0 26:1 48:1 88:1 332:1 5349:1
+0 24:1 49:1 95:1 330:1 5350:1
+0 25:1 89:1 93:1 331:1 503:1
+0 87:1 94:1 125:1 161:1 501:1
+0 68:1 88:1 123:1 159:1 173:1 502:1
+0 66:1 95:1 124:1 160:1 171:1 641:1
+0 67:1 93:1 104:1 172:1 191:1 639:1
+0 94:1 102:1 110:1 189:1 640:1 6176:1
+0 68:1 103:1 108:1 173:1 190:1 6174:1
+0 66:1 109:1 171:1 728:1 4694:1 6175:1
+0 11:1 26:1 67:1 172:1 726:1 4692:1 6089:1
+0 24:1 125:1 533:1 727:1 4693:1 6087:1
+0 25:1 123:1 140:1 531:1 731:1 6088:1
+0 26:1 124:1 138:1 532:1 729:1 6026:1
+0 24:1 44:1 139:1 730:1 6024:1
+0 25:1 42:1 125:1 2021:1 6025:1
+0 43:1 50:1 123:1 2019:1 6230:1
+0 48:1 104:1 124:1 191:1 2020:1 6228:1
+0 49:1 102:1 110:1 189:1 203:1 6229:1
+0 103:1 108:1 190:1 201:1 491:1 4733:1
+0 109:1 125:1 202:1 489:1 2477:1 4731:1
+0 50:1 123:1 490:1 1892:1 2475:1 4732:1
+0 48:1 104:1 124:1 350:1 1890:1 2476:1
+0 49:1 102:1 125:1 161:1 348:1 1891:1
+0 26:1 103:1 123:1 159:1 344:1 349:1
+0 24:1 44:1 124:1 160:1 342:1
+0 25:1 42:1 131:1 134:1 343:1
+0 43:1 68:1 129:1 132:1 2834:1
+0 26:1 66:1 130:1 133:1 344:1 2832:1
+0 24:1 67:1 110:1 275:1 342:1 2833:1
+0 25:1 108:1 152:1 273:1 343:1 482:1
+0 109:1 125:1 150:1 274:1 480:1 533:1
+0 50:1 123:1 151:1 481:1 531:1 6233:1
+0 48:1 104:1 124:1 191:1 532:1 6231:1
+0 49:1 62:1 102:1 189:1 6232:1
+0 4:1 8:1 60:1 103:1 190:1
+0 3:1 7:1 11:1 26:1 48:1 4646:1 6234:1
+0 24:1 49:1 125:1 161:1 4644:1 6235:1
+0 25:1 104:1 123:1 159:1 191:1 4645:1
+0 102:1 124:1 125:1 160:1 161:1 189:1
+0 103:1 123:1 140:1 159:1 190:1 731:1
+0 26:1 124:1 138:1 160:1 729:1 6026:1
+0 24:1 110:1 139:1 203:1 730:1 6024:1
+0 25:1 108:1 152:1 201:1 6025:1 6191:1
+0 62:1 109:1 150:1 202:1 6189:1
+0 4:1 8:1 60:1 151:1 6190:1
+0 3:1 7:1 11:1 39:1 65:1 68:1 6237:1
+0 11:1 40:1 63:1 66:1 104:1 6092:1 6238:1
+0 64:1 67:1 101:1 102:1 104:1 6090:1
+0 99:1 102:1 103:1 671:1 1052:1 6091:1
+0 68:1 100:1 103:1 173:1 669:1 1050:1
+0 66:1 171:1 584:1 587:1 670:1 1051:1
+0 67:1 152:1 172:1 582:1 585:1 6242:1
+0 125:1 150:1 161:1 583:1 586:1 6240:1
+0 68:1 123:1 151:1 159:1 173:1 6241:1
+0 50:1 66:1 124:1 160:1 171:1 185:1
+0 48:1 67:1 152:1 172:1 183:1 2687:1
+0 49:1 101:1 104:1 150:1 184:1 2685:1
+0 99:1 102:1 104:1 151:1 2686:1 6245:1
+0 100:1 102:1 103:1 131:1 134:1 6243:1
+0 103:1 110:1 129:1 132:1 203:1 6244:1
+0 68:1 108:1 130:1 133:1 173:1 201:1
+0 66:1 109:1 171:1 202:1 584:1 587:1
+0 67:1 152:1 172:1 582:1 585:1 6248:1
+0 62:1 150:1 583:1 586:1 6246:1
+0 4:1 8:1 60:1 151:1 6247:1
+0 3:1 7:1 11:1 671:1 1052:1 1362:1 3147:1
+0 68:1 287:1 669:1 1050:1 1363:1 3148:1
+0 26:1 66:1 285:1 548:1 670:1 1051:1
+0 24:1 67:1 125:1 161:1 286:1 546:1
+0 25:1 104:1 123:1 159:1 547:1 5975:1
+0 102:1 124:1 160:1 515:1 824:1 5973:1
+0 103:1 513:1 822:1 1010:1 5974:1 6251:1
+0 514:1 611:1 734:1 823:1 1008:1 6249:1
+0 140:1 609:1 732:1 1009:1 3119:1 6250:1
+0 125:1 138:1 236:1 610:1 733:1 3117:1
+0 68:1 123:1 139:1 173:1 234:1 3118:1
+0 26:1 66:1 124:1 171:1 235:1 6254:1
+0 24:1 67:1 125:1 161:1 172:1 6252:1
+0 25:1 68:1 123:1 159:1 323:1 6253:1
+0 66:1 101:1 104:1 124:1 160:1 321:1
+0 44:1 67:1 99:1 102:1 322:1
+0 42:1 100:1 103:1 572:1 2885:1
+0 43:1 125:1 533:1 570:1 2883:1
+0 104:1 123:1 531:1 571:1 2884:1 6095:1
+0 102:1 124:1 131:1 134:1 532:1 6093:1
+0 26:1 103:1 129:1 132:1 764:1 6094:1
+0 24:1 104:1 130:1 133:1 762:1 6098:1
+0 25:1 44:1 102:1 763:1 6096:1
+0 42:1 74:1 103:1 1535:1 6097:1
+0 32:1 43:1 72:1 1533:1
+0 30:1 73:1 1534:1 2099:1 6257:1
+0 26:1 31:1 344:1 2097:1 6255:1
+0 24:1 134:1 342:1 2098:1 2657:1 6256:1
+0 25:1 26:1 132:1 343:1 2655:1 6260:1
+0 24:1 110:1 133:1 275:1 2656:1 6258:1
+0 25:1 108:1 273:1 572:1 1097:1 6259:1
+0 109:1 152:1 274:1 482:1 570:1 1095:1
+0 125:1 150:1 480:1 533:1 571:1 1096:1
+0 123:1 151:1 152:1 481:1 531:1 2441:1
+0 104:1 124:1 150:1 532:1 2439:1 6095:1
+0 102:1 151:1 2099:1 2440:1 6093:1 6257:1
+0 103:1 104:1 545:1 2097:1 6094:1 6255:1
+0 102:1 543:1 1010:1 1439:1 2098:1 6256:1
+0 103:1 544:1 611:1 668:1 1008:1 1437:1
+0 140:1 609:1 666:1 1009:1 1438:1 3470:1
+0 138:1 491:1 610:1 667:1 1058:1 3468:1
+0 125:1 139:1 489:1 1056:1 2477:1 3469:1
+0 123:1 490:1 572:1 1057:1 2475:1 6263:1
+0 124:1 125:1 533:1 570:1 2476:1 6261:1
+0 68:1 123:1 173:1 531:1 571:1 6262:1
+0 66:1 124:1 152:1 171:1 227:1 532:1
+0 26:1 67:1 150:1 172:1 225:1 6266:1
+0 24:1 151:1 226:1 2099:1 6257:1 6264:1
+0 25:1 68:1 173:1 2097:1 6255:1 6265:1
+0 26:1 66:1 171:1 2098:1 5546:1 6256:1
+0 24:1 67:1 125:1 161:1 172:1 5544:1
+0 25:1 26:1 123:1 159:1 5545:1 6269:1
+0 24:1 124:1 160:1 1010:1 1439:1 6267:1
+0 25:1 611:1 734:1 1008:1 1437:1 6268:1
+0 152:1 609:1 732:1 1009:1 1438:1 6272:1
+0 150:1 610:1 733:1 2099:1 6257:1 6270:1
+0 26:1 151:1 2097:1 4409:1 6255:1 6271:1
+0 24:1 101:1 104:1 2098:1 4407:1 6256:1
+0 25:1 99:1 102:1 140:1 1940:1 4408:1
+0 100:1 103:1 125:1 138:1 533:1 1938:1
+0 74:1 123:1 139:1 531:1 1939:1 6275:1
+0 72:1 104:1 124:1 532:1 6143:1 6273:1
+0 73:1 102:1 110:1 203:1 6141:1 6274:1
+0 103:1 108:1 125:1 201:1 206:1 6142:1
+0 68:1 109:1 123:1 173:1 202:1 204:1
+0 50:1 66:1 124:1 171:1 205:1 6278:1
+0 26:1 48:1 67:1 172:1 6276:1 6281:1
+0 24:1 49:1 2099:1 6257:1 6277:1 6279:1
+0 25:1 68:1 173:1 2097:1 6255:1 6280:1
+0 26:1 66:1 171:1 866:1 2098:1 6256:1
+0 24:1 26:1 67:1 172:1 864:1 6089:1
+0 24:1 25:1 125:1 533:1 865:1 6087:1
+0 25:1 123:1 140:1 531:1 731:1 6088:1
+0 26:1 124:1 138:1 532:1 729:1 6026:1
+0 24:1 110:1 139:1 275:1 730:1 6024:1
+0 25:1 108:1 273:1 572:1 1097:1 6025:1
+0 109:1 274:1 570:1 572:1 1095:1 6284:1
+0 140:1 570:1 571:1 1096:1 6282:1 6287:1
+0 138:1 571:1 2099:1 6257:1 6283:1 6285:1
+0 139:1 1361:1 1364:1 2097:1 6255:1 6286:1
+0 1010:1 1359:1 1362:1 1439:1 2098:1 6256:1
+0 611:1 734:1 1008:1 1360:1 1363:1 1437:1
+0 104:1 609:1 732:1 1009:1 1438:1 6290:1
+0 102:1 152:1 610:1 733:1 1322:1 6288:1
+0 103:1 113:1 116:1 150:1 1320:1 6289:1
+0 74:1 111:1 114:1 151:1 1321:1 6293:1
+0 44:1 72:1 112:1 115:1 6291:1
+0 42:1 73:1 134:1 197:1 6292:1
+0 43:1 101:1 104:1 132:1 195:1
+0 26:1 99:1 102:1 133:1 196:1 6296:1
+0 24:1 26:1 100:1 103:1 644:1 6294:1
+0 11:1 24:1 25:1 50:1 224:1 642:1 6295:1
+0 25:1 32:1 48:1 222:1 643:1
+0 30:1 49:1 65:1 68:1 223:1
+0 11:1 17:1 31:1 63:1 66:1 4166:1
+0 11:1 15:1 17:1 64:1 67:1 1310:1 4164:1
+0 11:1 15:1 16:1 17:1 1308:1 4165:1 4169:1
+0 11:1 15:1 16:1 104:1 1309:1 4167:1 6299:1
+0 16:1 102:1 125:1 533:1 4168:1 6297:1
+0 26:1 103:1 123:1 531:1 6026:1 6298:1
+0 24:1 26:1 124:1 532:1 1994:1 6024:1
+0 24:1 25:1 671:1 1992:1 6025:1 6302:1
+0 25:1 125:1 515:1 669:1 1993:1 6300:1
+0 123:1 125:1 513:1 533:1 670:1 6301:1
+0 26:1 98:1 123:1 124:1 514:1 531:1
+0 24:1 96:1 104:1 124:1 532:1 6305:1
+0 25:1 44:1 97:1 102:1 6303:1
+0 42:1 68:1 103:1 173:1 6304:1
+0 26:1 43:1 66:1 171:1 866:1
+0 24:1 26:1 67:1 172:1 864:1 6089:1
+0 24:1 25:1 125:1 533:1 865:1 6087:1
+0 25:1 123:1 140:1 531:1 731:1 6088:1
+0 26:1 124:1 138:1 532:1 729:1 6026:1
+0 24:1 125:1 139:1 236:1 730:1 6024:1
+0 25:1 68:1 123:1 234:1 1022:1 6025:1
+0 66:1 124:1 152:1 235:1 1020:1 2399:1
+0 26:1 67:1 150:1 965:1 1021:1 2397:1
+0 24:1 151:1 963:1 1010:1 2398:1 3569:1
+0 25:1 611:1 734:1 964:1 1008:1 3567:1
+0 68:1 287:1 609:1 732:1 1009:1 3568:1
+0 26:1 66:1 285:1 610:1 733:1 1034:1
+0 24:1 50:1 67:1 286:1 1032:1 1892:1
+0 25:1 48:1 104:1 350:1 1033:1 1890:1
+0 49:1 102:1 125:1 161:1 348:1 1891:1
+0 26:1 103:1 123:1 159:1 344:1 349:1
+0 24:1 124:1 134:1 160:1 197:1 342:1
+0 25:1 132:1 195:1 343:1 491:1 6206:1
+0 83:1 133:1 196:1 489:1 5576:1 6204:1
+0 81:1 152:1 490:1 2267:1 5574:1 6205:1
+0 82:1 150:1 152:1 2265:1 5575:1 6056:1
+0 26:1 150:1 151:1 2266:1 6054:1 6059:1
+0 24:1 62:1 151:1 6055:1 6057:1
+0 4:1 8:1 25:1 60:1 6058:1
+0 3:1 7:1 11:1 15:1 17:1 5861:1 5862:1
+3 11:1 15:1 16:1 17:1 707:1 5859:1 5863:1
+0 11:1 15:1 16:1 44:1 705:1 5860:1
+0 16:1 42:1 50:1 706:1 2255:1
+0 26:1 43:1 48:1 2253:1 5858:1
+0 11:1 24:1 49:1 50:1 1742:1 2254:1 5856:1
+0 25:1 48:1 140:1 1740:1 5857:1 6308:1
+0 11:1 49:1 125:1 138:1 143:1 1741:1 6306:1
+0 32:1 123:1 139:1 141:1 6307:1
+0 17:1 30:1 124:1 142:1 6311:1
+0 11:1 15:1 17:1 31:1 5891:1 6309:1
+0 11:1 15:1 16:1 134:1 2657:1 5889:1 6310:1
+0 16:1 17:1 132:1 2655:1 5890:1 6314:1
+0 11:1 15:1 17:1 133:1 2656:1 5897:1 6312:1
+0 11:1 15:1 16:1 17:1 5895:1 6155:1 6313:1
+0 11:1 15:1 16:1 140:1 1640:1 5896:1 6153:1
+0 16:1 125:1 138:1 143:1 1638:1 6154:1
+0 123:1 139:1 141:1 152:1 1639:1 5966:1
+0 11:1 17:1 124:1 142:1 150:1 5964:1 5969:1
+0 11:1 15:1 17:1 151:1 1589:1 5965:1 5967:1
+0 11:1 15:1 16:1 17:1 1587:1 5864:1 5968:1
+0 11:1 15:1 16:1 17:1 755:1 1588:1 5862:1
+0 11:1 15:1 16:1 26:1 753:1 5863:1 6317:1
+0 11:1 16:1 24:1 104:1 383:1 754:1 6315:1
+0 25:1 32:1 102:1 381:1 6316:1
+0 17:1 30:1 103:1 382:1 1724:1
+0 11:1 15:1 17:1 31:1 1722:1 6320:1
+0 11:1 15:1 16:1 17:1 1723:1 6318:1 6323:1
+0 11:1 15:1 16:1 17:1 6319:1 6321:1 6326:1
+0 15:1 16:1 17:1 1724:1 6322:1 6324:1
+0 11:1 15:1 16:1 17:1 1722:1 5888:1 6325:1
+0 11:1 15:1 16:1 17:1 1723:1 5886:1 5891:1
+0 11:1 15:1 16:1 17:1 5887:1 5889:1 6329:1
+0 15:1 16:1 17:1 5890:1 6327:1 6332:1
+0 11:1 15:1 16:1 17:1 6328:1 6330:1 6335:1
+0 11:1 15:1 16:1 17:1 6331:1 6333:1 6338:1
+0 11:1 15:1 16:1 17:1 6334:1 6336:1 6341:1
+0 15:1 16:1 17:1 6337:1 6339:1 6344:1
+0 11:1 15:1 16:1 17:1 6340:1 6342:1 6347:1
+0 11:1 15:1 16:1 17:1 6343:1 6345:1 6350:1
+0 15:1 16:1 17:1 6346:1 6348:1 6353:1
+0 11:1 15:1 16:1 17:1 6349:1 6351:1 6356:1
+0 11:1 15:1 16:1 26:1 6352:1 6354:1 6359:1
+0 16:1 24:1 32:1 689:1 6355:1 6357:1
+0 25:1 30:1 104:1 687:1 6358:1 6362:1
+0 4:1 8:1 31:1 102:1 688:1 6360:1
