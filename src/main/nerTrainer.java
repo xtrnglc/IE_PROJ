@@ -35,7 +35,7 @@ public class nerTrainer {
 	public static int f = 1;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		boolean newNer = true;
+		boolean newNer = false;
 		
 		init();
 		
@@ -43,9 +43,9 @@ public class nerTrainer {
 		
 		if(!newNer) {
 			for(Entry<String, File> s : text_files.entrySet()) {
-				generateTrainingFile(s.getValue(), answer_files.get(s.getKey()));
-				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train.tsv", "UTF-8");
-				printWriter.write(output);
+				generateVictimTrainingFile(s.getValue(), answer_files.get(s.getKey()));
+				PrintWriter printWriter = new PrintWriter("nerTrainingFiles/Train_Victim.tsv", "UTF-8");
+				printWriter.write(outputVictim);
 				printWriter.close();
 			}
 		} else {
@@ -830,55 +830,51 @@ public class nerTrainer {
 				i++;
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("Please remove the '-s' flag on the command line if passing in a folder path!");
 			System.exit(0);
 		}
 		
 		Document d = new Document(text);
 		
 		HashSet<String> keyVictimWords = getKeyWords(answerArticle.victim);
-		HashSet<String> keyDiseaseWords = getKeyWords(answerArticle.disease);
 		
 		for (Sentence s : d.sentences()) {
 			for(i = 0; i < s.words().size(); i++) {
-				if(keyVictimWords.contains(s.word(i))) {
-					if(s.word(i).equals("the")) {
+				//first word of sentence
+				if(i == 0) {
+					if(keyVictimWords.contains(s.word(i))) {
 						if(keyVictimWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	VIC\n";
-						}
-					} 
-					else if(s.word(i).equals("and")) {
-						if(keyVictimWords.contains(s.word(i+1)) && keyVictimWords.contains(s.word(i-1))) {
-							outputString += s.word(i) + "	VIC\n";
-						}
-					}
-					else if(s.word(i).equals("at")) {
-						if(keyVictimWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	VIC\n";
-						}
-					}
-					else {
-						outputString += s.word(i) + "	VIC\n";
-					}
-				} else {
-					outputString += s.word(i) + "	O\n";
-				}
-				
-				if(keyDiseaseWords.contains(s.word(i))) {
-					if(s.word(i).equals("the")) {
-						if(keyDiseaseWords.contains(s.word(i+1))) {
-							outputString += s.word(i) + "	DIS\n";
+							outputString += s.word(i) + "	B-VIC\n";
 						}
 					} else {
-						outputString += s.word(i) + "	DIS\n";
+						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
 					}
-				} else {
-					
-					outputString += s.word(i) + "	O\n";
+				//last word
+				} else if (i == s.words().size()-1) {
+					if(keyVictimWords.contains(s.word(i))) {
+						if(keyVictimWords.contains(s.word(i-1))) {
+							outputString += s.word(i) + "	I-VIC\n";
+						}
+					} else {
+						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
+					}
+				} 
+				//all other words
+				else {
+					//i-1, i, i+1
+					if(keyVictimWords.contains(s.word(i)) && keyVictimWords.contains(s.word(i-1))) {
+						outputString += s.word(i) + "	I-VIC\n";
+					} else if(keyVictimWords.contains(s.word(i)) && keyVictimWords.contains(s.word(i+1))) {
+						outputString += s.word(i) + "	B-VIC\n";
+					} else {
+						outputString += s.word(i) + "	" + s.posTag(i) + "\n";
+					}
 				}
+				
 			}
-			
 		}
+		PrintWriter printWriter = new PrintWriter("nerTrainingFiles/" + textFile.getName() +".victims.tsv", "UTF-8");
+		printWriter.write(outputString);
+		printWriter.close();
 		outputVictim += outputString;
 	}
 	
@@ -925,3 +921,36 @@ public class nerTrainer {
 		outputDisease += outputString;
 	}
 }
+//
+//for (Sentence s : d.sentences()) {
+//	for(i = 0; i < s.words().size(); i++) {
+//		if(keyVictimWords.contains(s.word(i))) {
+//			if(s.word(i).equals("the")) {
+//				if(keyVictimWords.contains(s.word(i+1))) {
+//					outputString += s.word(i) + "	B-VIC\n";
+//				}
+//			} 
+//			else if(s.word(i).equals("and")) {
+//				if(keyVictimWords.contains(s.word(i+1)) && keyVictimWords.contains(s.word(i-1))) {
+//					outputString += s.word(i) + "	I-VIC\n";
+//				}
+//			}
+//			else if(s.word(i).equals("at")) {
+//				if(keyVictimWords.contains(s.word(i+1))) {
+//					outputString += s.word(i) + "	I-VIC\n";
+//				}
+//			}
+//			else if(s.word(i).equals("at")) {
+//				if(keyVictimWords.contains(s.word(i+1))) {
+//					outputString += s.word(i) + "	I-VIC\n";
+//				}
+//			}
+//			else {
+//				outputString += s.word(i) + "	B-VIC\n";
+//			}
+//		} else {
+//			outputString += s.word(i) + "	O\n";
+//		}
+//	}
+//}
+//outputVictim += outputString;
