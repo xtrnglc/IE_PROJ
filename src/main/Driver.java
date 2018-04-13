@@ -102,8 +102,8 @@ public class Driver {
 			}
 		}
 	}
-
-	Article a = new Article();
+	public static Article parseAnswerFile(File file) throws FileNotFoundException, IOException {
+		Article a = new Article();
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line;
 			String prev = "";
