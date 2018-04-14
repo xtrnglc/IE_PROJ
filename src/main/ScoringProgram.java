@@ -461,7 +461,14 @@ public class ScoringProgram {
 				+ containmentTrueCount + ")");
 
 		HashSet<String> victimAnswerSeen = new HashSet<String>();
-		int victimTrueCount = answer.victim.size();
+		int victimTrueCount = 0;
+		for(String s : answer.victim) {
+			if(!s.equals("-----")) {
+				victimTrueCount++;
+			} else {
+				System.out.println("");
+			}
+		}
 		int victimLabeledCount = 0;
 		for (String s : output.victim) {
 			for(String ans : answer.victim) {
@@ -477,13 +484,20 @@ public class ScoringProgram {
 						}
 					}
 				} else {
-					if(ans.equals(s)){
+					if(s.equals("-----")) {
+						
+					}
+					else if(ans.equals(s)){
 						victimLabeledCount++;
 					}
 				}
 			}
 		}
-		double victimRecall = (double) victimLabeledCount / victimTrueCount;
+		double victimRecall = 0.0;
+		if(victimTrueCount != 0.0) {
+			victimRecall = (double) victimLabeledCount / victimTrueCount;
+		} 
+		 
 		result.put("victim",
 				dec.format(victimRecall).toString() + " (" + victimLabeledCount + "/" + victimTrueCount + ")");
 		HashSet<String> diseaseAnswerSeen = new HashSet<String>();

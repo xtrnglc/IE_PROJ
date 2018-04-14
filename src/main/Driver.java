@@ -485,6 +485,10 @@ public class Driver {
 			if (!editingAFile) {
 				scoringProgram.evaluateSingle(a, goldAnswer);
 			}
+			
+			if(a.story.contains("20040109.0101")) {
+				System.out.println("");
+			}
 		}
 	}
 
